@@ -2,13 +2,13 @@ import pyaudio
 import wave
 import sys
 
-def Record():
+def Record(PATH):
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 16000
     RECORD_SECONDS = 5
-    WAVE_OUTPUT_FILENAME = sys.argv[1]
+    WAVE_OUTPUT_FILENAME = PATH
 
     p = pyaudio.PyAudio()
 
@@ -39,4 +39,7 @@ def Record():
     wf.writeframes(b''.join(frames))
     wf.close()
 
-Record()
+#if len(sys.argv < 2):
+#    print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
+#    sys.exit(-1)
+Record(sys.argv[1])
