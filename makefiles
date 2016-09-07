@@ -10,9 +10,13 @@ LIBS = -lboost_system-mt
 
 LCURL = -lcurl
 
+LPROTOBUF = -lprotobuf
+
 SOURCE = test.cpp
 
 OSOURCE = test.o
+
+BUF = address.pb.cc
 
 CFLAG = -c
 
@@ -20,7 +24,7 @@ all: test1
 	rm -rf *.o
 
 test1: test1.o
-	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(LIBS) $(OSOURCE) $(LCURL) -o test
+	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(LIBS) $(OSOURCE) $(LCURL) $(BUF) $(LPROTOBUF) -o test
 
 test1.o: $(SOURCE)
 	$(CC) $(CFLAG) $(SOURCE)
