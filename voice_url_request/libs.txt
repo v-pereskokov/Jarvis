@@ -1,0 +1,16 @@
+cURL:
+$ make && sudo make install ./configure
+
+pyaudio:
+$ brew install portaudio
+$ pip install pyaudio
+
+protocol buffers:
+$ sudo xcode-select --install
+$ sudo /opt/local/bin/port install autoconf automake libtool
+$ sudo port install protobuf-cpp
+Python in C++:
+-framework Python
+
+languages:
+C++, Python
