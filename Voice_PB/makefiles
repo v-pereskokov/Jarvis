@@ -1,0 +1,43 @@
+CC = g++
+
+C11 = -std=c++11
+
+BINCLUDE = -I/usr/include
+
+BLIB = -L/usr/lib
+
+LIBS = -lboost_system-mt
+
+LCURL = -lcurl
+
+LPROTOBUF = -lprotobuf
+
+SOURCE = main.cpp
+
+OSOURCE = main.o
+
+BUFCR = ConnectionRequest/ConnectionRequest.pb.cc
+
+BUFAD = AddData/AddData.pb.cc
+
+CFLAG = -c
+
+PROTOC = protoc
+
+CPP_OUT = --cpp_out=.
+
+PROTOCFILECR = ConnectionRequest.proto
+
+PROTOCFILEADDDATA = AddData.proto
+
+all: main
+	rm -rf *.o
+
+main: $(OSOURCE)
+	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(LIBS) $(OSOURCE) $(LCURL) $(BUFCR) $(BUFAD) $(LPROTOBUF) ConnectionResponse/ConnectionResponse.pb.cc -o test
+
+$(OSOURCE):
+	$(CC) $(C11) $(CFLAG) $(SOURCE)
+
+clean:
+	rm -rf test
