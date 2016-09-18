@@ -102,7 +102,8 @@ int main(int argc, char* argv[])
         boost::asio::write(*socket, request_cr);
         
         std::string response = read(socket);
-        
+        // Здесь программа просто ждет
+        std::cout << "not here" << std::endl;
         boost::shared_ptr<BasicProtobuf::ConnectionResponse> CResp(new BasicProtobuf::ConnectionResponse);
         
         CResp->ParseFromString(response);
