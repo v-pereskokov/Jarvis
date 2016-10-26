@@ -124,10 +124,10 @@
 #include <sstream>
 #include <map>
 #include <iostream>
-#include "JsonParser.hpp"
+#include "./JsonParser/JsonParser.hpp"
 
 int main() {
-  Jarvis::JsonParser j("speechkit.json");
+  Jarvis::JsonParser j("configuration.json");
   std::map <std::string, std::string> map;
   map = j.parse();
   for (auto it = map.begin(); it != map.end(); ++it) {

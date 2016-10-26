@@ -12,6 +12,7 @@
 
 namespace Jarvis {
   namespace connection {
+    
 #define public_methods
 #define private_methods
 #define params

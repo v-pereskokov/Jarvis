@@ -24,9 +24,6 @@ namespace Jarvis {
   
   class JsonParser final {
     public public_methods:
-//    JsonParser(const jFile &file)
-//    :_file(file) {}
-    
     JsonParser(const jPath &path);
     
     JsonParser(const JsonParser &copy) = default;

@@ -76,7 +76,7 @@ namespace Jarvis {
       boost::any str = "KeepAliveClient";
       curl_easy_setopt(_curl, CURLOPT_HTTPHEADER, _headers);
       curl_easy_setopt(_curl, CURLOPT_USERAGENT, boost::any_cast<std::string>(str).c_str());
-      curl_easy_setopt(_curl, CURLOPT_URL, "asr.yandex.net/asr_xml?key=d9def809-0bc4-4954-b0c9-6d544d787581&uuid=0CD748B1936933CEAA07FD7813B05877&topic=queries&lang=ru-RU");
+      curl_easy_setopt(_curl, CURLOPT_URL, "asr.yandex.net/asr_xml?key=&uuid=&topic=&lang=");
     }
   }
 }

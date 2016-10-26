@@ -10,8 +10,6 @@ LIBS = -lboost_system-mt
 
 LCURL = -lcurl
 
-LPROTOBUF = -lprotobuf
-
 SOURCE = main.cpp
 
 OSOURCE = main.o
