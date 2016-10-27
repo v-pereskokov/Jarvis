@@ -4,33 +4,36 @@
 #include <fstream>
 #include <string>
 #include <map>
-#include <boost/any.hpp>
 #include <boost/property_tree/ptree.hpp>
 
 namespace Jarvis {
-  
-#define public_methods
-#define private_methods
+#define methods
 #define params
   
   using boost::property_tree::ptree;
-  using boost::property_tree::read_json;
-  using boost::property_tree::write_json;
-  using jTree = ptree;
-  using jFile = std::fstream;
-  using jPath = std::string;
-  using jKey = std::string;
-  using jData = std::string;
+  
+  /*
+   * struct Json:
+   * "key_1" : {"key_2" : "data"}
+   * !add load file
+   */
   
   class JsonParser final {
-    public public_methods:
-    JsonParser(const jPath &path);
+    using jTree = ptree;
+    using jFile = std::fstream;
+    using jPath = std::string;
+    using jKey = std::string;
+    using jData = std::string;
+    using jMap = std::map<jKey, jData>;
     
+    public methods:
+    explicit JsonParser(const jPath &path);
     JsonParser(const JsonParser &copy) = default;
-    
     JsonParser & operator=(const JsonParser &copy) = default;
+    jMap parse();
     
-    std::map<jKey, jData> parse();
+    private methods:
+    JsonParser() = delete;
     
     private params:
     jFile _file;

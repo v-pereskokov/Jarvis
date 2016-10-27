@@ -13,5 +13,8 @@
 		"uuid" : "uuid",
 		"topic" : "queries",
 		"lang" : "ru-RU"
+	},
+	"record" : {
+		"name" : "output.wav"
 	}
 }

@@ -1,15 +1,18 @@
 #include <sstream>
 #include <boost/property_tree/json_parser.hpp>
-#include "JsonParser.h"
+#include "Include/JsonParser.h"
 
 namespace Jarvis {
+  using boost::property_tree::read_json;
+  using boost::property_tree::write_json;
+  using jStream = std::stringstream;
   
   JsonParser::JsonParser(const jPath &path)
   :_file(path) {}
   
-  std::map<std::string, std::string> JsonParser::parse() {
-    std::map<std::string, std::string> result;
-    std::stringstream stream;
+  JsonParser::jMap JsonParser::parse() {
+    jMap result;
+    jStream stream;
     stream << _file.rdbuf();
     read_json(stream, _tree);
     for (auto it_first = _tree.begin(); it_first != _tree.end(); ++it_first) {
@@ -20,5 +23,4 @@ namespace Jarvis {
     }
     return result;
   }
-  
 }
