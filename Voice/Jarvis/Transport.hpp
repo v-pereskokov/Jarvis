@@ -1,4 +1,5 @@
 #include "Include/Transport.h"
+#include "OptionsList.hpp"
 #include "JsonParser.hpp"
 
 namespace Jarvis {
@@ -20,8 +21,8 @@ namespace Jarvis {
     
     Transport::Transport(const jPath &path)
     :_curl(curl_easy_init()), _properties(path), _headers(nullptr) {
-      std::cout << "property: " << _properties._optList.at("url") << std::endl;
       checkConnection(_curl);
+      setOptions();
     }
     
     Transport::~Transport() {
@@ -36,31 +37,30 @@ namespace Jarvis {
       return checkConnection(_curl);
     }
     
-//    bool Transport::run() {
-//      if (!_curl) {
-//        return false;
-//      }
-//      optionsList();
-//      std::ifstream fileStream("./output.wav", std::ifstream::binary);
-//      fileStream.seekg (0, fileStream.end);
-//      int length = fileStream.tellg();
-//      fileStream.seekg (0, fileStream.beg);
-//      
-//      curl_easy_setopt(_curl, CURLOPT_READFUNCTION, &readRequestData);
-//      curl_easy_setopt(_curl, CURLOPT_POSTFIELDSIZE, length);
-//      curl_easy_setopt(_curl, CURLOPT_READDATA, &fileStream);
-//      std::stringstream contentStream;
-//      curl_easy_setopt(_curl, CURLOPT_WRITEFUNCTION, &writeResponseData);
-//      curl_easy_setopt(_curl, CURLOPT_WRITEDATA, &contentStream);
-//      _code = curl_easy_perform(_curl);
-//      
-//      unsigned httpCode;
-//      curl_easy_getinfo(_curl, CURLINFO_HTTP_CODE, &httpCode);
-//      std::stringstream msg;
-//      msg << "Http code is " << httpCode;
-//      std::cout << contentStream.str();
-//      return true;
-//    }
+    bool Transport::isConnect() {
+      return checkConnection(_curl);
+    }
+    
+    bool Transport::send() {
+      if (!isConnect()) {
+        return false;
+      }
+      file fileStream("./" + _properties.getOption("name"), std::ifstream::binary);
+      fileStream.seekg (0, fileStream.end);
+      int length = fileStream.tellg();
+      fileStream.seekg (0, fileStream.beg);
+      curl_easy_setopt(_curl, CURLOPT_READFUNCTION, &readRequestData);
+      curl_easy_setopt(_curl, CURLOPT_POSTFIELDSIZE, length);
+      curl_easy_setopt(_curl, CURLOPT_READDATA, &fileStream);
+      curl_easy_setopt(_curl, CURLOPT_WRITEFUNCTION, &writeResponseData);
+      curl_easy_setopt(_curl, CURLOPT_WRITEDATA, &_response);
+      CURLcode _code = curl_easy_perform(_curl);
+      return true;
+    }
+    
+    Transport::responseString Transport::recv() const {
+      return _response.str();
+    }
     
     bool Transport::checkConnection(const socket *curl) {
       if (!curl) {
@@ -69,16 +69,16 @@ namespace Jarvis {
       return static_cast<bool>(curl);
     }
     
-//    void Transport::optionsList() {
-//      curl_easy_setopt(_curl, CURLOPT_HEADER, boost::any<long>(map["CURLOPT_HEADER"]));
-//      curl_easy_setopt(_curl, CURLOPT_POST, 1);
-//      curl_easy_setopt(_curl, CURLOPT_VERBOSE, 1);
-//      curl_easy_setopt(_curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
-//      _headers = curl_slist_append(_headers, "Content-Type: audio/x-wav");
-//      boost::any str = "KeepAliveClient";
-//      curl_easy_setopt(_curl, CURLOPT_HTTPHEADER, _headers);
-//      curl_easy_setopt(_curl, CURLOPT_USERAGENT, boost::any_cast<std::string>(str).c_str());
-//      curl_easy_setopt(_curl, CURLOPT_URL, "asr.yandex.net/asr_xml?key=&uuid=&topic=&lang=");
-//    }
+    void Transport::setOptions() {
+      curl_easy_setopt(_curl, CURLOPT_HEADER, std::stol(_properties.getOption("header")));
+      curl_easy_setopt(_curl, CURLOPT_POST, std::stol(_properties.getOption("post")));
+      curl_easy_setopt(_curl, CURLOPT_VERBOSE, std::stol(_properties.getOption("verbose")));
+      curl_easy_setopt(_curl, CURLOPT_IPRESOLVE, std::stol(_properties.getOption("ipresolve")));
+      std::string contentType = "Content-Type: " + _properties.getOption("content-type");
+      _headers = curl_slist_append(_headers, contentType.c_str());
+      curl_easy_setopt(_curl, CURLOPT_HTTPHEADER, _headers);
+      curl_easy_setopt(_curl, CURLOPT_USERAGENT, _properties.getOption("useragent").c_str());
+      curl_easy_setopt(_curl, CURLOPT_URL, _properties.getOption("url").c_str());
+    }
   }
 }

@@ -9,24 +9,28 @@ namespace Jarvis {
   namespace connection {
     using jObject = JsonParser;
     
-    OptionsList::OptionsList(const jPath& path) {
+    Transport::OptionsList::OptionsList(const jPath& path) {
       jObject json(path);
       fillList(json.parse());
     }
     
-    void OptionsList::fillList(const jList &list) {
+    Transport::OptionsList::optionValue Transport::OptionsList::getOption(const Transport::OptionsList::option &option) {
+      return _optList[option];
+    }
+    
+    void Transport::OptionsList::fillList(const jList &list) {
       url url = list.at("url");
       for (auto jIt = list.begin(); jIt != list.end(); ++jIt) {
         auto jProperty = jIt;
         if (jProperty->first != "url" && !findYandexOption(jProperty->first)) {
-          _options.insert({jProperty->first, jProperty->second.data()});
+          _optList.insert({jProperty->first, jProperty->second.data()});
         }
       }
       url = makeUrl(list, url);
-      _options.insert({"url", url});
+      _optList.insert({"url", url});
     }
     
-    OptionsList::url OptionsList::makeUrl(const jList &list, url &url) {
+    Transport::OptionsList::url Transport::OptionsList::makeUrl(const jList &list, url &url) {
       for (auto jIt = list.begin(); jIt != list.end(); ++jIt) {
         auto jProperty = jIt;
         if (findYandexOption(jProperty->first)) {
@@ -36,7 +40,7 @@ namespace Jarvis {
       return url;
     }
     
-    bool OptionsList::findYandexOption(const yandexOption &option) {
+    bool Transport::OptionsList::findYandexOption(const yandexOption &option) {
       auto findOption = std::find(_yaOpts.begin(), _yaOpts.end(), option);
       return findOption != _yaOpts.end();
     }

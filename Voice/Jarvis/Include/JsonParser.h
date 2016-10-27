@@ -1,6 +1,8 @@
 #ifndef JSONPARSER_H
 #define JSONPARSER_H
 
+#pragma once
+
 #include <fstream>
 #include <string>
 #include <map>

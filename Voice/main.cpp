@@ -10,6 +10,8 @@ int main() {
   for (auto it = map.begin(); it != map.end(); ++it) {
     std::cout << it->first << " : " << it->second << std::endl;
   }
-  Jarvis::connection::OptionsList opt("configuration.json");
+  Jarvis::connection::Transport opt("configuration.json");
+  opt.send();
+  std::cout << opt.recv() << std::endl;
   return 0;
 }
