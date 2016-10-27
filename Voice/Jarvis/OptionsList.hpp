@@ -3,15 +3,15 @@
 
 #include <algorithm>
 #include "Include/Transport.h"
-#include "JsonParser.hpp"
+#include "Parser.hpp"
 
 namespace Jarvis {
   namespace connection {
-    using jObject = JsonParser;
+    using jObject = Parser;
     
     Transport::OptionsList::OptionsList(const jPath& path) {
       jObject json(path);
-      fillList(json.parse());
+      fillList(json.jsonParse());
     }
     
     Transport::OptionsList::optionValue Transport::OptionsList::getOption(const Transport::OptionsList::option &option) {

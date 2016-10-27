@@ -12,7 +12,7 @@
 		"key" : "key",
 		"uuid" : "uuid",
 		"topic" : "queries",
-		"lang" : "ru-RU"
+		"lang" : "en-EN"
 	},
 	"record" : {
 		"name" : "output.wav"

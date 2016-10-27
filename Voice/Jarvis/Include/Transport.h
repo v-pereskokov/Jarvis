@@ -31,7 +31,6 @@ namespace Jarvis {
       using responseString = std::string;
       using file = std::ifstream;
       
-    public:
       struct OptionsList {
         friend class Transport;
         
