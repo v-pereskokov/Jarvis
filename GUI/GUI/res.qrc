@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>bulbOff.png</file>
+        <file>bulbOn.png</file>
+        <file>tabClosed.png</file>
+        <file>tabOpened.png</file>
+    </qresource>
+</RCC>
