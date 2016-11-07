@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../Jarvis-GUI/GUI/GUI/smartbulbconfig.h"
+#include "../GUI/GUI/smartbulbconfig.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SmartBulbConfig_t {
     QByteArrayData data[6];
-    char stringdata0[103];
+    char stringdata0[101];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,12 +33,12 @@ QT_MOC_LITERAL(0, 0, 15), // "SmartBulbConfig"
 QT_MOC_LITERAL(1, 16, 32), // "on_brightnessSlider_valueChanged"
 QT_MOC_LITERAL(2, 49, 0), // ""
 QT_MOC_LITERAL(3, 50, 5), // "value"
-QT_MOC_LITERAL(4, 56, 25), // "on_statusCheckBox_clicked"
-QT_MOC_LITERAL(5, 82, 20) // "on_bulbImage_clicked"
+QT_MOC_LITERAL(4, 56, 23), // "on_statusButton_clicked"
+QT_MOC_LITERAL(5, 80, 20) // "on_bulbImage_clicked"
 
     },
     "SmartBulbConfig\0on_brightnessSlider_valueChanged\0"
-    "\0value\0on_statusCheckBox_clicked\0"
+    "\0value\0on_statusButton_clicked\0"
     "on_bulbImage_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -76,7 +76,7 @@ void SmartBulbConfig::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_brightnessSlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->on_statusCheckBox_clicked(); break;
+        case 1: _t->on_statusButton_clicked(); break;
         case 2: _t->on_bulbImage_clicked(); break;
         default: ;
         }

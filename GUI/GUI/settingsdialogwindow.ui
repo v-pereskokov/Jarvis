@@ -255,20 +255,42 @@ background-color: #333;</string>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="statusRadioButton">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
+       <widget class="QPushButton" name="statusButton">
         <property name="styleSheet">
-         <string notr="true">background-color: #333;
-color: #00FBF6;</string>
+         <string notr="true">QPushButton {
+border: none;
+text-align: center;
+background-repeat: none; 
+color:#00FBF6;
+font: 14px;
+}
+QPushButton:hover {
+background-color: #004A49;
+} </string>
         </property>
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </item>

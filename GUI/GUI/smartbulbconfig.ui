@@ -150,14 +150,26 @@ QPushButton:pressed{
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="statusCheckBox">
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
+       <widget class="QPushButton" name="statusButton">
+        <property name="baseSize">
+         <size>
+          <width>62</width>
+          <height>0</height>
+         </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">color: #00FBF6;</string>
+         <string notr="true">QPushButton {
+border: none;
+text-align: center;
+background-repeat: none; 
+color:#00FBF6;
+font: 14px;
+min-width: 30px;
+min-height: 30px;
+}
+QPushButton:hover {
+background-color: #004A49;
+} </string>
         </property>
         <property name="text">
          <string/>

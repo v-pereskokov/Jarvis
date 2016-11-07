@@ -61,6 +61,8 @@ public:
     QGridLayout *gridLayout;
     QSpacerItem *verticalSpacer_2;
     QVBoxLayout *verticalLayoutLeft;
+    QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_4;
     QMenuBar *menuBar;
     QMenu *menuAbout;
     QToolBar *mainToolBar;
@@ -71,7 +73,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(596, 382);
+        MainWindow->resize(723, 413);
         MainWindow->setStyleSheet(QStringLiteral("background-color: #222;"));
         actionJ_A_R_V_I_S_project = new QAction(MainWindow);
         actionJ_A_R_V_I_S_project->setObjectName(QStringLiteral("actionJ_A_R_V_I_S_project"));
@@ -176,15 +178,15 @@ public:
         verticalLayout->addLayout(horizontalLayout_3);
 
 
-        gridLayout_2->addLayout(verticalLayout, 0, 2, 1, 1);
+        gridLayout_2->addLayout(verticalLayout, 0, 4, 1, 1);
 
         verticalSpacer = new QSpacerItem(20, 130, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_2->addItem(verticalSpacer, 1, 2, 1, 1);
+        gridLayout_2->addItem(verticalSpacer, 1, 4, 1, 1);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_2->addItem(horizontalSpacer_3, 0, 1, 1, 1);
+        gridLayout_2->addItem(horizontalSpacer_3, 0, 3, 1, 1);
 
         scrollArea = new QScrollArea(centralWidget);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
@@ -199,7 +201,7 @@ public:
         scrollArea->setAlignment(Qt::AlignJustify|Qt::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 248, 287));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 248, 318));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -219,10 +221,26 @@ public:
 
         gridLayout_2->addWidget(scrollArea, 0, 0, 2, 1);
 
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setStyleSheet(QLatin1String("border: none;\n"
+"min-width: 115px;\n"
+"min-height: 115px"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/images/microphone.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton->setIcon(icon);
+        pushButton->setIconSize(QSize(115, 115));
+
+        gridLayout_2->addWidget(pushButton, 0, 2, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_2->addItem(horizontalSpacer_4, 0, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 596, 19));
+        menuBar->setGeometry(QRect(0, 0, 723, 19));
         menuBar->setStyleSheet(QLatin1String("QMenuBar {\n"
 "color: #00FBF6;\n"
 "background-color: #333;\n"
@@ -279,6 +297,7 @@ public:
         groupNameEdit->setText(QApplication::translate("MainWindow", "Main Group", 0));
         addGroup->setText(QApplication::translate("MainWindow", "Add Group", 0));
         deleteGroup->setText(QApplication::translate("MainWindow", "Delete Group", 0));
+        pushButton->setText(QString());
         menuAbout->setTitle(QApplication::translate("MainWindow", "About", 0));
         toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
     } // retranslateUi

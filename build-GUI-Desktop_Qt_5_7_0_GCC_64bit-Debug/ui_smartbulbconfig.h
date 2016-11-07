@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
@@ -39,7 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_3;
     QLabel *statusLabel;
-    QCheckBox *statusCheckBox;
+    QPushButton *statusButton;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QSlider *brightnessSlider;
@@ -134,12 +133,23 @@ public:
 
         horizontalLayout_3->addWidget(statusLabel);
 
-        statusCheckBox = new QCheckBox(layoutWidget);
-        statusCheckBox->setObjectName(QStringLiteral("statusCheckBox"));
-        statusCheckBox->setFont(font);
-        statusCheckBox->setStyleSheet(QStringLiteral("color: #00FBF6;"));
+        statusButton = new QPushButton(layoutWidget);
+        statusButton->setObjectName(QStringLiteral("statusButton"));
+        statusButton->setBaseSize(QSize(62, 0));
+        statusButton->setStyleSheet(QLatin1String("QPushButton {\n"
+"border: none;\n"
+"text-align: center;\n"
+"background-repeat: none; \n"
+"color:#00FBF6;\n"
+"font: 14px;\n"
+"min-width: 30px;\n"
+"min-height: 30px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: #004A49;\n"
+"} "));
 
-        horizontalLayout_3->addWidget(statusCheckBox);
+        horizontalLayout_3->addWidget(statusButton);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -205,7 +215,7 @@ public:
         bulbName->setText(QApplication::translate("SmartBulbConfig", "Smart Bulb", 0));
         label_3->setText(QApplication::translate("SmartBulbConfig", "Status:               ", 0));
         statusLabel->setText(QApplication::translate("SmartBulbConfig", "OFF", 0));
-        statusCheckBox->setText(QString());
+        statusButton->setText(QString());
         label->setText(QApplication::translate("SmartBulbConfig", "Brightness: ", 0));
         bulbImage->setText(QString());
     } // retranslateUi

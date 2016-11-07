@@ -21,18 +21,21 @@ SmartBulbConfig::SmartBulbConfig(QWidget *parent, DynamicButton *button):
     ui->lcdNumber->display(QString::number(deviceButton->getBrightness()));
     ui->bulbName->setText(deviceButton->getDeviceName());
 
+    ui->statusButton->setCheckable(true);
+    ui->statusButton->setFlat(true);
 
     if(deviceButton->getDeviceStatus())
     {
        ui->statusLabel->setText(QString("ON"));
-       ui->statusCheckBox->setChecked(true);
-
+       ui->statusButton->setChecked(true);
+       ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
        bulbImg.load( ":/images/bulbOn.png" );
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
-        ui->statusCheckBox->setChecked(false);
+        ui->statusButton->setChecked(false);
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
         bulbImg.load( ":/images/bulbOff.png" );
     }
 
@@ -54,19 +57,21 @@ void SmartBulbConfig::on_brightnessSlider_valueChanged(int value)
 
 
 
-void SmartBulbConfig::on_statusCheckBox_clicked()
+void SmartBulbConfig::on_statusButton_clicked()
 {
 
-    if(ui->statusCheckBox->isChecked())
+    if(ui->statusButton->isChecked())
     {
         ui->statusLabel->setText(QString("ON"));
         deviceButton->turnOnDevice();
         bulbImg.load( ":/images/bulbOn.png" );
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
         deviceButton->turnOffDevice();
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
         bulbImg.load( ":/images/bulbOff.png" );
     }
     ui->bulbImage->setIcon(QIcon(bulbImg));
@@ -76,6 +81,6 @@ void SmartBulbConfig::on_statusCheckBox_clicked()
 
 void SmartBulbConfig::on_bulbImage_clicked()
 {
-    ui->statusCheckBox->setChecked(!ui->statusCheckBox->isChecked());
-    emit(on_statusCheckBox_clicked());
+    ui->statusButton->setChecked(!ui->statusButton->isChecked());
+    emit(on_statusButton_clicked());
 }

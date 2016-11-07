@@ -26,20 +26,25 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, DynamicButton *btn,
 
     setStyles(stylesList);
     ui->buttonBox->setStyleSheet(stylesList[1]);
-    //ui->buttonBox->setStyleSheet(QString("QDialogButtonBox { background-color: #33f; border: none;}"));
+
+    ui->statusButton->setCheckable(true);
+    ui->statusButton->setFlat(true);
 
 
 
     if(deviceButton->getDeviceStatus())
     {
         ui->statusLabel->setText(QString("ON"));
-        ui->statusRadioButton->setChecked(true);
+        ui->statusButton->setChecked(true);
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
-        ui->statusRadioButton->setChecked(false);
+        ui->statusButton->setChecked(false);
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
     }
+    connect(ui->statusButton, SIGNAL(clicked()), this, SLOT(onStatusButtonClicked()));
 
 }
 
@@ -74,7 +79,7 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
             QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty device name"));
 
 
-        if(ui->statusRadioButton->isChecked())
+        if(ui->statusButton->isChecked())
             deviceButton->turnOnDevice();
         else
             deviceButton->turnOffDevice();
@@ -83,14 +88,22 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
     }
 }
 
-void SettingsDialogWindow::on_statusRadioButton_clicked()
+
+
+
+
+
+
+void SettingsDialogWindow::onStatusButtonClicked()
 {
-    if(ui->statusRadioButton->isChecked())
+    if(ui->statusButton->isChecked())
+    {
         ui->statusLabel->setText(QString("ON"));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+    }
     else
+    {
         ui->statusLabel->setText(QString("OFF"));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+    }
 }
-
-
-
-

@@ -22,7 +22,7 @@ public:
 private slots:
     void on_brightnessSlider_valueChanged(int value);
 
-    void on_statusCheckBox_clicked();
+    void on_statusButton_clicked();
 
 
     void on_bulbImage_clicked();

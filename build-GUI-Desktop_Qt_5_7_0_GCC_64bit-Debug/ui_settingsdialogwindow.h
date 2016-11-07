@@ -21,7 +21,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -48,7 +48,8 @@ public:
     QLabel *deviceTypelabel;
     QHBoxLayout *horizontalLayout_2;
     QLabel *statusLabel;
-    QRadioButton *statusRadioButton;
+    QPushButton *statusButton;
+    QSpacerItem *horizontalSpacer_2;
     QVBoxLayout *verticalLayout_3;
     QLineEdit *nameEdit;
     QLineEdit *GroupNameEdit;
@@ -193,13 +194,26 @@ public:
 
         horizontalLayout_2->addWidget(statusLabel);
 
-        statusRadioButton = new QRadioButton(frame);
-        statusRadioButton->setObjectName(QStringLiteral("statusRadioButton"));
-        statusRadioButton->setFont(font);
-        statusRadioButton->setStyleSheet(QLatin1String("background-color: #333;\n"
-"color: #00FBF6;"));
+        statusButton = new QPushButton(frame);
+        statusButton->setObjectName(QStringLiteral("statusButton"));
+        statusButton->setStyleSheet(QLatin1String("QPushButton {\n"
+"border: none;\n"
+"text-align: center;\n"
+"background-repeat: none; \n"
+"color:#00FBF6;\n"
+"font: 14px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"background-color: #004A49;\n"
+"} "));
+        statusButton->setCheckable(false);
+        statusButton->setFlat(false);
 
-        horizontalLayout_2->addWidget(statusRadioButton);
+        horizontalLayout_2->addWidget(statusButton);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
 
 
         gridLayout->addLayout(horizontalLayout_2, 1, 1, 1, 1);
@@ -246,7 +260,7 @@ public:
         idLabel->setText(QApplication::translate("SettingsDialogWindow", "ID", 0));
         deviceTypelabel->setText(QApplication::translate("SettingsDialogWindow", "Smart Device", 0));
         statusLabel->setText(QApplication::translate("SettingsDialogWindow", "OFF", 0));
-        statusRadioButton->setText(QString());
+        statusButton->setText(QString());
         nameEdit->setText(QApplication::translate("SettingsDialogWindow", "name", 0));
         GroupNameEdit->setText(QApplication::translate("SettingsDialogWindow", "name", 0));
     } // retranslateUi

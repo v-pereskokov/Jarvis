@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SettingsDialogWindow_t {
     QByteArrayData data[10];
-    char stringdata0[147];
+    char stringdata0[140];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,13 +38,13 @@ QT_MOC_LITERAL(5, 69, 3), // "btn"
 QT_MOC_LITERAL(6, 73, 20), // "on_buttonBox_clicked"
 QT_MOC_LITERAL(7, 94, 16), // "QAbstractButton*"
 QT_MOC_LITERAL(8, 111, 6), // "button"
-QT_MOC_LITERAL(9, 118, 28) // "on_statusRadioButton_clicked"
+QT_MOC_LITERAL(9, 118, 21) // "onStatusButtonClicked"
 
     },
     "SettingsDialogWindow\0deviceGroupChanged\0"
     "\0newGroupName\0DynamicButton*\0btn\0"
     "on_buttonBox_clicked\0QAbstractButton*\0"
-    "button\0on_statusRadioButton_clicked"
+    "button\0onStatusButtonClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -86,7 +86,7 @@ void SettingsDialogWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         switch (_id) {
         case 0: _t->deviceGroupChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< DynamicButton*(*)>(_a[2]))); break;
         case 1: _t->on_buttonBox_clicked((*reinterpret_cast< QAbstractButton*(*)>(_a[1]))); break;
-        case 2: _t->on_statusRadioButton_clicked(); break;
+        case 2: _t->onStatusButtonClicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
