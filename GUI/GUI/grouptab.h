@@ -6,7 +6,7 @@
 #include <QString>
 
 
-
+//Структура для боковых вкладок
 struct GroupTab
 {
 public:
@@ -14,8 +14,8 @@ public:
     GroupTab(QWidget *parent, const QString &tabName);
     ~GroupTab();
 
-    WidgetVerticalLayout   *layout;
-    QPushButton            *tab;
+    WidgetVerticalLayout   *layout;  //Слой вкладки в который добавляются кнопки с устройствами
+    QPushButton            *tab;     //Кнопка вкладки, позволяет свернуть вкладку по клику
 };
 
 #endif // GROUPTAB_H
