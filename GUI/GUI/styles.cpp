@@ -5,9 +5,11 @@ void setStyles(QString stylesList[stylesAmount])
 {
     //стили кнопок PushButton  в классе MainWindow
     stylesList[0] = "QPushButton {"
-                    "   background-color: rgb(93, 240, 84);"
+                    "   background-color: #009E9B;"
                     "   border : none;"
-                    "   font:  14px;"
+                    "   font:  14px; "
+                    "   color: #fff;"
+
                     "   max-width: 200px;"
                     "   min-width: 80px;"
                     "   min-height: 20px;"
@@ -29,9 +31,10 @@ void setStyles(QString stylesList[stylesAmount])
 
     //стили кнопок PushButton  в классе SettingsDialogWindow
     stylesList[1] = "QPushButton {"
-                    "   background-color: rgb(93, 240, 84);"
-                    "   border : none;"
+                    "   background-color: #009E9B;"
+                    "   border: none; "
                     "   font:  14px;"
+                    "   color: #fff;"
                     "   max-width: 200px;"
                     "   min-width: 80px;"
                     "   min-height: 20px;"
@@ -44,11 +47,14 @@ void setStyles(QString stylesList[stylesAmount])
                     " }"
                     "QPushButton:hover {"
                     "   background-color: #61b7ff;"
+                    "   color: #fff;"
                     " }"
                     "QPushButton:focus { "
                     "   background-color: #61b7ff;"
+                    "   color: #fff;"
                     " }"
                     "QPushButton:pressed {"
                     "   background-color: #54dff0;"
+                    "   color: #fff;"
                     " }";
 }

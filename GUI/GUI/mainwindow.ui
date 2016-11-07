@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>J.A.R.V.I.S.</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="2">
@@ -21,6 +24,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">color: #00FBF6;</string>
+          </property>
           <property name="text">
            <string>Enter device name</string>
           </property>
@@ -28,6 +34,10 @@
         </item>
         <item>
          <widget class="QLineEdit" name="lineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: #333;
+color: #00FBF6;</string>
+          </property>
           <property name="text">
            <string>Smart Device</string>
           </property>
@@ -95,6 +105,9 @@
         </property>
         <item>
          <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">color: #00FBF6;</string>
+          </property>
           <property name="text">
            <string>Enter group name</string>
           </property>
@@ -102,6 +115,10 @@
         </item>
         <item>
          <widget class="QLineEdit" name="groupNameEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: #333;
+color: #00FBF6;</string>
+          </property>
           <property name="text">
            <string>Main Group</string>
           </property>
@@ -248,7 +265,28 @@
      <height>19</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+color: #00FBF6;
+background-color: #333;
+}
+
+QMenuBar:hover {
+color: #00FBF6;
+background-color: #111;
+}</string>
+   </property>
    <widget class="QMenu" name="menuAbout">
+    <property name="styleSheet">
+     <string notr="true">QMenu {
+color: #00FBF6;
+background-color: #333;
+}
+QMenu:hover {
+color: #00FBF6;
+background-color: #111;
+}</string>
+    </property>
     <property name="title">
      <string>About</string>
     </property>

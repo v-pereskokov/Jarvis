@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Bulb Configuration</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222</string>
+  </property>
   <property name="sizeGripEnabled">
    <bool>false</bool>
   </property>
@@ -33,6 +36,35 @@
      <width>341</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: #009E9B;
+	border: none;
+	font:  14px;
+	color: #fff;
+	max-width: 200px;
+	min-width: 80px;
+	min-height: 20px;
+	margin: 5px;
+	padding: 5px;
+}
+QPushButton:disabled {
+	background-color: #989898;
+	color: #fff;
+}
+.QPushButton :hover{
+	background-color: #61b7ff;
+	color: #fff;
+}
+QPushButton:focus { 
+	background-color: #61b7ff;
+	color: #fff;
+}
+QPushButton:pressed{
+	background-color: #54dff0;
+	color: #fff;
+}</string>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -60,6 +92,9 @@
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
         <property name="text">
          <string>Bulb Name: </string>
         </property>
@@ -71,6 +106,9 @@
          <font>
           <pointsize>11</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
         </property>
         <property name="text">
          <string>Smart Bulb</string>
@@ -88,6 +126,9 @@
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
         <property name="text">
          <string>Status:               </string>
         </property>
@@ -100,6 +141,9 @@
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
         <property name="text">
          <string>OFF</string>
         </property>
@@ -111,6 +155,9 @@
          <font>
           <pointsize>11</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
         </property>
         <property name="text">
          <string/>
@@ -128,6 +175,9 @@
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
         <property name="text">
          <string>Brightness: </string>
         </property>
@@ -135,6 +185,9 @@
       </item>
       <item>
        <widget class="QSlider" name="brightnessSlider">
+        <property name="styleSheet">
+         <string notr="true">background-color: #333;</string>
+        </property>
         <property name="minimum">
          <number>1</number>
         </property>
@@ -154,7 +207,7 @@
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:rgb(0, 197, 0);
+         <string notr="true">color: #00FBF6;
 
 border:none;
 

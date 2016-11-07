@@ -26,6 +26,7 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, DynamicButton *btn,
 
     setStyles(stylesList);
     ui->buttonBox->setStyleSheet(stylesList[1]);
+    //ui->buttonBox->setStyleSheet(QString("QDialogButtonBox { background-color: #33f; border: none;}"));
 
 
 

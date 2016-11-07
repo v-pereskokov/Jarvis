@@ -15,10 +15,11 @@ GroupTab::GroupTab(QWidget *parent, const QString &tabName)
     tab->setStyleSheet("QPushButton {"
                        "    border: none;"
                        "    text-align: left;"
-                       "    background-repeat: none;"
+                       "    background-repeat: none; "
+                       "    color:#00FBF6;"
                        "}"
                        "QPushButton:hover {"
-                       "    background-color: #56c9ff;"
+                       "    background-color: #004A49;"
                        "}" );
 }
 

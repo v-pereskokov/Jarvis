@@ -9,12 +9,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>333</height>
+    <width>421</width>
+    <height>312</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Device Setiings</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -22,15 +34,44 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>280</y>
-     <width>291</width>
-     <height>41</height>
+     <x>80</x>
+     <y>250</y>
+     <width>320</width>
+     <height>42</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: #009E9B;
+	border: none;
+	font:  14px;
+	color: #fff;
+	max-width: 200px;
+	min-width: 80px;
+	min-height: 20px;
+	margin: 5px;
+	padding: 5px;
+}
+QPushButton:disabled {
+	background-color: #989898;
+	color: #fff;
+}
+.QPushButton :hover{
+	background-color: #61b7ff;
+	color: #fff;
+}
+QPushButton:focus { 
+	background-color: #61b7ff;
+	color: #fff;
+}
+QPushButton:pressed{
+	background-color: #54dff0;
+	color: #fff;
+}</string>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -59,8 +100,8 @@
     <rect>
      <x>40</x>
      <y>40</y>
-     <width>301</width>
-     <height>181</height>
+     <width>298</width>
+     <height>160</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -72,195 +113,202 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>111</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="vertNameLabelsLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Device Name:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Group Name:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Device Status:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Device ID:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_5">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Device Type:</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>10</y>
-      <width>127</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLineEdit" name="nameEdit">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>name</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="GroupNameEdit">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>name</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>80</y>
-      <width>52</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="statusLabel">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>OFF</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="statusRadioButton">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>100</y>
-      <width>104</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="topMargin">
-      <number>5</number>
-     </property>
-     <item>
-      <widget class="QLabel" name="idLabel">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>ID</string>
-       </property>
-       <property name="margin">
-        <number>0</number>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="deviceTypelabel">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Smart Device</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="3">
+     <layout class="QVBoxLayout" name="vertNameLabelsLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Device Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Group Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Device Status:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Device ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Device Type:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="idLabel">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>ID</string>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="deviceTypelabel">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>Smart Device</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="statusLabel">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #00FBF6;
+background-color: #333;</string>
+        </property>
+        <property name="text">
+         <string>OFF</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="statusRadioButton">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #333;
+color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLineEdit" name="nameEdit">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #333;
+color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="GroupNameEdit">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #333;
+color: #00FBF6;</string>
+        </property>
+        <property name="text">
+         <string>name</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <zorder>frame</zorder>
   <zorder>layoutWidget</zorder>

@@ -72,6 +72,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(596, 382);
+        MainWindow->setStyleSheet(QStringLiteral("background-color: #222;"));
         actionJ_A_R_V_I_S_project = new QAction(MainWindow);
         actionJ_A_R_V_I_S_project->setObjectName(QStringLiteral("actionJ_A_R_V_I_S_project"));
         actionJ_A_R_V_I_S_project->setCheckable(false);
@@ -91,11 +92,14 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
+        label->setStyleSheet(QStringLiteral("color: #00FBF6;"));
 
         horizontalLayout->addWidget(label);
 
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setStyleSheet(QLatin1String("background-color: #333;\n"
+"color: #00FBF6;"));
 
         horizontalLayout->addWidget(lineEdit);
 
@@ -137,11 +141,14 @@ public:
         horizontalLayout_4->setContentsMargins(-1, 35, -1, -1);
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral("color: #00FBF6;"));
 
         horizontalLayout_4->addWidget(label_2);
 
         groupNameEdit = new QLineEdit(centralWidget);
         groupNameEdit->setObjectName(QStringLiteral("groupNameEdit"));
+        groupNameEdit->setStyleSheet(QLatin1String("background-color: #333;\n"
+"color: #00FBF6;"));
 
         horizontalLayout_4->addWidget(groupNameEdit);
 
@@ -216,8 +223,25 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 596, 19));
+        menuBar->setStyleSheet(QLatin1String("QMenuBar {\n"
+"color: #00FBF6;\n"
+"background-color: #333;\n"
+"}\n"
+"\n"
+"QMenuBar:hover {\n"
+"color: #00FBF6;\n"
+"background-color: #111;\n"
+"}"));
         menuAbout = new QMenu(menuBar);
         menuAbout->setObjectName(QStringLiteral("menuAbout"));
+        menuAbout->setStyleSheet(QLatin1String("QMenu {\n"
+"color: #00FBF6;\n"
+"background-color: #333;\n"
+"}\n"
+"QMenu:hover {\n"
+"color: #00FBF6;\n"
+"background-color: #111;\n"
+"}"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));

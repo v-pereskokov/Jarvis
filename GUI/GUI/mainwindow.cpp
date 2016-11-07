@@ -118,6 +118,7 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
     tab->layout->show();
 
     connect(tab->tab, SIGNAL(clicked()), this, SLOT(onTabClicked()));
+    tab->layout->hide();
     return tab;
 }
 
