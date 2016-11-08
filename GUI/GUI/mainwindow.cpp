@@ -287,32 +287,13 @@ void MainWindow::on_deleteGroup_clicked()
     if(tab == nullptr)
         return;
 
-    GroupTab *mainTab = getGroupTab(QString("Main Group"), true, ui->scrollAreaWidgetContents);
-    if(tab == mainTab)
-        return;
 
     while( tab->layout->count() > 0 )
     {
-          DynamicButton *button = qobject_cast<DynamicButton*>(tab->layout->vertLayout->itemAt(0)->widget());
-          DynamicButton *newButton = new DynamicButton(button, mainTab->layout);
+        DynamicButton *button = qobject_cast<DynamicButton*>(tab->layout->vertLayout->itemAt(0)->widget());
 
-          newButton->setStyleSheet(stylesList[0]);
-          newButton->setGroupName(mainTab->tab->text());
-
-          deleteDynamicButton(button->text());
-
-          buttonList.push_back(newButton);          
-          mainTab->layout->addWidget(newButton);
-          newButton->show();
-
-          connect(newButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
-          connect(newButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
-
-
+        deleteDynamicButton(button->text());
     }
-
-    mainTab->tab->setChecked(false);
-    mainTab->layout->showWidgets();
 
     for(size_t i = 0; i < groupList.size()-1; ++i)
     {

@@ -2154,8 +2154,6 @@ settingsdialogwindow.o: ../GUI/GUI/settingsdialogwindow.cpp ../GUI/GUI/settingsd
 		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QRadioButton \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qradiobutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settingsdialogwindow.o ../GUI/GUI/settingsdialogwindow.cpp
@@ -2427,8 +2425,6 @@ smartbulbconfig.o: ../GUI/GUI/smartbulbconfig.cpp ../GUI/GUI/smartbulbconfig.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QCheckBox \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qcheckbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialogButtonBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
