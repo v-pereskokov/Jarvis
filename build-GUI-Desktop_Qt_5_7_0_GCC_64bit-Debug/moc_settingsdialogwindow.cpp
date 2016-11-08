@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_SettingsDialogWindow_t {
     QByteArrayData data[10];
-    char stringdata0[140];
+    char stringdata0[144];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,16 +33,16 @@ QT_MOC_LITERAL(0, 0, 20), // "SettingsDialogWindow"
 QT_MOC_LITERAL(1, 21, 18), // "deviceGroupChanged"
 QT_MOC_LITERAL(2, 40, 0), // ""
 QT_MOC_LITERAL(3, 41, 12), // "newGroupName"
-QT_MOC_LITERAL(4, 54, 14), // "DynamicButton*"
-QT_MOC_LITERAL(5, 69, 3), // "btn"
-QT_MOC_LITERAL(6, 73, 20), // "on_buttonBox_clicked"
-QT_MOC_LITERAL(7, 94, 16), // "QAbstractButton*"
-QT_MOC_LITERAL(8, 111, 6), // "button"
-QT_MOC_LITERAL(9, 118, 21) // "onStatusButtonClicked"
+QT_MOC_LITERAL(4, 54, 18), // "SettingsButtonBox*"
+QT_MOC_LITERAL(5, 73, 3), // "btn"
+QT_MOC_LITERAL(6, 77, 20), // "on_buttonBox_clicked"
+QT_MOC_LITERAL(7, 98, 16), // "QAbstractButton*"
+QT_MOC_LITERAL(8, 115, 6), // "button"
+QT_MOC_LITERAL(9, 122, 21) // "onStatusButtonClicked"
 
     },
     "SettingsDialogWindow\0deviceGroupChanged\0"
-    "\0newGroupName\0DynamicButton*\0btn\0"
+    "\0newGroupName\0SettingsButtonBox*\0btn\0"
     "on_buttonBox_clicked\0QAbstractButton*\0"
     "button\0onStatusButtonClicked"
 };
@@ -84,7 +84,7 @@ void SettingsDialogWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         SettingsDialogWindow *_t = static_cast<SettingsDialogWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->deviceGroupChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< DynamicButton*(*)>(_a[2]))); break;
+        case 0: _t->deviceGroupChanged((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< SettingsButtonBox*(*)>(_a[2]))); break;
         case 1: _t->on_buttonBox_clicked((*reinterpret_cast< QAbstractButton*(*)>(_a[1]))); break;
         case 2: _t->onStatusButtonClicked(); break;
         default: ;
@@ -96,7 +96,7 @@ void SettingsDialogWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 1:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< DynamicButton* >(); break;
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< SettingsButtonBox* >(); break;
             }
             break;
         case 1:
@@ -111,7 +111,7 @@ void SettingsDialogWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (SettingsDialogWindow::*_t)(QString , DynamicButton * );
+            typedef void (SettingsDialogWindow::*_t)(QString , SettingsButtonBox * );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&SettingsDialogWindow::deviceGroupChanged)) {
                 *result = 0;
                 return;
@@ -157,7 +157,7 @@ int SettingsDialogWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void SettingsDialogWindow::deviceGroupChanged(QString _t1, DynamicButton * _t2)
+void SettingsDialogWindow::deviceGroupChanged(QString _t1, SettingsButtonBox * _t2)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);

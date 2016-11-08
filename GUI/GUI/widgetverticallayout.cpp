@@ -19,7 +19,7 @@ void WidgetVerticalLayout::addWidget(DynamicButton *widget)
     vertLayout->addWidget(widget, vertLayout->rowCount(), 0);
 }
 
-void WidgetVerticalLayout::addWidgetWithSettingsButton(SettingsButton *settings)
+void WidgetVerticalLayout::addWidgetWithSettingsButton(SettingsButtonBox *settings)
 {
     int row = vertLayout->rowCount();
     vertLayout->addWidget(settings->deviceButton, row, 0);

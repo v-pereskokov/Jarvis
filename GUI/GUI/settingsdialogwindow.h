@@ -2,7 +2,7 @@
 #define SETTINGSDIALOGWINDOW_H
 #include <QDialog>
 #include <vector>
-#include "dynamicbutton.h"
+#include "settingsbuttonbox.h"
 #include "grouptab.h"
 #include "styles.h"
 
@@ -16,8 +16,8 @@ class SettingsDialogWindow : public QDialog
 
 public:
     explicit SettingsDialogWindow(QWidget *parent = 0);
-    SettingsDialogWindow(QWidget *parent, DynamicButton *btn,
-                         const std::vector<DynamicButton*> &btnList,
+    SettingsDialogWindow(QWidget *parent, SettingsButtonBox *btn,
+                         std::vector<SettingsButtonBox *> *btnList,
                          std::vector<GroupTab*> &grpList);
     ~SettingsDialogWindow();
 
@@ -29,14 +29,15 @@ private slots:
     void onStatusButtonClicked();
 
 signals:
-    void deviceGroupChanged(QString newGroupName, DynamicButton *btn);
+    void deviceGroupChanged(QString newGroupName, SettingsButtonBox *btn);
 
 private:
-    Ui::SettingsDialogWindow    *ui;
-    DynamicButton               *deviceButton;
-    std::vector<DynamicButton*>  buttonList;
-    std::vector<GroupTab*>       groupList;
-    QString                      stylesList[stylesAmount];
+    Ui::SettingsDialogWindow           *ui;
+    DynamicButton                      *deviceButton;
+    SettingsButtonBox                  *deviceSettingsButton;
+    std::vector<SettingsButtonBox*>    *buttonList;
+    std::vector<GroupTab*>              groupList;
+    QString                             stylesList[stylesAmount];
 
 
 

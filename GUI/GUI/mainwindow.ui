@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
+    <width>732</width>
     <height>413</height>
    </rect>
   </property>
@@ -80,16 +80,6 @@ color: #00FBF6;</string>
          <widget class="QPushButton" name="deleteButton">
           <property name="text">
            <string>Delete</string>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="settingsButton">
-          <property name="text">
-           <string>Settings</string>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -296,7 +286,7 @@ min-height: 115px</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>888</width>
+     <width>732</width>
      <height>19</height>
     </rect>
    </property>

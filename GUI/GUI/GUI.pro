@@ -22,7 +22,7 @@ SOURCES += main.cpp\
     smartbulbconfig.cpp \
     widgetverticallayout.cpp \
     grouptab.cpp \
-    settingsbutton.cpp
+    settingsbuttonbox.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -33,7 +33,7 @@ HEADERS  += mainwindow.h \
     smartbulbconfig.h \
     widgetverticallayout.h \
     grouptab.h \
-    settingsbutton.h
+    settingsbuttonbox.h
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \

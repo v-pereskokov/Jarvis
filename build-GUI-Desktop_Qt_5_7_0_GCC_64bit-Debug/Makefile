@@ -58,7 +58,7 @@ SOURCES       = ../GUI/GUI/main.cpp \
 		../GUI/GUI/smartbulbconfig.cpp \
 		../GUI/GUI/widgetverticallayout.cpp \
 		../GUI/GUI/grouptab.cpp \
-		../GUI/GUI/settingsbutton.cpp qrc_res.cpp \
+		../GUI/GUI/settingsbuttonbox.cpp qrc_res.cpp \
 		moc_mainwindow.cpp \
 		moc_smartdevice.cpp \
 		moc_smartbulb.cpp \
@@ -66,7 +66,7 @@ SOURCES       = ../GUI/GUI/main.cpp \
 		moc_dynamicbutton.cpp \
 		moc_smartbulbconfig.cpp \
 		moc_widgetverticallayout.cpp \
-		moc_settingsbutton.cpp
+		moc_settingsbuttonbox.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		smartdevice.o \
@@ -77,7 +77,7 @@ OBJECTS       = main.o \
 		smartbulbconfig.o \
 		widgetverticallayout.o \
 		grouptab.o \
-		settingsbutton.o \
+		settingsbuttonbox.o \
 		qrc_res.o \
 		moc_mainwindow.o \
 		moc_smartdevice.o \
@@ -86,7 +86,7 @@ OBJECTS       = main.o \
 		moc_dynamicbutton.o \
 		moc_smartbulbconfig.o \
 		moc_widgetverticallayout.o \
-		moc_settingsbutton.o
+		moc_settingsbuttonbox.o
 DIST          = ../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.7/gcc_64/mkspecs/common/unix.conf \
 		../../Qt/5.7/gcc_64/mkspecs/common/linux.conf \
@@ -245,7 +245,7 @@ DIST          = ../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../GUI/GUI/smartbulbconfig.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../GUI/GUI/grouptab.h \
-		../GUI/GUI/settingsbutton.h ../GUI/GUI/main.cpp \
+		../GUI/GUI/settingsbuttonbox.h ../GUI/GUI/main.cpp \
 		../GUI/GUI/mainwindow.cpp \
 		../GUI/GUI/smartdevice.cpp \
 		../GUI/GUI/smartbulb.cpp \
@@ -255,7 +255,7 @@ DIST          = ../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../GUI/GUI/smartbulbconfig.cpp \
 		../GUI/GUI/widgetverticallayout.cpp \
 		../GUI/GUI/grouptab.cpp \
-		../GUI/GUI/settingsbutton.cpp
+		../GUI/GUI/settingsbuttonbox.cpp
 QMAKE_TARGET  = GUI
 DESTDIR       = 
 TARGET        = GUI
@@ -591,8 +591,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../GUI/GUI/res.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../GUI/GUI/mainwindow.h ../GUI/GUI/smartdevice.h ../GUI/GUI/smartbulb.h ../GUI/GUI/settingsdialogwindow.h ../GUI/GUI/dynamicbutton.h ../GUI/GUI/styles.h ../GUI/GUI/smartbulbconfig.h ../GUI/GUI/widgetverticallayout.h ../GUI/GUI/grouptab.h ../GUI/GUI/settingsbutton.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../GUI/GUI/main.cpp ../GUI/GUI/mainwindow.cpp ../GUI/GUI/smartdevice.cpp ../GUI/GUI/smartbulb.cpp ../GUI/GUI/settingsdialogwindow.cpp ../GUI/GUI/dynamicbutton.cpp ../GUI/GUI/styles.cpp ../GUI/GUI/smartbulbconfig.cpp ../GUI/GUI/widgetverticallayout.cpp ../GUI/GUI/grouptab.cpp ../GUI/GUI/settingsbutton.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../GUI/GUI/mainwindow.h ../GUI/GUI/smartdevice.h ../GUI/GUI/smartbulb.h ../GUI/GUI/settingsdialogwindow.h ../GUI/GUI/dynamicbutton.h ../GUI/GUI/styles.h ../GUI/GUI/smartbulbconfig.h ../GUI/GUI/widgetverticallayout.h ../GUI/GUI/grouptab.h ../GUI/GUI/settingsbuttonbox.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../GUI/GUI/main.cpp ../GUI/GUI/mainwindow.cpp ../GUI/GUI/smartdevice.cpp ../GUI/GUI/smartbulb.cpp ../GUI/GUI/settingsdialogwindow.cpp ../GUI/GUI/dynamicbutton.cpp ../GUI/GUI/styles.cpp ../GUI/GUI/smartbulbconfig.cpp ../GUI/GUI/widgetverticallayout.cpp ../GUI/GUI/grouptab.cpp ../GUI/GUI/settingsbuttonbox.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../GUI/GUI/mainwindow.ui ../GUI/GUI/settingsdialogwindow.ui ../GUI/GUI/smartbulbconfig.ui $(DISTDIR)/
 
 
@@ -631,9 +631,9 @@ qrc_res.cpp: ../GUI/GUI/res.qrc \
 		../GUI/GUI/bulbOn.png
 	/home/nexx/Qt/5.7/gcc_64/bin/rcc -name res ../GUI/GUI/res.qrc -o qrc_res.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_smartdevice.cpp moc_smartbulb.cpp moc_settingsdialogwindow.cpp moc_dynamicbutton.cpp moc_smartbulbconfig.cpp moc_widgetverticallayout.cpp moc_settingsbutton.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_smartdevice.cpp moc_smartbulb.cpp moc_settingsdialogwindow.cpp moc_dynamicbutton.cpp moc_smartbulbconfig.cpp moc_widgetverticallayout.cpp moc_settingsbuttonbox.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_smartdevice.cpp moc_smartbulb.cpp moc_settingsdialogwindow.cpp moc_dynamicbutton.cpp moc_smartbulbconfig.cpp moc_widgetverticallayout.cpp moc_settingsbutton.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_smartdevice.cpp moc_smartbulb.cpp moc_settingsdialogwindow.cpp moc_dynamicbutton.cpp moc_smartbulbconfig.cpp moc_widgetverticallayout.cpp moc_settingsbuttonbox.cpp
 moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
@@ -740,15 +740,17 @@ moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
-		../GUI/GUI/settingsdialogwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
+		../GUI/GUI/styles.h \
+		../GUI/GUI/settingsdialogwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../GUI/GUI/grouptab.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
@@ -757,7 +759,6 @@ moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/styles.h \
 		../GUI/GUI/smartbulbconfig.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/QPixmap \
 		../GUI/GUI/mainwindow.h \
@@ -1079,16 +1080,18 @@ moc_settingsdialogwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../GUI/GUI/styles.h \
 		../GUI/GUI/grouptab.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
@@ -1097,7 +1100,6 @@ moc_settingsdialogwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/styles.h \
 		../GUI/GUI/settingsdialogwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
 	/home/nexx/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/nexx/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/nexx/github/Jarvis/GUI/GUI -I/home/nexx/Qt/5.7/gcc_64/include -I/home/nexx/Qt/5.7/gcc_64/include/QtWidgets -I/home/nexx/Qt/5.7/gcc_64/include/QtGui -I/home/nexx/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../GUI/GUI/settingsdialogwindow.h -o moc_settingsdialogwindow.cpp
@@ -1428,22 +1430,24 @@ moc_widgetverticallayout.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../GUI/GUI/styles.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/bin/moc
 	/home/nexx/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/nexx/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/nexx/github/Jarvis/GUI/GUI -I/home/nexx/Qt/5.7/gcc_64/include -I/home/nexx/Qt/5.7/gcc_64/include/QtWidgets -I/home/nexx/Qt/5.7/gcc_64/include/QtGui -I/home/nexx/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../GUI/GUI/widgetverticallayout.h -o moc_widgetverticallayout.cpp
 
-moc_settingsbutton.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+moc_settingsbuttonbox.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
@@ -1551,9 +1555,9 @@ moc_settingsbutton.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		../GUI/GUI/styles.h \
-		../GUI/GUI/settingsbutton.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/nexx/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/nexx/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/nexx/github/Jarvis/GUI/GUI -I/home/nexx/Qt/5.7/gcc_64/include -I/home/nexx/Qt/5.7/gcc_64/include/QtWidgets -I/home/nexx/Qt/5.7/gcc_64/include/QtGui -I/home/nexx/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../GUI/GUI/settingsbutton.h -o moc_settingsbutton.cpp
+	/home/nexx/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/nexx/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/nexx/github/Jarvis/GUI/GUI -I/home/nexx/Qt/5.7/gcc_64/include -I/home/nexx/Qt/5.7/gcc_64/include/QtWidgets -I/home/nexx/Qt/5.7/gcc_64/include/QtGui -I/home/nexx/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../GUI/GUI/settingsbuttonbox.h -o moc_settingsbuttonbox.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1689,15 +1693,17 @@ main.o: ../GUI/GUI/main.cpp ../GUI/GUI/mainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
-		../GUI/GUI/settingsdialogwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
+		../GUI/GUI/styles.h \
+		../GUI/GUI/settingsdialogwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../GUI/GUI/grouptab.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
@@ -1706,7 +1712,6 @@ main.o: ../GUI/GUI/main.cpp ../GUI/GUI/mainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/styles.h \
 		../GUI/GUI/smartbulbconfig.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/QPixmap \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
@@ -1825,15 +1830,17 @@ mainwindow.o: ../GUI/GUI/mainwindow.cpp ../GUI/GUI/mainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
-		../GUI/GUI/settingsdialogwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
+		../GUI/GUI/styles.h \
+		../GUI/GUI/settingsdialogwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../GUI/GUI/grouptab.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
@@ -1842,7 +1849,6 @@ mainwindow.o: ../GUI/GUI/mainwindow.cpp ../GUI/GUI/mainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/styles.h \
 		../GUI/GUI/smartbulbconfig.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/QPixmap \
 		ui_mainwindow.h \
@@ -2212,16 +2218,18 @@ settingsdialogwindow.o: ../GUI/GUI/settingsdialogwindow.cpp ../GUI/GUI/settingsd
 		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../GUI/GUI/styles.h \
 		../GUI/GUI/grouptab.h \
 		../GUI/GUI/widgetverticallayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
@@ -2230,7 +2238,6 @@ settingsdialogwindow.o: ../GUI/GUI/settingsdialogwindow.cpp ../GUI/GUI/settingsd
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/styles.h \
 		ui_settingsdialogwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
@@ -2683,17 +2690,19 @@ widgetverticallayout.o: ../GUI/GUI/widgetverticallayout.cpp ../GUI/GUI/widgetver
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../GUI/GUI/styles.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widgetverticallayout.o ../GUI/GUI/widgetverticallayout.cpp
 
 grouptab.o: ../GUI/GUI/grouptab.cpp ../GUI/GUI/grouptab.h \
@@ -2800,13 +2809,14 @@ grouptab.o: ../GUI/GUI/grouptab.cpp ../GUI/GUI/grouptab.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../GUI/GUI/dynamicbutton.h \
-		../GUI/GUI/smartbulb.h \
-		../GUI/GUI/smartdevice.h \
+		../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../GUI/GUI/dynamicbutton.h \
+		../GUI/GUI/smartbulb.h \
+		../GUI/GUI/smartdevice.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QString \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
@@ -2814,7 +2824,7 @@ grouptab.o: ../GUI/GUI/grouptab.cpp ../GUI/GUI/grouptab.h \
 		../GUI/GUI/styles.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grouptab.o ../GUI/GUI/grouptab.cpp
 
-settingsbutton.o: ../GUI/GUI/settingsbutton.cpp ../GUI/GUI/settingsbutton.h \
+settingsbuttonbox.o: ../GUI/GUI/settingsbuttonbox.cpp ../GUI/GUI/settingsbuttonbox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
@@ -2923,7 +2933,7 @@ settingsbutton.o: ../GUI/GUI/settingsbutton.cpp ../GUI/GUI/settingsbutton.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		../GUI/GUI/styles.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settingsbutton.o ../GUI/GUI/settingsbutton.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settingsbuttonbox.o ../GUI/GUI/settingsbuttonbox.cpp
 
 qrc_res.o: qrc_res.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_res.o qrc_res.cpp
@@ -2949,8 +2959,8 @@ moc_smartbulbconfig.o: moc_smartbulbconfig.cpp
 moc_widgetverticallayout.o: moc_widgetverticallayout.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widgetverticallayout.o moc_widgetverticallayout.cpp
 
-moc_settingsbutton.o: moc_settingsbutton.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_settingsbutton.o moc_settingsbutton.cpp
+moc_settingsbuttonbox.o: moc_settingsbuttonbox.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_settingsbuttonbox.o moc_settingsbuttonbox.cpp
 
 ####### Install
 

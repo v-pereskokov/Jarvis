@@ -5,12 +5,12 @@
 #include "dynamicbutton.h"
 #include "styles.h"
 
-class SettingsButton : public QPushButton
+class SettingsButtonBox : public QPushButton
 {
     Q_OBJECT
 public:
-    explicit SettingsButton(QWidget *parent = 0);
-    SettingsButton(DynamicButton *button, QWidget *parent = 0);
+    explicit SettingsButtonBox(QWidget *parent = 0);
+    SettingsButtonBox(DynamicButton *button, QWidget *parent = 0);
 
     DynamicButton *deviceButton;
 
