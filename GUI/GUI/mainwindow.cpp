@@ -287,7 +287,29 @@ void MainWindow::on_deleteGroup_clicked()
     if(tab == nullptr)
         return;
 
+    QMessageBox msgBox;
+    //заголовок
+    msgBox.setWindowTitle(QString("Delete Group"));
+    msgBox.setText("Warning");
+    msgBox.setIcon(QMessageBox::Information);
+    // Основное сообщение Message Box
+    msgBox.setInformativeText(QString("All Smart Devices in the group \"")
+                              + tabName
+                              + QString("\" will be REMOVED!!! \n\n Do you want to continue?") );
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
 
+    int ret = msgBox.exec();
+
+    switch (ret)
+    {
+    case QMessageBox::Cancel:
+        return;
+    case QMessageBox::Ok:
+        break;
+    default:
+        return;
+    }
     while( tab->layout->count() > 0 )
     {
         DynamicButton *button = qobject_cast<DynamicButton*>(tab->layout->vertLayout->itemAt(0)->widget());
