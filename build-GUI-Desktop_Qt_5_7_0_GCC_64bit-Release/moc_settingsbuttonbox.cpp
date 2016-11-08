@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'widgetverticallayout.h'
+** Meta object code from reading C++ file 'settingsbuttonbox.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../GUI/GUI/widgetverticallayout.h"
+#include "../GUI/GUI/settingsbuttonbox.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'widgetverticallayout.h' doesn't include <QObject>."
+#error "The header file 'settingsbuttonbox.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.7.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_WidgetVerticalLayout_t {
+struct qt_meta_stringdata_SettingsButtonBox_t {
     QByteArrayData data[1];
-    char stringdata0[21];
+    char stringdata0[18];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_WidgetVerticalLayout_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_SettingsButtonBox_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_WidgetVerticalLayout_t qt_meta_stringdata_WidgetVerticalLayout = {
+static const qt_meta_stringdata_SettingsButtonBox_t qt_meta_stringdata_SettingsButtonBox = {
     {
-QT_MOC_LITERAL(0, 0, 20) // "WidgetVerticalLayout"
+QT_MOC_LITERAL(0, 0, 17) // "SettingsButtonBox"
 
     },
-    "WidgetVerticalLayout"
+    "SettingsButtonBox"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_WidgetVerticalLayout[] = {
+static const uint qt_meta_data_SettingsButtonBox[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_WidgetVerticalLayout[] = {
        0        // eod
 };
 
-void WidgetVerticalLayout::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void SettingsButtonBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,28 +60,28 @@ void WidgetVerticalLayout::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
     Q_UNUSED(_a);
 }
 
-const QMetaObject WidgetVerticalLayout::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_WidgetVerticalLayout.data,
-      qt_meta_data_WidgetVerticalLayout,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject SettingsButtonBox::staticMetaObject = {
+    { &QPushButton::staticMetaObject, qt_meta_stringdata_SettingsButtonBox.data,
+      qt_meta_data_SettingsButtonBox,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *WidgetVerticalLayout::metaObject() const
+const QMetaObject *SettingsButtonBox::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *WidgetVerticalLayout::qt_metacast(const char *_clname)
+void *SettingsButtonBox::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_WidgetVerticalLayout.stringdata0))
-        return static_cast<void*>(const_cast< WidgetVerticalLayout*>(this));
-    return QWidget::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_SettingsButtonBox.stringdata0))
+        return static_cast<void*>(const_cast< SettingsButtonBox*>(this));
+    return QPushButton::qt_metacast(_clname);
 }
 
-int WidgetVerticalLayout::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int SettingsButtonBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QPushButton::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

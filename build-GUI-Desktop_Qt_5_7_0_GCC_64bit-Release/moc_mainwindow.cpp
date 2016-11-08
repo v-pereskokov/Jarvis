@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[16];
-    char stringdata0[262];
+    char stringdata0[266];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,24 +35,24 @@ QT_MOC_LITERAL(2, 32, 0), // ""
 QT_MOC_LITERAL(3, 33, 23), // "on_deleteButton_clicked"
 QT_MOC_LITERAL(4, 57, 17), // "slotGetButtonName"
 QT_MOC_LITERAL(5, 75, 20), // "slotOpenDeviceConfig"
-QT_MOC_LITERAL(6, 96, 25), // "on_settingsButton_clicked"
+QT_MOC_LITERAL(6, 96, 25), // "slotSettingsButtonCLicked"
 QT_MOC_LITERAL(7, 122, 23), // "on_lineEdit_textChanged"
 QT_MOC_LITERAL(8, 146, 3), // "str"
 QT_MOC_LITERAL(9, 150, 12), // "onTabClicked"
 QT_MOC_LITERAL(10, 163, 20), // "changeDeviceGroupTab"
 QT_MOC_LITERAL(11, 184, 15), // "newGroupTabName"
-QT_MOC_LITERAL(12, 200, 14), // "DynamicButton*"
-QT_MOC_LITERAL(13, 215, 3), // "btn"
-QT_MOC_LITERAL(14, 219, 19), // "on_addGroup_clicked"
-QT_MOC_LITERAL(15, 239, 22) // "on_deleteGroup_clicked"
+QT_MOC_LITERAL(12, 200, 18), // "SettingsButtonBox*"
+QT_MOC_LITERAL(13, 219, 3), // "btn"
+QT_MOC_LITERAL(14, 223, 19), // "on_addGroup_clicked"
+QT_MOC_LITERAL(15, 243, 22) // "on_deleteGroup_clicked"
 
     },
     "MainWindow\0on_addButton_clicked\0\0"
     "on_deleteButton_clicked\0slotGetButtonName\0"
-    "slotOpenDeviceConfig\0on_settingsButton_clicked\0"
+    "slotOpenDeviceConfig\0slotSettingsButtonCLicked\0"
     "on_lineEdit_textChanged\0str\0onTabClicked\0"
     "changeDeviceGroupTab\0newGroupTabName\0"
-    "DynamicButton*\0btn\0on_addGroup_clicked\0"
+    "SettingsButtonBox*\0btn\0on_addGroup_clicked\0"
     "on_deleteGroup_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -107,10 +107,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_deleteButton_clicked(); break;
         case 2: _t->slotGetButtonName(); break;
         case 3: _t->slotOpenDeviceConfig(); break;
-        case 4: _t->on_settingsButton_clicked(); break;
+        case 4: _t->slotSettingsButtonCLicked(); break;
         case 5: _t->on_lineEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 6: _t->onTabClicked(); break;
-        case 7: _t->changeDeviceGroupTab((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< DynamicButton*(*)>(_a[2]))); break;
+        case 7: _t->changeDeviceGroupTab((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< SettingsButtonBox*(*)>(_a[2]))); break;
         case 8: _t->on_addGroup_clicked(); break;
         case 9: _t->on_deleteGroup_clicked(); break;
         default: ;
@@ -122,7 +122,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 1:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< DynamicButton* >(); break;
+                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< SettingsButtonBox* >(); break;
             }
             break;
         }

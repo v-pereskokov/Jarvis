@@ -46,7 +46,6 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *addButton;
     QPushButton *deleteButton;
-    QPushButton *settingsButton;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_2;
     QLineEdit *groupNameEdit;
@@ -73,7 +72,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(723, 413);
+        MainWindow->resize(732, 413);
         MainWindow->setStyleSheet(QStringLiteral("background-color: #222;"));
         actionJ_A_R_V_I_S_project = new QAction(MainWindow);
         actionJ_A_R_V_I_S_project->setObjectName(QStringLiteral("actionJ_A_R_V_I_S_project"));
@@ -127,12 +126,6 @@ public:
         deleteButton->setFlat(true);
 
         horizontalLayout_2->addWidget(deleteButton);
-
-        settingsButton = new QPushButton(centralWidget);
-        settingsButton->setObjectName(QStringLiteral("settingsButton"));
-        settingsButton->setFlat(true);
-
-        horizontalLayout_2->addWidget(settingsButton);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
@@ -190,7 +183,7 @@ public:
 
         scrollArea = new QScrollArea(centralWidget);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setMinimumSize(QSize(250, 60));
+        scrollArea->setMinimumSize(QSize(300, 60));
         scrollArea->setMaximumSize(QSize(300, 16777215));
         scrollArea->setLayoutDirection(Qt::LeftToRight);
         scrollArea->setLineWidth(1);
@@ -201,7 +194,7 @@ public:
         scrollArea->setAlignment(Qt::AlignJustify|Qt::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 248, 318));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 298, 318));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -240,7 +233,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 723, 19));
+        menuBar->setGeometry(QRect(0, 0, 732, 19));
         menuBar->setStyleSheet(QLatin1String("QMenuBar {\n"
 "color: #00FBF6;\n"
 "background-color: #333;\n"
@@ -292,7 +285,6 @@ public:
 #endif // QT_NO_STATUSTIP
         addButton->setText(QApplication::translate("MainWindow", "Create", 0));
         deleteButton->setText(QApplication::translate("MainWindow", "Delete", 0));
-        settingsButton->setText(QApplication::translate("MainWindow", "Settings", 0));
         label_2->setText(QApplication::translate("MainWindow", "Enter group name", 0));
         groupNameEdit->setText(QApplication::translate("MainWindow", "Main Group", 0));
         addGroup->setText(QApplication::translate("MainWindow", "Add Group", 0));

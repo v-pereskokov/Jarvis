@@ -2,7 +2,7 @@
 
 SmartBulb::SmartBulb(QWidget *parent)  : SmartDevice(parent)
 {
-    brightness = 1;
+    brightness = 100;
     color = bulbColor::white;
 
 }
