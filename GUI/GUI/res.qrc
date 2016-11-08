@@ -7,5 +7,6 @@
         <file>powerOn.png</file>
         <file>powerOff.png</file>
         <file>microphone.png</file>
+        <file>settings.png</file>
     </qresource>
 </RCC>

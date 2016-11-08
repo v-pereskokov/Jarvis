@@ -36,8 +36,7 @@ SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, co
     button->setDeviceName(buttonName);
     button->setGroupName(groupName);
 
-    SettingsButtonBox *settings = new SettingsButtonBox(button, parent);
-    settings->setStyleSheet(stylesList[2]);
+    SettingsButtonBox *settings = new SettingsButtonBox(button, parent);    
     buttonList.push_back(settings);
 
     return settings;
@@ -77,7 +76,6 @@ void MainWindow::changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox
 
     newButton->setStyleSheet(stylesList[0]);
     newButton->setGroupName(tab->tab->text());
-    newSettingsButton->setStyleSheet(stylesList[2]);
 
     deleteDynamicButton(btn->deviceButton->text());
 

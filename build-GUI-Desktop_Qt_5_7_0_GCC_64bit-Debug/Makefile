@@ -628,7 +628,8 @@ qrc_res.cpp: ../GUI/GUI/res.qrc \
 		../GUI/GUI/bulbOff.png \
 		../GUI/GUI/tabOpened.png \
 		../GUI/GUI/powerOn.png \
-		../GUI/GUI/bulbOn.png
+		../GUI/GUI/bulbOn.png \
+		../GUI/GUI/settings.png
 	/home/nexx/Qt/5.7/gcc_64/bin/rcc -name res ../GUI/GUI/res.qrc -o qrc_res.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_smartdevice.cpp moc_smartbulb.cpp moc_settingsdialogwindow.cpp moc_dynamicbutton.cpp moc_smartbulbconfig.cpp moc_widgetverticallayout.cpp moc_settingsbuttonbox.cpp
