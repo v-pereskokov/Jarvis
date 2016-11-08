@@ -5,6 +5,7 @@
 #include <QScrollBar>
 #include <QMessageBox>
 #include <vector>
+#include "settingsbutton.h"
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"
 #include "grouptab.h"

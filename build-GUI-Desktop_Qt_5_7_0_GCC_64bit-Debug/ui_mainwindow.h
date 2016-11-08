@@ -73,7 +73,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(723, 413);
+        MainWindow->resize(888, 413);
         MainWindow->setStyleSheet(QStringLiteral("background-color: #222;"));
         actionJ_A_R_V_I_S_project = new QAction(MainWindow);
         actionJ_A_R_V_I_S_project->setObjectName(QStringLiteral("actionJ_A_R_V_I_S_project"));
@@ -190,7 +190,7 @@ public:
 
         scrollArea = new QScrollArea(centralWidget);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
-        scrollArea->setMinimumSize(QSize(250, 60));
+        scrollArea->setMinimumSize(QSize(300, 60));
         scrollArea->setMaximumSize(QSize(300, 16777215));
         scrollArea->setLayoutDirection(Qt::LeftToRight);
         scrollArea->setLineWidth(1);
@@ -201,7 +201,7 @@ public:
         scrollArea->setAlignment(Qt::AlignJustify|Qt::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 248, 318));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 298, 318));
         gridLayout = new QGridLayout(scrollAreaWidgetContents);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -240,7 +240,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 723, 19));
+        menuBar->setGeometry(QRect(0, 0, 888, 19));
         menuBar->setStyleSheet(QLatin1String("QMenuBar {\n"
 "color: #00FBF6;\n"
 "background-color: #333;\n"

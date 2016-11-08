@@ -149,16 +149,16 @@ void MainWindow::on_addButton_clicked()
         ui->deleteButton->setDisabled(false);
         ui->settingsButton->setDisabled(false);
 
-
         GroupTab *tab = getGroupTab(ui->groupNameEdit->text(), true, ui->scrollAreaWidgetContents);
-
 
         // Создаем объект динамической кнопки
         DynamicButton *button = createDynamicButton(ui->lineEdit->text(), tab->tab->text(), tab->layout);
+        SettingsButton *settings = new SettingsButton(button, tab->layout);
+        settings->setStyleSheet(stylesList[2]);
 
         /* Добавляем кнопку в слой с вертикальной компоновкой
          * */
-        tab->layout->addWidget(button);
+        tab->layout->addWidgetWithSettingsButton(settings);
         if(tab->tab->isChecked())
             button->hide();
         else
@@ -169,13 +169,9 @@ void MainWindow::on_addButton_clicked()
          * */
         connect(button, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
         connect(button, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
-
     }
     else
         QMessageBox::information(nullptr, QString("warning"), QString("Error. Name is alredy used"));
-
-
-
 }
 
 /* Метод для удаления динамической кнопки по её имени
