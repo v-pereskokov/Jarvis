@@ -34,10 +34,11 @@ SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, co
     button->setStyleSheet(stylesList[0]);
     button->setText(buttonName);
     button->setDeviceName(buttonName);
-    button->setGroupName(groupName);
+    button->setGroupName(groupName);    
+    button->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+    button->setIconSize(QSize(25, 25));
 
-    SettingsButtonBox *settings = new SettingsButtonBox(button, parent);
-    settings->setStyleSheet(stylesList[2]);
+    SettingsButtonBox *settings = new SettingsButtonBox(button, parent);    
     buttonList.push_back(settings);
 
     return settings;
@@ -77,7 +78,13 @@ void MainWindow::changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox
 
     newButton->setStyleSheet(stylesList[0]);
     newButton->setGroupName(tab->tab->text());
-    newSettingsButton->setStyleSheet(stylesList[2]);
+
+    if(newButton->getDeviceStatus())
+       newButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+    else
+        newButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+
+    newButton->setIconSize(QSize(25, 25));
 
     deleteDynamicButton(btn->deviceButton->text());
 
