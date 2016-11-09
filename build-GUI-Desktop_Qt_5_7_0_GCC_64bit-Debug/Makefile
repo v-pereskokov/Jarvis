@@ -625,9 +625,14 @@ qrc_res.cpp: ../GUI/GUI/res.qrc \
 		../GUI/GUI/tabClosed.png \
 		../GUI/GUI/powerOff.png \
 		../GUI/GUI/microphone.png \
+		../GUI/GUI/bulbOnIcon.png \
 		../GUI/GUI/bulbOff.png \
 		../GUI/GUI/tabOpened.png \
 		../GUI/GUI/powerOn.png \
+<<<<<<< HEAD
+=======
+		../GUI/GUI/bulbOffIcon.png \
+>>>>>>> GUI
 		../GUI/GUI/bulbOn.png \
 		../GUI/GUI/settings.png
 	/home/nexx/Qt/5.7/gcc_64/bin/rcc -name res ../GUI/GUI/res.qrc -o qrc_res.cpp

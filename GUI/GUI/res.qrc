@@ -8,5 +8,7 @@
         <file>powerOff.png</file>
         <file>microphone.png</file>
         <file>settings.png</file>
+        <file>bulbOffIcon.png</file>
+        <file>bulbOnIcon.png</file>
     </qresource>
 </RCC>

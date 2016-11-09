@@ -83,9 +83,17 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
 
 
         if(ui->statusButton->isChecked())
+        {
             deviceButton->turnOnDevice();
+            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+        }
         else
+        {
             deviceButton->turnOffDevice();
+            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+        }
+        deviceButton->setIconSize(QSize(25, 25));
+
         if(deviceButton->getGroupName() != ui->GroupNameEdit->text())
         {
             emit deviceGroupChanged(ui->GroupNameEdit->text(), deviceSettingsButton);
@@ -115,11 +123,12 @@ void SettingsDialogWindow::onStatusButtonClicked()
     if(ui->statusButton->isChecked())
     {
         ui->statusLabel->setText(QString("ON"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));       
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));       
     }
+
 }

@@ -66,15 +66,18 @@ void SmartBulbConfig::on_statusButton_clicked()
         deviceButton->turnOnDevice();
         bulbImg.load( ":/images/bulbOn.png" );
         ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+        deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
         deviceButton->turnOffDevice();
         ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+        deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
         bulbImg.load( ":/images/bulbOff.png" );
     }
     ui->bulbImage->setIcon(QIcon(bulbImg));
+    deviceButton->setIconSize(QSize(25, 25));
 }
 
 
