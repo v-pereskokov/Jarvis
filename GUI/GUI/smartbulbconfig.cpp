@@ -2,15 +2,15 @@
 #include "ui_smartbulbconfig.h"
 
 SmartBulbConfig::SmartBulbConfig(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::SmartBulbConfig)
+    QDialog{parent},
+    ui{new Ui::SmartBulbConfig}
 {
     ui->setupUi(this);
 }
 
 SmartBulbConfig::SmartBulbConfig(QWidget *parent, DynamicButton *button):
-    QDialog(parent),
-    ui(new Ui::SmartBulbConfig)
+    QDialog{parent},
+    ui{new Ui::SmartBulbConfig}
 {
     ui->setupUi(this);
     deviceButton = button;
@@ -26,20 +26,20 @@ SmartBulbConfig::SmartBulbConfig(QWidget *parent, DynamicButton *button):
 
     if(deviceButton->getDeviceStatus())
     {
-       ui->statusLabel->setText(QString("ON"));
+       ui->statusLabel->setText(QString{"ON"});
        ui->statusButton->setChecked(true);
-       ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+       ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOn.png"}});
        bulbImg.load( ":/images/bulbOn.png" );
     }
     else
     {
-        ui->statusLabel->setText(QString("OFF"));
+        ui->statusLabel->setText(QString{"OFF"});
         ui->statusButton->setChecked(false);
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOff.png"}});
         bulbImg.load( ":/images/bulbOff.png" );
     }
 
-    ui->bulbImage->setIcon(QIcon(bulbImg));
+    ui->bulbImage->setIcon(QIcon{bulbImg});
     ui->bulbImage->setIconSize(ui->bulbImage->size());
 }
 
@@ -62,22 +62,22 @@ void SmartBulbConfig::on_statusButton_clicked()
 
     if(ui->statusButton->isChecked())
     {
-        ui->statusLabel->setText(QString("ON"));
+        ui->statusLabel->setText(QString{"ON"});
         deviceButton->turnOnDevice();
         bulbImg.load( ":/images/bulbOn.png" );
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
-        deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOn.png"}});
+        deviceButton->setIcon(QIcon{QPixmap{":/images/bulbOnIcon.png"}});
     }
     else
     {
-        ui->statusLabel->setText(QString("OFF"));
+        ui->statusLabel->setText(QString{"OFF"});
         deviceButton->turnOffDevice();
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
-        deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOff.png"}});
+        deviceButton->setIcon(QIcon{QPixmap{":/images/bulbOffIcon.png"}});
         bulbImg.load( ":/images/bulbOff.png" );
     }
-    ui->bulbImage->setIcon(QIcon(bulbImg));
-    deviceButton->setIconSize(QSize(25, 25));
+    ui->bulbImage->setIcon(QIcon{bulbImg});
+    deviceButton->setIconSize(QSize{25, 25});
 }
 
 

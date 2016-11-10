@@ -2,8 +2,8 @@
 #include "ui_settingsdialogwindow.h"
 
 SettingsDialogWindow::SettingsDialogWindow(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::SettingsDialogWindow)
+    QDialog{parent},
+    ui{new Ui::SettingsDialogWindow}
 {
     ui->setupUi(this);  
 }
@@ -11,7 +11,7 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent) :
 
 SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, SettingsButtonBox *btn,
                                            std::vector<SettingsButtonBox *> *btnList,
-                                           std::vector<GroupTab *> &grpList)  : SettingsDialogWindow(parent)
+                                           std::vector<GroupTab *> &grpList)  : SettingsDialogWindow{parent}
 
 {
 
@@ -35,15 +35,15 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, SettingsButtonBox *b
 
     if(deviceButton->getDeviceStatus())
     {
-        ui->statusLabel->setText(QString("ON"));
+        ui->statusLabel->setText(QString{"ON"});
         ui->statusButton->setChecked(true);
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOn.png"}});
     }
     else
     {
-        ui->statusLabel->setText(QString("OFF"));
+        ui->statusLabel->setText(QString{"OFF"});
         ui->statusButton->setChecked(false);
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOff.png"}});
     }
     connect(ui->statusButton, SIGNAL(clicked()), this, SLOT(onStatusButtonClicked()));
 
@@ -71,7 +71,7 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
                 if((button->deviceButton->getDeviceName() == ui->nameEdit->text())
                         && (button->deviceButton != deviceButton))
                 {
-                    QMessageBox::information(nullptr, QString("Warning"), QString("Name is already used"));
+                    QMessageBox::information(nullptr, QString{"Warning"}, QString{"Name is already used"});
                     return;
                 }
             }
@@ -79,20 +79,20 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
             deviceButton->setText(ui->nameEdit->text());
         }
         else
-            QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty device name"));
+            QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Empty device name"});
 
 
         if(ui->statusButton->isChecked())
         {
             deviceButton->turnOnDevice();
-            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+            deviceButton->setIcon(QIcon{QPixmap{":/images/bulbOnIcon.png"}});
         }
         else
         {
             deviceButton->turnOffDevice();
-            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+            deviceButton->setIcon(QIcon{QPixmap{":/images/bulbOffIcon.png"}});
         }
-        deviceButton->setIconSize(QSize(25, 25));
+        deviceButton->setIconSize(QSize{25, 25});
 
         if(deviceButton->getGroupName() != ui->GroupNameEdit->text())
         {
@@ -122,13 +122,13 @@ void SettingsDialogWindow::onStatusButtonClicked()
 {
     if(ui->statusButton->isChecked())
     {
-        ui->statusLabel->setText(QString("ON"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));       
+        ui->statusLabel->setText(QString{"ON"});
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOn.png"}});
     }
     else
     {
-        ui->statusLabel->setText(QString("OFF"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));       
+        ui->statusLabel->setText(QString{"OFF"});
+        ui->statusButton->setIcon(QIcon{QPixmap{":/images/powerOff.png"}});
     }
 
 }

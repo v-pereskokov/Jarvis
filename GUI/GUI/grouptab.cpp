@@ -2,14 +2,14 @@
 
 GroupTab::GroupTab(QWidget *parent)
 {
-    layout = new WidgetVerticalLayout(parent);
-    tab = new QPushButton(parent);
+    layout = new WidgetVerticalLayout{parent};
+    tab = new QPushButton{parent};
 }
 
 GroupTab::GroupTab(QWidget *parent, const QString &tabName)
 {
-    layout =  new WidgetVerticalLayout(parent);
-    tab = new QPushButton(QIcon(QPixmap(":/images/tabOpened")), tabName, parent);
+    layout =  new WidgetVerticalLayout{parent};
+    tab = new QPushButton{QIcon{QPixmap{":/images/tabOpened"}}, tabName, parent};
     tab->setCheckable(true);
     tab->setFlat(true);
     tab->setStyleSheet("QPushButton {"
