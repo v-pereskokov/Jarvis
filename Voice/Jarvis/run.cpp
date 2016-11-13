@@ -36,8 +36,7 @@ int run() {
     stream << response;
     std::map <std::string, std::string> map = Jarvis::xmlParse(stream);
     std::map<std::string, std::string> cmds{
-                                            {"Включи свет", "LedOn"},
-      {"Выключи свет", "LedOff"}, {"Моргание", "Blink"}};
+                                            {"Включи свет", "LedOn"},{"Выключи свет", "LedOff"}, {"Моргание", "Blink"}};
     std::string command = map["variant"];
     if (cmds.find(command) != cmds.end()) {
       std::thread voice(voiceJarvis, std::ref(cmds[command]));
