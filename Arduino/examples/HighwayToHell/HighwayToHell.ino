@@ -15,6 +15,7 @@ void dot()
 
 void top()
 {
+  delay(900);
   dot(); dot(); dot();
   delay(1200);
   dot(); dot(); dot();
@@ -26,7 +27,6 @@ void top()
   dot(); 
   delay(190);
   dot(); dot();
-  delay(950);
 }
  
 void loop()
