@@ -4,8 +4,7 @@ WidgetGridLayout::WidgetGridLayout(QWidget *parent)
     : QWidget{parent}
 {
     vertLayout = new QGridLayout{parent};
-    vertLayout->setSizeConstraint(QLayout::SetMaximumSize);
-    //vertLayout->setColumnMinimumWidth(0, 210);
+    vertLayout->setSizeConstraint(QLayout::SetMinimumSize);
     vertLayout->setColumnMinimumWidth(settingsButtonColumn, settingsButtonColumnWidth);
 }
 

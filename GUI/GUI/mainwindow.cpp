@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->verticalLayoutLeft->setSpacing(10);
     ui->deleteButton->setDisabled(true); 
+    ui->scrollAreaWidgetContents->setLayout(ui->verticalLayoutLeft);
 
     setStyles(stylesList);
 
@@ -15,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->deleteButton->setStyleSheet(stylesList[3]);
     ui->addGroup->setStyleSheet(stylesList[3]);
     ui->deleteGroup->setStyleSheet(stylesList[3]);
+
 
 
 
@@ -124,15 +126,12 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
 
     GroupTab *tab = new GroupTab{parent, tabName};
     groupList.push_back(tab);
-
     ui->verticalLayoutLeft->addWidget(tab->tab);
     ui->verticalLayoutLeft->addLayout(tab->layout->vertLayout);
 
-    tab->tab->show();
-    tab->layout->show();
+    tab->tab->show();    
 
-    connect(tab->tab, SIGNAL(clicked()), this, SLOT(onTabClicked()));
-    tab->layout->hide();
+    connect(tab->tab, SIGNAL(clicked()), this, SLOT(onTabClicked()));    
     return tab;
 }
 
@@ -170,9 +169,15 @@ void MainWindow::on_addButton_clicked()
         //Добавляем кнопку в слой
         tab->layout->addSettingsButtonBox(settings);
         if(tab->tab->isChecked())
+        {
             settings->deviceButton->hide();
+            settings->hide();
+        }
         else
+        {
             settings->deviceButton->show();
+            settings->show();
+        }
 
         // Подключаем сигнал нажатия кнопки к слотам
         connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
