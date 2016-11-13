@@ -1,6 +1,6 @@
 #include "dynamicbutton.h"
 
-DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb(parent)
+DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb{parent}
 {
 
     buttonID = findNewID();   /* Присвоение кнопке номера, по которому булет производиться
@@ -13,7 +13,7 @@ DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb(parent)
     this->setMaximumWidth(200);
 }
 
-DynamicButton::DynamicButton(DynamicButton *btn, QWidget *parent) :  SmartBulb(parent)
+DynamicButton::DynamicButton(DynamicButton *btn, QWidget *parent) :  SmartBulb{parent}
 {
     buttonID = findNewID();
     resBusyID[buttonID] = true;

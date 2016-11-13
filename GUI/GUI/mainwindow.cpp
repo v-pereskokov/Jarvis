@@ -2,8 +2,8 @@
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    QMainWindow{parent},
+    ui{new Ui::MainWindow}
 {
     ui->setupUi(this);
     ui->verticalLayoutLeft->setSpacing(10);
@@ -28,7 +28,7 @@ MainWindow::~MainWindow()
 
 SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent)
 {
-    DynamicButton *button = new DynamicButton(parent);  // Создаем объект динамической кнопки
+    DynamicButton *button = new DynamicButton{parent};  // Создаем объект динамической кнопки
 
 
     button->setStyleSheet(stylesList[0]);
@@ -38,7 +38,7 @@ SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, co
     button->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
     button->setIconSize(QSize(25, 25));
 
-    SettingsButtonBox *settings = new SettingsButtonBox(button, parent);    
+    SettingsButtonBox *settings = new SettingsButtonBox{button, parent};
     buttonList.push_back(settings);
 
     return settings;
@@ -73,18 +73,18 @@ void MainWindow::changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox
 {
     GroupTab *tab = getGroupTab(newGroupTabName, true, ui->scrollAreaWidgetContents);
 
-    DynamicButton *newButton = new DynamicButton(btn->deviceButton, tab->layout);
-    SettingsButtonBox *newSettingsButton = new SettingsButtonBox(newButton, tab->layout);
+    DynamicButton *newButton = new DynamicButton{btn->deviceButton, tab->layout};
+    SettingsButtonBox *newSettingsButton = new SettingsButtonBox{newButton, tab->layout};
 
     newButton->setStyleSheet(stylesList[0]);
     newButton->setGroupName(tab->tab->text());
 
     if(newButton->getDeviceStatus())
-       newButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+       newButton->setIcon(QIcon{QPixmap{":/images/bulbOnIcon.png"}});
     else
-        newButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+        newButton->setIcon(QIcon{QPixmap{":/images/bulbOffIcon.png"}});
 
-    newButton->setIconSize(QSize(25, 25));
+    newButton->setIconSize(QSize{25, 25});
 
     deleteDynamicButton(btn->deviceButton->text());
 
@@ -103,7 +103,7 @@ GroupTab* MainWindow::getGroupTab(QString tabName,bool createIfNotExist, QWidget
 {
     GroupTab *tab = nullptr;
     if(tabName.isEmpty())
-        tabName = QString("Main Group");
+        tabName = QString{"Main Group"};
     for(size_t i = 0; i < groupList.size(); ++i)
     {
         tab = groupList[i];
@@ -120,9 +120,9 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
 {
 
     if(tabName.isEmpty())
-        tabName = QString("Main Group");
+        tabName = QString{"Main Group"};
 
-    GroupTab *tab = new GroupTab(parent, tabName);
+    GroupTab *tab = new GroupTab{parent, tabName};
     groupList.push_back(tab);
 
     ui->verticalLayoutLeft->addWidget(tab->tab);
@@ -154,7 +154,7 @@ void MainWindow::on_addButton_clicked()
 {
     if(ui->lineEdit->text().isEmpty())
     {
-        QMessageBox::information(this, QString("warning"), QString("Error. Empty name"));
+        QMessageBox::information(this, QString{"warning"}, QString{"Error. Empty name"});
         return;
     }
 
@@ -185,7 +185,7 @@ void MainWindow::on_addButton_clicked()
         connect(settings, SIGNAL(clicked()), this, SLOT(slotSettingsButtonCLicked()));
     }
     else
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Name is alredy used"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Name is alredy used"});
 }
 
 /* Метод для удаления динамической кнопки по её имени
@@ -229,7 +229,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &str)
 
 void MainWindow::slotOpenDeviceConfig()
 {
-    SmartBulbConfig *configWindow = new SmartBulbConfig(this, (DynamicButton*) sender());
+    SmartBulbConfig *configWindow = new SmartBulbConfig{this, (DynamicButton*) sender()};
     configWindow->show(); //вызов диалогового окна настроек
 
 }
@@ -238,7 +238,7 @@ void MainWindow::slotSettingsButtonCLicked()
 {
     SettingsButtonBox *button = (SettingsButtonBox*) sender();
 
-    SettingsDialogWindow *settingsWindow = new SettingsDialogWindow(this, button, &buttonList, groupList);
+    SettingsDialogWindow *settingsWindow = new SettingsDialogWindow{this, button, &buttonList, groupList};
     connect(settingsWindow, SIGNAL(deviceGroupChanged(QString , SettingsButtonBox *)),
             this, SLOT(changeDeviceGroupTab(QString , SettingsButtonBox *)));
     settingsWindow->show(); //вызов диалогового окна настроек
@@ -254,14 +254,14 @@ void MainWindow::onTabClicked()
 
     if(tab->isChecked())
     {
-        tab->setIcon(QIcon(QPixmap(":/images/tabClosed")));
+        tab->setIcon(QIcon{QPixmap{":/images/tabClosed"}});
         groupTab->layout->hideWidgets();
         groupTab->layout->hide();
 
     }
     else
     {
-        tab->setIcon(QIcon(QPixmap(":/images/tabOpened")));
+        tab->setIcon(QIcon{QPixmap{":/images/tabOpened"}});
         groupTab->layout->showWidgets();
     }
 }
@@ -287,13 +287,13 @@ void MainWindow::on_deleteGroup_clicked()
 
     QMessageBox msgBox;
     //заголовок
-    msgBox.setWindowTitle(QString("Delete Group"));
-    msgBox.setText("Warning");
+    msgBox.setWindowTitle(QString{"Delete Group"});
+    msgBox.setText(QString{"Warning"});
     msgBox.setIcon(QMessageBox::Information);
     // Основное сообщение Message Box
-    msgBox.setInformativeText(QString("All Smart Devices in the group \"")
+    msgBox.setInformativeText(QString{"All Smart Devices in the group \""}
                               + tabName
-                              + QString("\" will be REMOVED!!! \n\n Do you want to continue?") );
+                              + QString{"\" will be REMOVED!!! \n\n Do you want to continue?"} );
     msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
     msgBox.setDefaultButton(QMessageBox::Cancel);
 

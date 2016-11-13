@@ -1,6 +1,6 @@
 #include "smartdevice.h"
 
-SmartDevice::SmartDevice(QWidget *parent) : QPushButton(parent)
+SmartDevice::SmartDevice(QWidget *parent) : QPushButton{parent}
 {
     groupName = "defaultGroup";
     deviceName = "defaultName";
@@ -9,22 +9,22 @@ SmartDevice::SmartDevice(QWidget *parent) : QPushButton(parent)
 
 }
 
-SmartDevice::SmartDevice(QWidget *parent, const QString& groupName, const QString& deviceName, int id) : SmartDevice(parent)
+SmartDevice::SmartDevice(QWidget *parent, const QString& groupName, const QString& deviceName, int id) : SmartDevice{parent}
 {
 
 
     if(groupName.isEmpty())
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty group name"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Empty group name"});
     else
         this->groupName = groupName;
 
     if(deviceName.isEmpty())
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty device name"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Empty device name"});
     else
         this->deviceName = deviceName;
 
     if(id < 0)
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Invalid device ID"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Invalid device ID"});
     else
         deviceID = id;
 }
@@ -40,7 +40,7 @@ bool SmartDevice::setGroupName(const QString& name)
 
     if(name.isEmpty())
     {
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty group name"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Empty group name"});
         return false;
     }
     else
@@ -51,7 +51,7 @@ bool SmartDevice::setGroupName(const QString& name)
         else
         {
             groupName = temp;
-            QMessageBox::information(nullptr, QString("warning"), QString("Error. Cannot upload config"));
+            QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Cannot upload config"});
             return false;
         }
 
@@ -65,7 +65,7 @@ bool SmartDevice::setDeviceName(const QString &name)
 
     if(name.isEmpty())
     {
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Empty device name"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Empty device name"});
         return false;
     }
     else
@@ -76,7 +76,7 @@ bool SmartDevice::setDeviceName(const QString &name)
         else
         {
             deviceName = temp;
-            QMessageBox::information(nullptr, QString("warning"), QString("Error. Cannot upload config"));
+            QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Cannot upload config"});
             return false;
         }
     }
@@ -88,7 +88,7 @@ bool  SmartDevice::setDeviceID(int id)
     int temp = deviceID;
     if(id < 0)
     {
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Invalid device ID"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Invalid device ID"});
         return false;
     }
     else
@@ -99,7 +99,7 @@ bool  SmartDevice::setDeviceID(int id)
         else
         {
             deviceID = temp;
-            QMessageBox::information(nullptr, QString("warning"), QString("Error. Cannot upload config"));
+            QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Cannot upload config"});
             return false;
         }
     }
@@ -116,7 +116,7 @@ bool SmartDevice::turnOnDevice()
     else
     {
         deviceStatus = temp;
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Cannot upload config"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Cannot upload config"});
         return false;
     }
 }
@@ -131,7 +131,7 @@ bool SmartDevice::turnOffDevice()
     else
     {
         deviceStatus = temp;
-        QMessageBox::information(nullptr, QString("warning"), QString("Error. Cannot upload config"));
+        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Cannot upload config"});
         return false;
     }
 }

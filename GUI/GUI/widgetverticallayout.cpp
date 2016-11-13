@@ -1,9 +1,9 @@
 #include "widgetverticallayout.h"
 
 WidgetVerticalLayout::WidgetVerticalLayout(QWidget *parent)
-    : QWidget(parent)
+    : QWidget{parent}
 {
-    vertLayout = new QGridLayout(parent);
+    vertLayout = new QGridLayout{parent};
     vertLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
     vertLayout->setColumnMinimumWidth(0, 210);
     vertLayout->setColumnMinimumWidth(1, 40);
