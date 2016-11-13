@@ -9,13 +9,14 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent) :
 }
 
 
-SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, DynamicButton *btn,
-                                           const std::vector<DynamicButton *> &btnList,
+SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, SettingsButtonBox *btn,
+                                           std::vector<SettingsButtonBox *> *btnList,
                                            std::vector<GroupTab *> &grpList)  : SettingsDialogWindow(parent)
 
 {
 
-    deviceButton = btn;
+    deviceButton = btn->deviceButton;
+    deviceSettingsButton = btn;
     buttonList = btnList;
     groupList = grpList;
 
@@ -58,15 +59,17 @@ SettingsDialogWindow::~SettingsDialogWindow()
 
 void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
 {
+
     if(ui->buttonBox->standardButton(button) == QDialogButtonBox::Apply)
 
     {
         if(!ui->nameEdit->text().isEmpty())
         {
-            for(size_t i = 0; i < buttonList.size(); ++i)
+            for(size_t i = 0; i < buttonList->size(); ++i)
             {
-                DynamicButton *button = buttonList[i];
-                if(button->getDeviceName() == ui->nameEdit->text()   && button != deviceButton)
+                SettingsButtonBox *button = (*buttonList)[i];
+                if((button->deviceButton->getDeviceName() == ui->nameEdit->text())
+                        && (button->deviceButton != deviceButton))
                 {
                     QMessageBox::information(nullptr, QString("Warning"), QString("Name is already used"));
                     return;
@@ -80,11 +83,32 @@ void SettingsDialogWindow::on_buttonBox_clicked(QAbstractButton *button)
 
 
         if(ui->statusButton->isChecked())
+        {
             deviceButton->turnOnDevice();
+            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOnIcon.png")));
+        }
         else
+        {
             deviceButton->turnOffDevice();
+            deviceButton->setIcon(QIcon(QPixmap(":/images/bulbOffIcon.png")));
+        }
+        deviceButton->setIconSize(QSize(25, 25));
+
         if(deviceButton->getGroupName() != ui->GroupNameEdit->text())
-            emit deviceGroupChanged(ui->GroupNameEdit->text(), deviceButton);
+        {
+            emit deviceGroupChanged(ui->GroupNameEdit->text(), deviceSettingsButton);
+            for(size_t i = 0; i < buttonList->size(); ++i)
+            {
+                SettingsButtonBox *button = (*buttonList)[i];
+                if(button->deviceButton->getDeviceName() == ui->nameEdit->text())
+                {
+                    deviceButton = button->deviceButton;  //обновление указателя после смены группы
+                    deviceSettingsButton = button;
+                    break;
+                }
+
+            }
+        }
     }
 }
 
@@ -99,11 +123,12 @@ void SettingsDialogWindow::onStatusButtonClicked()
     if(ui->statusButton->isChecked())
     {
         ui->statusLabel->setText(QString("ON"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOn.png")));       
     }
     else
     {
         ui->statusLabel->setText(QString("OFF"));
-        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));
+        ui->statusButton->setIcon(QIcon(QPixmap(":/images/powerOff.png")));       
     }
+
 }

@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QGridLayout>
-#include "dynamicbutton.h"
+#include "settingsbuttonbox.h"
 
 class WidgetVerticalLayout : public QWidget
 {
@@ -16,6 +16,7 @@ public:
     QLayoutItem *itemAt(int index) const;
     void removeWidget(QWidget *widget);
     void addWidget(DynamicButton *widget);
+    void addWidgetWithSettingsButton(SettingsButtonBox *settings);
     void hideWidgets();
     void showWidgets();
     int  count() const;

@@ -2,11 +2,9 @@ CC = g++
 
 C11 = -std=c++14
 
-BINCLUDE = -I/usr/include
+BINCLUDE = -I/opt/local/include
 
-BLIB = -L/usr/lib
-
-LIBS = -lboost_system-mt
+BLIB = -L/opt/local/lib
 
 LCURL = -lcurl
 
@@ -20,7 +18,7 @@ all: main
 	rm -rf *.o
 
 main: $(OSOURCE)
-	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(LIBS) $(OSOURCE) $(LCURL) -o test 
+	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(OSOURCE) $(LCURL) -o test 
 
 $(OSOURCE):
 	$(CC) $(C11) $(CFLAG) $(SOURCE)
