@@ -5,6 +5,10 @@
 #include <QGridLayout>
 #include "settingsbuttonbox.h"
 
+#define deviceButtonColumn   0
+#define settingsButtonColumn 1
+#define settingsButtonColumnWidth 40
+
 class WidgetVerticalLayout : public QWidget
 {
     Q_OBJECT

@@ -12,6 +12,7 @@ GroupTab::GroupTab(QWidget *parent, const QString &tabName)
     tab = new QPushButton{QIcon{QPixmap{":/images/tabOpened"}}, tabName, parent};
     tab->setCheckable(true);
     tab->setFlat(true);
+    tab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     tab->setStyleSheet("QPushButton {"
                        "    border: none;"
                        "    text-align: left;"

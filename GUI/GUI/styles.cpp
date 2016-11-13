@@ -3,15 +3,13 @@
 
 void setStyles(QString stylesList[stylesAmount])
 {
-    //стили кнопок PushButton  в классе MainWindow
+    //стили  динамических кнопок PushButton  в классе MainWindow
     stylesList[0] = "QPushButton {"
                     "   background-color: #009E9B;"
                     "   border : none;"
                     "   font:  14px; "
                     "   color: #fff;"
-
-                    "   max-width: 200px;"
-                    "   min-width: 80px;"
+                    "   text-align: left;"
                     "   min-height: 20px;"
                     "   padding: 5px;"
                     "}"
@@ -84,5 +82,28 @@ void setStyles(QString stylesList[stylesAmount])
                     "QPushButton:pressed {"
                     "   background-color: #54dff0;"
                     "   color: #fff;"
+                    " }";
+    //стили cтатичных кнопок PushButton  в классе MainWindow
+    stylesList[3] = "QPushButton {"
+                    "   background-color: #009E9B;"
+                    "   border : none;"
+                    "   font:  14px; "
+                    "   color: #fff;"
+                    "   min-width: 80px;"
+                    "   min-height: 20px;"
+                    "   padding: 5px;"
+                    "}"
+                    "QPushButton:disabled {"
+                    "   background-color: #989898;"
+                    "   color: #fff;"
+                    " }"
+                    "QPushButton:hover {"
+                    "   background-color: #61b7ff;"
+                    " }"
+                    "QPushButton:focus { "
+                    "   background-color: #61b7ff;"
+                    " }"
+                    "QPushButton:pressed {"
+                    "   background-color: #54dff0;"
                     " }";
 }

@@ -4,9 +4,9 @@ WidgetVerticalLayout::WidgetVerticalLayout(QWidget *parent)
     : QWidget{parent}
 {
     vertLayout = new QGridLayout{parent};
-    vertLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-    vertLayout->setColumnMinimumWidth(0, 210);
-    vertLayout->setColumnMinimumWidth(1, 40);
+    vertLayout->setSizeConstraint(QLayout::SetMaximumSize);
+    //vertLayout->setColumnMinimumWidth(0, 210);
+    vertLayout->setColumnMinimumWidth(settingsButtonColumn, settingsButtonColumnWidth);
 }
 
 WidgetVerticalLayout::~WidgetVerticalLayout()
@@ -16,14 +16,14 @@ WidgetVerticalLayout::~WidgetVerticalLayout()
 
 void WidgetVerticalLayout::addWidget(DynamicButton *widget)
 {
-    vertLayout->addWidget(widget, vertLayout->rowCount(), 0);
+    vertLayout->addWidget(widget, vertLayout->rowCount(), deviceButtonColumn);
 }
 
 void WidgetVerticalLayout::addWidgetWithSettingsButton(SettingsButtonBox *settings)
 {
     int row = vertLayout->rowCount();
-    vertLayout->addWidget(settings->deviceButton, row, 0);
-    vertLayout->addWidget(settings, row, 1);
+    vertLayout->addWidget(settings->deviceButton, row, deviceButtonColumn);
+    vertLayout->addWidget(settings, row, settingsButtonColumn);
 }
 
 void WidgetVerticalLayout::hideWidgets()

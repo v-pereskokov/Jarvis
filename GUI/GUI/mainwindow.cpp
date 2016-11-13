@@ -11,10 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setStyles(stylesList);
 
-    ui->addButton->setStyleSheet(stylesList[0]);
-    ui->deleteButton->setStyleSheet(stylesList[0]);    
-    ui->addGroup->setStyleSheet(stylesList[0]);
-    ui->deleteGroup->setStyleSheet(stylesList[0]);
+    ui->addButton->setStyleSheet(stylesList[3]);
+    ui->deleteButton->setStyleSheet(stylesList[3]);
+    ui->addGroup->setStyleSheet(stylesList[3]);
+    ui->deleteGroup->setStyleSheet(stylesList[3]);
 
 
 

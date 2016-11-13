@@ -8,18 +8,18 @@ DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb{parent}
                                * */
     resBusyID[buttonID] = true; //ID кнпки теперь занят
     this->setDeviceID(buttonID);
-    this->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->setFlat(true);
-    this->setMaximumWidth(200);
+    //this->setMaximumWidth(200);
 }
 
 DynamicButton::DynamicButton(DynamicButton *btn, QWidget *parent) :  SmartBulb{parent}
 {
     buttonID = findNewID();
     resBusyID[buttonID] = true;
-    this->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->setFlat(true);
-    this->setMaximumWidth(200);
+    //this->setMaximumWidth(200);
     this->setText(btn->text());
     this->setDeviceName(btn->text());
     this->setBrightness(btn->getBrightness());
