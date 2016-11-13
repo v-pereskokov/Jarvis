@@ -20,9 +20,9 @@ SOURCES += main.cpp\
     dynamicbutton.cpp \
     styles.cpp \
     smartbulbconfig.cpp \
-    widgetverticallayout.cpp \
     grouptab.cpp \
-    settingsbuttonbox.cpp
+    settingsbuttonbox.cpp \
+    widgetgridlayout.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -31,9 +31,9 @@ HEADERS  += mainwindow.h \
     dynamicbutton.h \
     styles.h \
     smartbulbconfig.h \
-    widgetverticallayout.h \
     grouptab.h \
-    settingsbuttonbox.h
+    settingsbuttonbox.h \
+    widgetgridlayout.h
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \

@@ -1,6 +1,6 @@
-#include "widgetverticallayout.h"
+#include "widgetgridlayout.h"
 
-WidgetVerticalLayout::WidgetVerticalLayout(QWidget *parent)
+WidgetGridLayout::WidgetGridLayout(QWidget *parent)
     : QWidget{parent}
 {
     vertLayout = new QGridLayout{parent};
@@ -9,24 +9,30 @@ WidgetVerticalLayout::WidgetVerticalLayout(QWidget *parent)
     vertLayout->setColumnMinimumWidth(settingsButtonColumn, settingsButtonColumnWidth);
 }
 
-WidgetVerticalLayout::~WidgetVerticalLayout()
+WidgetGridLayout::~WidgetGridLayout()
 {
 
 }
 
-void WidgetVerticalLayout::addWidget(DynamicButton *widget)
+void WidgetGridLayout::addWidget(QWidget *widget)
 {
-    vertLayout->addWidget(widget, vertLayout->rowCount(), deviceButtonColumn);
+    vertLayout->addWidget(widget, vertLayout->rowCount(), 0);
 }
 
-void WidgetVerticalLayout::addWidgetWithSettingsButton(SettingsButtonBox *settings)
+
+void WidgetGridLayout::addLayout(QLayout *layout)
+{
+    vertLayout->addLayout(layout, vertLayout->rowCount(), 0);
+}
+
+void WidgetGridLayout::addSettingsButtonBox(SettingsButtonBox *settings)
 {
     int row = vertLayout->rowCount();
     vertLayout->addWidget(settings->deviceButton, row, deviceButtonColumn);
     vertLayout->addWidget(settings, row, settingsButtonColumn);
 }
 
-void WidgetVerticalLayout::hideWidgets()
+void WidgetGridLayout::hideWidgets()
 {
     for(int i = 0; i < count(); ++i)
         {
@@ -36,7 +42,7 @@ void WidgetVerticalLayout::hideWidgets()
         }
 }
 
-void WidgetVerticalLayout::showWidgets()
+void WidgetGridLayout::showWidgets()
 {
     for(int i = 0; i < vertLayout->count(); ++i)
         {
@@ -46,18 +52,18 @@ void WidgetVerticalLayout::showWidgets()
         }
 }
 
-int  WidgetVerticalLayout::count() const
+int  WidgetGridLayout::count() const
 {
     return vertLayout->count();
 }
 
-QLayoutItem* WidgetVerticalLayout::itemAt(int index) const
+QLayoutItem* WidgetGridLayout::itemAt(int index) const
 {
     return vertLayout->itemAt(index);
 }
 
 
-void WidgetVerticalLayout::removeWidget(QWidget *widget)
+void WidgetGridLayout::removeWidget(QWidget *widget)
 {
     vertLayout->removeWidget(widget);
     delete widget;

@@ -89,7 +89,7 @@ void MainWindow::changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox
     deleteDynamicButton(btn->deviceButton->text());
 
     buttonList.push_back(newSettingsButton);
-    tab->layout->addWidgetWithSettingsButton(newSettingsButton);
+    tab->layout->addSettingsButtonBox(newSettingsButton);
     newButton->show();
     newSettingsButton->show();
 
@@ -167,19 +167,14 @@ void MainWindow::on_addButton_clicked()
         // Создаем объект динамической кнопки
         SettingsButtonBox *settings = createDynamicButton(ui->lineEdit->text(), tab->tab->text(), tab->layout);
 
-
-
-        /* Добавляем кнопку в слой
-         * */
-        tab->layout->addWidgetWithSettingsButton(settings);
+        //Добавляем кнопку в слой
+        tab->layout->addSettingsButtonBox(settings);
         if(tab->tab->isChecked())
             settings->deviceButton->hide();
         else
             settings->deviceButton->show();
 
-
-        /* Подключаем сигнал нажатия кнопки к СЛОТ получения номера кнопки
-         * */
+        // Подключаем сигнал нажатия кнопки к слотам
         connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
         connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
         connect(settings, SIGNAL(clicked()), this, SLOT(slotSettingsButtonCLicked()));

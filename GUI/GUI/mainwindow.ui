@@ -18,15 +18,15 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="4">
-     <spacer name="horizontalSpacer_4">
+    <item row="1" column="9">
+     <spacer name="verticalSpacer">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Vertical</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
-        <width>40</width>
-        <height>20</height>
+        <width>20</width>
+        <height>130</height>
        </size>
       </property>
      </spacer>
@@ -59,6 +59,9 @@ color: #00FBF6;</string>
           </property>
           <property name="text">
            <string>Smart Device</string>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
           </property>
          </widget>
         </item>
@@ -143,6 +146,12 @@ color: #00FBF6;</string>
           <property name="text">
            <string>Main Group</string>
           </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+          <property name="frame">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
        </layout>
@@ -180,6 +189,28 @@ color: #00FBF6;</string>
       </item>
      </layout>
     </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">border: none;
+min-width: 115px;
+min-height: 115px</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/images/microphone.png</normaloff>:/images/microphone.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>115</width>
+        <height>115</height>
+       </size>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0" rowspan="2">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
@@ -190,13 +221,13 @@ color: #00FBF6;</string>
       </property>
       <property name="minimumSize">
        <size>
-        <width>275</width>
+        <width>300</width>
         <height>60</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>16777215</width>
+        <width>400</width>
         <height>16777215</height>
        </size>
       </property>
@@ -222,11 +253,14 @@ color: #00FBF6;</string>
        <set>Qt::AlignJustify|Qt::AlignTop</set>
       </property>
       <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>273</width>
+         <width>298</width>
          <height>327</height>
         </rect>
        </property>
@@ -236,11 +270,24 @@ color: #00FBF6;</string>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <layout class="QGridLayout" name="gridLayout">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <property name="sizeConstraint">
          <enum>QLayout::SetMaximumSize</enum>
         </property>
-        <item row="1" column="0">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayoutLeft">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMinimumSize</enum>
+          </property>
+         </layout>
+        </item>
+        <item>
          <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -253,29 +300,9 @@ color: #00FBF6;</string>
           </property>
          </spacer>
         </item>
-        <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayoutLeft">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetMaximumSize</enum>
-          </property>
-         </layout>
-        </item>
        </layout>
       </widget>
      </widget>
-    </item>
-    <item row="1" column="9">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>130</height>
-       </size>
-      </property>
-     </spacer>
     </item>
     <item row="0" column="6">
      <spacer name="horizontalSpacer_3">
@@ -290,27 +317,18 @@ color: #00FBF6;</string>
       </property>
      </spacer>
     </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="pushButton">
-      <property name="styleSheet">
-       <string notr="true">border: none;
-min-width: 115px;
-min-height: 115px</string>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="res.qrc">
-        <normaloff>:/images/microphone.png</normaloff>:/images/microphone.png</iconset>
-      </property>
-      <property name="iconSize">
+      <property name="sizeHint" stdset="0">
        <size>
-        <width>115</width>
-        <height>115</height>
+        <width>40</width>
+        <height>20</height>
        </size>
       </property>
-     </widget>
+     </spacer>
     </item>
    </layout>
   </widget>

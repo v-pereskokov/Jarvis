@@ -10,6 +10,7 @@ void setStyles(QString stylesList[stylesAmount])
                     "   font:  14px; "
                     "   color: #fff;"
                     "   text-align: left;"
+                    "   max-width: 200px;"
                     "   min-height: 20px;"
                     "   padding: 5px;"
                     "}"

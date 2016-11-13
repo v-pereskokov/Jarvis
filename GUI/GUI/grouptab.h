@@ -1,6 +1,6 @@
 #ifndef GROUPTAB_H
 #define GROUPTAB_H
-#include "widgetverticallayout.h"
+#include "widgetgridlayout.h"
 #include "styles.h"
 #include <QPushButton>
 #include <QString>
@@ -14,7 +14,7 @@ public:
     GroupTab(QWidget *parent, const QString &tabName);
     ~GroupTab();
 
-    WidgetVerticalLayout   *layout;  //Слой вкладки в который добавляются кнопки с устройствами
+    WidgetGridLayout   *layout;  //Слой вкладки в который добавляются кнопки с устройствами
     QPushButton            *tab;     //Кнопка вкладки, позволяет свернуть вкладку по клику
 };
 

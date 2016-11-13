@@ -9,18 +9,19 @@
 #define settingsButtonColumn 1
 #define settingsButtonColumnWidth 40
 
-class WidgetVerticalLayout : public QWidget
+class WidgetGridLayout : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit WidgetVerticalLayout(QWidget *parent = 0);
+    explicit WidgetGridLayout(QWidget *parent = 0);
 
-   ~WidgetVerticalLayout();
+   ~WidgetGridLayout();
     QLayoutItem *itemAt(int index) const;
     void removeWidget(QWidget *widget);
-    void addWidget(DynamicButton *widget);
-    void addWidgetWithSettingsButton(SettingsButtonBox *settings);
+    void addWidget(QWidget *widget);
+    void addLayout(QLayout *layout);
+    void addSettingsButtonBox(SettingsButtonBox *settings);
     void hideWidgets();
     void showWidgets();
     int  count() const;
