@@ -3,11 +3,33 @@
 
 #pragma once
 
+#include <vector>
+#include <initializer_list>
+
 namespace Jarvis {
   namespace Commands {
-    class Command {
+    namespace CommandType{
+      using commandType = std::string;
+      
+      const commandType python = "python";
+      const commandType shell = "";
+      const commandType music = "afplay";
+    }
+#define methods
+#define params
+    
+    class Command final {
+      using scriptName = std::string;
+      using argument = std::string;
+      using argumentsList = std::initializer_list<argument>;
+      using argumentsVector = std::vector<argument>;
+      using executeCommand = std::string;
+      
     public:
-      virtual void execute() = 0;
+      static void execute(const CommandType::commandType &type, const scriptName &script, const argumentsList arguments);
+      
+    private:
+      static void terminalExecute(const argumentsVector &arguments);
     };
   }
 }
