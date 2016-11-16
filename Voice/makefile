@@ -6,6 +6,8 @@ BINCLUDE = -I/opt/local/include
 
 BLIB = -L/opt/local/lib
 
+LBOOST = -lboost_system
+
 LCURL = -lcurl
 
 SOURCE = main.cpp
@@ -18,7 +20,7 @@ all: main
 	rm -rf *.o
 
 main: $(OSOURCE)
-	$(CC) $(C11) $(BINCLUDE) $(BLIB) $(OSOURCE) $(LCURL) -o test 
+	$(CC) $(C11) $(LBOOST) $(BINCLUDE) $(BLIB) $(OSOURCE) $(LCURL) -o test 
 
 $(OSOURCE):
 	$(CC) $(C11) $(CFLAG) $(SOURCE)

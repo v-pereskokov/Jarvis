@@ -15,6 +15,7 @@ namespace Jarvis {
       const commandType shell = "";
       const commandType music = "afplay";
     }
+    
 #define methods
 #define params
     
