@@ -1,4 +1,7 @@
+#pragma once
+
 #include "Include/SerialPort.h"
+
 namespace Jarvis {
   namespace Arduino {
     namespace Connection {

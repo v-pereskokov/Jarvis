@@ -25,6 +25,7 @@ void HighwayToHell::dot() {
 }
 
 void HighwayToHell::music() {
+  delay(900);
   dot(); dot(); dot();
   delay(1200);
   dot(); dot(); dot();
@@ -36,5 +37,4 @@ void HighwayToHell::music() {
   dot();
   delay(190);
   dot(); dot();
-  delay(900);
 }

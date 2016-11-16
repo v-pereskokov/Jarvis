@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Include/Transport.h"
 #include "OptionsList.hpp"
 #include "Parser.hpp"
@@ -16,6 +18,17 @@ namespace Jarvis {
       size_t n = size * nmemb;
       f->read(ptr, n);
       size_t result = f->gcount();
+      return result;
+    }
+    
+    Map parsingTree(const Jarvis::Parser::Tree &tree) {
+      Map result;
+      for (auto it_first = tree.begin(); it_first != tree.end(); ++it_first) {
+        auto object = it_first->second;
+        for (auto it_second = object.begin(); it_second != object.end(); ++it_second) {
+          result.insert({it_second->first, it_second->second.data()});
+        }
+      }
       return result;
     }
     

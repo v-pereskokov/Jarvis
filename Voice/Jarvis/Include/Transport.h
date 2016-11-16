@@ -10,17 +10,21 @@
 #include <map>
 #include <vector>
 #include <curl/curl.h>
-#include <boost/any.hpp>
+#include "../Parser.hpp"
 
 
 namespace Jarvis {
   namespace connection {
-    
 #define methods
 #define params
     
+    using Key = std::string;
+    using Data = std::string;
+    using Map = std::map<Key, Data>;
+    
     std::size_t writeResponseData(char *ptr, size_t size, size_t nmemb, void *userdata);
     std::size_t readRequestData(char *ptr, size_t size, size_t nmemb, void *userdata);
+    Map parsingTree(const Jarvis::Parser::Tree &tree);
     
     class Transport final {
       using socket = CURL;
@@ -50,8 +54,8 @@ namespace Jarvis {
         OptionsList() = delete;
         OptionsList(const OptionsList &copy) = delete;
         OptionsList & operator=(const OptionsList &copy) = delete;
-        url makeUrl(const jList &list, url &url);
         void fillList(const jList &list);
+        url makeUrl(const jList &list, url &url);
         bool findYandexOption(const yandexOption &option);
         
         protected params:

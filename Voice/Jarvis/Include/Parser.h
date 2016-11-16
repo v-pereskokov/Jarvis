@@ -11,7 +11,7 @@
 namespace Jarvis {
 #define methods
 #define params
-  
+#define usings
   using boost::property_tree::ptree;
   
   /*
@@ -20,12 +20,10 @@ namespace Jarvis {
    */
   
   class Parser final {
+    public usings:
     using Tree = ptree;
     using stringTarget = std::stringstream;
     using Path = std::string;
-    using Key = std::string;
-    using Data = std::string;
-    using Map = std::map<Key, Data>;
     
     public methods:
     Parser() = default;
@@ -33,31 +31,26 @@ namespace Jarvis {
     Parser(const Parser &copy) = default;
     Parser & operator=(const Parser &copy) = default;
     void loadTarget(const Path &path);
-    Map jsonParse();
-    friend Map jsonParse(stringTarget &stream);
-    Map xmlParse();
-    friend Map xmlParse(stringTarget &stream);
-    
-    private methods:
-    static Map fillMap(Map &result, const Tree &tree);
+    Tree jsonParse();
+    friend Tree jsonParse(stringTarget &stream);
+    Tree xmlParse();
+    friend Tree xmlParse(stringTarget &stream);
     
     private params:
     Path _target;
     Tree _tree;
   };
   
-  Parser::Map jsonParse(Parser::stringTarget &stream) {
-    Parser::Map result;
+  Parser::Tree jsonParse(Parser::stringTarget &stream) {
     Parser::Tree tree;
     read_json(stream, tree);
-    return Parser::fillMap(result, tree);
+    return tree;
   }
   
-  Parser::Map xmlParse(Parser::stringTarget &stream) {
-    Parser::Map result;
+  Parser::Tree xmlParse(Parser::stringTarget &stream) {
     Parser::Tree tree;
     read_xml(stream, tree);
-    return Parser::fillMap(result, tree);
+    return tree;
   }
 }
 

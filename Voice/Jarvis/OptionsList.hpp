@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include "Include/Transport.h"
-#include "Parser.hpp"
 
 namespace Jarvis {
   namespace connection {
@@ -11,7 +10,7 @@ namespace Jarvis {
     
     Transport::OptionsList::OptionsList(const jPath& path) {
       jObject json(path);
-      fillList(json.jsonParse());
+      fillList(parsingTree(json.jsonParse()));
     }
     
     Transport::OptionsList::optionValue Transport::OptionsList::getOption(const Transport::OptionsList::option &option) {
