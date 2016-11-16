@@ -1,5 +1,5 @@
-#ifndef HIGHWAYTOHELL_H
-#define HIGHWAYTOHELL_H
+#ifndef LED_H
+#define LED_H
 
 #pragma once
 
@@ -9,24 +9,20 @@
 #include "WProgram.h"
 #endif
 
-class HighwayToHell {
+class Led {
 #define methods
 #define params
   
   typedef int PIN;
   
 public methods:
-  HighwayToHell(PIN pin);
-  void play();
-  
-private methods:
-  void high();
-  void low();
-  void dot();
-  void music();
+  Led(PIN pin);
+  void on();
+  void off();
+  void blink();
   
 private params:
   PIN _pin;
 };
 
-#endif // HIGHWAYTOHELL_H
+#endif // LED_H
