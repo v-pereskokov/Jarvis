@@ -8,7 +8,8 @@ namespace Jarvis {
   namespace connection {
     using jObject = Parser;
     
-    Transport::OptionsList::OptionsList(const jPath& path) {
+    Transport::OptionsList::OptionsList(const jPath& path, const yandexOptions yandexOptions)
+    :_yandexOptions(yandexOptions) {
       jObject json(path);
       fillList(parsingTree(json.jsonParse()));
     }
@@ -40,8 +41,8 @@ namespace Jarvis {
     }
     
     bool Transport::OptionsList::findYandexOption(const yandexOption &option) {
-      auto findOption = std::find(_yaOpts.begin(), _yaOpts.end(), option);
-      return findOption != _yaOpts.end();
+      auto findOption = std::find(_yandexOptions.begin(), _yandexOptions.end(), option);
+      return findOption != _yandexOptions.end();
     }
   }
 }
