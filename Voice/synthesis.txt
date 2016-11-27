@@ -1,0 +1,1 @@
+curl "https://tts.voicetech.yandex.net/generate?format=wav&lang=ru-RU&speaker=ermil&emotion=good&key=d9def809-0bc4-4954-b0c9-6d544d787581" -G --data-urlencode "text=text" > speech.wav
