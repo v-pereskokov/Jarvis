@@ -12,11 +12,12 @@
 #include <curl/curl.h>
 #include "../Parser.hpp"
 
-
 namespace Jarvis {
   namespace connection {
 #define methods
 #define params
+#define structs
+#define usings
     
     using Key = std::string;
     using Data = std::string;
@@ -26,7 +27,8 @@ namespace Jarvis {
     std::size_t readRequestData(char *ptr, size_t size, size_t nmemb, void *userdata);
     Map parsingTree(const Jarvis::Parser::Tree &tree);
     
-    class Transport final {
+    class Transport {
+      protected usings:
       using socket = CURL;
       using codeInfo = CURLcode;
       using headerList = curl_slist;
@@ -35,6 +37,7 @@ namespace Jarvis {
       using responseString = std::string;
       using file = std::ifstream;
       
+      public structs:
       struct OptionsList {
         friend class Transport;
         
@@ -47,8 +50,9 @@ namespace Jarvis {
         using yandexOptions = std::vector<yandexOption>;
         
         public methods:
-        explicit OptionsList(const jPath &path);
+        explicit OptionsList(const jPath &path, const yandexOptions yandexOptions);
         optionValue getOption(const option &option);
+        ~OptionsList() = default;
         
         private methods:
         OptionsList() = delete;
@@ -62,27 +66,29 @@ namespace Jarvis {
         optionList _optList;
         
         private params:
-        yandexOptions _yaOpts{"key", "uuid", "topic", "lang"};
+        yandexOptions _yandexOptions;
       };
       
       using property = OptionsList;
       
       public methods:
-      explicit Transport(const jPath &path);
-      ~Transport();
+      explicit Transport(const jPath &path, const OptionsList::yandexOptions yandexOptions);
+      virtual ~Transport();
+      virtual bool send() = 0;
+      responseString recv() const;
       bool connect();
       bool isConnect();
-      bool send();
-      responseString recv() const;
+      
+      protected methods:
+      bool checkConnection(const socket *curl);
+      virtual void setOptions() = 0;
       
       private methods:
       Transport() = delete;
       Transport(const Transport &copy) = delete;
       Transport & operator=(const Transport &copy) = delete;
-      bool checkConnection(const socket *curl);
-      void setOptions();
       
-      private params:
+      protected params:
       socket *_curl;
       property _properties;
       headerList *_headers;

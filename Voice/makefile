@@ -26,7 +26,7 @@ $(OSOURCE):
 	$(CC) $(C11) $(CFLAG) $(SOURCE)
 
 run:
-	./test
+	test
 
 clean:
 	rm -rf test

@@ -14,11 +14,6 @@ namespace Jarvis {
 #define usings
   using boost::property_tree::ptree;
   
-  /*
-   * struct Json:
-   * "key_1" : {"key_2" : "data"}
-   */
-  
   class Parser final {
     public usings:
     using Tree = ptree;

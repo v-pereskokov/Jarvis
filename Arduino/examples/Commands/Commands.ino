@@ -1,20 +1,61 @@
 #include <Led.h>
 #include <HighwayToHell.h>
 
-int pin = 13;
+#define button A5
 
-Led led(pin);
-HighwayToHell rock(pin);
+const int pin10 = 10;
+const int pin9 = 9;
 
+Led led10(pin10);
+Led led9(pin9);
+HighwayToHell rock(pin9);
+
+const int red = 11;
+const int green = 12;
+const int blue = 13;
 
 void setup() {
   Serial.begin(9600);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
+}
+
+void redOn() {
+  digitalWrite(red, HIGH);
+}
+
+void redOff() {
+  digitalWrite(red, LOW);
+}
+
+void greenOn() {
+  digitalWrite(green, HIGH);
+}
+
+void greenOff() {
+  digitalWrite(red, LOW);
+}
+
+void blueOn() {
+  digitalWrite(blue, HIGH);
+}
+
+void blueOff() {
+  digitalWrite(blue, LOW);
 }
 
 int cmd;
  
 void loop() {
-  if (Serial.available()) {
+  if (digitalRead(button) == LOW) {
+    redOn();
+    Serial.print("record\n");
+    delay(5000);
+    redOff();
+    blueOn();
+    delay(6000);
+  } else if (Serial.available()) {
     cmd = int(Serial.read()) - 48;
     Serial.print("command: ");
     Serial.print(cmd);
@@ -22,14 +63,18 @@ void loop() {
   }
   switch (cmd) {
     case 0:
-      led.off();
+      led10.off();
+      led9.off();
+      blueOff();
       break;
     case 1:
-      led.on();
+      led10.on();
+      led9.on();
       break;
     case 2:
-      led.blink();
-       break;
+      led10.blink();
+      led9.blink();
+      break;
     case 3:
       rock.play();
       break;
