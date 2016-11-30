@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QPixmap>
-#include "dynamicbutton.h"
+#include "dynamicbulbbutton.h"
 #include "styles.h"
 
 namespace Ui {
@@ -16,7 +16,7 @@ class SmartBulbConfig : public QDialog
 
 public:
     explicit SmartBulbConfig(QWidget *parent = 0);
-    SmartBulbConfig(QWidget *parent, DynamicButton *button);
+    SmartBulbConfig(QWidget *parent, DynamicBulbButton *button);
     ~SmartBulbConfig();
 
 private slots:
@@ -30,7 +30,7 @@ private slots:
 private:
     Ui::SmartBulbConfig *ui;
     QString stylesList[stylesAmount];
-    DynamicButton *deviceButton;
+    DynamicBulbButton *deviceButton;
     QPixmap bulbImg;
 
 };

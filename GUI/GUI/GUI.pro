@@ -17,23 +17,23 @@ SOURCES += main.cpp\
     smartdevice.cpp \
     smartbulb.cpp \
     settingsdialogwindow.cpp \
-    dynamicbutton.cpp \
     styles.cpp \
     smartbulbconfig.cpp \
     grouptab.cpp \
     settingsbuttonbox.cpp \
-    widgetgridlayout.cpp
+    widgetgridlayout.cpp \
+    dynamicbulbbutton.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
     smartbulb.h \
     settingsdialogwindow.h \
-    dynamicbutton.h \
     styles.h \
     smartbulbconfig.h \
     grouptab.h \
     settingsbuttonbox.h \
-    widgetgridlayout.h
+    widgetgridlayout.h \
+    dynamicbulbbutton.h
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \

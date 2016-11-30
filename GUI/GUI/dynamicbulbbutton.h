@@ -5,13 +5,13 @@
 
 #define maxButtonAmount 100
 
-class DynamicButton :  public SmartBulb
+class DynamicBulbButton :  public SmartBulb
 {
     Q_OBJECT
 public:
-    explicit DynamicButton(QWidget *parent = 0);
-    DynamicButton(DynamicButton *btn, QWidget *parent = 0);
-    ~DynamicButton();
+    explicit DynamicBulbButton(QWidget *parent = 0);
+    DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent = 0);
+    ~DynamicBulbButton();
     static bool resBusyID[maxButtonAmount];   // массив номеров кнопок, равен true  если кнопка с этим ID создана
     int getID();        // Функция для возврата локального номера кнопки
 

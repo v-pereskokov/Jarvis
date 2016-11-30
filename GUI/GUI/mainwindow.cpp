@@ -30,7 +30,7 @@ MainWindow::~MainWindow()
 
 SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent)
 {
-    DynamicButton *button = new DynamicButton{parent};  // Создаем объект динамической кнопки
+    DynamicBulbButton *button = new DynamicBulbButton{parent};  // Создаем объект динамической кнопки
 
 
     button->setStyleSheet(stylesList[0]);
@@ -75,7 +75,7 @@ void MainWindow::changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox
 {
     GroupTab *tab = getGroupTab(newGroupTabName, true, ui->scrollAreaWidgetContents);
 
-    DynamicButton *newButton = new DynamicButton{btn->deviceButton, tab->layout};
+    DynamicBulbButton *newButton = new DynamicBulbButton{btn->deviceButton, tab->layout};
     SettingsButtonBox *newSettingsButton = new SettingsButtonBox{newButton, tab->layout};
 
     newButton->setStyleSheet(stylesList[0]);
@@ -201,7 +201,7 @@ void MainWindow::slotGetButtonName()
 {
     /* Определяем объект, который вызвал сигнал
      * */
-    DynamicButton *button = (DynamicButton*) sender();
+    DynamicBulbButton *button = (DynamicBulbButton*) sender();
     /* После чего устанавливаем номер кнопки в lineEdit,
      * который содержится в данной динамической кнопке
      * */
@@ -229,7 +229,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &str)
 
 void MainWindow::slotOpenDeviceConfig()
 {
-    SmartBulbConfig *configWindow = new SmartBulbConfig{this, (DynamicButton*) sender()};
+    SmartBulbConfig *configWindow = new SmartBulbConfig{this, (DynamicBulbButton*) sender()};
     configWindow->show(); //вызов диалогового окна настроек
 
 }
@@ -310,7 +310,7 @@ void MainWindow::on_deleteGroup_clicked()
     }
     while( tab->layout->count() > 0 )
     {
-        DynamicButton *button = qobject_cast<DynamicButton*>(tab->layout->vertLayout->itemAt(0)->widget());        
+        DynamicBulbButton *button = qobject_cast<DynamicBulbButton*>(tab->layout->vertLayout->itemAt(0)->widget());        
         deleteDynamicButton(button->text());
     }
 

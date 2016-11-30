@@ -8,7 +8,7 @@ SmartBulbConfig::SmartBulbConfig(QWidget *parent) :
     ui->setupUi(this);
 }
 
-SmartBulbConfig::SmartBulbConfig(QWidget *parent, DynamicButton *button):
+SmartBulbConfig::SmartBulbConfig(QWidget *parent, DynamicBulbButton *button):
     QDialog{parent},
     ui{new Ui::SmartBulbConfig}
 {

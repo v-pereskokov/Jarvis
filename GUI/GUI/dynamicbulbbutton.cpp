@@ -1,6 +1,6 @@
-#include "dynamicbutton.h"
+#include "dynamicbulbbutton.h"
 
-DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
 {
 
     buttonID = findNewID();   /* Присвоение кнопке номера, по которому булет производиться
@@ -13,7 +13,7 @@ DynamicButton::DynamicButton(QWidget *parent) :  SmartBulb{parent}
     //this->setMaximumWidth(200);
 }
 
-DynamicButton::DynamicButton(DynamicButton *btn, QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent) :  SmartBulb{parent}
 {
     buttonID = findNewID();
     resBusyID[buttonID] = true;
@@ -33,19 +33,19 @@ DynamicButton::DynamicButton(DynamicButton *btn, QWidget *parent) :  SmartBulb{p
 
 }
 
-DynamicButton::~DynamicButton()
+DynamicBulbButton::~DynamicBulbButton()
 {
     resBusyID[buttonID] = false; //ID кнопки освобожден
 }
 
 /* Метод для возврата значения номера кнопки
  * */
-int DynamicButton::getID()
+int DynamicBulbButton::getID()
 {
     return buttonID;
 }
 
-int DynamicButton::findNewID()
+int DynamicBulbButton::findNewID()
 {
     for(size_t i = 0; i < maxButtonAmount; ++i)
     {
@@ -57,4 +57,4 @@ int DynamicButton::findNewID()
 
 /* Инициализация статической переменной класса.
  * */
-bool DynamicButton::resBusyID[maxButtonAmount];
+bool DynamicBulbButton::resBusyID[maxButtonAmount];

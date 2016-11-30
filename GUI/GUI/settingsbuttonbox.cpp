@@ -2,11 +2,10 @@
 
 SettingsButtonBox::SettingsButtonBox(QWidget *parent) : QPushButton{parent}
 {
-    setText(QString{"..."});
     deviceButton = nullptr;
 }
 
-SettingsButtonBox::SettingsButtonBox(DynamicButton *button, QWidget *parent) : QPushButton{parent}
+SettingsButtonBox::SettingsButtonBox(DynamicBulbButton *button, QWidget *parent) : QPushButton{parent}
 {    
     deviceButton = button;
     this->setStyleSheet("QPushButton {"
