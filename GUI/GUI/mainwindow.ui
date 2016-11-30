@@ -18,20 +18,68 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="9">
-     <spacer name="verticalSpacer">
+    <item row="0" column="5">
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">border: none;
+min-width: 115px;
+min-height: 115px</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/images/microphone.png</normaloff>:/images/microphone.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>115</width>
+        <height>115</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="6">
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="8" rowspan="3">
+     <spacer name="verticalSpacer_3">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
         <width>20</width>
-        <height>130</height>
+        <height>40</height>
        </size>
       </property>
      </spacer>
     </item>
-    <item row="0" column="9">
+    <item row="0" column="8">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
@@ -189,29 +237,20 @@ color: #00FBF6;</string>
       </item>
      </layout>
     </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="pushButton">
-      <property name="styleSheet">
-       <string notr="true">border: none;
-min-width: 115px;
-min-height: 115px</string>
+    <item row="1" column="5" rowspan="4">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="res.qrc">
-        <normaloff>:/images/microphone.png</normaloff>:/images/microphone.png</iconset>
-      </property>
-      <property name="iconSize">
+      <property name="sizeHint" stdset="0">
        <size>
-        <width>115</width>
-        <height>115</height>
+        <width>20</width>
+        <height>40</height>
        </size>
       </property>
-     </widget>
+     </spacer>
     </item>
-    <item row="0" column="0" rowspan="2">
+    <item row="0" column="0" rowspan="5">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -304,31 +343,36 @@ min-height: 115px</string>
       </widget>
      </widget>
     </item>
-    <item row="0" column="6">
-     <spacer name="horizontalSpacer_3">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+    <item row="4" column="8">
+     <widget class="QPushButton" name="toolPushButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {                         
+                          text-align: left;
+						background-color: #004A49;
+                          background-repeat: none; 
+						 min-width: 70px; 
+                          min-height: 70px;
+                          max-width: 70px; 
+                          max-height: 70px;
+						border: #535353 1px solid;
+						border-radius: 35px;
+						align: rigth;
+                        }
+                        QPushButton:hover {
+                           background-color: #009E9B;
+                        }
+</string>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
+      <property name="text">
+       <string/>
       </property>
-     </spacer>
-    </item>
-    <item row="0" column="4">
-     <spacer name="horizontalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
+      <property name="flat">
+       <bool>true</bool>
       </property>
-     </spacer>
+     </widget>
     </item>
    </layout>
   </widget>

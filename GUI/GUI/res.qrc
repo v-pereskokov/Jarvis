@@ -10,5 +10,6 @@
         <file>settings.png</file>
         <file>bulbOffIcon.png</file>
         <file>bulbOnIcon.png</file>
+        <file>toolIcon.png</file>
     </qresource>
 </RCC>

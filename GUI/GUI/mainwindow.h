@@ -37,6 +37,8 @@ private slots:
     void     on_addGroup_clicked();
     void     on_deleteGroup_clicked();
 
+    void on_toolPushButton_clicked();
+
 private:
     SettingsButtonBox*  createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent = 0);
     void             deleteDynamicButton(const QString &buttonName);

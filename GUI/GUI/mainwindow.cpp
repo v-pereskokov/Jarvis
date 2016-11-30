@@ -17,8 +17,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->addGroup->setStyleSheet(stylesList[3]);
     ui->deleteGroup->setStyleSheet(stylesList[3]);
 
+    ui->toolPushButton->setIcon(QIcon{QPixmap{":/images/toolIcon.png"}});
+    ui->toolPushButton->setIconSize(QSize{75, 50});
 
-
+    ui->label->hide();
+    ui->lineEdit->hide();
+    ui->addButton->hide();
+    ui->deleteButton->hide();
+    ui->label_2->hide();
+    ui->groupNameEdit->hide();
+    ui->addGroup->hide();
+    ui->deleteGroup->hide();
 
 
 }
@@ -321,4 +330,30 @@ void MainWindow::on_deleteGroup_clicked()
     }
     groupList.pop_back();
     delete tab;
+}
+
+void MainWindow::on_toolPushButton_clicked()
+{
+    if(ui->toolPushButton->isChecked())
+    {
+        ui->label->hide();
+        ui->lineEdit->hide();
+        ui->addButton->hide();
+        ui->deleteButton->hide();
+        ui->label_2->hide();
+        ui->groupNameEdit->hide();
+        ui->addGroup->hide();
+        ui->deleteGroup->hide();
+    }
+    else
+    {
+        ui->label->show();
+        ui->lineEdit->show();
+        ui->addButton->show();
+        ui->deleteButton->show();
+        ui->label_2->show();
+        ui->groupNameEdit->show();
+        ui->addGroup->show();
+        ui->deleteGroup->show();
+    }
 }
