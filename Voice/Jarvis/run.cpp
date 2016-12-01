@@ -68,43 +68,40 @@ std::pair<std::string, std::string> check(std::string &command, std::map<std::st
 int run() {
   try {
     Jarvis::Arduino::Connection::SerialPort serial("/dev/tty.HC-06-DevB", 9600);
+    Jarvis::Arduino::Connection::SerialPort serial1("/dev/tty.HC-06-DevB-1", 9600);
     std::thread voice(voiceJarvis, "Welcome");
     system("Scripts/hello.sh");
     voice.join();
     std::string exit = "nothing";
     while (true) {
       if (serial.read() == "record") {
-        while (exit != "stop") {
-          system("python Scripts/record.py Samples/output.wav");
-          std::map<std::string, std::string> map = handleQuery();
-          std::map<std::string, std::pair<std::string, std::string>> cmds{
-            {"включи свет", {"1", "LedOn"}}, {"выключи свет", {"0", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
-          std::string command = map["variant"];
-          auto isDoing = check(command, cmds);
-          if (command == "Умри" || command == "Успокойся") {
-            break;
-          } else if (atoi(isDoing.first.c_str()) < 4) {
-            std::thread voice(voiceJarvis, std::ref(isDoing.second));
-            std::thread work(doing, std::ref(serial), std::ref(isDoing.first));
-            voice.join();
-            work.join();
-            if (atoi(isDoing.first.c_str()) == 3) {
-              system("afplay Samples/HighwayToHell.mp3");
-            }
-          } else {
-            printf("%s\n", command.c_str());
-            system("afplay Samples/Error.wav");
+        system("python Scripts/record.py Samples/output.wav");
+        std::map<std::string, std::string> map = handleQuery();
+        std::map<std::string, std::pair<std::string, std::string>> cmds{
+          {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
+        std::string command = map["variant"];
+        auto isDoing = check(command, cmds);
+        if (command == "умри" || command == "успокойся") {
+          break;
+        } else if (atoi(isDoing.first.c_str()) < 4) {
+          std::thread voice(voiceJarvis, std::ref(isDoing.second));
+          std::thread work(doing, std::ref(serial1), std::ref(isDoing.first));
+          voice.join();
+          work.join();
+          if (atoi(isDoing.first.c_str()) == 3) {
+            system("afplay Samples/HighwayToHell.mp3");
           }
-          std::cout << "Есть еще пожелания?\n" << "\"stop\" - для завершения\n";
-          system("afplay Samples/SomethingElse.wav");
-          std::getline(std::cin, exit);
+        } else {
+          printf("%s\n", command.c_str());
+          system("afplay Samples/Error.wav");
         }
-        doing(serial, "0");
-        system("Scripts/goodbye.sh");
-        system("afplay Samples/Goodbye.wav");
-        return 0;
+        system("afplay Samples/SomethingElse.wav");
       }
     }
+    doing(serial1, "x");
+    system("Scripts/goodbye.sh");
+    system("afplay Samples/Goodbye.wav");
+    return 0;
   } catch(boost::system::system_error& e) {
     std::cout<<"Error: "<<e.what()<<std::endl;
     return 1;
