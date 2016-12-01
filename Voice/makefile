@@ -10,7 +10,7 @@ LBOOST = -lboost_system
 
 LCURL = -lcurl
 
-SOURCE = main.cpp
+SOURCE = Tests/main.cpp
 
 OSOURCE = main.o
 
