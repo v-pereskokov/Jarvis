@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../Include/Sentence.hpp"
 
 namespace Jarvis {
@@ -34,7 +36,7 @@ namespace Jarvis {
     _phrase = phrase;
   }
   
-  Sentence::phrase Sentence::getSentence() {
+  Sentence::phrase Sentence::getSentence() const {
     return _phrase;
   }
 }

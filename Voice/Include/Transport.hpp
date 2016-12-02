@@ -77,10 +77,10 @@ namespace Jarvis {
       virtual bool send() = 0;
       responseString recv() const;
       bool connect();
-      bool isConnect();
+      bool isConnect() const;
       
       protected methods:
-      bool checkConnection(const socket *curl);
+      bool checkConnection(const socket *curl) const;
       virtual void setOptions() = 0;
       
       private methods:

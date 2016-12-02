@@ -12,11 +12,12 @@
 #include "Command.cpp"
 #include "SerialPort.cpp"
 #include "SpeechKit.cpp"
+#include "Voice.cpp"
 
 using boost::property_tree::ptree;
 
 void voiceJarvis(const std::string &phrase) {
-  std::string audioSamplePath = "afplay Samples/" + phrase + ".wav";
+  std::string audioSamplePath = "afplay ../Samples/" + phrase + ".wav";
   system(audioSamplePath.c_str());
 }
 
@@ -28,7 +29,7 @@ void doing(Jarvis::Arduino::Connection::SerialPort &serial, const std::string &c
 }
 
 std::map<std::string, std::string> handleQuery() {
-  Jarvis::connection::SpeechKit opt("Configs/speechkit.json", std::vector<std::string>{"key", "uuid", "topic", "lang"});
+  Jarvis::connection::SpeechKit opt("../Configs/speechkit.json", std::vector<std::string>{"key", "uuid", "topic", "lang"});
   opt.send();
   std::string response(opt.recv());
   response.erase(response.begin(), response.begin() + response.find("<"));
@@ -70,12 +71,12 @@ int run() {
     Jarvis::Arduino::Connection::SerialPort serial("/dev/tty.HC-06-DevB", 9600);
     Jarvis::Arduino::Connection::SerialPort serial1("/dev/tty.HC-06-DevB-1", 9600);
     std::thread voice(voiceJarvis, "Welcome");
-    system("Scripts/hello.sh");
+    system("../Scripts/hello.sh");
     voice.join();
     std::string exit = "nothing";
     while (true) {
       if (serial.read() == "record") {
-        system("python Scripts/record.py Samples/output.wav");
+        system("python ../Scripts/record.py Samples/output.wav");
         std::map<std::string, std::string> map = handleQuery();
         std::map<std::string, std::pair<std::string, std::string>> cmds{
           {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
@@ -89,22 +90,21 @@ int run() {
           voice.join();
           work.join();
           if (atoi(isDoing.first.c_str()) == 3) {
-            system("afplay Samples/HighwayToHell.mp3");
+            system("afplay ../Samples/HighwayToHell.mp3");
           }
         } else {
           printf("%s\n", command.c_str());
-          system("afplay Samples/Error.wav");
+          system("afplay ../Samples/Error.wav");
         }
-        system("afplay Samples/SomethingElse.wav");
+        system("afplay ../Samples/SomethingElse.wav");
       }
     }
     doing(serial1, "x");
-    system("Scripts/goodbye.sh");
-    system("afplay Samples/Goodbye.wav");
+    system("../Scripts/goodbye.sh");
+    system("afplay ../Samples/Goodbye.wav");
     return 0;
   } catch(boost::system::system_error& e) {
     std::cout<<"Error: "<<e.what()<<std::endl;
     return 1;
   }
-  return 0;
 }

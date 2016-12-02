@@ -53,11 +53,11 @@ namespace Jarvis {
       return checkConnection(_curl);
     }
     
-    bool Transport::isConnect() {
+    bool Transport::isConnect() const {
       return checkConnection(_curl);
     }
     
-    bool Transport::checkConnection(const socket *curl) {
+    bool Transport::checkConnection(const socket *curl) const {
       if (!curl) {
         printf("Connection is lost\nPlease, try again\n");
       }
