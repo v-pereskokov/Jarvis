@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Include/SpeechKit.hpp"
+#include "../include/SpeechKit.hpp"
 
 namespace Jarvis {
   namespace connection {

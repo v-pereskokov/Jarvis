@@ -1,4 +1,4 @@
-#include "../Include/Voice.hpp"
+#include "../include/Voice.hpp"
 #include "Transport.cpp"
 
 namespace Jarvis {
@@ -23,10 +23,9 @@ namespace Jarvis {
     
     bool Voice::execute() {
       if (!findCommand(_waves, _sentence)) {
-        Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"Samples/error.wav"});
+        Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"samples/error.wav"});
         return false;
       }
-      printf("%s\n", _waves.at(_sentence.getSentence()).c_str());
       Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {_waves.at(_sentence.getSentence())
       });
       return true;

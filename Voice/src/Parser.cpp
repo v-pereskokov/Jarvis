@@ -2,7 +2,7 @@
 
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/xml_parser.hpp>
-#include "../Include/Parser.hpp"
+#include "../include/Parser.hpp"
 
 namespace Jarvis {
   using boost::property_tree::read_json;

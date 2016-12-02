@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "../Include/Command.hpp"
+#include "../include/Command.hpp"
 
 namespace Jarvis {
   namespace Commands {

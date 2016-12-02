@@ -4,8 +4,8 @@
 #pragma once
 
 #include <string>
-#include "../Source/Sentence.cpp"
-#include "../Source/Command.cpp"
+#include "../src/Sentence.cpp"
+#include "../src/Command.cpp"
 
 namespace Jarvis {
 #define methods

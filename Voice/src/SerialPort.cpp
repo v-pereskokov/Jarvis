@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Include/SerialPort.hpp"
+#include "../include/SerialPort.hpp"
 
 namespace Jarvis {
   namespace Arduino {

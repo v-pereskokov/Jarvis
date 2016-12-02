@@ -1,23 +1,23 @@
 #pragma once
 
-#include "../Include/Transport.hpp"
+#include "../include/Transport.hpp"
 #include "OptionsList.cpp"
 #include "Parser.cpp"
 
 namespace Jarvis {
   namespace connection {
-    std::size_t writeResponseData(char *ptr, size_t size, size_t nmemb, void *userdata) {
-      std::stringstream *s = static_cast<std::stringstream *>(userdata);
-      size_t n = size * nmemb;
-      s->write(ptr, n);
-      return n;
+    std::size_t writeResponseData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
+      std::stringstream *stream = static_cast<std::stringstream *>(pUserdata);
+      size_t writeSize = size * count;
+      stream->write(pChar, writeSize);
+      return writeSize;
     }
     
-    std::size_t readRequestData(char *ptr, size_t size, size_t nmemb, void *userdata) {
-      std::ifstream* f = static_cast<std::ifstream *>(userdata);
-      size_t n = size * nmemb;
-      f->read(ptr, n);
-      size_t result = f->gcount();
+    std::size_t readRequestData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
+      std::ifstream *stream = static_cast<std::ifstream *>(pUserdata);
+      size_t readSize = size * count;
+      stream->read(pChar, readSize);
+      size_t result = stream->gcount();
       return result;
     }
     
