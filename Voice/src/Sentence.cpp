@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Include/Sentence.hpp"
+#include "../include/Sentence.hpp"
 
 namespace Jarvis {
   Sentence::Sentence(const phrase &phrase)

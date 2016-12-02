@@ -9,8 +9,9 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <memory>
 #include <curl/curl.h>
-#include "../Source/Parser.cpp"
+#include "../src/Parser.cpp"
 
 namespace Jarvis {
   namespace connection {
@@ -22,9 +23,11 @@ namespace Jarvis {
     using Key = std::string;
     using Data = std::string;
     using Map = std::map<Key, Data>;
+    using char_ptr = char *;
+    using void_ptr = void *;
     
-    std::size_t writeResponseData(char *ptr, size_t size, size_t nmemb, void *userdata);
-    std::size_t readRequestData(char *ptr, size_t size, size_t nmemb, void *userdata);
+    std::size_t writeResponseData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata);
+    std::size_t readRequestData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata);
     Map parsingTree(const Jarvis::Parser::Tree &tree);
     
     class Transport {
