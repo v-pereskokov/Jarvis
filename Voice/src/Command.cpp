@@ -4,7 +4,6 @@
 
 namespace Jarvis {
   namespace Commands {
-    
     void Command::execute(const CommandType::commandType &type, const scriptName &script, const argumentsList arguments) {
       argumentsVector list(arguments);
       list.emplace(list.begin(), script);

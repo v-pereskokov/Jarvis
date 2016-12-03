@@ -19,15 +19,15 @@ namespace Jarvis {
     public methods:
     Voice(const path &path, const name &name);
     ~Voice() = default;
+    Voice(const Voice &copy) = default;
+    Voice(Voice &&copy) = default;
+    Voice & operator=(const Voice &copy) = default;
     bool say();
     void setSentence(const Sentence &sentence);
     Sentence getSentence() const;
     
     private methods:
     Voice() = delete;
-    Voice(const Voice &copy) = delete;
-    Voice(Voice &&copy) = delete;
-    Voice & operator=(const Voice &copy) = delete;
     bool execute();
     bool findCommand(const connection::Map &waves, const Sentence &sentence);
     
