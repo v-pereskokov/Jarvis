@@ -1,7 +1,0 @@
-package Jarvis;
-
-message AddData
-{
-    optional bytes audioData = 1;
-    required bool lastChunk = 2;
-}
