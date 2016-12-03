@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.7)
 
-project(Jarvis)
+project(Jarvis CXX)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall -I/opt/local/include -L/opt/local/lib -lboost_system -lcurl")
 set(Boost_USE_STATIC_LIBS OFF)
