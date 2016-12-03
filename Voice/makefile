@@ -4,7 +4,7 @@ BINCLUDE = -I/opt/local/include
 BLIB = -L/opt/local/lib
 LBOOST = -lboost_system
 LCURL = -lcurl
-SOURCE = Tests/main.cpp
+SOURCE = Tests/test.cpp
 OSOURCE = main.o
 CFLAG = -c
 
