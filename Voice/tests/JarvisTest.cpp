@@ -1,4 +1,4 @@
-#include "../include/Jarvis.hpp"
+#include "../src/Jarvis.cpp"
 #include "catch.hpp"
 
 TEST_CASE("Jarvis parse voice", "[voice]" ) {
