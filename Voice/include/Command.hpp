@@ -27,7 +27,7 @@ namespace Jarvis {
       using executeCommand = std::string;
       
     public:
-      static void execute(const CommandType::commandType &type, const scriptName &script, const argumentsList arguments);
+      static void execute(const CommandType::commandType &type, const scriptName &script, const argumentsList arguments = {});
       
     private:
       static void terminalExecute(const argumentsVector &arguments);

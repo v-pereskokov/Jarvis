@@ -1,5 +1,4 @@
-#ifndef OPTIONSLIST_H
-#define OPTIONSLIST_H
+#pragma once
 
 #include <algorithm>
 #include "Transport.cpp"
@@ -46,5 +45,3 @@ namespace Jarvis {
     }
   }
 }
-
-#endif // OPTIONSLIST_H
