@@ -8,6 +8,6 @@ matrix:
 script:
   - cd Voice/
   - mkdir build
-  - make -f makefile
+  - make
   - cd build
   - ./test
