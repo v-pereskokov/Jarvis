@@ -11,7 +11,7 @@ CFLAG = -c
 all: main
 	rm -rf *.o
 main: $(OSOURCE)
-	$(CC) $(C11) $(LBOOST) $(BINCLUDE) $(BLIB) $(OSOURCE) $(LCURL) -o test 
+	$(CC) $(C11) $(LBOOST) $(BINCLUDE) $(BLIB) $(OSOURCE) $(LCURL) -o build/test 
 $(OSOURCE):
 	$(CC) $(C11) $(CFLAG) $(SOURCE)
 run:

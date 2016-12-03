@@ -29,7 +29,7 @@ namespace Jarvis {
     public methods:
     static Jarvis& instance();
     static void say(Voice &voice, const sayPhrase &phrase);
-    static void toArduino();
+    static stringVoice toArduino();
 //    static void toArduino(SerialPort &serial, SerialPort &serial1);
     
     private methods:

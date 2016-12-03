@@ -28,35 +28,26 @@ namespace Jarvis {
     voice.say();
   }
   
-  void Jarvis::toArduino() {
+  Jarvis::stringVoice Jarvis::toArduino() {
     using mapCommands = std::map<std::string, std::pair<std::string, std::string>>;
-    try {
-      Commands::Command::execute(Commands::CommandType::shell, "./scripts/hello.sh", {});
-      Commands::Command::execute(Commands::CommandType::music, "", { "./samples/Welcome.wav" });
-      while (true) {
-        Commands::Command::execute(Commands::CommandType::python, "./scripts/record.py", { "./samples/output.wav" });
-        mapCommands cmds{
-          {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
-        stringVoice command = sendToYandexSpeechKit();
-        printf("string: %s\n", command.c_str());
-        Commands::Command::execute(Commands::CommandType::music, "", { "./samples/SomethingElse.wav" });
-        char c;
-        scanf("%c", &c);
-      }
-      Commands::Command::execute(Commands::CommandType::shell, "./scripts/goodbye.sh", {});
-      Commands::Command::execute(Commands::CommandType::music, "", { "./samples/Goodbye.wav" });
-    } catch(boost::system::system_error& e) {
-      printf("Error: %s\n", e.what());
-    } catch (...) {
-      printf("Unknown error\n");
-    }
+    Commands::Command::execute(Commands::CommandType::shell, "../scripts/hello.sh", {});
+    Commands::Command::execute(Commands::CommandType::music, "", { "../samples/Welcome.wav" });
+    Commands::Command::execute(Commands::CommandType::python, "../scripts/record.py", { "../samples/output.wav" });
+    mapCommands cmds{
+      {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
+    stringVoice command = sendToYandexSpeechKit();
+    printf("string: %s\n", command.c_str());
+    Commands::Command::execute(Commands::CommandType::music, "", { "../samples/SomethingElse.wav" });
+    Commands::Command::execute(Commands::CommandType::shell, "../scripts/goodbye.sh", {});
+    Commands::Command::execute(Commands::CommandType::music, "", { "../samples/Goodbye.wav" });
+    return command;
   }
   
   Jarvis::Jarvis(Voice &voice)
   :_voice(voice) {}
   
   Jarvis::stringVoice Jarvis::sendToYandexSpeechKit() {
-    return getMapFromYandexSpeechKit("./conf/speechkit.json")["variant"];
+    return getMapFromYandexSpeechKit("../conf/speechkit.json")["variant"];
   }
   
   void Jarvis::sendToSerialPort(SerialPort &serial, const std::string &command) {
