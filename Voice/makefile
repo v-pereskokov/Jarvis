@@ -5,7 +5,7 @@ BLIB = -L/opt/local/lib
 LBOOST = -lboost_system
 LCURL = -lcurl
 SOURCE = Tests/test.cpp
-OSOURCE = main.o
+OSOURCE = test.o
 CFLAG = -c
 
 all: main

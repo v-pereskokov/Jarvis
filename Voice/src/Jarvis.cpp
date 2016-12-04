@@ -36,7 +36,6 @@ namespace Jarvis {
     mapCommands cmds{
       {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
     stringVoice command = sendToYandexSpeechKit();
-    printf("string: %s\n", command.c_str());
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/SomethingElse.wav" });
     Commands::Command::execute(Commands::CommandType::shell, "../scripts/goodbye.sh", {});
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/Goodbye.wav" });
