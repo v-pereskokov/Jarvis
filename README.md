@@ -37,13 +37,13 @@
 <a name="GUI"></a>  
 ##Графический интерфейс  
 ===  
-![GUI1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/1.jpeg)  
+![GUI1](/docs/1.jpeg)  
 ===  
-![GUI1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/2.jpeg)  
+![GUI1](/docs/2.jpeg)  
 ===  
-![GUI1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/3.jpeg)  
+![GUI1](/docs/3.jpeg)  
 ===  
-![GUI1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/4.jpeg)  
+![GUI1](/docs/4.jpeg)  
 ===  
 <a name="Voice"></a>  
 ##Распознавание голоса  
@@ -57,20 +57,20 @@ SpeechKit Cloud — это программа, которая открывает
 * голосовой интерфейс электронных роботов;  
 * голосовое управление бытовой техникой и т.д.  
 Схема управления представлена ниже:  
-![VOICE1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/Voice1.png)  
+![VOICE1](/docs/Voice1.png)  
 Как видно из схемы - пользователь произносит команду, которая преобразуется в строку на сервере "Yandex", после чего произойдет разбор команды на лексемы и выявления главных частей. Далее составится запрос для "мозга" системы, который отправится к устройству. После того, как устройство выполнит указанное действие - оно отправит серверу через "мозг" подтверждение выполнилась ли команда и в каком состоянии находилось устройство в момент отправки обратного сообщения.   
 <a name = "Arduino"></a>  
 ##Arduino  
 "Мозг" системы состоит из плат Arduino и множества датчиков. Ниже приведены схемы подключения некоторых датчиков. 
 ```Схема 1```  
-![Arduino1](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/Arduino1.png)  
+![Arduino1](/docs/Arduino1.png)  
 На ```Схеме 1``` представлено подключение датчиков шума, освещенности и зуммер.   
 ===  
 ```Схема 2```  
-![Arduino2](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/Arduino2.png)  
+![Arduino2](/docs/Arduino2.png)  
 На этой схеме изображена схема подключения Bluetooth - датчика. 
 ===  
-![Arduino3](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/Arduino3.png)  
+![Arduino3](/docs/Arduino3.png)  
 Выше описано устройство беспроводного соединения по Bluetooth - "HC-06".  
 ===  
 <a name="technologies"></a>  
