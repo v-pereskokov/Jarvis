@@ -214,7 +214,23 @@ struct ptree
 
 ```libcurl``` свободна, потокобезопасна, совместима с IPv6, функциональна, имеет хорошую поддержку, быстрая, тщательно задокументирована и уже используется во многих известных, крупных и успешных компаний и в многочисленных приложениях.
 
-В нашем случае - по протоколу HTTP отправляются запросы к серверу ```Yandex SpeechKitCloud```. 
+В нашем случае - по протоколу HTTP отправляются запросы к серверу ```Yandex SpeechKitCloud```.
+
+<a name="ide"></a>  
+### IDE
+
+Были использованы следующие IDE. 
+Для реализации графического интерфейса отлично подходит IDE от создателей фреймворка ```Qt```:
+* [Qt Creator](https://www.qt.io/ru/download/)
+
+Для написания кода на языках ```C++``` и ```Python``` существует серия отличных IDE от [JetBrains](https://www.jetbrains.com/):
+
+* [Clion](https://www.jetbrains.com/clion/)
+* [PyCharm](https://www.jetbrains.com/pycharm/)
+
+Для написания кода под Arduino существует специальная IDE:
+
+* [Arduino](https://www.arduino.cc/en/Main/Software)
 
 <a name="diagrams"></a>  
 ## UML-диаграммы
