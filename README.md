@@ -45,7 +45,6 @@
 
 <a name="GUI"></a>
 ## Графический интерфейс    
-<hr>
 ![GUI1](/docs/1.jpg)  
 <hr>
 ![GUI1](/docs/2.jpg)  
