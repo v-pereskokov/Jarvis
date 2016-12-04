@@ -1,8 +1,6 @@
 # J.A.R.V.I.S
 [![Build Status](https://travis-ci.org/vladpereskokov/Jarvis.svg?branch=voice)](https://travis-ci.org/vladpereskokov/Jarvis)
 ===
-![J.A.R.V.I.S. brain](/docs/home.png)
-===
 ## Оглавление
 + [Введение](#introduction)
 + [Графический интерфейс](#GUI)
