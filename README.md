@@ -8,7 +8,7 @@
 + [Графический интерфейс](#GUI)
 + [Распознавание голоса](#Voice)
 + [Arduino](#Arduino)
-===  
+
 <a name="introduction"></a>
 ##Введение
 + [Для чего мне эта система?](#why)
@@ -37,13 +37,13 @@
 <a name="GUI"></a>  
 ##Графический интерфейс  
 ===  
-![GUI1](/docs/1.jpeg)  
+![GUI1](/docs/1.jpg)  
 ===  
-![GUI1](/docs/2.jpeg)  
+![GUI1](/docs/2.jpg)  
 ===  
-![GUI1](/docs/3.jpeg)  
+![GUI1](/docs/3.jpg)  
 ===  
-![GUI1](/docs/4.jpeg)  
+![GUI1](/docs/4.jpg)  
 ===  
 <a name="Voice"></a>  
 ##Распознавание голоса  
