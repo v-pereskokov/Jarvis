@@ -1,0 +1,778 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classJarvis_1_1connection_1_1Transport">
+<title>Jarvis::connection::Transport class Reference</title>
+<para>
+    <programlisting>#include <link linkend="Transport_8hpp">&lt;Transport.hpp&gt;</link></programlisting>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef CURLcode  <link linkend="classJarvis_1_1connection_1_1Transport_1aa08d781f1960aea12a898a9f50c7f441">codeInfo</link><para><emphasis>Определяет тип для возвращаемого с сервера кода ответа</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef curl_slist  <link linkend="classJarvis_1_1connection_1_1Transport_1a838719112fad8ddfcd103fbf3393cc7c">headerList</link><para><emphasis>Определяет тип для заголовков, отправляемых на сервер</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1ac28ed9eef3bd81748ae1b5bf437f4422">jPath</link><para><emphasis>Определяет тип для пути до конфигурационного файла</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::stringstream  <link linkend="classJarvis_1_1connection_1_1Transport_1ae191c4280af298582093adcee64e58ac">response</link><para><emphasis>Определяет тип для потока возвращаемых с сервера данных</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1adb5ecf815ccfa5d0c23b3462558a47f6">responseString</link><para><emphasis>Определяет тип для строки, преобразованной из потока</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::ifstream  <link linkend="classJarvis_1_1connection_1_1Transport_1aef8a3251456d06d4084f221deacc63d1">file</link><para><emphasis>Определяет тип для файла</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1ad4dba717f33119386ba9fd662474fc14">yandexOption</link><para><emphasis>Определяет тип для параметра</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::map&lt; std::string, std::string &gt;  <link linkend="classJarvis_1_1connection_1_1Transport_1a0fd11c14293da1c1ccc98c55161491d7">jList</link><para><emphasis>Определяет тип для отображения std::string -&gt; std::string.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1a6870ef17197f876a6d62ebea1455fb48">url</link><para><emphasis>Определяет тип для URL.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1a72e44f56681bd1ee3cbfd7a81beba058">option</link><para><emphasis>Определяет тип для имени параметра</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1connection_1_1Transport_1ae80f1c4c8a85f182eefc39b56a17316b">optionValue</link><para><emphasis>Определяет тип для значения параметра</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::map&lt; std::string, std::string &gt;  <link linkend="classJarvis_1_1connection_1_1Transport_1a54c4225323a0d164b1eb60af2ade06fa">optionList</link><para><emphasis>Определяет тип для отображения параметров</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::vector&lt; yandexOption &gt;  <link linkend="classJarvis_1_1connection_1_1Transport_1a411b46556e7b8acb9c7ac38eb57950a0">yandexOptions</link><para><emphasis>Определяет тип для списка ключей</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="classJarvis_1_1connection_1_1Transport_1a2cb5e9e28fa84404e8b002c65fe8ecd0">OptionsList</link>  <link linkend="classJarvis_1_1connection_1_1Transport_1a81b1e5dc6c0a246fa2a225a1ff185b95">property</link><para><emphasis>Определяет тип для параметров отправки</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>protected usings</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>public structs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Открытые атрибуты</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>protected params</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>private params</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>property _properties</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>headerList * _headers</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>response _response</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1a2cb5e9e28fa84404e8b002c65fe8ecd0">OptionsList</link> (
+const jPath &amp; path, const yandexOptions yandexOptions)<para><emphasis>Конструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>optionValue <link linkend="classJarvis_1_1connection_1_1Transport_1a46481607af9201bd96cd37f44ab3f02a">getOption</link> (
+const option &amp; option)<para><emphasis>Метод получения значения параметра</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1a6e9599cad725bc1d305908a0c6325511">~OptionsList</link> (
+)<para><emphasis>Деструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1ab80ef9d2e0ff34de3a81fe653fd66563">OptionsList</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1a8e67b3b2abea1422f25bf1fa583c3081">OptionsList</link> (
+const OptionsList &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classJarvis_1_1connection_1_1Transport_1a2cb5e9e28fa84404e8b002c65fe8ecd0">OptionsList</link> &amp; <link linkend="classJarvis_1_1connection_1_1Transport_1ad32df85374b4ebe723e829521fde41ec">operator=</link> (
+const <link linkend="classJarvis_1_1connection_1_1Transport_1a2cb5e9e28fa84404e8b002c65fe8ecd0">OptionsList</link> &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classJarvis_1_1connection_1_1Transport_1aeb9700e28a25af20c96beccf4b6b3aef">fillList</link> (
+const jList &amp; list)<para><emphasis>Метод заполнения списка параметров</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>url <link linkend="classJarvis_1_1connection_1_1Transport_1ab08175e845055cdd1ccbe7994f0c1973">makeUrl</link> (
+const jList &amp; list, url &amp; url)<para><emphasis>Метод составления URL&apos;а из ключей и их значений для post запроса</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classJarvis_1_1connection_1_1Transport_1a41a2e836f9c20e4d4aae16ebcc895b8c">findYandexOption</link> (
+const yandexOption &amp; option)<para><emphasis>Метод поиска ключевых параметров</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1a2fce583b7c16902b5c2f4ad492371e2c">Transport</link> (
+const jPath &amp; path, const OptionsList::yandexOptions yandexOptions)<para><emphasis>Конструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classJarvis_1_1connection_1_1Transport_1aa074aa7a32a3bf78ec64aba07984b502">~Transport</link> (
+)<para><emphasis>Деструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="classJarvis_1_1connection_1_1Transport_1ad0116f6773802fd75ea6795313051a96">send</link> (
+)<para><emphasis>Отправка данных</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>responseString <link linkend="classJarvis_1_1connection_1_1Transport_1a25b1e13d35fe44466a4f5bdddd8ea499">recv</link> (
+)<para><emphasis>Получение данных</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classJarvis_1_1connection_1_1Transport_1abce3b6342c4a90603b187485422828c6">connect</link> (
+)<para><emphasis>Соединение</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classJarvis_1_1connection_1_1Transport_1a9b15d1e6a7be779dcf8284ff0f17a8b0">isConnect</link> (
+)<para><emphasis>Проверка соединения</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classJarvis_1_1connection_1_1Transport_1ae97760ea03453e9621027051c99a1c72">checkConnection</link> (
+const socket * curl)<para><emphasis>Проверка соединения</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classJarvis_1_1connection_1_1Transport_1aea38743d9d867274991c19f1747e6f11">setOptions</link> (
+)<para><emphasis>Задание параметров отправки</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1ac2ad1d9e23cba875640ebbcdccaa5044">Transport</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1connection_1_1Transport_1ab65f3a824a24bd7d33fb8bf8b191d3ca">Transport</link> (
+const <link linkend="classJarvis_1_1connection_1_1Transport">Transport</link> &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classJarvis_1_1connection_1_1Transport">Transport</link> &amp; <link linkend="classJarvis_1_1connection_1_1Transport_1ae8dc60fe1e4b9cdd7730674ced147000">operator=</link> (
+const <link linkend="classJarvis_1_1connection_1_1Transport">Transport</link> &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Абстрактный класс для &quot;общения&quot; с сервером </para>
+    </simplesect>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1aa08d781f1960aea12a898a9f50c7f441">
+                <title>using Jarvis::connection::Transport::codeInfo =  CURLcode</title> <emphasis>Определяет тип для возвращаемого с сервера кода ответа</emphasis>
+                
+<para>CURLcode codeInfo </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a838719112fad8ddfcd103fbf3393cc7c">
+                <title>using Jarvis::connection::Transport::headerList =  curl_slist</title> <emphasis>Определяет тип для заголовков, отправляемых на сервер</emphasis>
+                
+<para>curl_slist headerList </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ac28ed9eef3bd81748ae1b5bf437f4422">
+                <title>using Jarvis::connection::Transport::jPath =  std::string</title> <emphasis>Определяет тип для пути до конфигурационного файла</emphasis>
+                
+<para>std::string jPath </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ae191c4280af298582093adcee64e58ac">
+                <title>using Jarvis::connection::Transport::response =  std::stringstream</title> <emphasis>Определяет тип для потока возвращаемых с сервера данных</emphasis>
+                
+<para>std::stringstream response </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1adb5ecf815ccfa5d0c23b3462558a47f6">
+                <title>using Jarvis::connection::Transport::responseString =  std::string</title> <emphasis>Определяет тип для строки, преобразованной из потока</emphasis>
+                
+<para>std::string responseString </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1aef8a3251456d06d4084f221deacc63d1">
+                <title>using Jarvis::connection::Transport::file =  std::ifstream</title> <emphasis>Определяет тип для файла</emphasis>
+                
+<para>std::ifstream file </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ad4dba717f33119386ba9fd662474fc14">
+                <title>using Jarvis::connection::Transport::yandexOption =  std::string</title> <emphasis>Определяет тип для параметра</emphasis>
+                
+<para>std::string yandexOption </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a0fd11c14293da1c1ccc98c55161491d7">
+                <title>using Jarvis::connection::Transport::jList =  std::map&lt;std::string, std::string&gt;</title> <emphasis>Определяет тип для отображения std::string -&gt; std::string.</emphasis>
+                
+<para>std::map&lt;std::string, std::string&gt; jList </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a6870ef17197f876a6d62ebea1455fb48">
+                <title>using Jarvis::connection::Transport::url =  std::string</title> <emphasis>Определяет тип для URL.</emphasis>
+                
+<para>std::string url </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a72e44f56681bd1ee3cbfd7a81beba058">
+                <title>using Jarvis::connection::Transport::option =  std::string</title> <emphasis>Определяет тип для имени параметра</emphasis>
+                
+<para>std::string option </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ae80f1c4c8a85f182eefc39b56a17316b">
+                <title>using Jarvis::connection::Transport::optionValue =  std::string</title> <emphasis>Определяет тип для значения параметра</emphasis>
+                
+<para>std::string optionValue </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a54c4225323a0d164b1eb60af2ade06fa">
+                <title>using Jarvis::connection::Transport::optionList =  std::map&lt;std::string, std::string&gt;</title> <emphasis>Определяет тип для отображения параметров</emphasis>
+                
+<para>std::map&lt;std::string, std::string&gt; optionList </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a411b46556e7b8acb9c7ac38eb57950a0">
+                <title>using Jarvis::connection::Transport::yandexOptions =  std::vector&lt;yandexOption&gt;</title> <emphasis>Определяет тип для списка ключей</emphasis>
+                
+<para>std::vector&lt;yandexOption&gt; yandexOptions </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a81b1e5dc6c0a246fa2a225a1ff185b95">
+                <title>using Jarvis::connection::Transport::property =  OptionsList</title> <emphasis>Определяет тип для параметров отправки</emphasis>
+                
+<para>OptionsList property </para>
+
+            </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+        <section>
+            <title>Данные класса</title>
+            <simplesect>
+                <title>protected Jarvis::connection::Transport::params</title>                
+<para>Список параметров</para>
+
+<para>Сокет </para>
+
+                <para>Definition at line 207 of file Transport.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Transport.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>private Jarvis::connection::Transport::params</title>                
+<para>Список ключевых параметров </para>
+
+                <para>Definition at line 210 of file Transport.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Transport.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>property Jarvis::connection::Transport::_properties</title>                
+<para>Параметры соединения </para>
+
+                <para>Definition at line 271 of file Transport.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Transport.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>headerList* Jarvis::connection::Transport::_headers</title>                
+<para>Заголовки </para>
+
+                <para>Definition at line 272 of file Transport.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Transport.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>response Jarvis::connection::Transport::_response</title>                
+<para>Ответ с сервера </para>
+
+                <para>Definition at line 273 of file Transport.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Transport.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a2cb5e9e28fa84404e8b002c65fe8ecd0">
+                <title>Jarvis::connection::Transport::OptionsList (const jPath &amp;path, const yandexOptions yandexOptions)</title> <emphasis>Конструктор</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>path</entry>
+                                <entry>
+<para>Путь до конфигурационного файла </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>yandexOptions</entry>
+                                <entry>
+<para>Список с необходимыми ключами </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a46481607af9201bd96cd37f44ab3f02a">
+                <title>optionValue Jarvis::connection::Transport::getOption (const option &amp;option)</title> <emphasis>Метод получения значения параметра</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>option</entry>
+                                <entry>
+<para>Искомый параметр </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Возвращает: </title>
+
+<para>optionValue Значение заданного параметра </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a6e9599cad725bc1d305908a0c6325511">
+                <title>Jarvis::connection::Transport::~OptionsList ()=default</title> <emphasis>Деструктор</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ab80ef9d2e0ff34de3a81fe653fd66563">
+                <title>Jarvis::connection::Transport::OptionsList ()=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a8e67b3b2abea1422f25bf1fa583c3081">
+                <title>Jarvis::connection::Transport::OptionsList (const OptionsList &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ad32df85374b4ebe723e829521fde41ec">
+                <title>OptionsList&amp; Jarvis::connection::Transport::operator= (const OptionsList &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1aeb9700e28a25af20c96beccf4b6b3aef">
+                <title>void Jarvis::connection::Transport::fillList (const jList &amp;list)</title> <emphasis>Метод заполнения списка параметров</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>list</entry>
+                                <entry>
+<para>Отображение из распарсенного дерева </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ab08175e845055cdd1ccbe7994f0c1973">
+                <title>url Jarvis::connection::Transport::makeUrl (const jList &amp;list, url &amp;url)</title> <emphasis>Метод составления URL&apos;а из ключей и их значений для post запроса</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>list</entry>
+                                <entry>
+<para>Отображение из распарсенного дерева </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>url</entry>
+                                <entry>
+<para>Сырой url </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Возвращает: </title>
+
+<para>url URL для отправки </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a41a2e836f9c20e4d4aae16ebcc895b8c">
+                <title>bool Jarvis::connection::Transport::findYandexOption (const yandexOption &amp;option)</title> <emphasis>Метод поиска ключевых параметров</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>option</entry>
+                                <entry>
+<para>Искомый параметр </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Возвращает: </title>
+
+<para>bool Подтверждение - найдено ли </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a2fce583b7c16902b5c2f4ad492371e2c">
+                <title>Jarvis::connection::Transport::Transport (const jPath &amp;path, const OptionsList::yandexOptions yandexOptions)</title> <emphasis>Конструктор</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>path</entry>
+                                <entry>
+<para>Путь до конфигурационного файла </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>yandexOptions</entry>
+                                <entry>
+<para>Список нужных ключей для конфигурационного файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1aa074aa7a32a3bf78ec64aba07984b502">
+                <title>virtual Jarvis::connection::Transport::~Transport ()</title> <emphasis>Деструктор</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ad0116f6773802fd75ea6795313051a96">
+                <title>virtual bool Jarvis::connection::Transport::send ()=0</title> <emphasis>Отправка данных</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>bool Подтверждение отправки </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a25b1e13d35fe44466a4f5bdddd8ea499">
+                <title>responseString Jarvis::connection::Transport::recv () const</title> <emphasis>Получение данных</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>responseString Полученное сообщение </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1abce3b6342c4a90603b187485422828c6">
+                <title>bool Jarvis::connection::Transport::connect ()</title> <emphasis>Соединение</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>bool Подтверждение соединения </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1a9b15d1e6a7be779dcf8284ff0f17a8b0">
+                <title>bool Jarvis::connection::Transport::isConnect () const</title> <emphasis>Проверка соединения</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>bool Подтверждение соединения </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ae97760ea03453e9621027051c99a1c72">
+                <title>bool Jarvis::connection::Transport::checkConnection (const socket *curl) const</title> <emphasis>Проверка соединения</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>curl</entry>
+                                <entry>
+<para>Сокет для проверки </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Возвращает: </title>
+
+<para>bool Подтверждение соединения </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1aea38743d9d867274991c19f1747e6f11">
+                <title>virtual void Jarvis::connection::Transport::setOptions ()=0</title> <emphasis>Задание параметров отправки</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ac2ad1d9e23cba875640ebbcdccaa5044">
+                <title>Jarvis::connection::Transport::Transport ()=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ab65f3a824a24bd7d33fb8bf8b191d3ca">
+                <title>Jarvis::connection::Transport::Transport (const Transport &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1connection_1_1Transport_1ae8dc60fe1e4b9cdd7730674ced147000">
+                <title>Transport&amp; Jarvis::connection::Transport::operator= (const Transport &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+</section>

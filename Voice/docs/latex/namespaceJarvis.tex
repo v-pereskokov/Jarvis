@@ -1,0 +1,157 @@
+\hypertarget{namespaceJarvis}{}\section{Пространство имен Jarvis}
+\label{namespaceJarvis}\index{Jarvis@{Jarvis}}
+
+
+Основной namespace для всего проекта  
+
+
+\subsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classJarvis_1_1Jarvis}{Jarvis}
+\item 
+class \hyperlink{classJarvis_1_1Parser}{Parser}
+\begin{DoxyCompactList}\small\item\em Класс для парсинга файлов различных типов \end{DoxyCompactList}\item 
+class \hyperlink{classJarvis_1_1Sentence}{Sentence}
+\begin{DoxyCompactList}\small\item\em Класс для работы с предложениями к \hyperlink{classJarvis_1_1Jarvis}{Jarvis}. \end{DoxyCompactList}\item 
+class \hyperlink{classJarvis_1_1Voice}{Voice}
+\begin{DoxyCompactList}\small\item\em Описывает объект голос \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+Parser\+::\+Tree \hyperlink{namespaceJarvis_a317317aef901d7a097472293993d35d0}{json\+Parse} (Parser\+::string\+Target \&stream)
+\item 
+Parser\+::\+Tree \hyperlink{namespaceJarvis_aee6fb2e55e20f8df7e199e5adbe43fa1}{xml\+Parse} (Parser\+::string\+Target \&stream)
+\item 
+bool \hyperlink{namespaceJarvis_a333da3058dd9eba2fb455fce8edd2557}{operator==} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\item 
+bool \hyperlink{namespaceJarvis_a30effa4f0618d13d82a08b61222841c3}{operator!=} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\item 
+bool \hyperlink{namespaceJarvis_ae92529451bff5ef1a8e6117041b0d4eb}{operator$>$} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\item 
+bool \hyperlink{namespaceJarvis_a150bb3f2da01868ba25056a7b602420a}{operator$<$} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\item 
+bool \hyperlink{namespaceJarvis_a4f81241fea0f46c08819fbbce5b115ed}{operator$>$=} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\item 
+bool \hyperlink{namespaceJarvis_a0df10f752b2586fd4069ef999f744c04}{operator$<$=} (const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&lhs, const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Основной namespace для всего проекта 
+
+\subsection{Функции}
+\mbox{\Hypertarget{namespaceJarvis_a317317aef901d7a097472293993d35d0}\label{namespaceJarvis_a317317aef901d7a097472293993d35d0}} 
+\index{Jarvis@{Jarvis}!json\+Parse@{json\+Parse}}
+\index{json\+Parse@{json\+Parse}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{json\+Parse()}{jsonParse()}}
+{\footnotesize\ttfamily Parser\+::\+Tree Jarvis\+::json\+Parse (\begin{DoxyParamCaption}\item[{Parser\+::string\+Target \&}]{stream }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_a30effa4f0618d13d82a08b61222841c3}\label{namespaceJarvis_a30effa4f0618d13d82a08b61222841c3}} 
+\index{Jarvis@{Jarvis}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_a150bb3f2da01868ba25056a7b602420a}\label{namespaceJarvis_a150bb3f2da01868ba25056a7b602420a}} 
+\index{Jarvis@{Jarvis}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_a0df10f752b2586fd4069ef999f744c04}\label{namespaceJarvis_a0df10f752b2586fd4069ef999f744c04}} 
+\index{Jarvis@{Jarvis}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_a333da3058dd9eba2fb455fce8edd2557}\label{namespaceJarvis_a333da3058dd9eba2fb455fce8edd2557}} 
+\index{Jarvis@{Jarvis}!operator==@{operator==}}
+\index{operator==@{operator==}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_ae92529451bff5ef1a8e6117041b0d4eb}\label{namespaceJarvis_ae92529451bff5ef1a8e6117041b0d4eb}} 
+\index{Jarvis@{Jarvis}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_a4f81241fea0f46c08819fbbce5b115ed}\label{namespaceJarvis_a4f81241fea0f46c08819fbbce5b115ed}} 
+\index{Jarvis@{Jarvis}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Jarvis\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{lhs,  }\item[{const \hyperlink{classJarvis_1_1Sentence}{Sentence} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lhs} & Левый операнд \\
+\hline
+{\em rhs} & Правый операнд \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+bool Результат сравнения 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceJarvis_aee6fb2e55e20f8df7e199e5adbe43fa1}\label{namespaceJarvis_aee6fb2e55e20f8df7e199e5adbe43fa1}} 
+\index{Jarvis@{Jarvis}!xml\+Parse@{xml\+Parse}}
+\index{xml\+Parse@{xml\+Parse}!Jarvis@{Jarvis}}
+\subsubsection{\texorpdfstring{xml\+Parse()}{xmlParse()}}
+{\footnotesize\ttfamily Parser\+::\+Tree Jarvis\+::xml\+Parse (\begin{DoxyParamCaption}\item[{Parser\+::string\+Target \&}]{stream }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}

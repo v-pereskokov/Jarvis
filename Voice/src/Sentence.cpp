@@ -22,6 +22,12 @@ namespace Jarvis {
     return *this;
   }
   
+  Sentence & Sentence::operator=(Sentence &&copy) {
+    _phrase = copy._phrase;
+    copy._phrase = "";
+    return *this;
+  }
+  
   void Sentence::setSentence(const Sentence &sentence) {
     if (this == &sentence) {
       return;

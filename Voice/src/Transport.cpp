@@ -6,14 +6,14 @@
 
 namespace Jarvis {
   namespace connection {
-    std::size_t writeResponseData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
+    size_t writeResponseData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
       std::stringstream *stream = static_cast<std::stringstream *>(pUserdata);
       size_t writeSize = size * count;
       stream->write(pChar, writeSize);
       return writeSize;
     }
     
-    std::size_t readRequestData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
+    size_t readRequestData(char_ptr pChar, size_t size, size_t count, void_ptr pUserdata) {
       std::ifstream *stream = static_cast<std::ifstream *>(pUserdata);
       size_t readSize = size * count;
       stream->read(pChar, readSize);

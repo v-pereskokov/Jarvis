@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <info>
+    <title>Jarvis</title>
+    </info>
+    <chapter>
+        <title>Namespace Documentation</title>
+        <xi:include href="namespaceArduino.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceboost_1_1asio.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceCommands.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceCommandType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceconnection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceConnection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis_1_1Arduino.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis_1_1Arduino_1_1Connection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis_1_1Commands.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis_1_1Commands_1_1CommandType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespaceJarvis_1_1connection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Классы</title>
+        <xi:include href="classJarvis_1_1Commands_1_1Command.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1Jarvis.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classboost_1_1noncopyable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1Parser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1Sentence.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1connection_1_1SpeechKit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1connection_1_1Transport.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classJarvis_1_1Voice.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Файлы</title>
+        <xi:include href="Command_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="Jarvis_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="Parser_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="Sentence_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="SerialPort_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="SpeechKit_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="Transport_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="Voice_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+</book>
