@@ -221,12 +221,12 @@ struct ptree
 
 Представлена общая схема проекта:
 
-![J.A.R.V.I.S. brain](/docs/UML1.png)
+![UML1](/docs/UML1.png)
 
 Ниже Вы можете увидеть диаграмму классов (```По мере добавления будет меняться```):
 
-![J.A.R.V.I.S. brain](/docs/UML3.png)
+![UML2](/docs/UML3.png)
 
 Рассмотрим поподробнее схему общения системы ```J.A.R.V.I.S.``` с сервером ```Yandex SpeechKitCloud```:
 
-[J.A.R.V.I.S. brain](/docs/UML2.png)
+[UML3](/docs/UML2.png)
