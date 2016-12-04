@@ -1,7 +1,7 @@
 # J.A.R.V.I.S
 [![Build Status](https://travis-ci.org/vladpereskokov/Jarvis.svg?branch=voice)](https://travis-ci.org/vladpereskokov/Jarvis)
 ===
-## [Документация](/Voice/docs/latex/documentation.pdf)
+### [Документация](/Voice/docs/latex/documentation.pdf)
 ## Оглавление
 + [Введение](#introduction)
 + [Графический интерфейс](#GUI)
