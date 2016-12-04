@@ -229,4 +229,4 @@ struct ptree
 
 Рассмотрим поподробнее схему общения системы ```J.A.R.V.I.S.``` с сервером ```Yandex SpeechKitCloud```:
 
-[UML3](/docs/UML2.png)
+![UML3](/docs/UML2.png)
