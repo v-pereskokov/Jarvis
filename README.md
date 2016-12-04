@@ -90,7 +90,6 @@ SpeechKit Cloud — это программа, которая открывает
 
 ![Arduino3](/docs/Arduino3.png)  
 Выше описано устройство беспроводного соединения по Bluetooth - "HC-06".  
-<hr>
 
 <a name="server"></a>  
 ## Сервер (```soon```)
