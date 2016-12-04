@@ -93,8 +93,7 @@ SpeechKit Cloud — это программа, которая открывает
 <hr>
 
 <a name="server"></a>  
-## Сервер  
-```soon```
+## Сервер (```soon```)
 
 <a name="technologies"></a>  
 ## Технологии  
