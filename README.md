@@ -2,20 +2,19 @@
 [![Build Status](https://travis-ci.org/vladpereskokov/Jarvis.svg?branch=voice)](https://travis-ci.org/vladpereskokov/Jarvis)
 ===
 ![J.A.R.V.I.S. brain](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/home.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 ===
 ##Оглавление
 + [Введение](#introduction)
 + [Графический интерфейс](#GUI)
 + [Распознавание голоса](#Voice)
 + [Arduino](#Arduino)
-+ [Технологии](#technologies)
 ===  
 <a name="introduction"></a>
 ##Введение
 + [Для чего мне эта система?](#why)
 + [Почему именно эта система?](#feautures)
 + [Рассмотрение аналогов](#analogs)
-+ [Дополнительные функции](#helpers)
 ===
 <a name="why"></a>   
 ###Для чего мне эта система?  
