@@ -1,7 +1,7 @@
 #J.A.R.V.I.S
 [![Build Status](https://travis-ci.org/vladpereskokov/Jarvis.svg?branch=voice)](https://travis-ci.org/vladpereskokov/Jarvis)
 ===
-![J.A.R.V.I.S. brain](https://github.com/vladpereskokov/Jarvis/tree/voice/docs/home.png)
+![J.A.R.V.I.S. brain](/docs/home.png)
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 ===
 ##Оглавление
