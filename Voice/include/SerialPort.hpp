@@ -4,9 +4,9 @@
 #pragma once
 
 #include <string>
+#include <boost/utility.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>
-
 
 /*!
  * \namespace Jarvis
@@ -31,7 +31,7 @@ namespace Jarvis {
       /*! \class SerialPort
        * \brief Класс для подключения по порту
        */
-      class SerialPort final {
+      class SerialPort : boost::noncopyable final {
         /*!
          * \using io_service serviceIO
          * \brief Определяет тип для сервиса I/O

@@ -9,8 +9,8 @@
 		"url" : "asr.yandex.net/asr_xml?key=&uuid=&topic=&lang="
 	},
 	"yandex-options" : {
-		"key" : "d9def809-0bc4-4954-b0c9-6d544d787581",
-		"uuid" : "0CD748B1936933CEAA07FD7813B05877",
+		"key" : <key>,
+		"uuid" : <uuid>,
 		"topic" : "queries",
 		"lang" : "ru-RU"
 	},
