@@ -7,6 +7,7 @@
 #include <map>
 #include <boost/utility.hpp>
 #include "../src/Arduino.cpp"
+#include "../src/States.cpp"
 
 /*!
  * \namespace Jarvis
@@ -27,7 +28,22 @@ namespace Jarvis {
      */
     class ArduinoCommands {
       using command = std::string;
-      using stateMapcommand = std::map<State, command>;
+      using stateMapcommand = std::map<States, command>;
+      
+      friend class States<ArduinoCommands>;
+      
+      struct ArduinoStates {
+        using ArduinoState = States<ArduinoCommands>;
+        
+        public methods:
+        ArduinoStates() = default;
+        
+        ~ArduinoStates();
+        
+        public params:
+        ArduinoState *_current{new Off()};
+        ArduinoState *_previous{new Off()};
+      };
       
       public methods:
       ArduinoCommands(const Arduino &arduino);
@@ -36,14 +52,18 @@ namespace Jarvis {
       ArduinoCommands& operator=(const ArduinoCommands &copy) = default;
       ~ArduinoCommands() = default;
       
-      void command(const State &state);
+      ArduinoStates::ArduinoState getCurrentState() const;
+      ArduinoStates::ArduinoState getPreviousState() const;
+      void setCurrentState(const ArduinoStates::ArduinoState &state);
+      void setPreviousState(const ArduinoStates::ArduinoState &state);
       void command(const command &command);
       
-      private map:
-      stateMapcommand _states{{State::off, "off"}, {State::on, "on"}}
+      private methods:
+      command checkState(const command &command);
       
       private params:
       Arduino _arduino;
+      ArduinoStates _states;
     };
   }
 }

@@ -31,7 +31,7 @@ namespace Jarvis {
       /*! \class SerialPort
        * \brief Класс для подключения по порту
        */
-      class SerialPort : boost::noncopyable final {
+      class SerialPort : boost::noncopyable {
         /*!
          * \using io_service serviceIO
          * \brief Определяет тип для сервиса I/O

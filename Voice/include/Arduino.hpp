@@ -21,15 +21,6 @@ namespace Jarvis {
 #define params
 #define structs
     
-    /** \enum States
-     * \brief Возможные состояния устройств
-     */
-    enum class States {
-      off = 0, /*!< Выключенное состояние*/
-      on, /*!< Включенное состояние*/
-      other /*!< Иное состояние*/
-    };
-    
     /*! \class Arduino
      * \brief Класс - платы Arduino
      */
