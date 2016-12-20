@@ -23,7 +23,7 @@ namespace Jarvis {
 #define params
 #define structs
     
-    class YandexSpeechKitMediator : Mediator {
+    class YandexSpeechKitMediator : public Mediator {
       /*!
        * \using connection::Map map
        * \brief Определяет тип для отображения std::string -> std::string

@@ -129,14 +129,6 @@ namespace Jarvis {
       Jarvis *_jarvis; /*!< Объект Jarvis*/
     };
     
-    template <typename... Exact>
-    struct funptr {
-      template <typename R>
-      constexpr auto operator()(R(*pointer)(Exact...)) -> decltype(pointer) {
-        return pointer;
-      }
-    };
-    
     private params:
     static Jarvis *_jarvis; /*!< Статический объект Jarvis*/
     static JarvisDestroyer _destroyer; /*!< Статический объект, отвечающий за разрушение Jarvis'a*/

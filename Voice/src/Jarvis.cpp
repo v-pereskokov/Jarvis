@@ -36,11 +36,12 @@ namespace Jarvis {
     Commands::Command::execute(Commands::CommandType::python, "../scripts/record.py", { "../samples/output.wav" });
     mapCommands cmds{
       {"включи свет", {"a", "LedOn"}}, {"выключи свет", {"x", "LedOff"}}, {"подмигни", {"2", "Blink"}}, {"зажигай", {"3", "VoiceHighwayToHell"}}};
-    stringVoice command = sendToYandexSpeechKit(); //fix
+//    stringVoice command = sendToYandexSpeechKit(); //fix
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/SomethingElse.wav" });
     Commands::Command::execute(Commands::CommandType::shell, "../scripts/goodbye.sh", {});
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/Goodbye.wav" });
-    return command;
+//    return command;
+    return "soon in your compukters";
   }
   
   Jarvis::Jarvis(Voice &voice)
@@ -55,7 +56,6 @@ namespace Jarvis {
   
   void Jarvis::initializeMediators(mediators &mediators) {
     mediators["SpeechKit"] = std::make_shared<Mediator::YandexSpeechKitMediator>();
-//    mediators["Arduino"] = new ArduinoMediator;
   }
   
   Jarvis::mediator_ptr Jarvis::getMediator(const mediatorName &name) {
