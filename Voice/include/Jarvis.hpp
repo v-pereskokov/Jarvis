@@ -43,10 +43,6 @@ namespace Jarvis {
      * \brief Определяет тип для фразы, которую система должна произнести
      */
     using sayPhrase = std::string;
-    using mediator = Mediator::Mediator;
-    using mediator_ptr = std::shared_ptr<mediator>;
-    using mediatorName = std::string;
-    using mediators = std::map<mediatorName, mediator_ptr>;
     
     public methods:
     /*!
@@ -88,9 +84,6 @@ namespace Jarvis {
     Jarvis & operator=(Jarvis &&copy) = delete;
     friend struct JarvisDestroyer;
     
-    static void initializeMediators(mediators &mediators);
-    
-    static mediator_ptr getMediator(const mediatorName &name);
     /*!
      * \brief Статический метод для "общения" с портом Arduino
      * \param serial Порт, по которому будет отправлен сигнал
@@ -133,7 +126,6 @@ namespace Jarvis {
     static Jarvis *_jarvis; /*!< Статический объект Jarvis*/
     static JarvisDestroyer _destroyer; /*!< Статический объект, отвечающий за разрушение Jarvis'a*/
     Voice _voice; /*!< Голос Jarvis*/
-    static mediators _mediators; /*!< Посредники*/
   };
   
 }

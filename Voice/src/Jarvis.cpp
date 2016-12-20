@@ -17,7 +17,6 @@ namespace Jarvis {
   Jarvis& Jarvis::instance() {
     if(!_jarvis) {
       Voice voice("../conf/voiceJarvis.json", "Jarvis");
-      initializeMediators(_mediators);
       _jarvis = new Jarvis(voice);
       _destroyer.initialize(_jarvis);
     }
@@ -40,7 +39,6 @@ namespace Jarvis {
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/SomethingElse.wav" });
     Commands::Command::execute(Commands::CommandType::shell, "../scripts/goodbye.sh", {});
     Commands::Command::execute(Commands::CommandType::music, "", { "../samples/Goodbye.wav" });
-//    return command;
     return "soon in your compukters";
   }
   
@@ -52,13 +50,5 @@ namespace Jarvis {
       std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
     serial.write(command);
-  }
-  
-  void Jarvis::initializeMediators(mediators &mediators) {
-    mediators["SpeechKit"] = std::make_shared<Mediator::YandexSpeechKitMediator>();
-  }
-  
-  Jarvis::mediator_ptr Jarvis::getMediator(const mediatorName &name) {
-    return _mediators[name];
   }
 }
