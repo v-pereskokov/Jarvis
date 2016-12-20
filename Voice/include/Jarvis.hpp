@@ -6,12 +6,11 @@
 #include <vector>
 #include <map>
 #include <string>
-#include <sstream>
 #include <thread>
 #include <boost/utility.hpp>
 #include "../src/Command.cpp"
 #include "../src/SerialPort.cpp"
-#include "../src/SpeechKit.cpp"
+#include "../src/YandexSpeechKitMediator.cpp"
 #include "../src/Voice.cpp"
 
 /*!
@@ -28,11 +27,6 @@ namespace Jarvis {
    */
   class Jarvis : boost::noncopyable {
     /*!
-     * \using connection::Map map
-     * \brief Определяет тип для отображения std::string -> std::string
-     */
-    using map = connection::Map;
-    /*!
      * \using Arduino::Connection::SerialPort SerialPort
      * \brief Определяет тип для порта I/O
      */
@@ -42,11 +36,6 @@ namespace Jarvis {
      * \brief Определяет тип для строки, преобразованной из голоса
      */
     using stringVoice = std::string;
-    /*!
-     * \using std::string pathToConfigs
-     * \brief Определяет тип для пути к конфигурациям
-     */
-    using pathToConfigs = std::string;
     /*!
      * \using std::string sayPhrase
      * \brief Определяет тип для фразы, которую система должна произнести
@@ -93,22 +82,11 @@ namespace Jarvis {
     Jarvis & operator=(Jarvis &&copy) = delete;
     friend struct JarvisDestroyer;
     /*!
-     * \brief Статический метод для "общения" с сервером Яндекса
-     * \return stringVoice Строка, преобразованная из голоса
-     */
-    static stringVoice sendToYandexSpeechKit();
-    /*!
      * \brief Статический метод для "общения" с портом Arduino
      * \param serial Порт, по которому будет отправлен сигнал
      * \param command Команда, которая будет отправлена
      */
     static void sendToSerialPort(SerialPort &serial, const std::string &command);
-    /*!
-     * \brief Статический метод для "общения" получения данных с сервера Yandex
-     * \param path Путь до конфигурационного файла
-     * \return map Отображение вида std::string -> std::string
-     */
-    static map getMapFromYandexSpeechKit(const pathToConfigs &path);
     
     private structs:
     /*! \struct JarvisDestroyer

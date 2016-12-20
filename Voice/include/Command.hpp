@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <cstdlib>
 #include <vector>
 #include <initializer_list>
 

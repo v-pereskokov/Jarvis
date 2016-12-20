@@ -45,28 +45,10 @@ namespace Jarvis {
   Jarvis::Jarvis(Voice &voice)
   :_voice(voice) {}
   
-  Jarvis::stringVoice Jarvis::sendToYandexSpeechKit() {
-    return getMapFromYandexSpeechKit("../conf/speechkit.json")["variant"];
-  }
-  
   void Jarvis::sendToSerialPort(SerialPort &serial, const std::string &command) {
     if (command == "3") {
       std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
     serial.write(command);
-  }
-  
-  Jarvis::map Jarvis::getMapFromYandexSpeechKit(const pathToConfigs &path) {
-    using namespace std;
-    using keys = vector<std::string>;
-    using responseString = string;
-    
-    connection::SpeechKit toYandex(path, keys{"key", "uuid", "topic", "lang"});
-    toYandex.send();
-    responseString response(toYandex.recv());
-    response.erase(response.begin(), response.begin() + response.find("<"));
-    stringstream stream;
-    stream << response;
-    return map(connection::parsingTree(xmlParse(stream)));
   }
 }
