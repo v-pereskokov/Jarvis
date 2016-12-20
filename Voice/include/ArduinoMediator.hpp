@@ -1,13 +1,12 @@
-#ifndef YANDEXSPEECHKITMEDIATOR_H
-#define YANDEXSPEECHKITMEDIATOR_H
+#ifndef ARDUINOMEDIATOR_H
+#define ARDUINOMEDIATOR_H
 
 #pragma once
 
 #include <string>
-#include <sstream>
 #include <vector>
 #include "Mediator.hpp"
-#include "../src/SpeechKit.cpp"
+#include "../src/SerialPort.cpp"
 
 /*!
  * \namespace Jarvis
@@ -23,8 +22,32 @@ namespace Jarvis {
 #define params
 #define structs
     
-    
+    class ArduinoMediator : Mediator {
+      /*!
+       * \using Arduino::Connection::SerialPort SerialPort
+       * \brief Определяет тип для порта I/O
+       */
+      using SerialPort = Arduino::Connection::SerialPort;
+      
+      public methods:
+      ArduinoMediator() = default;
+      
+      /*!
+       * \brief Статический метод для запуска скрипта
+       * \return stringVoice Строка, преобразованная из голоса
+       */
+      stringVoice toArduino();
+      
+      private methods:
+      /*!
+       * \brief Метод для "общения" с портом Arduino
+       * \param serial Порт, по которому будет отправлен сигнал
+       * \param command Команда, которая будет отправлена
+       */
+      void sendToSerialPort(SerialPort &serial, const std::string &command);
+      
+    };
   }
 }
 
-#endif // YANDEXSPEECHKITMEDIATOR_H
+#endif // ARDUINOMEDIATOR_H
