@@ -1,7 +1,7 @@
 CC = g++
 C11 = -std=c++14
-BINCLUDE = -I/opt/local/include
-BLIB = -L/opt/local/lib
+BINCLUDE = -I/opt/boost/include
+BLIB = -L/opt/boost/lib
 LBOOST = -lboost_system
 LCURL = -lcurl
 SOURCE = Tests/main.cpp
