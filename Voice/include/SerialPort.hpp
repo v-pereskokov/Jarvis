@@ -84,17 +84,17 @@ namespace Jarvis {
          * \return message Сообщение
          */
         message read();
-        
-      private methods:
-        SerialPort(const SerialPort &copy) = delete;
-        SerialPort(const SerialPort &&copy) = delete;
-        SerialPort& operator=(const SerialPort &copy) = delete;
         /*!
          * \brief Заполнение информацией
          * \param port Порт для "общения"
          * \param rate Скорость для передачи данных
          */
         void setRate(port &port, const portRate rate);
+        
+      private methods:
+        SerialPort(const SerialPort &copy) = delete;
+        SerialPort(const SerialPort &&copy) = delete;
+        SerialPort& operator=(const SerialPort &copy) = delete;
         
       private params:
         serviceIO _service; /*!< I/O cервис*/
