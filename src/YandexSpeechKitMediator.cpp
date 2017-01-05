@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/YandexSpeechKitMediator.hpp"
 
 namespace Jarvis {
@@ -18,7 +16,6 @@ namespace Jarvis {
     
     YandexSpeechKitMediator::map YandexSpeechKitMediator::getMapFromYandexSpeechKit(const pathToConfigs &path) {
       using namespace std;
-      using keys = vector<std::string>;
       using responseString = string;
       
       connection::SpeechKit toYandex(path, SpeechKitConstants::keys);

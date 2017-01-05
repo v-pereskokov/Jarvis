@@ -1,7 +1,7 @@
+#pragma once
+
 #ifndef JARVIS_H
 #define JARVIS_H
-
-#pragma once
 
 #include <vector>
 #include <map>
@@ -9,11 +9,10 @@
 #include <thread>
 #include <memory>
 #include <boost/utility.hpp>
-#include "../src/Command.cpp"
-#include "../src/SerialPort.cpp"
+#include "Command.hpp"
+#include "SerialPort.hpp"
 #include "Mediator.hpp"
-#include "../src/YandexSpeechKitMediator.cpp"
-#include "../src/Voice.cpp"
+#include "Voice.hpp"
 
 /*!
  * \namespace Jarvis
@@ -29,11 +28,6 @@ namespace Jarvis {
    */
   class Jarvis : boost::noncopyable {
     /*!
-     * \using Arduino::Connection::SerialPort SerialPort
-     * \brief Определяет тип для порта I/O
-     */
-    using SerialPort = Arduino::Connection::SerialPort;
-    /*!
      * \using std::string stringVoice
      * \brief Определяет тип для строки, преобразованной из голоса
      */
@@ -43,6 +37,7 @@ namespace Jarvis {
      * \brief Определяет тип для фразы, которую система должна произнести
      */
     using sayPhrase = std::string;
+    using bitsFromSmartHome = std::string;
     
     public methods:
     /*!
@@ -51,18 +46,7 @@ namespace Jarvis {
      * Метод для инициализации системы
      */
     static Jarvis& instance();
-    /*!
-     * \brief Воспроизведение фразы
-     * \param voice Голос Jarvis
-     * \param phrase Фраза, которую Jarvis должен вопроизвести голосом
-     * Метод для воспроизведения фразы, которую должен сказать Jarvis
-     */
-    static void say(Voice &voice, const sayPhrase &phrase);
-    /*!
-     * \brief Статический метод для запуска скрипта
-     * \return stringVoice Строка, преобразованная из голоса
-     */
-    static stringVoice toArduino();
+    static bitsFromSmartHome smartHome(const stringVoice& command);
     
     private methods:
     /*!
@@ -85,11 +69,12 @@ namespace Jarvis {
     friend struct JarvisDestroyer;
     
     /*!
-     * \brief Статический метод для "общения" с портом Arduino
-     * \param serial Порт, по которому будет отправлен сигнал
-     * \param command Команда, которая будет отправлена
+     * \brief Воспроизведение фразы
+     * \param voice Голос Jarvis
+     * \param phrase Фраза, которую Jarvis должен вопроизвести голосом
+     * Метод для воспроизведения фразы, которую должен сказать Jarvis
      */
-    static void sendToSerialPort(SerialPort &serial, const std::string &command);
+    static void say(Voice &voice, const sayPhrase &phrase);
     
     private structs:
     /*! \struct JarvisDestroyer

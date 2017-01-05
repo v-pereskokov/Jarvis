@@ -1,27 +1,24 @@
-#pragma once
-
-#include <cstdio>
 #include "../include/Voice.hpp"
-#include "Transport.cpp"
 
 namespace Jarvis {
   Voice::Voice(const path &path, const name &name)
   :_name(name), _sentence("") {
     try {
-      _waves = connection::parsingTree((connection::jObject(path)).jsonParse());
+      _waves = connection::parsingTree((Parser::jObject(path)).jsonParse());
     } catch(...) {
-      Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"samples/error.wav"});
+      Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"../samples/error.wav"});
+      ;
     }
   }
   
-  void Voice::setSentence(const Sentence &sentence) {
+  void Voice::setSentence(const sentence &sentence) {
     if (_sentence == sentence) {
       return;
     }
     _sentence = sentence;
   }
   
-  Sentence Voice::getSentence() const {
+  Voice::sentence Voice::getSentence() const {
     return _sentence;
   }
   
@@ -31,17 +28,16 @@ namespace Jarvis {
   
   bool Voice::execute() {
     if (!findCommand(_waves, _sentence)) {
-      Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"samples/error.wav"});
+      Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"../samples/error.wav"});
       return false;
     }
-    Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {_waves.at(_sentence.getSentence())
-    });
+    Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {_waves.at(_sentence)});
     return true;
   }
   
-  bool Voice::findCommand(const map &waves, const Sentence &sentence) {
+  bool Voice::findCommand(const map &waves, const sentence &sentence) {
     for (auto it = waves.begin(); it != waves.end(); ++it) {
-      if ((it->first).find(sentence.getSentence()) != std::string::npos) {
+      if ((it->first).find(sentence) != std::string::npos) {
         return true;
       }
     }

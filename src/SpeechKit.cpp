@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/SpeechKit.hpp"
 
 namespace Jarvis {
@@ -22,7 +20,7 @@ namespace Jarvis {
       curl_easy_setopt(_curl, CURLOPT_READDATA, &fileStream);
       curl_easy_setopt(_curl, CURLOPT_WRITEFUNCTION, &writeResponseData);
       curl_easy_setopt(_curl, CURLOPT_WRITEDATA, &_response);
-      CURLcode _code = curl_easy_perform(_curl);
+      curl_easy_perform(_curl);
       return true;
     }
     

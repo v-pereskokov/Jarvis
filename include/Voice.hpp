@@ -1,11 +1,13 @@
+#pragma once
+
 #ifndef VOICE_H
 #define VOICE_H
 
-#pragma once
-
+#include <cstdio>
 #include <string>
-#include "../src/Sentence.cpp"
-#include "../src/Command.cpp"
+#include <map>
+#include "Command.hpp"
+#include "SpeechKit.hpp"
 
 /*!
  * \namespace Jarvis
@@ -20,10 +22,20 @@ namespace Jarvis {
    */
   class Voice final {
     /*!
-     * \using connection::Map map
+     * \using std::string key
+     * \brief Определяет тип для ключа
+     */
+    using Key = std::string;
+    /*!
+     * \using std::string data
+     * \brief Определяет тип для значения
+     */
+    using Data = std::string;
+    /*!
+     * \using connection::Map mapm
      * \brief Определяет тип для отображения std::string -> std::string
      */
-    using map = connection::Map;
+    using map = std::map<Key, Data>;
     /*!
      * \using std::string path
      * \brief Определяет тип для пути до конфигурационного файла
@@ -34,6 +46,7 @@ namespace Jarvis {
      * \brief Определяет тип для имени объекта, который имеет голос
      */
     using name = std::string;
+    using sentence = std::string;
     
     public methods:
     /*!
@@ -75,12 +88,12 @@ namespace Jarvis {
      * \brief Метод изменения фразы
      * \param sentence Предложение
      */
-    void setSentence(const Sentence &sentence);
+    void setSentence(const sentence &sentence);
     /*!
      * \brief Метод получения фразы
      * \return sentence Предложение
      */
-    Sentence getSentence() const;
+    sentence getSentence() const;
     
     private methods:
     Voice() = delete;
@@ -95,12 +108,12 @@ namespace Jarvis {
      * \param sentence Фраза
      * \return bool Найдено ли
      */
-    bool findCommand(const connection::Map &waves, const Sentence &sentence);
+    bool findCommand(const map &waves, const sentence &sentence);
     
     private params:
     name _name; /*!< Имя голоса*/
     map _waves; /*!< Необходимый сэмпл*/
-    Sentence _sentence; /*!< Фраза*/
+    sentence _sentence; /*!< Фраза*/
   };
 }
 

@@ -1,13 +1,13 @@
+#pragma once
+
 #ifndef MEDIATORCREATOR_H
 #define MEDIATORCREATOR_H
-
-#pragma once
 
 #include <string>
 #include <map>
 #include <utility>
 #include "Mediator.hpp"
-#include "../src/YandexSpeechKitMediator.hpp"
+#include "YandexSpeechKitMediator.hpp"
 
 /*!
  * \namespace Jarvis

@@ -1,17 +1,17 @@
+#pragma once
+
 #ifndef TRANSPORT_H
 #define TRANSPORT_H
 
-#pragma once
-
 #include <cstdio>
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <map>
 #include <vector>
 #include <memory>
+#include <algorithm>
 #include <curl/curl.h>
-#include "../src/Parser.cpp"
+#include "Parser.hpp"
 
 /*!
  * \namespace Jarvis

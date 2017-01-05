@@ -1,13 +1,13 @@
+#pragma once
+
 #ifndef YANDEXSPEECHKITMEDIATOR_H
 #define YANDEXSPEECHKITMEDIATOR_H
-
-#pragma once
 
 #include <string>
 #include <sstream>
 #include <vector>
 #include "Mediator.hpp"
-#include "../src/SpeechKit.cpp"
+#include "SpeechKit.hpp"
 
 /*!
  * \namespace Jarvis

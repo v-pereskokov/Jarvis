@@ -1,9 +1,9 @@
+#pragma once
+
 #ifndef SPEECHKIT_H
 #define SPEECHKIT_H
 
-#pragma once
-
-#include "../src/Transport.cpp"
+#include "Transport.hpp"
 
 /*!
  * \namespace Jarvis

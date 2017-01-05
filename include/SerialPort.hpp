@@ -1,7 +1,7 @@
+#pragma once
+
 #ifndef SERIALPORT_H
 #define SERIALPORT_H
-
-#pragma once
 
 #include <string>
 #include <boost/utility.hpp>

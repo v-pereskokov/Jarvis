@@ -1,11 +1,13 @@
+#pragma once
+
 #ifndef PARSER_H
 #define PARSER_H
-
-#pragma once
 
 #include <string>
 #include <sstream>
 #include <map>
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/xml_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 
 /*!
@@ -38,6 +40,7 @@ namespace Jarvis {
      * \brief Определяет тип для пути к файлу
      */
     using Path = std::string;
+    using jObject = Parser;
     
     public methods:
     /*!
@@ -72,37 +75,18 @@ namespace Jarvis {
      */
     Tree jsonParse();
     /*!
-     * \brief Парсер json фалйа
-     * \return Дерево, распарсенного файла
-     */
-    friend Tree jsonParse(stringTarget &stream);
-    /*!
      * \brief Парсер xml фалйа
      * \return Дерево, распарсенного файла
      */
     Tree xmlParse();
-    /*!
-     * \brief Парсер xml фалйа
-     * \return Дерево, распарсенного файла
-     */
-    friend Tree xmlParse(stringTarget &stream);
     
     private params:
     Path _target; /*!< путь до файла*/
     Tree _tree; /*!< Дерево*/
   };
   
-  Parser::Tree jsonParse(Parser::stringTarget &stream) {
-    Parser::Tree tree;
-    read_json(stream, tree);
-    return tree;
-  }
-  
-  Parser::Tree xmlParse(Parser::stringTarget &stream) {
-    Parser::Tree tree;
-    read_xml(stream, tree);
-    return tree;
-  }
+  Parser::Tree jsonParse(Parser::stringTarget &stream);
+  Parser::Tree xmlParse(Parser::stringTarget &stream);
 }
 
 #endif // PARSER_H

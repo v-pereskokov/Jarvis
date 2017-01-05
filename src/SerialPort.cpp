@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/SerialPort.hpp"
 
 namespace Jarvis {

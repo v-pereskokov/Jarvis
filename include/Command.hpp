@@ -1,10 +1,11 @@
+#pragma once
+
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#pragma once
-
 #include <cstdlib>
 #include <vector>
+#include <string>
 #include <initializer_list>
 
 /*!

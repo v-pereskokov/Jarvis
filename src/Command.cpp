@@ -1,5 +1,3 @@
-#pragma once 
-
 #include "../include/Command.hpp"
 
 namespace Jarvis {

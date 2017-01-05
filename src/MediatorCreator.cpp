@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/MediatorCreator.hpp"
 
 namespace Jarvis {
@@ -9,11 +7,11 @@ namespace Jarvis {
     }
     
     MediatorCreator::mediator_ptr MediatorCreator::operator()(const mediatorName &name) const {
-      return _mediators[name];
+      return _mediators.at(name);
     }
     
     void MediatorCreator::initialization() {
-      _mediators["SpeechKit"] = std::make_shared<Mediator::YandexSpeechKitMediator>();
+      _mediators["SpeechKit"] = std::make_shared<YandexSpeechKitMediator>();
     }
   }
 }

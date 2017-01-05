@@ -1,7 +1,3 @@
-#pragma once 
-
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/xml_parser.hpp>
 #include "../include/Parser.hpp"
 
 namespace Jarvis {
@@ -23,5 +19,17 @@ namespace Jarvis {
   Parser::Tree Parser::xmlParse() {
     read_xml(_target, _tree);
     return _tree;
+  }
+  
+  Parser::Tree jsonParse(Parser::stringTarget &stream) {
+    Parser::Tree tree;
+    read_json(stream, tree);
+    return tree;
+  }
+  
+  Parser::Tree xmlParse(Parser::stringTarget &stream) {
+    Parser::Tree tree;
+    read_xml(stream, tree);
+    return tree;
   }
 }

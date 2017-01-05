@@ -1,7 +1,7 @@
+#pragma once
+
 #ifndef MEDIATOR_H
 #define MEDIATOR_H
-
-#pragma once
 
 #include <boost/utility.hpp>
 

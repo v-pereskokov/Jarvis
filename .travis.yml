@@ -6,8 +6,7 @@ matrix:
       env: COMPILER=g++ -std=c++14
 
 script:
-  - cd Voice/
   - mkdir build
-  - make
   - cd build
-  - ./test
+  - cmake .. && make
+  - ./tests
