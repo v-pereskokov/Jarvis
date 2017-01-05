@@ -1,25 +1,30 @@
 #include "../include/Voice.hpp"
+#include <iostream>
 
 namespace Jarvis {
-  Voice::Voice(const path &path, const name &name)
-  :_name(name), _sentence("") {
-    try {
-      _waves = connection::parsingTree((Parser::jObject(path)).jsonParse());
-    } catch(...) {
-      Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::music, "", {"../samples/error.wav"});
-      ;
-    }
-  }
+  Voice::Voice(const name &name)
+  :_name(name), _sentence("") {}
   
   void Voice::setSentence(const sentence &sentence) {
-    if (_sentence == sentence) {
-      return;
-    }
     _sentence = sentence;
   }
   
   Voice::sentence Voice::getSentence() const {
     return _sentence;
+  }
+  
+  void Voice::record() {
+    Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::python, VoiceConfigurations::scriptRecord, {"../samples/output.wav"});
+  }
+  
+  Voice::sentence Voice::voiceRecognition() {
+    setSentence(sendVoiceToYandexSpeechKit(VoiceConfigurations::speechKitJson));
+    return getSentence();
+  }
+  
+  Voice::sentence Voice::recordAndGet() {
+    record();
+    return voiceRecognition();
   }
   
   bool Voice::say() {
@@ -42,5 +47,22 @@ namespace Jarvis {
       }
     }
     return false;
+  }
+  
+  Voice::sentence Voice::sendVoiceToYandexSpeechKit(const path &path) {
+    return getSentenceMapFromYandexSpeechKit(path)[VoiceConfigurations::resultSentenceKey];
+  }
+  
+  Voice::map Voice::getSentenceMapFromYandexSpeechKit(const path &path) {
+    using namespace std;
+    using responseString = string;
+    
+    connection::SpeechKit toYandex(path, VoiceConfigurations::keys);
+    toYandex.send();
+    responseString response(toYandex.recv());
+    response.erase(response.begin(), response.begin() + response.find("<"));
+    stringstream stream;
+    stream << response;
+    return map(connection::parsingTree(xmlParse(stream)));
   }
 }

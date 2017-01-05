@@ -6,6 +6,8 @@
 #include <cstdio>
 #include <string>
 #include <map>
+#include <vector>
+#include <sstream>
 #include "Command.hpp"
 #include "SpeechKit.hpp"
 
@@ -14,6 +16,19 @@
  * \brief Основной namespace для всего проекта
  */
 namespace Jarvis {
+  namespace VoiceConfigurations {
+    using scriptName = std::string;
+    using configurationFile = std::string;
+    using resultSentenceKeySpeechKit = std::string;
+    using settingsKeySpeechKit = std::string;
+    using settingsKeysSpeechKitYandex = std::vector<settingsKeySpeechKit>;
+    
+    const scriptName scriptRecord = "../scripts/record.py";
+    const configurationFile speechKitJson = "../conf/speechkit.json";
+    const resultSentenceKeySpeechKit resultSentenceKey = "variant";
+    const settingsKeysSpeechKitYandex keys = {"key", "uuid", "topic", "lang"};
+  }
+  
 #define methods
 #define params
   
@@ -32,7 +47,7 @@ namespace Jarvis {
      */
     using Data = std::string;
     /*!
-     * \using connection::Map mapm
+     * \using connection::Map map
      * \brief Определяет тип для отображения std::string -> std::string
      */
     using map = std::map<Key, Data>;
@@ -54,7 +69,7 @@ namespace Jarvis {
      * \param path Путь до конфигурационного файла
      * \param name Имя голоса
      */
-    Voice(const path &path, const name &name);
+    Voice(const name &name);
     /*!
      * \brief Деструктор
      */
@@ -94,6 +109,9 @@ namespace Jarvis {
      * \return sentence Предложение
      */
     sentence getSentence() const;
+    void record();
+    sentence voiceRecognition();
+    sentence recordAndGet();
     
     private methods:
     Voice() = delete;
@@ -109,6 +127,8 @@ namespace Jarvis {
      * \return bool Найдено ли
      */
     bool findCommand(const map &waves, const sentence &sentence);
+    sentence sendVoiceToYandexSpeechKit(const path &path);
+    map getSentenceMapFromYandexSpeechKit(const path &path);
     
     private params:
     name _name; /*!< Имя голоса*/

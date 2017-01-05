@@ -8,10 +8,11 @@
 #include <string>
 #include <thread>
 #include <memory>
+#include <utility>
 #include <boost/utility.hpp>
 #include "Command.hpp"
 #include "SerialPort.hpp"
-#include "Mediator.hpp"
+//#include "Mediator.hpp"
 #include "Voice.hpp"
 
 /*!
@@ -45,19 +46,14 @@ namespace Jarvis {
      * \return Jarvis возвращает тип едиснтвенного объека Jarvis
      * Метод для инициализации системы
      */
-    static Jarvis& instance();
-    static bitsFromSmartHome smartHome(const stringVoice& command);
+    static std::pair<Jarvis*, Voice*> instance();
+    static stringVoice getStringVoice();
     
     private methods:
     /*!
      * \brief Конструктор по-умолчанию
      */
     Jarvis() = default;
-    /*!
-     * \brief Конструктор
-     * \param voice Голос Jarvis'a
-     */
-    Jarvis(Voice &voice);
     /*!
      * \brief Деструктор
      */
@@ -74,7 +70,7 @@ namespace Jarvis {
      * \param phrase Фраза, которую Jarvis должен вопроизвести голосом
      * Метод для воспроизведения фразы, которую должен сказать Jarvis
      */
-    static void say(Voice &voice, const sayPhrase &phrase);
+//    static void say(Voice &voice, const sayPhrase &phrase);
     
     private structs:
     /*! \struct JarvisDestroyer
@@ -95,7 +91,7 @@ namespace Jarvis {
        * \param jarvis Объект Jarvis
        * Метод для инициализации системы
        */
-      void initialize(Jarvis *jarvis);
+      void initialize(Jarvis *jarvis, Voice *voice);
       
       private methods:
       JarvisDestroyer(const JarvisDestroyer &copy) = delete;
@@ -105,12 +101,13 @@ namespace Jarvis {
       
       private params:
       Jarvis *_jarvis; /*!< Объект Jarvis*/
+      Voice *_voice;
     };
     
     private params:
     static Jarvis *_jarvis; /*!< Статический объект Jarvis*/
     static JarvisDestroyer _destroyer; /*!< Статический объект, отвечающий за разрушение Jarvis'a*/
-    Voice _voice; /*!< Голос Jarvis*/
+    static Voice *_voice; /*!< Голос Jarvis*/
   };
   
 }

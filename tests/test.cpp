@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "../include/Jarvis.hpp"
+#include "../include/Voice.hpp"
 
 TEST_CASE("Jarvis parse voice", "[voice]" ) {
-  REQUIRE(Jarvis::Jarvis::smartHome("Jarvis") == "Jarvis");
-  REQUIRE(Jarvis::Jarvis::smartHome("Jarvis1") != "Jarvis");
+  REQUIRE(Jarvis::Jarvis::getStringVoice() == "включить");
 }

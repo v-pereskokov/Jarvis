@@ -7,7 +7,6 @@
 #include <map>
 #include <utility>
 #include "Mediator.hpp"
-#include "YandexSpeechKitMediator.hpp"
 
 /*!
  * \namespace Jarvis

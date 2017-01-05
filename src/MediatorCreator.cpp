@@ -11,7 +11,7 @@ namespace Jarvis {
     }
     
     void MediatorCreator::initialization() {
-      _mediators["SpeechKit"] = std::make_shared<YandexSpeechKitMediator>();
+      _mediators["SpeechKit"] = std::make_shared<MEDIATOR>();
     }
   }
 }
