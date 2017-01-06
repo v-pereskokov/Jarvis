@@ -46,7 +46,7 @@ namespace Jarvis {
      * \return Jarvis возвращает тип едиснтвенного объека Jarvis
      * Метод для инициализации системы
      */
-    static std::pair<Jarvis*, Voice*> instance();
+    static Jarvis& instance();
     static stringVoice getStringVoice();
     
     private methods:
@@ -91,7 +91,7 @@ namespace Jarvis {
        * \param jarvis Объект Jarvis
        * Метод для инициализации системы
        */
-      void initialize(Jarvis *jarvis, Voice *voice);
+      void initialize(Jarvis *jarvis);
       
       private methods:
       JarvisDestroyer(const JarvisDestroyer &copy) = delete;
@@ -101,13 +101,12 @@ namespace Jarvis {
       
       private params:
       Jarvis *_jarvis; /*!< Объект Jarvis*/
-      Voice *_voice;
     };
     
     private params:
     static Jarvis *_jarvis; /*!< Статический объект Jarvis*/
     static JarvisDestroyer _destroyer; /*!< Статический объект, отвечающий за разрушение Jarvis'a*/
-    static Voice *_voice; /*!< Голос Jarvis*/
+    static Voice _voice; /*!< Голос Jarvis*/
   };
   
 }
