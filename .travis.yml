@@ -26,5 +26,5 @@ before_script:
 script:
   - mkdir build
   - cd build
-  - cmake .. && make
+  - cmake .. -DOPENSSL_ROOT_DIR=/usr/local/ssl -DOPENSSL_LIBRARIES=/usr/local/ssl/lib && make
   - ./tests
