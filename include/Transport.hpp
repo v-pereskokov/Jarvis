@@ -128,10 +128,10 @@ namespace Jarvis {
         friend class Transport;
         
         /*!
-         * \using std::string yandexOption
+         * \using std::string Option
          * \brief Определяет тип для параметра
          */
-        using yandexOption = std::string;
+        using Option = std::string;
         /*!
          * \using std::map<std::string, std::string> jList
          * \brief Определяет тип для отображения std::string -> std::string
@@ -158,18 +158,18 @@ namespace Jarvis {
          */
         using optionList = std::map<std::string, std::string>;
         /*!
-         * \using std::vector<yandexOption> yandexOptions
+         * \using std::vector<Option> Options
          * \brief Определяет тип для списка ключей
          */
-        using yandexOptions = std::vector<yandexOption>;
+        using Options = std::vector<Option>;
         
         public methods:
         /*!
          * \brief Конструктор
          * \param path Путь до конфигурационного файла
-         * \param yandexOptions Список с необходимыми ключами
+         * \param Options Список с необходимыми ключами
          */
-        explicit OptionsList(const jPath &path, const yandexOptions yandexOptions);
+        explicit OptionsList(const jPath &path, const Options Options);
         /*!
          * \brief Метод получения значения параметра
          * \param option Искомый параметр
@@ -202,13 +202,13 @@ namespace Jarvis {
          * \param option Искомый параметр
          * \return bool Подтверждение - найдено ли
          */
-        bool findYandexOption(const yandexOption &option);
+        bool findOption(const Option &option);
         
         protected params:
         optionList _optList; /*!< Список параметров*/
         
         private params:
-        yandexOptions _yandexOptions; /*!< Список ключевых параметров*/
+        Options _options; /*!< Список ключевых параметров*/
       };
       
       /*!
@@ -221,9 +221,9 @@ namespace Jarvis {
       /*!
        * \brief Конструктор
        * \param path Путь до конфигурационного файла
-       * \param yandexOptions Список нужных ключей для конфигурационного файла
+       * \param Options Список нужных ключей для конфигурационного файла
        */
-      explicit Transport(const jPath &path, const OptionsList::yandexOptions yandexOptions);
+      explicit Transport(const jPath &path, const OptionsList::Options Options);
       /*!
        * \brief Деструктор
        */

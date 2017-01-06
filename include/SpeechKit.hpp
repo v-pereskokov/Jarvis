@@ -27,9 +27,9 @@ namespace Jarvis {
       /*!
        * \brief Конструктор
        * \param path Путь до конфигурационного файла
-       * \param yandexOptions Список нужных ключей для конфигурационного файла
+       * \param Options Список нужных ключей для конфигурационного файла
        */
-      SpeechKit(const Transport::jPath &path, const Transport::OptionsList::yandexOptions yandexOptions);
+      SpeechKit(const Transport::jPath &path, const Transport::OptionsList::Options options);
       /*!
        * \brief Деструктор
        */

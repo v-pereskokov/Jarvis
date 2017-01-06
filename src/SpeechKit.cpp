@@ -2,8 +2,8 @@
 
 namespace Jarvis {
   namespace connection {
-    SpeechKit::SpeechKit(const Transport::jPath &path, const Transport::OptionsList::yandexOptions yandexOptions)
-    :Transport(path, yandexOptions) {
+    SpeechKit::SpeechKit(const Transport::jPath &path, const Transport::OptionsList::Options options)
+    :Transport(path, options) {
       setOptions();
     }
     

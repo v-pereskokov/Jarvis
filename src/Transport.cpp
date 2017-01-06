@@ -29,8 +29,8 @@ namespace Jarvis {
       return result;
     }
     
-    Transport::Transport(const jPath &path, const OptionsList::yandexOptions yandexOptions)
-    :_curl(curl_easy_init()), _properties(path, yandexOptions), _headers(nullptr) {
+    Transport::Transport(const jPath &path, const OptionsList::Options options)
+    :_curl(curl_easy_init()), _properties(path, options), _headers(nullptr) {
       checkConnection(_curl);
     }
     
@@ -61,8 +61,8 @@ namespace Jarvis {
       return static_cast<bool>(curl);
     }
     
-    Transport::OptionsList::OptionsList(const jPath& path, const yandexOptions yandexOptions)
-    :_yandexOptions(yandexOptions) {
+    Transport::OptionsList::OptionsList(const jPath& path, const Options options)
+    :_options(options) {
       Parser::jObject json(path);
       fillList(parsingTree(json.jsonParse()));
     }
@@ -75,7 +75,7 @@ namespace Jarvis {
       url url = list.at("url");
       for (auto jIt = list.begin(); jIt != list.end(); ++jIt) {
         auto jProperty = jIt;
-        if (jProperty->first != "url" && !findYandexOption(jProperty->first)) {
+        if (jProperty->first != "url" && !findOption(jProperty->first)) {
           _optList.insert({jProperty->first, jProperty->second.data()});
         }
       }
@@ -86,16 +86,16 @@ namespace Jarvis {
     Transport::OptionsList::url Transport::OptionsList::makeUrl(const jList &list, url &url) {
       for (auto jIt = list.begin(); jIt != list.end(); ++jIt) {
         auto jProperty = jIt;
-        if (findYandexOption(jProperty->first)) {
+        if (findOption(jProperty->first)) {
           url.insert(url.find(jProperty->first + "=") + (jProperty->first).size() + 1, jProperty->second.data());
         }
       }
       return url;
     }
     
-    bool Transport::OptionsList::findYandexOption(const yandexOption &option) {
-      auto findOption = std::find(_yandexOptions.begin(), _yandexOptions.end(), option);
-      return findOption != _yandexOptions.end();
+    bool Transport::OptionsList::findOption(const Option &option) {
+      auto findOption = std::find(_options.begin(), _options.end(), option);
+      return findOption != _options.end();
     }
   }
 }

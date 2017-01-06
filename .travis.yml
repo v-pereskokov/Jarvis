@@ -28,8 +28,8 @@ before_script:
   - cd boost
   - git checkout develop
   - ./bootstrap.sh
-  - mkdir /opt/boost
-  - ./b2 --prefix=/opt/boost/
+  - sudo mkdir /opt/boost
+  - sudo ./b2 --prefix=/opt/boost/
 
 script:
   - mkdir build
