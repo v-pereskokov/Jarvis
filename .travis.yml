@@ -11,9 +11,6 @@ matrix:
     - os: osx
       compiler: g++-5
       env: COMPILER=g++ -std=c++14
-    - os: linux
-      compiler: g++-5
-      env: COMPILER=g++ -std=c++14
 
 before_script:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
@@ -26,5 +23,5 @@ before_script:
 script:
   - mkdir build
   - cd build
-  - cmake .. -DOPENSSL_ROOT_DIR=/usr/local/ssl -DOPENSSL_LIBRARIES=/usr/local/ssl/lib && make
+  - cmake .. && make
   - ./tests
