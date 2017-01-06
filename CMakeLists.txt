@@ -19,8 +19,8 @@ set(Boost_USE_MULTITHREADED ON)
 set(BOOST_COMPONENTS system)
 
 find_package(Boost COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
-find_package(OpenSSL REQUIRED)
-find_package(CURL REQUIRED)
+find_package(OpenSSL)
+find_package(CURL)
 
 include_directories(${CURL_INCLUDE_DIR})
 
