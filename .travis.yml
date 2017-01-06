@@ -5,7 +5,6 @@ addons:
     packages:
       - git
       - cmake
-      - g++-5
 
 matrix:
   include:
@@ -23,13 +22,6 @@ before_script:
     else 
       brew install curl wget openssl;
     fi;
-  - cd ~/Downloads/
-  - git clone --recursive https://github.com/boostorg/boost.git
-  - cd boost
-  - git checkout develop
-  - ./bootstrap.sh
-  - sudo mkdir /opt/boost
-  - sudo ./b2 --prefix=/opt/boost/
 
 script:
   - mkdir build

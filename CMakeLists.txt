@@ -18,7 +18,7 @@ set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 set(BOOST_COMPONENTS system)
 
-find_package(Boost 1.63.0 COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
+find_package(Boost COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
 find_package(OpenSSL REQUIRED)
 find_package(CURL REQUIRED)
 
