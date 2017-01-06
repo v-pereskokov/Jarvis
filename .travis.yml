@@ -1,9 +1,35 @@
 language: cpp
+
+addons:
+  apt:
+    packages:
+      - git
+      - cmake
+      - g++-5
+
 matrix:
   include:
     - os: osx
       compiler: g++-5
       env: COMPILER=g++ -std=c++14
+    - os: linux
+      compiler: g++-5
+      env: COMPILER=g++ -std=c++14
+
+before_script:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      sudo apt-get update;
+      sudo apt-get install curl wget libssl-dev;
+    else 
+      brew install curl wget openssl;
+    fi;
+  - cd ~/Downloads/
+  - git clone --recursive https://github.com/boostorg/boost.git
+  - cd boost
+  - git checkout develop
+  - ./bootstrap.sh
+  - mkdir /opt/boost
+  - ./b2 --prefix=/opt/boost/
 
 script:
   - mkdir build
