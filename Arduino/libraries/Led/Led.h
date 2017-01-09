@@ -13,15 +13,21 @@ class Led {
 #define methods
 #define params
   
-  typedef int PIN;
+  using PIN = int;
+  using frequency = int;
+  using brightness = int;
   
-public methods:
-  Led(PIN pin);
+  public methods:
+  Led(const PIN pin);
   void on();
   void off();
-  void blink();
+  void manual(const brightness bright);
+  void blink(const frequency frequency);
   
-private params:
+  private methods:
+  bool check(const brightness bright);
+  
+  private params:
   PIN _pin;
 };
 

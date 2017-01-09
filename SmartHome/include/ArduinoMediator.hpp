@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include "Mediator.hpp"
-#include "../src/SerialPort.cpp"
+#include "../SerialPort.hpp"
 
 /*!
  * \namespace Jarvis

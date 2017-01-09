@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/States.hpp"
 
 namespace Jarvis {

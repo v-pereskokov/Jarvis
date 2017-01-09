@@ -6,7 +6,7 @@
 #include <string>
 //shared_ptr
 #include <boost/utility.hpp>
-#include "../src/ArduinoCommands.cpp"
+#include "ArduinoCommands.cpp"
 
 /*!
  * \namespace Jarvis

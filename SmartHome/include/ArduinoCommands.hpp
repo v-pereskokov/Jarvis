@@ -6,8 +6,8 @@
 #include <string>
 #include <map>
 #include <boost/utility.hpp>
-#include "../src/Arduino.cpp"
-#include "../src/States.cpp"
+#include "Arduino.hpp"
+#include "../States.hpp"
 
 /*!
  * \namespace Jarvis

@@ -1,6 +1,4 @@
-#pragma once
-
-#include "../include/Commands.hpp"
+#include "../include/Arduino/Commands.hpp"
 
 namespace Jarvis {
   namespace Arduino {

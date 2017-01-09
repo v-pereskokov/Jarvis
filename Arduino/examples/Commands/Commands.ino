@@ -1,14 +1,6 @@
 #include <Led.h>
-#include <HighwayToHell.h>
 
 #define button A5
-
-const int pin10 = 10;
-const int pin9 = 9;
-
-Led led10(pin10);
-Led led9(pin9);
-HighwayToHell rock(pin9);
 
 const int red = 11;
 const int green = 12;
@@ -63,23 +55,9 @@ void loop() {
   }
   switch (cmd) {
     case 0:
-      led10.off();
-      led9.off();
       blueOff();
       break;
-    case 1:
-      led10.on();
-      led9.on();
-      break;
-    case 2:
-      led10.blink();
-      led9.blink();
-      break;
-    case 3:
-      rock.play();
-      break;
     default:
-      Serial.print("nothing");
       break; 
   }
 }

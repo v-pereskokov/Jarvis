@@ -1,0 +1,4 @@
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/rebuild_cache.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/edit_cache.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/tests.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/SmartHomeLib.dir

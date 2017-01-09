@@ -13,9 +13,19 @@ void Led::off() {
   digitalWrite(_pin, LOW);
 }
 
-void Led::blink() {
+void manual(const brightness bright) {
+  if (check(bright)) {
+    digitalWrite(_pin, bright);
+  }
+}
+
+void Led::blink(const frequency frequency) {
   on();
-  delay(100);
+  delay(frequency);
   off();
-  delay(100);
+  delay(frequency);
+}
+
+bool check(const brightness bright) {
+  return bright >= LOW && bright <= HIGH;
 }

@@ -1,5 +1,7 @@
-#include "../src/run.cpp"
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+#include "../src/Jarvis.cpp"
 
-int main() {
-  return run();
+TEST_CASE("Jarvis parse voice", "[voice]" ) {
+  REQUIRE(Jarvis::Jarvis::toArduino() == "зажигай");
 }

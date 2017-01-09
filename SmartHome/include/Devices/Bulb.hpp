@@ -5,7 +5,7 @@
 
 #include <string>
 #include <boost/utility.hpp>
-#include "../src/SerialPort.cpp"
+#include "../SerialPort.hpp"
 
 /*!
  * \namespace Jarvis
@@ -25,12 +25,11 @@ namespace Jarvis {
      * \brief Класс - платы Arduino
      */
     class Arduino final {
-      using Connection;
       /*!
        * \using Connection::SerialPort port
        * \brief Определяет тип для порта, по которому будут отправляться сигналы
        */
-      using port = SerialPort;
+      using port = Connection::SerialPort;
       
       /*!
        * \using std::string name
@@ -51,16 +50,16 @@ namespace Jarvis {
        * \param portName Имя порта для подключения
        * \param rate Сокрость передачи данных
        */
-      Ardiuno(const name &name, const SerialPort::portName &portName, const SerialPort::portRate rate);
+      Arduino(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate rate);
       
-      Ardiuno(const Ardiuno &copy) = default;
-      Ardiuno(const Ardiuno &&copy) = default;
-      Ardiuno& operator=(const Ardiuno &copy) = default;
+      Arduino(const Arduino &copy) = default;
+      Arduino(Arduino &&copy) = default;
+      Arduino& operator=(const Arduino &copy) = default;
       
       /*!
        * \brief Деструктор
        */
-      ~Ardiuno() = default;
+      ~Arduino() = default;
       
       /*!
        * \brief Метод для отправки сообщения
