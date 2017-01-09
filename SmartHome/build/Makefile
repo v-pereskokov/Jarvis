@@ -136,32 +136,59 @@ SmartHomeLib/fast:
 	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/build
 .PHONY : SmartHomeLib/fast
 
-src/Arduino.o: src/Arduino.cpp.o
+src/Bulb.o: src/Bulb.cpp.o
 
-.PHONY : src/Arduino.o
+.PHONY : src/Bulb.o
 
 # target to build an object file
-src/Arduino.cpp.o:
-	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o
-.PHONY : src/Arduino.cpp.o
+src/Bulb.cpp.o:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o
+.PHONY : src/Bulb.cpp.o
 
-src/Arduino.i: src/Arduino.cpp.i
+src/Bulb.i: src/Bulb.cpp.i
 
-.PHONY : src/Arduino.i
+.PHONY : src/Bulb.i
 
 # target to preprocess a source file
-src/Arduino.cpp.i:
-	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.i
-.PHONY : src/Arduino.cpp.i
+src/Bulb.cpp.i:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.i
+.PHONY : src/Bulb.cpp.i
 
-src/Arduino.s: src/Arduino.cpp.s
+src/Bulb.s: src/Bulb.cpp.s
 
-.PHONY : src/Arduino.s
+.PHONY : src/Bulb.s
 
 # target to generate assembly for a file
-src/Arduino.cpp.s:
-	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.s
-.PHONY : src/Arduino.cpp.s
+src/Bulb.cpp.s:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.s
+.PHONY : src/Bulb.cpp.s
+
+src/Device.o: src/Device.cpp.o
+
+.PHONY : src/Device.o
+
+# target to build an object file
+src/Device.cpp.o:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o
+.PHONY : src/Device.cpp.o
+
+src/Device.i: src/Device.cpp.i
+
+.PHONY : src/Device.i
+
+# target to preprocess a source file
+src/Device.cpp.i:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Device.cpp.i
+.PHONY : src/Device.cpp.i
+
+src/Device.s: src/Device.cpp.s
+
+.PHONY : src/Device.s
+
+# target to generate assembly for a file
+src/Device.cpp.s:
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Device.cpp.s
+.PHONY : src/Device.cpp.s
 
 src/SerialPort.o: src/SerialPort.cpp.o
 
@@ -227,9 +254,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... tests"
 	@echo "... SmartHomeLib"
-	@echo "... src/Arduino.o"
-	@echo "... src/Arduino.i"
-	@echo "... src/Arduino.s"
+	@echo "... src/Bulb.o"
+	@echo "... src/Bulb.i"
+	@echo "... src/Bulb.s"
+	@echo "... src/Device.o"
+	@echo "... src/Device.i"
+	@echo "... src/Device.s"
 	@echo "... src/SerialPort.o"
 	@echo "... src/SerialPort.i"
 	@echo "... src/SerialPort.s"

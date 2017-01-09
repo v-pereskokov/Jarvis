@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libSmartHomeLib.a  CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libSmartHomeLib.a  CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libSmartHomeLib.a

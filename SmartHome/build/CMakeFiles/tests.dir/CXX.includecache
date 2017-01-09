@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Arduino/Arduino.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Bulb.hpp
 string
 -
-boost/utility.hpp
+Device.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Device.hpp
+
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Device.hpp
+string
 -
 ../SerialPort.hpp
 /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/SerialPort.hpp
+
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Devices.hpp
+Bulb.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Bulb.hpp
 
 /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/SerialPort.hpp
 string
@@ -31,10 +39,12 @@ string
 -
 queue
 -
+memory
+-
 ../include/SerialPort.hpp
 /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/SerialPort.hpp
-../include/Arduino/Arduino.hpp
-/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Arduino/Arduino.hpp
+../include/Devices/Devices.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Devices.hpp
 
 /opt/boost/include/boost/array.hpp
 boost/detail/workaround.hpp

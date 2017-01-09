@@ -1,5 +1,5 @@
-#ifndef STATE_H
-#define STATE_H
+#ifndef STATES_H
+#define STATES_H
 
 #pragma once
 
@@ -52,4 +52,4 @@ namespace Jarvis {
   }
 }
 
-#endif // STATE_H
+#endif // STATES_H

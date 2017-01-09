@@ -6,10 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Arduino/Arduino.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Bulb.hpp
 string
 -
-boost/utility.hpp
+Device.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Device.hpp
+
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Device.hpp
+string
 -
 ../SerialPort.hpp
 /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/SerialPort.hpp
@@ -24,9 +28,13 @@ boost/asio.hpp
 boost/asio/serial_port.hpp
 -
 
-/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Arduino.cpp
-../include/Arduino/Arduino.hpp
-/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Arduino/Arduino.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Bulb.cpp
+../include/Devices/Bulb.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Bulb.hpp
+
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Device.cpp
+../include/Devices/Device.hpp
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/include/Devices/Device.hpp
 
 /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/SerialPort.cpp
 ../include/SerialPort.hpp

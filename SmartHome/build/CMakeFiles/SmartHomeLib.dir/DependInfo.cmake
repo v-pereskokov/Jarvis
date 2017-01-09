@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Arduino.cpp" "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o"
+  "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Bulb.cpp" "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o"
+  "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Device.cpp" "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o"
   "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/SerialPort.cpp" "/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

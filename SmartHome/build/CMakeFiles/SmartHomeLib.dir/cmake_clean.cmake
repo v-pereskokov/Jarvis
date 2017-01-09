@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o"
-  "CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o"
+  "CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o"
+  "CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o"
   "libSmartHomeLib.pdb"
   "libSmartHomeLib.a"
 )

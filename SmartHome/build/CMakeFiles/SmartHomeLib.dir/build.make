@@ -81,43 +81,69 @@ CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o.provides: CMakeFiles/SmartHomeL
 CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o.provides.build: CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o
 
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o: CMakeFiles/SmartHomeLib.dir/flags.make
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o: ../src/Arduino.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o -c /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Arduino.cpp
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o: CMakeFiles/SmartHomeLib.dir/flags.make
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o: ../src/Device.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o -c /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Device.cpp
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Arduino.cpp > CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.i
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SmartHomeLib.dir/src/Device.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Device.cpp > CMakeFiles/SmartHomeLib.dir/src/Device.cpp.i
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Arduino.cpp -o CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.s
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SmartHomeLib.dir/src/Device.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Device.cpp -o CMakeFiles/SmartHomeLib.dir/src/Device.cpp.s
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.requires:
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.requires:
 
-.PHONY : CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.requires
+.PHONY : CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.requires
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.provides: CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.provides.build
-.PHONY : CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.provides
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.provides: CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.provides.build
+.PHONY : CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.provides
 
-CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.provides.build: CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o
+CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.provides.build: CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o
+
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o: CMakeFiles/SmartHomeLib.dir/flags.make
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o: ../src/Bulb.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o -c /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Bulb.cpp
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Bulb.cpp > CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.i
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/src/Bulb.cpp -o CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.s
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.requires:
+
+.PHONY : CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.requires
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.provides: CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SmartHomeLib.dir/build.make CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.provides.build
+.PHONY : CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.provides
+
+CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.provides.build: CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o
 
 
 # Object files for target SmartHomeLib
 SmartHomeLib_OBJECTS = \
 "CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o" \
-"CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o"
+"CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o" \
+"CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o"
 
 # External object files for target SmartHomeLib
 SmartHomeLib_EXTERNAL_OBJECTS =
 
 libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o
-libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o
+libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o
+libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o
 libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/build.make
 libSmartHomeLib.a: CMakeFiles/SmartHomeLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libSmartHomeLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/vladislavpereskokov/Desktop/Projects/Jarvis/SmartHome/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libSmartHomeLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/SmartHomeLib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SmartHomeLib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -127,7 +153,8 @@ CMakeFiles/SmartHomeLib.dir/build: libSmartHomeLib.a
 .PHONY : CMakeFiles/SmartHomeLib.dir/build
 
 CMakeFiles/SmartHomeLib.dir/requires: CMakeFiles/SmartHomeLib.dir/src/SerialPort.cpp.o.requires
-CMakeFiles/SmartHomeLib.dir/requires: CMakeFiles/SmartHomeLib.dir/src/Arduino.cpp.o.requires
+CMakeFiles/SmartHomeLib.dir/requires: CMakeFiles/SmartHomeLib.dir/src/Device.cpp.o.requires
+CMakeFiles/SmartHomeLib.dir/requires: CMakeFiles/SmartHomeLib.dir/src/Bulb.cpp.o.requires
 
 .PHONY : CMakeFiles/SmartHomeLib.dir/requires
 
