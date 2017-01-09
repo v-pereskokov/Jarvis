@@ -1,10 +1,9 @@
-#ifndef DEVICE_H
-#define DEVICE_H
+#ifndef MODULE_H
+#define MODULE_H
 
 #pragma once
 
-#include <string>
-#include "../Device.hpp"
+#include "Device.hpp"
 
 /*!
  * \namespace Jarvis
@@ -13,23 +12,21 @@
 namespace Jarvis {
   namespace Devices {
 #define methods
-#define params
 #define usings
     
     class Module : public Device {
+      protected usings:
+      using scale = std::string;
+      
       public methods:
-      Module(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
-      
-      virtual void on() = 0;
-      virtual void off() = 0;
-      
+      Module(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
       virtual ~Module() = default;
       
-      protected params:
-      name _name; /*!< имя устройства*/
-      port _port; /*!< порт подключения*/
+      private methods:
+      void on() override;
+      void off() override;
     };
   }
 }
 
-#endif // DEVICE_H
+#endif // MODULE_H

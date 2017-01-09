@@ -6,26 +6,26 @@ namespace Jarvis {
     :Device(name, portName, portRate) {}
     
     void Bulb::on() {
-      send("a"); // on
+      execute("a"); // on
     }
     
     void Bulb::off() {
-      send("x"); // off
+      execute("x"); // off
     }
     
-    void Bulb::manual(const command &command) {
-      send(command);
+    void Bulb::manual(const Device::command &command) {
+      execute(command);
     }
     
     Device::name Bulb::getName() const {
       return _name;
     }
     
-    void Bulb::send(const command &command) {
+    void Bulb::execute(const Device::command &command) {
       _port.write(makeRequest(command));
     }
     
-    Device::signal Bulb::makeRequest(const command &command) const {
+    Device::command Bulb::makeRequest(const Device::command &command) const {
       return getName() + "" + command; // name + "_" + cmd
     }
   }

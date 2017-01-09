@@ -34,15 +34,16 @@ namespace Jarvis {
        * \using std::string signal
        * \brief Определяет тип для отправляемого сигнала
        */
-      using signal = std::string;
+      using command = std::string;
+      friend class DeviceFactory;
       
       public methods:
       Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
+      virtual ~Device() = default;
       
       virtual void on() = 0;
       virtual void off() = 0;
-      
-      virtual ~Device() = default;
+      virtual void execute(const command &command) = 0;
       
       private methods:
       Device() = delete;

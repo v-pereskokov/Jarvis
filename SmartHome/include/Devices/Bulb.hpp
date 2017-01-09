@@ -17,22 +17,18 @@ namespace Jarvis {
 #define structs
     
     class Bulb : public Device {
-      
-      using command = std::string;
-      
       public methods:
       Bulb(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
+       ~Bulb() = default;
       
       void on() override;
       void off() override;
-      void manual(const command &command);
+      void manual(const Device::command &command);
       Device::name getName() const;
       
-      ~Bulb() = default;
-      
       private methods:
-      void send(const command &command);
-      Device::signal makeRequest(const command &command) const;
+      void execute(const Device::command &command) override;
+      Device::command makeRequest(const Device::command &command) const;
     };
   }
 }
