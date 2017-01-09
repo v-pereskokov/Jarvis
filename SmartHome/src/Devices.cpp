@@ -2,17 +2,21 @@
 
 namespace Jarvis {
   namespace Devices {
-    DeviceFactory::DeviceFactory(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate) {
-      initialize(name, portName, portRate);
+    DeviceFactory::DeviceFactory() {
+      initialize();
     }
     
-    DeviceFactory::uniqueDevice DeviceFactory::operator()(const deviceClassName &name) {
-      return std::forward<uniqueDevice>(_traits[name]);
+    DeviceFactory::uniqueDevice DeviceFactory::operator()(const deviceClassName &className, const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate) {
+      auto find = _traits.find(className);
+      if (find != _traits.end()) {
+        return std::forward<uniqueDevice>(find->second->create(name, portName, portRate));
+      } else {
+        throw std::invalid_argument("Device not found!");
+      }
     }
     
-    void DeviceFactory::initialize(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate) {
-      _traits["Bulb"] = std::unique_ptr<Device>(new Bulb(name, portName, portRate));
-//      _traits["Termo"] = std::unique_ptr<Device>(new TemperatureModule(name, portName, portRate));
+    void DeviceFactory::initialize() {
+      _traits["Bulb"] = std::make_shared<Creator<Bulb, Device, Device::name, Connection::SerialPort::portName, Connection::SerialPort::portRate>>();
     }
   }
 }
