@@ -23,6 +23,8 @@ int main() {
       bulb.on();
     } else if (cmd == "off") {
       bulb.off();
+    } else {
+      bulb.manual(cmd);
     }
   }
   return 0;

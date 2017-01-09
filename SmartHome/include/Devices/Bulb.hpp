@@ -1,5 +1,5 @@
-#ifndef ARDUINO_H
-#define ARDUINO_H
+#ifndef BULB_H
+#define BULB_H
 
 #pragma once
 
@@ -28,6 +28,8 @@ namespace Jarvis {
       void manual(const command &command);
       Device::name getName() const;
       
+      ~Bulb() = default;
+      
       private methods:
       void send(const command &command);
       Device::signal makeRequest(const command &command) const;
@@ -35,4 +37,4 @@ namespace Jarvis {
   }
 }
 
-#endif // ARDUINO_H
+#endif // BULB_H

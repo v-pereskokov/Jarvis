@@ -42,7 +42,7 @@ namespace Jarvis {
       virtual void on() = 0;
       virtual void off() = 0;
       
-      ~Device() = default;
+      virtual ~Device() = default;
       
       private methods:
       Device() = delete;
