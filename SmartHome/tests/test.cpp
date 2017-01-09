@@ -32,26 +32,6 @@ void test2() {
   }
 }
 
-//void test3() {
-//  Jarvis::Devices::DeviceFactory *factory = new Jarvis::Devices::DeviceFactory("bulb", "/dev/cu.Bulb-DevB");
-//  while (true) {
-//    std::unique_ptr<Jarvis::Devices::Device> device;
-//    std::cout << "enter the class: ";
-//    std::string classname;
-//    std::cin >> classname;
-//    device = (*factory)(classname);
-//    std::cout << "print cmd: ";
-//    std::string cmd;
-//    std::cin >> cmd;
-//    if (cmd == "on") {
-//      device->on();
-//    } else if (cmd == "off") {
-//      device->off();
-//    }
-//  }
-//  delete factory;
-//}
-
 void test3() {
   Jarvis::Devices::DeviceFactory *factory = new Jarvis::Devices::DeviceFactory;
   std::unique_ptr<Jarvis::Devices::Device> device;
@@ -69,7 +49,6 @@ void test3() {
       device->off();
     }
   }
-
   delete factory;
 }
 

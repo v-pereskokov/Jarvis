@@ -36,7 +36,8 @@ namespace Jarvis {
     class Creator : public AbstractCreator<Base, Args...> {
       public methods:
       typename AbstractCreator<Base, Args...>::uniqueBase create(const Args&... args) const override {
-        return std::forward<typename AbstractCreator<Base, Args...>::uniqueBase>(typename AbstractCreator<Base, Args...>::uniqueBase(new Concrete(args...)));
+        return std::forward<typename AbstractCreator<Base, Args...>::uniqueBase>
+        (typename AbstractCreator<Base, Args...>::uniqueBase(new Concrete(args...)));
       }
     };
     
