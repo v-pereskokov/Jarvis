@@ -16,6 +16,70 @@ namespace Jarvis {
 #define params
 #define usings
     
+    class Device;
+    struct States;
+    
+    class State {
+      protected usings:
+      using command = std::string;
+      
+      friend class Device;
+      friend struct States;
+      
+      public methods:
+      State() = default;
+      State(const State &copy) = default;
+      State(State &&copy) = default;
+      State & operator=(const State &copy) = default;
+      State & operator=(State &&copy) = default;
+      virtual ~State() = default;
+      
+      virtual void on(Device *device);
+      virtual void off(Device *device);
+    };
+    
+    struct States {
+      using state = std::shared_ptr<State>;
+      
+      friend class Device;
+      
+      public methods:
+      States();
+      States(const States &copy) = default;
+      States(States &&copy) = default;
+      States & operator=(const States &copy) = default;
+      States & operator=(States &&copy) = default;
+      ~States() = default;
+      
+      void on(Device *device);
+      void off(Device *device);
+      void setCurrentState(state newState);
+      state getCurrentState() const;
+      state getPreviouslyState() const;
+      
+      protected params:
+      state _current;
+      state _previously;
+    };
+    
+    class On : public State {
+      friend class Device;
+      public methods:
+      On() = default;
+      ~On() = default;
+      
+      void off(Device *device) override;
+    };
+    
+    class Off : public State {
+      friend class Device;
+      public methods:
+      Off() = default;
+      ~Off() = default;
+      
+      void on(Device *device) override;
+    };
+    
     class Device {
       protected usings:
       /*!
@@ -35,6 +99,8 @@ namespace Jarvis {
        * \brief Определяет тип для отправляемого сигнала
        */
       using command = std::string;
+      using state = States;
+      
       friend class DeviceFactory;
       
       public methods:
@@ -45,6 +111,9 @@ namespace Jarvis {
       virtual void off() = 0;
       virtual void execute(const command &command) = 0;
       
+      name getName() const;
+      state getState() const;
+      
       private methods:
       Device() = delete;
       Device(const Device &copy) = delete;
@@ -52,10 +121,10 @@ namespace Jarvis {
       Device& operator=(const Device &copy) = delete;
       Device& operator=(Device &&copy) = delete;
       
-      
       protected params:
       name _name; /*!< имя устройства*/
       port _port; /*!< порт подключения*/
+      state _state; /*!< состояние устройства*/
     };
   }
 }

@@ -16,10 +16,10 @@ namespace Jarvis {
 #define params
 #define usings
   
-    template <class Base, class... Args>
+    template <class Device, class... Args>
     class AbstractCreator {
       protected usings:
-      using uniqueBase = std::unique_ptr<Base>;
+      using uniqueDevice = std::unique_ptr<Device>;
       
       public methods:
       AbstractCreator() = default;
@@ -29,15 +29,15 @@ namespace Jarvis {
       AbstractCreator& operator=(const AbstractCreator &copy) = default;
       AbstractCreator& operator=(AbstractCreator &&copy) = default;
       
-      virtual uniqueBase create(const Args&... args) const = 0;
+      virtual uniqueDevice create(const Args&... args) const = 0;
     };
     
-    template <class Concrete, class Base, class... Args>
-    class Creator : public AbstractCreator<Base, Args...> {
+    template <class ConcreteDevice, class Device, class... Args>
+    class Creator : public AbstractCreator<Device, Args...> {
       public methods:
-      typename AbstractCreator<Base, Args...>::uniqueBase create(const Args&... args) const override {
-        return std::forward<typename AbstractCreator<Base, Args...>::uniqueBase>
-        (typename AbstractCreator<Base, Args...>::uniqueBase(new Concrete(args...)));
+      typename AbstractCreator<Device, Args...>::uniqueDevice create(const Args&... args) const override {
+        return std::forward<typename AbstractCreator<Device, Args...>::uniqueDevice>
+        (typename AbstractCreator<Device, Args...>::uniqueDevice(new ConcreteDevice(args...)));
       }
     };
     

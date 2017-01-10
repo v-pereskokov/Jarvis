@@ -24,7 +24,6 @@ namespace Jarvis {
       void on() override;
       void off() override;
       void manual(const Device::command &command);
-      Device::name getName() const;
       
       private methods:
       void execute(const Device::command &command) override;

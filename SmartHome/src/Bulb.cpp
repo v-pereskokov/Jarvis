@@ -6,19 +6,15 @@ namespace Jarvis {
     :Device(name, portName, portRate) {}
     
     void Bulb::on() {
-      execute("a"); // on
+      _state._current->on(this);
     }
     
     void Bulb::off() {
-      execute("x"); // off
+      _state._current->off(this);
     }
     
     void Bulb::manual(const Device::command &command) {
       execute(command);
-    }
-    
-    Device::name Bulb::getName() const {
-      return _name;
     }
     
     void Bulb::execute(const Device::command &command) {
