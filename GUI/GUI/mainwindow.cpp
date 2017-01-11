@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "adddevicewindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -160,41 +161,57 @@ bool MainWindow::checkName(const QString& name) const
  * */
 void MainWindow::on_addButton_clicked()
 {
-    if(ui->lineEdit->text().isEmpty())
+
+
+
+    std::vector<QString> avaliableDevices;
+    avaliableDevices.push_back("Device #1");
+    avaliableDevices.push_back("Device #2");
+    avaliableDevices.push_back("Device #3");
+    avaliableDevices.push_back("Device #4");
+
+
+    AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
+    connect(addDeviceWindow, SIGNAL(newDevice(QString , QString)),
+            this, SLOT(addDevice(QString , QString)));
+    addDeviceWindow->show(); //вызов диалогового окна добавления устройства
+
+}
+
+void MainWindow::addDevice(QString deviceName, QString groupName)
+{
+    //    if(ui->lineEdit->text().isEmpty())
+    //    {
+    //        QMessageBox::information(this, QString{"warning"}, QString{"Error. Empty name"});
+    //        return;
+    //    }
+
+
+    ui->deleteButton->setDisabled(false);
+
+    GroupTab *tab = getGroupTab(groupName, true, ui->scrollAreaWidgetContents);
+
+    // Создаем объект динамической кнопки
+    SettingsButtonBox *settings = createDynamicButton(deviceName, tab->tab->text(), tab->layout);
+
+    //Добавляем кнопку в слой
+    tab->layout->addSettingsButtonBox(settings);
+    if(tab->tab->isChecked())
     {
-        QMessageBox::information(this, QString{"warning"}, QString{"Error. Empty name"});
-        return;
-    }
-
-    if (checkName(ui->lineEdit->text()))
-    {
-        ui->deleteButton->setDisabled(false);        
-
-        GroupTab *tab = getGroupTab(ui->groupNameEdit->text(), true, ui->scrollAreaWidgetContents);
-
-        // Создаем объект динамической кнопки
-        SettingsButtonBox *settings = createDynamicButton(ui->lineEdit->text(), tab->tab->text(), tab->layout);
-
-        //Добавляем кнопку в слой
-        tab->layout->addSettingsButtonBox(settings);
-        if(tab->tab->isChecked())
-        {
-            settings->deviceButton->hide();
-            settings->hide();
-        }
-        else
-        {
-            settings->deviceButton->show();
-            settings->show();
-        }
-
-        // Подключаем сигнал нажатия кнопки к слотам
-        connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
-        connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
-        connect(settings, SIGNAL(clicked()), this, SLOT(slotSettingsButtonCLicked()));
+        settings->deviceButton->hide();
+        settings->hide();
     }
     else
-        QMessageBox::information(nullptr, QString{"warning"}, QString{"Error. Name is alredy used"});
+    {
+        settings->deviceButton->show();
+        settings->show();
+    }
+
+    // Подключаем сигнал нажатия кнопки к слотам
+    connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
+    connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
+    connect(settings, SIGNAL(clicked()), this, SLOT(slotSettingsButtonCLicked()));
+
 }
 
 /* Метод для удаления динамической кнопки по её имени

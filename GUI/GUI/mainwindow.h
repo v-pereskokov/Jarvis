@@ -36,8 +36,8 @@ private slots:
     void     changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox *btn);
     void     on_addGroup_clicked();
     void     on_deleteGroup_clicked();
-
-    void on_toolPushButton_clicked();
+    void     addDevice(QString deviceName, QString groupName);
+    void     on_toolPushButton_clicked();
 
 private:
     SettingsButtonBox*  createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent = 0);

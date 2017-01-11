@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     grouptab.cpp \
     settingsbuttonbox.cpp \
     widgetgridlayout.cpp \
-    dynamicbulbbutton.cpp
+    dynamicbulbbutton.cpp \
+    adddevicewindow.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -33,11 +34,13 @@ HEADERS  += mainwindow.h \
     grouptab.h \
     settingsbuttonbox.h \
     widgetgridlayout.h \
-    dynamicbulbbutton.h
+    dynamicbulbbutton.h \
+    adddevicewindow.h
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \
-    smartbulbconfig.ui
+    smartbulbconfig.ui \
+    adddevicewindow.ui
 
 RESOURCES += \
     res.qrc
