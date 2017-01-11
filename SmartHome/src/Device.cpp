@@ -36,6 +36,18 @@ namespace Jarvis {
     Device::Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate)
     :_name(name), _port(portName, portRate) {}
     
+    void Device::on() {
+      getState().on(this);
+    }
+    
+    void Device::off() {
+      getState().off(this);
+    }
+    
+    void Device::previously() {
+      _state.getStateName() == States::StateName::off ? on() : off();
+    }
+    
     Device::name Device::getName() const {
       return _name;
     }

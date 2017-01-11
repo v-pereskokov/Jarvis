@@ -116,10 +116,10 @@ namespace Jarvis {
       Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
       virtual ~Device() = default;
       
-      virtual void on() = 0;
-      virtual void off() = 0;
+      virtual void on();
+      virtual void off();
       virtual void manual(const command &command) = 0;
-      virtual void previously() = 0;
+      virtual void previously();
 
       name getName() const;
       

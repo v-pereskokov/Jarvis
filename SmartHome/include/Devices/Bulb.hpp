@@ -22,10 +22,7 @@ namespace Jarvis {
       Bulb(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
        ~Bulb() = default;
       
-      void on() override;
-      void off() override;
       void manual(const Device::command &command) override;
-      void previously() override;
       
       private methods:
       void execute(const Device::command &command) override;
