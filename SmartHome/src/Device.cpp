@@ -7,17 +7,14 @@ namespace Jarvis {
     void State::on(Device *device) {}
     
     void On::off(Device *device) {
-      device->getState().setCurrentState(std::make_shared<State>(new Off()));
+      device->getState().setCurrentState(new Off());
       delete this;
     }
     
     void Off::on(Device *device) {
-      device->getState().setCurrentState(std::make_shared<State>(new On()));
+      device->getState().setCurrentState(new On());
       delete this;
     }
-    
-    States::States()
-    :_current(new Off()), _previously(nullptr) {}
     
     void States::on(Device *device) {
       device->execute("a"); // on
@@ -32,16 +29,12 @@ namespace Jarvis {
       _current = newState;
     }
     
-    States::state States::getCurrentState() const {
-      return _current;
-    }
-    
-    States::state States::getPreviouslyState() const {
-      return _previously;
+    States::StateName States::getStateName() const {
+      return _sName;
     }
     
     Device::Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate)
-    :_name(name), _port(portName, portRate), _state() {}
+    :_name(name), _port(portName, portRate) {}
     
     Device::name Device::getName() const {
       return _name;

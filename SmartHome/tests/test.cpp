@@ -52,9 +52,34 @@ void test3() {
   delete factory;
 }
 
+void test4() {
+  Jarvis::Devices::DeviceFactory *factory = new Jarvis::Devices::DeviceFactory;
+  std::unique_ptr<Jarvis::Devices::Device> device;
+  std::cout << "enter the class name: ";
+  std::string clname;
+  std::cin >> clname;
+  device = (*factory)(clname, "bulb1", "/dev/cu.Bulb-DevB");
+  while (true) {
+    std::cout << "print cmd: ";
+    std::string cmd;
+    std::cin >> cmd;
+    if (cmd == "on") {
+      device->on();
+    } else if (cmd == "off") {
+      device->off();
+    } else if (cmd == "prev") {
+      device->previously();
+    } else {
+      device->manual(cmd);
+    }
+  }
+  delete factory;
+}
+
 int main() {
   //  test1();
   //  test2();
-  test3();
+  //  test3();
+  test4();
   return 0;
 }

@@ -4,6 +4,7 @@
 #pragma once
 
 #include <string>
+#include <exception>
 #include "Device.hpp"
 
 /*!
@@ -23,7 +24,8 @@ namespace Jarvis {
       
       void on() override;
       void off() override;
-      void manual(const Device::command &command);
+      void manual(const Device::command &command) override;
+      void previously() override;
       
       private methods:
       void execute(const Device::command &command) override;

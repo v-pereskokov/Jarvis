@@ -15,6 +15,7 @@ namespace Jarvis {
 #define methods
 #define params
 #define usings
+#define enums
     
     class Device;
     struct States;
@@ -38,30 +39,6 @@ namespace Jarvis {
       virtual void off(Device *device);
     };
     
-    struct States {
-      using state = std::shared_ptr<State>;
-      
-      friend class Device;
-      
-      public methods:
-      States();
-      States(const States &copy) = default;
-      States(States &&copy) = default;
-      States & operator=(const States &copy) = default;
-      States & operator=(States &&copy) = default;
-      ~States() = default;
-      
-      void on(Device *device);
-      void off(Device *device);
-      void setCurrentState(state newState);
-      state getCurrentState() const;
-      state getPreviouslyState() const;
-      
-      protected params:
-      state _current;
-      state _previously;
-    };
-    
     class On : public State {
       friend class Device;
       public methods:
@@ -78,6 +55,34 @@ namespace Jarvis {
       ~Off() = default;
       
       void on(Device *device) override;
+    };
+    
+    struct States {
+      using state = State*;
+      
+      friend class Device;
+      friend class Bulb;
+      
+      protected enums:
+      enum class StateName {off, on};
+      
+      public methods:
+      States() = default;
+      States(const States &copy) = default;
+      States(States &&copy) = default;
+      States & operator=(const States &copy) = default;
+      States & operator=(States &&copy) = default;
+      ~States() = default;
+      
+      void on(Device *device);
+      void off(Device *device);
+      void setCurrentState(state newState);
+      StateName getStateName() const;
+      
+      protected params:
+      state _current{new Off()};
+      state _previously{new Off()};
+      StateName _sName{StateName::off};
     };
     
     class Device {
@@ -102,6 +107,10 @@ namespace Jarvis {
       using state = States;
       
       friend class DeviceFactory;
+      friend struct States;
+      friend class State;
+      friend class On;
+      friend class Off;
       
       public methods:
       Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
@@ -109,9 +118,14 @@ namespace Jarvis {
       
       virtual void on() = 0;
       virtual void off() = 0;
+      virtual void manual(const command &command) = 0;
+      virtual void previously() = 0;
+
+      name getName() const;
+      
+      protected methods:
       virtual void execute(const command &command) = 0;
       
-      name getName() const;
       state getState() const;
       
       private methods:

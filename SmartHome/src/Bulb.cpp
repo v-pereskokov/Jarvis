@@ -1,4 +1,5 @@
 #include "../include/Devices/Bulb.hpp"
+#include <iostream>
 
 namespace Jarvis {
   namespace Devices {
@@ -6,23 +7,27 @@ namespace Jarvis {
     :Device(name, portName, portRate) {}
     
     void Bulb::on() {
-      _state._current->on(this);
+      getState().on(this);
     }
     
     void Bulb::off() {
-      _state._current->off(this);
+      getState().off(this);
     }
     
     void Bulb::manual(const Device::command &command) {
       execute(command);
     }
     
+    void Bulb::previously() {
+      _state.getStateName() == States::StateName::off ? on() : off();
+    }
+    
     void Bulb::execute(const Device::command &command) {
-      _port.write(makeRequest(command));
+      _port.write(command);
     }
     
     Device::command Bulb::makeRequest(const Device::command &command) const {
-      return getName() + "" + command; // name + "_" + cmd
+      return command; // name + "_" + cmd
     }
   }
 }
