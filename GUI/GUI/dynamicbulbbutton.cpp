@@ -10,7 +10,7 @@ DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
     this->setDeviceID(buttonID);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->setFlat(true);
-    //this->setMaximumWidth(200);
+
 }
 
 DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent) :  SmartBulb{parent}
@@ -18,8 +18,7 @@ DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent) : 
     buttonID = findNewID();
     resBusyID[buttonID] = true;
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    this->setFlat(true);
-    //this->setMaximumWidth(200);
+    this->setFlat(true);    
     this->setText(btn->text());
     this->setDeviceName(btn->text());
     this->setBrightness(btn->getBrightness());

@@ -7,24 +7,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui{new Ui::MainWindow}
 {
     ui->setupUi(this);
-    ui->verticalLayoutLeft->setSpacing(10);
-    ui->deleteButton->setDisabled(true); 
+    ui->verticalLayoutLeft->setSpacing(10); 
     ui->scrollAreaWidgetContents->setLayout(ui->verticalLayoutLeft);
 
     setStyles(stylesList);
 
     ui->addButton->setStyleSheet(stylesList[3]);
-    ui->deleteButton->setStyleSheet(stylesList[3]);
     ui->addGroup->setStyleSheet(stylesList[3]);
     ui->deleteGroup->setStyleSheet(stylesList[3]);
 
     ui->toolPushButton->setIcon(QIcon{QPixmap{":/images/toolIcon.png"}});
     ui->toolPushButton->setIconSize(QSize{75, 50});
 
-    ui->label->hide();
-    ui->lineEdit->hide();
+
     ui->addButton->hide();
-    ui->deleteButton->hide();
     ui->label_2->hide();
     ui->groupNameEdit->hide();
     ui->addGroup->hide();
@@ -180,15 +176,6 @@ void MainWindow::on_addButton_clicked()
 
 void MainWindow::addDevice(QString deviceName, QString groupName)
 {
-    //    if(ui->lineEdit->text().isEmpty())
-    //    {
-    //        QMessageBox::information(this, QString{"warning"}, QString{"Error. Empty name"});
-    //        return;
-    //    }
-
-
-    ui->deleteButton->setDisabled(false);
-
     GroupTab *tab = getGroupTab(groupName, true, ui->scrollAreaWidgetContents);
 
     // Создаем объект динамической кнопки
@@ -216,39 +203,24 @@ void MainWindow::addDevice(QString deviceName, QString groupName)
 
 /* Метод для удаления динамической кнопки по её имени
  * */
-void MainWindow::on_deleteButton_clicked()
+void MainWindow::deleteButtonBox(QString deviceName)
 {
-    deleteDynamicButton(ui->lineEdit->text());
+    deleteDynamicButton(deviceName);
 }
 
 /* СЛОТ для получения номера кнопки.
  * */
-void MainWindow::slotGetButtonName()
-{
-    /* Определяем объект, который вызвал сигнал
-     * */
-    DynamicBulbButton *button = (DynamicBulbButton*) sender();
-    /* После чего устанавливаем номер кнопки в lineEdit,
-     * который содержится в данной динамической кнопке
-     * */
-    ui->lineEdit->setText(button->text());
-    /* То есть номер кнопки устанавливается в поле lineEdit только тогда,
-     * когда мы нажимаем одну из динамических кнопок, и этот номер соответствует
-     * номеру нажатой кнопки
-     * */
-}
+
 
 void MainWindow::on_lineEdit_textChanged(const QString &str)
 {
     if(str.isEmpty())
     {
-        ui->addButton->setDisabled(true);
-        ui->deleteButton->setDisabled(true);        
+        ui->addButton->setDisabled(true);                
     }
     else
     {
-        ui->addButton->setDisabled(false);
-        ui->deleteButton->setDisabled(false);        
+        ui->addButton->setDisabled(false);               
     }
 
 }
@@ -256,6 +228,7 @@ void MainWindow::on_lineEdit_textChanged(const QString &str)
 void MainWindow::slotOpenDeviceConfig()
 {
     SmartBulbConfig *configWindow = new SmartBulbConfig{this, (DynamicBulbButton*) sender()};
+    connect(configWindow, SIGNAL(deleteDevice(QString)), this, SLOT(deleteButtonBox(QString)));
     configWindow->show(); //вызов диалогового окна настроек
 
 }
@@ -352,22 +325,16 @@ void MainWindow::on_deleteGroup_clicked()
 void MainWindow::on_toolPushButton_clicked()
 {
     if(ui->toolPushButton->isChecked())
-    {
-        ui->label->hide();
-        ui->lineEdit->hide();
-        ui->addButton->hide();
-        ui->deleteButton->hide();
+    {       
+        ui->addButton->hide();       
         ui->label_2->hide();
         ui->groupNameEdit->hide();
         ui->addGroup->hide();
         ui->deleteGroup->hide();
     }
     else
-    {
-        ui->label->show();
-        ui->lineEdit->show();
-        ui->addButton->show();
-        ui->deleteButton->show();
+    {        
+        ui->addButton->show();        
         ui->label_2->show();
         ui->groupNameEdit->show();
         ui->addGroup->show();

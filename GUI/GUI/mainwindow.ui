@@ -82,38 +82,7 @@ min-height: 115px</string>
     <item row="0" column="8">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="styleSheet">
-           <string notr="true">color: #00FBF6;</string>
-          </property>
-          <property name="text">
-           <string>Enter device name</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #333;
-color: #00FBF6;</string>
-          </property>
-          <property name="text">
-           <string>Smart Device</string>
-          </property>
-          <property name="maxLength">
-           <number>50</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QHBoxLayout" name="horizontalLayout"/>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -139,7 +108,7 @@ color: #00FBF6;</string>
            <string/>
           </property>
           <property name="text">
-           <string>Create</string>
+           <string>Add device</string>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -147,21 +116,24 @@ color: #00FBF6;</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="deleteButton">
-          <property name="text">
-           <string>Delete</string>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-          <property name="flat">
-           <bool>true</bool>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
           </property>
-         </widget>
+         </spacer>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <property name="topMargin">
-         <number>35</number>
+         <number>25</number>
         </property>
         <item>
          <widget class="QLabel" name="label_2">

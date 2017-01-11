@@ -27,8 +27,7 @@ public:
 
 private slots:
     void     on_addButton_clicked();    // Слот-обработчик нажатия кнопки добавления
-    void     on_deleteButton_clicked(); // Слот-обработчик нажатия кнопки удаления
-    void     slotGetButtonName();       // Слот для получения имени нажатой динамической кнопки
+    void     deleteButtonBox(QString deviceName); // Слот-обработчик удаления кнопки
     void     slotOpenDeviceConfig();    // Слот окрывающий окно настроек устройства(кнопки)
     void     slotSettingsButtonCLicked();
     void     on_lineEdit_textChanged(const QString &str);
