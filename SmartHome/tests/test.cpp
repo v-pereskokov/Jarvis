@@ -7,7 +7,7 @@
 
 void test1() {
   std::queue<std::unique_ptr<Jarvis::Connection::SerialPort>> devices;
-  devices.push(std::unique_ptr<Jarvis::Connection::SerialPort>(new Jarvis::Connection::SerialPort("/dev/cu.Bulb-DevB")));
+  devices.push(std::unique_ptr<Jarvis::Connection::SerialPort>(new Jarvis::Connection::SerialPort("/dev/cu.RemoteControl-DevB")));
   while (true) {
     std::cout << "print cmd: ";
     std::string cmd;
@@ -77,9 +77,9 @@ void test4() {
 }
 
 int main() {
-  //  test1();
+  test1();
   //  test2();
   //  test3();
-  test4();
+  //  test4();
   return 0;
 }

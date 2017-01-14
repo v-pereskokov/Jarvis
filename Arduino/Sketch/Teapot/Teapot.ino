@@ -10,7 +10,7 @@ int cmd;
 
 void loop() {
   if (Serial.available()) {
-    cmd = Serial.read();
+    cmd = int(Serial.read()) - 48;
   }
   switch (cmd) {
     case 0:
