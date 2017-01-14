@@ -1,5 +1,0 @@
-Device	     KEYWORD1
-on  	     KEYWORD2
-off  	     KEYWORD2
-blink  	     KEYWORD2
-state		 KEYWORD2
