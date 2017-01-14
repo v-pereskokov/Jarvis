@@ -1,5 +1,5 @@
-#ifndef BULB_H
-#define BULB_H
+#ifndef TEAPOT_H
+#define TEAPOT_H
 
 #pragma once
 
@@ -17,15 +17,15 @@ namespace Jarvis {
 #define params
 #define structs
     
-    class Bulb : public Device {
+    class Teapot : public Device {
       public methods:
-      Bulb(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
-       ~Bulb() = default;
+      Teapot(const Device::name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
+      ~Teapot() = default;
       
       private methods:
-      Device::command makeRequest(const Device::command &command) const override;
+      Device::command makeRequest(const Device::command &command) const;
     };
   }
 }
 
-#endif // BULB_H
+#endif // TEAPOT_H

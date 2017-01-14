@@ -98,6 +98,8 @@ namespace Jarvis {
        * \brief Определяет тип для имени платы
        */
       using name = std::string;
+      using message = std::string;
+      using pin = unsigned int;
       
       /*!
        * \using std::string signal
@@ -118,13 +120,16 @@ namespace Jarvis {
       
       virtual void on();
       virtual void off();
-      virtual void manual(const command &command) = 0;
+      virtual void manual(const command &command);
       virtual void previously();
+      virtual bool isOff(const pin &pin);
 
       name getName() const;
       
       protected methods:
-      virtual void execute(const command &command) = 0;
+      virtual void execute(const command &command);
+      virtual command makeRequest(const command &command) const = 0;
+      virtual message checkState(const pin &pin);
       
       state getState() const;
       

@@ -17,11 +17,11 @@ namespace Jarvis {
     }
     
     void States::on(Device *device) {
-      device->execute("a"); // on
+      device->execute("1"); // on
     }
     
     void States::off(Device *device) {
-      device->execute("x"); // off
+      device->execute("0"); // off
     }
     
     void States::setCurrentState(state newState) {
@@ -44,8 +44,26 @@ namespace Jarvis {
       getState().off(this);
     }
     
+    void Device::manual(const command &command) {
+      execute(command);
+    }
+    
     void Device::previously() {
       _state.getStateName() == States::StateName::off ? on() : off();
+    }
+    
+    bool Device::isOff(const pin &pin) {
+      message message = checkState(pin);
+      return message == "high";
+    }
+    
+    void Device::execute(const command &command) {
+      _port.write(command);
+    }
+    
+    Device::message Device::checkState(const pin &pin) {
+      _port.write("c");
+      return _port.read();
     }
     
     Device::name Device::getName() const {

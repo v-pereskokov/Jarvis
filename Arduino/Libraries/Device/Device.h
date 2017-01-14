@@ -1,5 +1,5 @@
-#ifndef LED_H
-#define LED_H
+#ifndef DEVICE_H
+#define DEVICE_H
 
 #pragma once
 
@@ -9,20 +9,22 @@
 #include "WProgram.h"
 #endif
 
-class Led {
+class Device {
 #define methods
 #define params
   
   using PIN = int;
   using frequency = int;
   using brightness = int;
+  using states = char;
   
   public methods:
-  Led(const PIN pin);
+  Device(const PIN pin);
   void on();
   void off();
   void manual(const brightness bright);
   void blink(const frequency frequency);
+  states state();
   
   private methods:
   bool check(const brightness bright);
@@ -31,4 +33,4 @@ class Led {
   PIN _pin;
 };
 
-#endif // LED_H
+#endif // DEVICE_H

@@ -8,6 +8,7 @@
 #include <memory>
 #include <exception>
 #include "Bulb.hpp"
+#include "Teapot.hpp"
 //#include "TemperatureModule.hpp"
 
 namespace Jarvis {
