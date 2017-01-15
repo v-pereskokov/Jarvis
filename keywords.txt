@@ -1,5 +1,0 @@
-BluetoothHC05	     KEYWORD1
-getBTSerial 		 KEYWORD2
-check 				 KEYWORD2
-checkUpdate  	     KEYWORD2
-
