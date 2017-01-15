@@ -19,7 +19,17 @@
 
 using size_t = unsigned int;
 
-std::string readStream();
+template <class Serial>
+std::string readStream(const Serial &serial) {
+  std::string command = "";
+  if (serial.available()) {
+    while (serial.peek() != -1) {
+      command += char(serial.read());
+      delay(2);
+    }
+    return command;
+  }
+}
 
 struct ATCommands {
 #define methods
@@ -41,13 +51,13 @@ struct ATCommands {
   
   private methods:
   void initialaize();
-  bool checkCommand(const command &command);
+  std::pair<bool, ATCommands::key> checkCommand(const command &command);
   bool findCommandWithArgs(const command &command);
   command findArgument(const command &command);
   
   private params:
   ATMap _commands;
-  vectorCommands _commandsWithArgs{"inqm", "pair", "link"};
+  vectorCommands _commandsWithArgs{"inqm", "pair", "link", "cmode", "rname"};
 };
 
 #endif // EASYA_H

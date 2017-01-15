@@ -24,9 +24,9 @@ class BluetoothHC05 {
   ~BluetoothHC05() = default;
   
   void check();
-//  void getName() const;
   void wait(const HardwareSerial &serial);
   void command(const buffer command);
+  void write(const buffer command);
   
   private methods:
   BluetoothHC05() = delete;
@@ -35,7 +35,6 @@ class BluetoothHC05 {
   
   void pinSetup(const PIN &pin);
   void writeCommand(const buffer command);
-  void write(const buffer command);
   
   private params:
   bluetooth _btModule;
