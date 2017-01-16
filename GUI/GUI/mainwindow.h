@@ -21,6 +21,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QString getDeviceTypeFromBluetoothName(QString deviceBluetooth);
     ~MainWindow();   
 
 private slots:

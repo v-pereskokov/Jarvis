@@ -1,6 +1,7 @@
 #include "dynamicbulbbutton.h"
 
-DynamicBulbButton::DynamicBulbButton(QWidget *parent, const QString &deviceBluetooth) :  SmartBulb{parent, deviceBluetooth}
+DynamicBulbButton::DynamicBulbButton(QWidget *parent, const QString &deviceBluetooth,
+                                     QString &deviceType) :  SmartBulb{parent, deviceBluetooth}
 {
 
     buttonID = findNewID();   /* Присвоение кнопке номера, по которому булет производиться
@@ -10,6 +11,7 @@ DynamicBulbButton::DynamicBulbButton(QWidget *parent, const QString &deviceBluet
     this->setDeviceID(buttonID);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->setFlat(true);
+    this->deviceType = deviceType;
 
 }
 
@@ -25,6 +27,7 @@ DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent)
     this->setBrightness(btn->getBrightness());
     this->setBulbColor(btn->getBulbColor());
     this->setDeviceID(buttonID);
+    deviceType = btn->deviceType;
     if(btn->getDeviceStatus())
         this->turnOnDevice();
     else

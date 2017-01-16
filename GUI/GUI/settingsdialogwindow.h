@@ -33,7 +33,7 @@ signals:
 
 private:
     Ui::SettingsDialogWindow           *ui;
-    DynamicBulbButton                      *deviceButton;
+    DynamicBulbButton                  *deviceButton;
     SettingsButtonBox                  *deviceSettingsButton;
     std::vector<SettingsButtonBox*>    *buttonList;
     std::vector<GroupTab*>              groupList;

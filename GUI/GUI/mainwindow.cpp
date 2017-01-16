@@ -37,7 +37,8 @@ MainWindow::~MainWindow()
 SettingsButtonBox* MainWindow::createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
                                                    const QString groupName, QWidget *parent)
 {
-    DynamicBulbButton *button = new DynamicBulbButton{parent, deviceBluetooth};  // Создаем объект динамической кнопки
+    QString type = getDeviceTypeFromBluetoothName(deviceBluetooth);
+    DynamicBulbButton *button = new DynamicBulbButton{parent, deviceBluetooth, type};  // Создаем объект динамической кнопки
 
     button->setStyleSheet(stylesList[0]);
     button->setText(buttonName);
@@ -50,6 +51,13 @@ SettingsButtonBox* MainWindow::createDynamicButton(const QString deviceBluetooth
     buttonList.push_back(settings);
 
     return settings;
+}
+
+
+QString MainWindow::getDeviceTypeFromBluetoothName(QString deviceBluetooth) //TODO need fix
+{
+
+    return QString("Bulb");
 }
 
 void MainWindow::deleteDynamicButton(const QString &buttonName)
@@ -184,7 +192,8 @@ void MainWindow::addDevice(QString deviceBluetooth, QString deviceName, QString 
 
     // Подключаем сигнал нажатия кнопки к слотам
     connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotGetButtonName()));
-    connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
+    if(settings->deviceButton->deviceType == "Bulb")
+        connect(settings->deviceButton, SIGNAL(clicked()), this, SLOT(slotOpenDeviceConfig()));
     connect(settings, SIGNAL(clicked()), this, SLOT(slotSettingsButtonCLicked()));
 
 }
