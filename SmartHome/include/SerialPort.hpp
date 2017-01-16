@@ -4,6 +4,7 @@
 #define SERIALPORT_H
 
 #include <string>
+#include <exception>
 #include <boost/utility.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>
@@ -90,6 +91,7 @@ namespace Jarvis {
       void setRate(port &port, const portRate rate);
       void connection();
       void disconnection();
+      portName getPortName() const;
       
       private methods:
       SerialPort(const SerialPort &copy) = delete;
@@ -108,7 +110,6 @@ namespace Jarvis {
         public params:
         portName _name;
         portRate _rate;
-        state _isOpen{false};
       };
       
       private params:

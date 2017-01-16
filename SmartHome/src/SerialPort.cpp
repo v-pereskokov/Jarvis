@@ -36,17 +36,24 @@ namespace Jarvis {
     }
     
     void SerialPort::connection() {
-      if (!_info->_isOpen) {
+      if (!_port.is_open()) {
         _port.open(_info->_name);
         setRate(_port, _info->_rate);
-        _info->_isOpen = true;
+      } else {
+        throw std::exception("Already connected");
       }
     }
     
     void SerialPort::disconnection() {
-      if (_info->_isOpen) {
+      if (_port.is_open()) {
         _port.close();
+      } else {
+        throw std::exception("Already closed");
       }
+    }
+    
+    SerialPort::portName SerialPort::getPortName() const {
+      return _info->_name;
     }
     
     SerialPort::PortInformation::PortInformation(const portName &name, const portRate rate)
