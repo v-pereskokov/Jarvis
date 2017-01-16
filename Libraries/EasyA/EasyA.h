@@ -25,7 +25,7 @@ std::string readStream(const Serial &serial) {
   if (serial.available()) {
     while (serial.peek() != -1) {
       command += char(serial.read());
-      delay(2);
+      delay(10);
     }
     return command;
   }
@@ -57,7 +57,7 @@ struct ATCommands {
   
   private params:
   ATMap _commands;
-  vectorCommands _commandsWithArgs{"inqm", "pair", "link", "cmode", "rname"};
+  vectorCommands _commandsWithArgs{"rname", "inqm", "pair", "link", "cmode"};
 };
 
 #endif // EASYA_H

@@ -17,6 +17,7 @@ ATCommands::command ATCommands::getCommand(const command &command) {
 }
 
 void ATCommands::initialaize(){
+  _commands.insert(KDPair("rname", "RNAME?"));
   _commands.insert(KDPair("name", "NAME?"));
   _commands.insert(KDPair("inqm", "INQM="));
   _commands.insert(KDPair("init", "INIT"));
@@ -26,12 +27,13 @@ void ATCommands::initialaize(){
   _commands.insert(KDPair("disc", "DISC"));
   _commands.insert(KDPair("role", "ROLE="));
   _commands.insert(KDPair("cmode", "CMODE="));
-  _commands.insert(KDPair("rname", "RNAME?"));
 }
 
 std::pair<bool, ATCommands::key> ATCommands::checkCommand(const command &command) {
   for (auto &i : _commands) {
-    if (command.find(i.first) != std::string::npos) { // SFINAE
+    auto commandName(command);
+    commandName.erase(commandName.begin() + (commandName.find("_") != std::string::npos ? commandName.find("_") : commandName.length()), commandName.end());
+    if (i.first == commandName) { // SFINAE
       return {true, i.first};
     }
   }
