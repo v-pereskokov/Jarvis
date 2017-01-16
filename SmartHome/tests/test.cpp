@@ -2,17 +2,33 @@
 #include <string>
 #include <queue>
 #include <memory>
+#include <chrono>
+#include <thread>
 #include "../include/SerialPort.hpp"
 #include "../include/Devices/Devices.hpp"
 
 void test1() {
   std::queue<std::unique_ptr<Jarvis::Connection::SerialPort>> devices;
-  devices.push(std::unique_ptr<Jarvis::Connection::SerialPort>(new Jarvis::Connection::SerialPort("/dev/cu.RemoteControl-DevB")));
+  devices.push(std::unique_ptr<Jarvis::Connection::SerialPort>(new Jarvis::Connection::SerialPort("/dev/cu.usbmodem14331")));
   while (true) {
-    std::cout << "print cmd: ";
-    std::string cmd;
-    std::cin >> cmd;
-    devices.front()->write(cmd);
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    devices.front()->write("init");
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    std::cout << "answer:\n";
+    std::string answer = "hello";
+    while (answer != "OK") {
+      answer = devices.front()->read();
+      std::cout << answer << std::endl;
+    }
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    devices.front()->write("link_2016,6,227738");
+    std::this_thread::sleep_for(std::chrono::milliseconds(9000));
+    std::cout << "answer:\n";
+    answer = "hello";
+    while (answer != "OK") {
+      answer = devices.front()->read();
+      std::cout << answer << std::endl;
+    }
   }
 }
 

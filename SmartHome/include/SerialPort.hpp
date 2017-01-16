@@ -21,6 +21,7 @@ namespace Jarvis {
 #define methods
 #define params
 #define usings
+#define structs
     
     using namespace boost::asio;
     
@@ -70,7 +71,7 @@ namespace Jarvis {
       /*!
        * \brief Деструктор
        */
-      ~SerialPort() = default;
+      ~SerialPort();
       /*!
        * \brief Метод для отправки сообщения
        * \param message Сообщение
@@ -87,6 +88,8 @@ namespace Jarvis {
        * \param rate Скорость для передачи данных
        */
       void setRate(port &port, const portRate rate);
+      void connection();
+      void disconnection();
       
       private methods:
       SerialPort(const SerialPort &copy) = delete;
@@ -94,8 +97,23 @@ namespace Jarvis {
       SerialPort& operator=(const SerialPort &copy) = delete;
       SerialPort& operator=(SerialPort &&copy) = delete;
       
+      private structs:
+      struct PortInformation {
+        using state = bool;
+        
+        public methods:
+        PortInformation(const portName &name, const portRate rate);
+        ~PortInformation() = default;
+        
+        public params:
+        portName _name;
+        portRate _rate;
+        state _isOpen{false};
+      };
+      
       private params:
       serviceIO _service; /*!< I/O cервис*/
+      PortInformation *_info; /*!< Информация о подключении*/ // unique_ptr
       port _port; /*!< порт*/
     };
   }

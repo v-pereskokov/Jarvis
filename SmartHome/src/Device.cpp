@@ -17,11 +17,11 @@ namespace Jarvis {
     }
     
     void States::on(Device *device) {
-      device->execute("1"); // on
+      device->execute("on");
     }
     
     void States::off(Device *device) {
-      device->execute("0"); // off
+      device->execute("off");
     }
     
     void States::setCurrentState(state newState) {
@@ -62,7 +62,7 @@ namespace Jarvis {
     }
     
     Device::message Device::checkState(const pin &pin) {
-      _port.write("c");
+      _port.write("state");
       return _port.read();
     }
     
