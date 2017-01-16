@@ -9,7 +9,7 @@ class DynamicBulbButton :  public SmartBulb
 {
     Q_OBJECT
 public:
-    explicit DynamicBulbButton(QWidget *parent = 0);
+    DynamicBulbButton(QWidget *parent, const QString &deviceBluetooth);
     DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent = 0);
     ~DynamicBulbButton();
     static bool resBusyID[maxButtonAmount];   // массив номеров кнопок, равен true  если кнопка с этим ID создана
@@ -19,7 +19,7 @@ public:
 public slots:
 
 private:
-    int buttonID = 0;   // Локальная переменная, номер кнопки
+    int buttonID = 0;   // номер кнопки
     int findNewID();
 };
 

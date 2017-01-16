@@ -89,7 +89,7 @@ void setStyles(QString stylesList[stylesAmount])
                     "   border : none;"
                     "   font:  14px; "
                     "   color: #fff;"
-                    "   min-width: 80px;"
+                    "   min-width: 95px;"
                     "   min-height: 20px;"
                     "   padding: 5px;"
                     "}"

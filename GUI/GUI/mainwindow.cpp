@@ -34,10 +34,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-SettingsButtonBox* MainWindow::createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent)
+SettingsButtonBox* MainWindow::createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
+                                                   const QString groupName, QWidget *parent)
 {
-    DynamicBulbButton *button = new DynamicBulbButton{parent};  // Создаем объект динамической кнопки
-
+    DynamicBulbButton *button = new DynamicBulbButton{parent, deviceBluetooth};  // Создаем объект динамической кнопки
 
     button->setStyleSheet(stylesList[0]);
     button->setText(buttonName);
@@ -141,45 +141,33 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
     return tab;
 }
 
-bool MainWindow::checkName(const QString& name) const
-{
-    for(size_t i = 0; i < buttonList.size(); ++i)
-    {
-        SettingsButtonBox *button = buttonList[i];
-        if(button->deviceButton->text() == name)
-            return false;
 
-    }
-    return true;
-}
 
-/* Метод для добавления динамической кнопки
- * */
 void MainWindow::on_addButton_clicked()
 {
 
 
 
-    std::vector<QString> avaliableDevices;
-    avaliableDevices.push_back("Device #1");
-    avaliableDevices.push_back("Device #2");
-    avaliableDevices.push_back("Device #3");
-    avaliableDevices.push_back("Device #4");
+    std::vector<QString> avaliableDevices;   // TODO:
+    avaliableDevices.push_back("Device #1"); //
+    avaliableDevices.push_back("Device #2"); // Здесь надо добавить функцию которая выдает название
+    avaliableDevices.push_back("Device #3"); // доступных Bluetooth устройств, и засисать их строками
+    avaliableDevices.push_back("Device #4"); // в вектор
 
 
     AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
-    connect(addDeviceWindow, SIGNAL(newDevice(QString , QString)),
-            this, SLOT(addDevice(QString , QString)));
+    connect(addDeviceWindow, SIGNAL(newDevice(QString, QString , QString)),
+            this, SLOT(addDevice(QString, QString , QString)));
     addDeviceWindow->show(); //вызов диалогового окна добавления устройства
 
 }
 
-void MainWindow::addDevice(QString deviceName, QString groupName)
+void MainWindow::addDevice(QString deviceBluetooth, QString deviceName, QString groupName)
 {
     GroupTab *tab = getGroupTab(groupName, true, ui->scrollAreaWidgetContents);
 
     // Создаем объект динамической кнопки
-    SettingsButtonBox *settings = createDynamicButton(deviceName, tab->tab->text(), tab->layout);
+    SettingsButtonBox *settings = createDynamicButton(deviceBluetooth, deviceName, tab->tab->text(), tab->layout);
 
     //Добавляем кнопку в слой
     tab->layout->addSettingsButtonBox(settings);
@@ -201,28 +189,10 @@ void MainWindow::addDevice(QString deviceName, QString groupName)
 
 }
 
-/* Метод для удаления динамической кнопки по её имени
- * */
+
 void MainWindow::deleteButtonBox(QString deviceName)
 {
     deleteDynamicButton(deviceName);
-}
-
-/* СЛОТ для получения номера кнопки.
- * */
-
-
-void MainWindow::on_lineEdit_textChanged(const QString &str)
-{
-    if(str.isEmpty())
-    {
-        ui->addButton->setDisabled(true);                
-    }
-    else
-    {
-        ui->addButton->setDisabled(false);               
-    }
-
 }
 
 void MainWindow::slotOpenDeviceConfig()
@@ -241,8 +211,6 @@ void MainWindow::slotSettingsButtonCLicked()
     connect(settingsWindow, SIGNAL(deviceGroupChanged(QString , SettingsButtonBox *)),
             this, SLOT(changeDeviceGroupTab(QString , SettingsButtonBox *)));
     settingsWindow->show(); //вызов диалогового окна настроек
-
-
 }
 
 void MainWindow::onTabClicked()
@@ -340,4 +308,21 @@ void MainWindow::on_toolPushButton_clicked()
         ui->addGroup->show();
         ui->deleteGroup->show();
     }
+}
+
+void MainWindow::on_microphoneButton_clicked()
+{
+    // TODO:
+    //
+    // включить микрофон
+    // получить команду
+    // 1) для выключения вызвать функцию
+    //    device = buttonList[n]; // n найти перебором спика по имени лампочки которое ввел пользователь (deviceName)
+    //    device->deviceButton->turnOffDevice;
+    // 2) для включения вызвать функцию
+    //    device = buttonList[n]; // n найти перебором спика по имени лампочки которое ввел пользователь (deviceName)
+    //    device->deviceButton->turnOnDevice;
+    // 3) для добавления устройства вызвать
+    //    emit(on_addButton_clicked());
+    // связать через deviceBluetoothName
 }

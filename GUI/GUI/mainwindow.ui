@@ -19,7 +19,7 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="5">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="microphoneButton">
       <property name="styleSheet">
        <string notr="true">border: none;
 min-width: 115px;
@@ -179,6 +179,13 @@ color: #00FBF6;</string>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
+         <widget class="QPushButton" name="addGroup">
+          <property name="text">
+           <string>Add Group</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -190,13 +197,6 @@ color: #00FBF6;</string>
            </size>
           </property>
          </spacer>
-        </item>
-        <item>
-         <widget class="QPushButton" name="addGroup">
-          <property name="text">
-           <string>Add Group</string>
-          </property>
-         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="deleteGroup">

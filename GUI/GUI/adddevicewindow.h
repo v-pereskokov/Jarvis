@@ -21,13 +21,14 @@ public:
                     std::vector<QString> avaliableDevices);
     ~AddDeviceWindow();
     bool checkName(const QString& name) const;
+    bool checkBluetoothName(const QString& name) const;
 
 private slots:
     void  getButtonName();
     void  on_buttonBox_clicked(QAbstractButton *button);
 
 signals:
-    void  newDevice(QString deviceName, QString GroupName);
+    void  newDevice(QString device, QString deviceName, QString GroupName);
 
 private:
     Ui::AddDeviceWindow *ui;

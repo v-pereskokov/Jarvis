@@ -1,7 +1,8 @@
 #include "smartdevice.h"
 
-SmartDevice::SmartDevice(QWidget *parent) : QPushButton{parent}
+SmartDevice::SmartDevice(QWidget *parent, const QString deviceBluetooth) : QPushButton{parent}
 {
+    deviceBluetoothName = deviceBluetooth;
     groupName = "defaultGroup";
     deviceName = "defaultName";
     deviceID = 0;
@@ -9,7 +10,8 @@ SmartDevice::SmartDevice(QWidget *parent) : QPushButton{parent}
 
 }
 
-SmartDevice::SmartDevice(QWidget *parent, const QString& groupName, const QString& deviceName, int id) : SmartDevice{parent}
+SmartDevice::SmartDevice(QWidget *parent, const QString& deviceBluetooth,
+                         const QString& groupName, const QString& deviceName, int id) : SmartDevice{parent, deviceBluetooth}
 {
 
 
@@ -83,6 +85,12 @@ bool SmartDevice::setDeviceName(const QString &name)
     return true;
 }
 
+
+
+QString SmartDevice::getDeviceBluetoothName() const
+{
+    return deviceBluetoothName;
+}
 bool  SmartDevice::setDeviceID(int id)
 {
     int temp = deviceID;
@@ -111,6 +119,11 @@ bool SmartDevice::turnOnDevice()
     bool temp =  deviceStatus;
     deviceStatus = true;
 
+    // TODO:
+    //
+    // вызвать функцию включения лампочки
+    // связать через deviceBluetoothName
+
     if(uploadDeviceConfig())
         return true;
     else
@@ -125,6 +138,11 @@ bool SmartDevice::turnOffDevice()
 {
     bool temp =  deviceStatus;
     deviceStatus = false;
+
+    // TODO:
+    //
+    // вызвать функцию выключения лампочки
+    // связать через deviceBluetoothName
 
     if(uploadDeviceConfig())
         return true;

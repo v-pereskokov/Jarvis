@@ -1,6 +1,6 @@
 #include "dynamicbulbbutton.h"
 
-DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(QWidget *parent, const QString &deviceBluetooth) :  SmartBulb{parent, deviceBluetooth}
 {
 
     buttonID = findNewID();   /* Присвоение кнопке номера, по которому булет производиться
@@ -13,7 +13,8 @@ DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
 
 }
 
-DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent)
+    :  SmartBulb{parent, btn->getDeviceBluetoothName()}
 {
     buttonID = findNewID();
     resBusyID[buttonID] = true;

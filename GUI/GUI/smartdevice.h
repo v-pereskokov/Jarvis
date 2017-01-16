@@ -9,12 +9,14 @@ class SmartDevice : public QPushButton
 {
     Q_OBJECT
 public:
-     SmartDevice(QWidget *parent);
-     SmartDevice(QWidget *parent, const QString &groupName, const QString &deviceName, int id);
+     SmartDevice(QWidget *parent, const QString deviceBluetooth);
+     SmartDevice(QWidget *parent, const QString &deviceBluetooth,
+                 const QString &groupName, const QString &deviceName, int id);
     virtual ~SmartDevice();
 
     bool            setGroupName(const QString& name);
     virtual bool    setDeviceName(const QString& name);
+    virtual QString    getDeviceBluetoothName() const;
     bool            setDeviceID(int id);
     bool            turnOnDevice();                 //включить устройство
     bool            turnOffDevice();                //выключить устройство
@@ -27,12 +29,13 @@ public:
 protected:
     QString                  groupName;
     QString                  deviceName;
+    QString                  deviceBluetoothName; // уникальное Bluetooth имя устройства
     int                      deviceID;
     bool                     deviceStatus;  //вкл/выкл
 
 
-    virtual bool        updateDeviceConfig();  //написать
-    virtual bool        uploadDeviceConfig();  //написать
+    virtual bool        updateDeviceConfig();  //написать (нужен сервер)
+    virtual bool        uploadDeviceConfig();  //написать (нужен сервер)
 
 
 //signals:

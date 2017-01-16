@@ -52,6 +52,18 @@ bool AddDeviceWindow::checkName(const QString& name) const
     return true;
 }
 
+
+bool AddDeviceWindow::checkBluetoothName(const QString& name) const
+{
+    for(size_t i = 0; i < buttonList.size(); ++i)
+    {
+        SettingsButtonBox *button = buttonList[i];
+        if(button->deviceButton->getDeviceBluetoothName() == name)
+            return false;
+    }
+    return true;
+}
+
 void AddDeviceWindow::on_buttonBox_clicked(QAbstractButton *button)
 {
     if(ui->buttonBox->standardButton(button) == QDialogButtonBox::Apply)
@@ -67,12 +79,19 @@ void AddDeviceWindow::on_buttonBox_clicked(QAbstractButton *button)
             return;
         }
 
+        if(!checkBluetoothName(ui->deviceEdit->text()))
+        {
+            QMessageBox::information(this, QString{"warning"}, QString{"Device is already added."});
+            return;
+        }
+
+
         if(ui->deviceNameEdit->text().isEmpty())
         {
             QMessageBox::information(this, QString{"warning"}, QString{"Enter device name."});
             return;
         }
-        emit(newDevice(ui->deviceNameEdit->text(), ui->deviceGroupEdit->text()));
+        emit(newDevice(ui->deviceEdit->text(), ui->deviceNameEdit->text(), ui->deviceGroupEdit->text()));
         this->close();
     }
 }

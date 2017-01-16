@@ -21,25 +21,25 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-
-    bool checkName(const QString &name) const;
+    ~MainWindow();   
 
 private slots:
     void     on_addButton_clicked();    // Слот-обработчик нажатия кнопки добавления
     void     deleteButtonBox(QString deviceName); // Слот-обработчик удаления кнопки
-    void     slotOpenDeviceConfig();    // Слот окрывающий окно настроек устройства(кнопки)
-    void     slotSettingsButtonCLicked();
-    void     on_lineEdit_textChanged(const QString &str);
-    void     onTabClicked();
-    void     changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox *btn);
-    void     on_addGroup_clicked();
-    void     on_deleteGroup_clicked();
-    void     addDevice(QString deviceName, QString groupName);
-    void     on_toolPushButton_clicked();
+    void     slotOpenDeviceConfig();    // Слот окрывающий окно конфигурации устройства(кнопки)
+    void     slotSettingsButtonCLicked(); // Слот открывающий окно настроек устройства
+    void     onTabClicked();              // Слот обрабоки сворачивания групп устройств
+    void     changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox *btn); //Слот изменения группы устройства
+    void     on_addGroup_clicked();   // Слот добавления группы устройств
+    void     on_deleteGroup_clicked(); // Слот удаления группы устройств вместе с устройствами
+    void     addDevice(QString deviceBluetooth, QString deviceName, QString groupName); // Слот создания устройства
+    void     on_toolPushButton_clicked();  // Слот сворачивания/разворачивания панели управления
+
+    void on_microphoneButton_clicked();
 
 private:
-    SettingsButtonBox*  createDynamicButton(const QString &buttonName, const QString groupName, QWidget *parent = 0);
+    SettingsButtonBox*  createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
+                                            const QString groupName, QWidget *parent = 0);
     void             deleteDynamicButton(const QString &buttonName);
     GroupTab*        getGroupTab(QString tabName, bool createIfNotExist, QWidget *parent = 0);
     GroupTab*        createGroupTab(QString tabName, QWidget *parent = 0);
