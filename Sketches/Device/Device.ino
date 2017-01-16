@@ -1,26 +1,24 @@
 #include <EasyA.h>
 #include <Device.h>
+#include <SoftwareSerial.h>
 
 Device device(13);
+SoftwareSerial BTModule(10, 11);
 std::string command = "";
 
 void setup() {
-  Serial.begin(9600); // baud 9600, no line ending
+  BTModule.begin(9600);
 }
 
 void loop() {
-  if (Serial.available()) {
-    command = readStream();
-    Serial.println(command.c_str());
-    delay(10);
-    if (command[0] == '$') {
-      auto cmdUno = command.erase(0, 1);
-      Serial.println(cmdUno.c_str()); // to uno
-      if (cmdUno == "on") {
-        device.on();
-      } else if (cmdUno == "off") {
-        device.off();
-      }
+  if (BTModule.available()) {
+    command = readStream(BTModule);
+    if (command == "on") {
+      device.on();
+      BTModule.println("OK");
+    } else if (command == "off") {
+      device.off();
+      BTModule.println("OK");
     }
   }
 }

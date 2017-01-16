@@ -5,9 +5,10 @@ static const char name##_pgm[] PROGMEM = src; \
 char name[sizeof(name##_pgm)]; \
 strcpy_P(name, name##_pgm);
 
-BluetoothHC05::BluetoothHC05(const PIN &rx, const PIN &tx, const PIN &key)
-:_btModule(rx, tx), _key(key) {
+BluetoothHC05::BluetoothHC05(const PIN &rx, const PIN &tx, const PIN &power, const PIN &key)
+:_btModule(rx, tx), _power(power), _key(key) {
   pinSetup(_key);
+  pinSetup(_power);
   _btModule.begin(38400);
 }
 
@@ -21,6 +22,17 @@ void BluetoothHC05::wait(const HardwareSerial &serial) {
 
 void BluetoothHC05::command(const buffer command) {
   writeCommand(command);
+}
+
+void BluetoothHC05::write(const buffer command) {
+  _btModule.write(command);
+}
+
+void BluetoothHC05::reset() {
+  digitalWrite(_power, LOW);
+  delay(100);
+  digitalWrite(_power, HIGH);
+  delay(100);
 }
 
 void BluetoothHC05::pinSetup(const PIN &pin) {
@@ -37,8 +49,4 @@ void BluetoothHC05::writeCommand(const buffer command) {
   }
   PGM_STRING_MAPPED_TO_RAM(EOL, "\r\n");
   write(EOL);
-}
-
-void BluetoothHC05::write(const buffer command) {
-  _btModule.write(command);
 }

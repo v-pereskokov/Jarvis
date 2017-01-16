@@ -4,4 +4,4 @@ check 				 KEYWORD2
 checkUpdate  	     KEYWORD2
 command			 	 KEYWORD2
 write				 KEYWORD2
-
+reset				 KEYWORD2

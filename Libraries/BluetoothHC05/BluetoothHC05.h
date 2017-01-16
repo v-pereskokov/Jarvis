@@ -20,13 +20,14 @@ class BluetoothHC05 {
   using buffer = char*;
   
   public methods:
-  BluetoothHC05(const PIN &rx, const PIN &tx, const PIN &key);
+  BluetoothHC05(const PIN &rx, const PIN &tx, const PIN &power, const PIN &key);
   ~BluetoothHC05() = default;
   
   void check();
   void wait(const HardwareSerial &serial);
   void command(const buffer command);
   void write(const buffer command);
+  void reset();
   
   private methods:
   BluetoothHC05() = delete;
@@ -38,6 +39,7 @@ class BluetoothHC05 {
   
   private params:
   bluetooth _btModule;
+  PIN _power;
   PIN _key;
 };
 
