@@ -5,6 +5,8 @@
 
 #include <string>
 #include <exception>
+#include <chrono>
+#include <thread>
 #include <boost/utility.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp>

@@ -6,6 +6,7 @@
 #include <thread>
 #include "../include/SerialPort.hpp"
 #include "../include/Devices/Devices.hpp"
+#include "../include/BluetoothHC05.hpp"
 
 void test1() {
   std::queue<std::unique_ptr<Jarvis::Connection::SerialPort>> devices;
@@ -97,9 +98,8 @@ void test4() {
 void test5() {
   std::unique_ptr<Jarvis::Connection::SerialPort> port(new Jarvis::Connection::SerialPort("/dev/cu.usbmodem14331"));
   port->connect();
-  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(1600));
   port->write("init");
-  std::this_thread::sleep_for(std::chrono::milliseconds(300));
   std::cout << "answer:\n";
   std::string answer = "hello";
   while (answer != "OK") {
@@ -107,29 +107,23 @@ void test5() {
     std::cout << answer << std::endl;
   }
   port->disconnect();
-  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
   port->connect();
-  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(1600));
   port->write("init");
-  std::this_thread::sleep_for(std::chrono::milliseconds(300));
   std::cout << "answer:\n";
   answer = "hello";
   while (answer != "OK") {
     answer = port->read();
     std::cout << answer << std::endl;
   }
-  std::this_thread::sleep_for(std::chrono::milliseconds(300));
   port->write("link_2016,6,227738");
-  std::this_thread::sleep_for(std::chrono::milliseconds(9000));
   std::cout << "answer:\n";
   answer = "hello";
   while (answer != "OK") {
     answer = port->read();
     std::cout << answer << std::endl;
   }
-  std::this_thread::sleep_for(std::chrono::milliseconds(300));
   port->write("disc");
-  std::this_thread::sleep_for(std::chrono::milliseconds(9000));
   std::cout << "answer:\n";
   answer = "hello";
   while (answer != "OK") {
@@ -139,11 +133,22 @@ void test5() {
   port->disconnect();
 }
 
+void test6() {
+  Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.usbmodem14331");
+//  std::cout << BTModule.getNameDevice("2016,6,227738") << std::endl;
+//  BTModule.getListDevicesName();
+  auto list = BTModule.getListOfDevicePortName();
+  for (auto &i : list) {
+    std::cout << "name: " << i.first << " port: " << i.second << std::endl;
+  }
+}
+
 int main() {
-  //    test1();
-  test2();
+  //  test1();
+  //  test2();
   //  test3();
   //  test4();
   //  test5();
+  test6();
   return 0;
 }

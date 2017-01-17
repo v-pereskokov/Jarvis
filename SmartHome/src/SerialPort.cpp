@@ -39,6 +39,7 @@ namespace Jarvis {
       if (!_port.is_open()) {
         _port.open(_info->_name);
         setRate(_port, _info->_rate);
+        std::this_thread::sleep_for(std::chrono::milliseconds(1600));
       } else {
         throw std::logic_error("Already connected");
       }
