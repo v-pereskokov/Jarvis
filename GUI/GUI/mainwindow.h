@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QScrollBar>
 #include <QMessageBox>
+#include <QMovie>
 #include <vector>
 #include "settingsbuttonbox.h"
 #include "settingsdialogwindow.h"
@@ -35,8 +36,8 @@ private slots:
     void     on_deleteGroup_clicked(); // Слот удаления группы устройств вместе с устройствами
     void     addDevice(QString deviceBluetooth, QString deviceName, QString groupName); // Слот создания устройства
     void     on_toolPushButton_clicked();  // Слот сворачивания/разворачивания панели управления
-
-    void on_microphoneButton_clicked();
+    void     setButtonIcon(int frame);
+    void     on_microphoneButton_clicked();
 
 private:
     SettingsButtonBox*  createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
@@ -46,6 +47,7 @@ private:
     GroupTab*        createGroupTab(QString tabName, QWidget *parent = 0);
 
 
+    QMovie         *microphoneMovie;
     Ui::MainWindow *ui;
     std::vector<SettingsButtonBox*> buttonList;
     std::vector<GroupTab*>       groupList;

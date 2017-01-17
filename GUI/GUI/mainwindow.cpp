@@ -17,8 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->deleteGroup->setStyleSheet(stylesList[3]);
 
     ui->toolPushButton->setIcon(QIcon{QPixmap{":/images/toolIcon.png"}});
-    ui->toolPushButton->setIconSize(QSize{75, 50});
-
+    ui->toolPushButton->setIconSize(QSize{75, 50});    
 
     ui->addButton->hide();
     ui->label_2->hide();
@@ -26,12 +25,23 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->addGroup->hide();
     ui->deleteGroup->hide();
 
+    microphoneMovie = new QMovie(":/images/microphone.gif");
+    connect(microphoneMovie ,SIGNAL(frameChanged(int)),this,SLOT(setButtonIcon(int)));
+
+    if (microphoneMovie->loopCount() != -1)
+        connect(microphoneMovie, SIGNAL(finished()), microphoneMovie, SLOT(stop()));
+
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setButtonIcon(int frame)
+{
+    ui->microphoneButton->setIcon(QIcon(microphoneMovie->currentPixmap()));
 }
 
 SettingsButtonBox* MainWindow::createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
@@ -321,6 +331,7 @@ void MainWindow::on_toolPushButton_clicked()
 
 void MainWindow::on_microphoneButton_clicked()
 {
+    microphoneMovie->start();
     // TODO:
     //
     // включить микрофон
