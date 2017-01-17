@@ -89,8 +89,8 @@ namespace Jarvis {
        * \param rate Скорость для передачи данных
        */
       void setRate(port &port, const portRate rate);
-      void connection();
-      void disconnection();
+      void connect();
+      void disconnect();
       portName getPortName() const;
       
       private methods:

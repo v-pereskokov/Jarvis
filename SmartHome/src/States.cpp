@@ -20,11 +20,11 @@ namespace Jarvis {
     :_current(new Off()), _previously(nullptr) {}
     
     void States::on(Device *device) {
-      device->execute("a"); // on
+      device->on();
     }
     
     void States::off(Device *device) {
-      device->execute("x"); // off
+      device->off();
     }
     
     void States::setCurrentState(state newState) {

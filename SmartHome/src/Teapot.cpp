@@ -1,5 +1,4 @@
 #include "../include/Devices/Teapot.hpp"
-#include <iostream>
 
 namespace Jarvis {
   namespace Devices {

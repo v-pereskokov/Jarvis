@@ -1,5 +1,4 @@
 #include "../include/Devices/Bulb.hpp"
-#include <iostream>
 
 namespace Jarvis {
   namespace Devices {

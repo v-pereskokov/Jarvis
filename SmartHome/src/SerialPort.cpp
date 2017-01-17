@@ -4,7 +4,7 @@ namespace Jarvis {
   namespace Connection {
     SerialPort::SerialPort(const portName &name, const portRate rate)
     :_service(), _info(new PortInformation(name, rate)), _port(_service) {
-      connection();
+//      connection();
     }
     
     SerialPort::~SerialPort() {
@@ -35,20 +35,20 @@ namespace Jarvis {
       port.set_option(serial_port_base::baud_rate(rate));
     }
     
-    void SerialPort::connection() {
+    void SerialPort::connect() {
       if (!_port.is_open()) {
         _port.open(_info->_name);
         setRate(_port, _info->_rate);
       } else {
-        throw std::exception("Already connected");
+        throw std::logic_error("Already connected");
       }
     }
     
-    void SerialPort::disconnection() {
+    void SerialPort::disconnect() {
       if (_port.is_open()) {
         _port.close();
       } else {
-        throw std::exception("Already closed");
+        throw std::logic_error("Already closed");
       }
     }
     

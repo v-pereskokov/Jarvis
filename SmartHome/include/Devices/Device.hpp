@@ -116,13 +116,15 @@ namespace Jarvis {
       
       public methods:
       Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
-      virtual ~Device() = default;
+      virtual ~Device();
       
       virtual void on();
       virtual void off();
       virtual void manual(const command &command);
       virtual void previously();
       virtual bool isOff(const pin &pin);
+      virtual void connect();
+      virtual void disconnect();
 
       name getName() const;
       
@@ -142,7 +144,7 @@ namespace Jarvis {
       
       protected params:
       name _name; /*!< имя устройства*/
-      port _port; /*!< порт подключения*/
+      port *_port; /*!< порт подключения*/
       state _state; /*!< состояние устройства*/
     };
   }

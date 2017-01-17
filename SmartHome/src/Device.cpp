@@ -34,7 +34,11 @@ namespace Jarvis {
     }
     
     Device::Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate)
-    :_name(name), _port(portName, portRate) {}
+    :_name(name), _port(new Connection::SerialPort(portName, portRate)) {}
+    
+    Device::~Device() {
+      delete _port;
+    }
     
     void Device::on() {
       getState().on(this);
@@ -57,13 +61,21 @@ namespace Jarvis {
       return message == "high";
     }
     
+    void Device::connect() {
+      _port->connect();
+    }
+    
+    void Device::disconnect() {
+      _port->disconnect();
+    }
+    
     void Device::execute(const command &command) {
-      _port.write(command);
+      _port->write(command);
     }
     
     Device::message Device::checkState(const pin &pin) {
-      _port.write("state");
-      return _port.read();
+      _port->write("state");
+      return _port->read();
     }
     
     Device::name Device::getName() const {
