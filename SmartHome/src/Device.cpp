@@ -34,7 +34,7 @@ namespace Jarvis {
     }
     
     Device::Device(const name &name, const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate)
-    :_name(name), _port(new Connection::SerialPort(portName, portRate)) {}
+    :_name(name), _port(new port(portName, portRate)) {}
     
     Device::~Device() {
       delete _port;
