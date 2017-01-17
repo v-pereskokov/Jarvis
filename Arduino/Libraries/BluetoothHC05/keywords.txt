@@ -1,0 +1,7 @@
+BluetoothHC05	     KEYWORD1
+getBTSerial 		 KEYWORD2
+check 				 KEYWORD2
+checkUpdate  	     KEYWORD2
+command			 	 KEYWORD2
+write				 KEYWORD2
+reset				 KEYWORD2

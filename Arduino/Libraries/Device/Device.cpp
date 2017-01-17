@@ -26,7 +26,7 @@ void Device::blink(const frequency frequency) {
   delay(frequency);
 }
 
-Devices::states Device::state() {
+Device::states Device::state() {
   return digitalRead(_pin) == HIGH ? 'h' : 'l';
 }
 
