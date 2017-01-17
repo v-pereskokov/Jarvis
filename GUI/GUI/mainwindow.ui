@@ -22,12 +22,14 @@
      <widget class="QPushButton" name="microphoneButton">
       <property name="maximumSize">
        <size>
-        <width>100</width>
-        <height>100</height>
+        <width>70</width>
+        <height>70</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 50px;</string>
+       <string notr="true">QPushButton {  						
+						border-radius: 50px;						
+                        }</string>
       </property>
       <property name="text">
        <string/>
@@ -38,8 +40,8 @@
       </property>
       <property name="iconSize">
        <size>
-        <width>100</width>
-        <height>100</height>
+        <width>70</width>
+        <height>70</height>
        </size>
       </property>
      </widget>
@@ -335,7 +337,7 @@ color: #00FBF6;</string>
 						align: rigth;
                         }
                         QPushButton:hover {
-                           background-color: #009E9B;
+                           background-color: #2897ff;
                         }
 </string>
       </property>
