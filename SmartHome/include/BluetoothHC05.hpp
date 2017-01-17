@@ -80,7 +80,7 @@ namespace Jarvis {
         void findListDevicesAddress(listDevices *list, const answers &answer);
         devicesCount getDevicesCount(const answers &answer) const;
         portName makePortName(const deviceName &name);
-        listDevices getListDevicesPortName(listDevices *list);
+        void makeListDevicesPortName(listDevices *list);
         
         template <class Predicate>
         void changeListElements(listDevices *list, Predicate pred) {

@@ -44,7 +44,7 @@ namespace Jarvis {
       BluetoothHC05::listOfPair BluetoothHC05::getListOfDevicePortName() {
         auto listName = getListDevicesName();
         auto listPort = listName;
-        changeListElements(&listPort, [&](const deviceName &device){ return makePortName(device); });
+        makeListDevicesPortName(&listPort);
         listOfPair result;
         for (devicesCount i = 0; i < listPort.size(); ++i) {
           result.push_back({listName[i], listPort[i]});
@@ -103,9 +103,8 @@ namespace Jarvis {
         return "/dev/cu." + name + "-DevB";
       }
       
-      BluetoothHC05::listDevices BluetoothHC05::getListDevicesPortName(listDevices *list) {
+      void BluetoothHC05::makeListDevicesPortName(listDevices *list) {
         changeListElements(list, [&](const deviceName &device){ return makePortName(device); });
-        return *list;
       }
     }
   }
