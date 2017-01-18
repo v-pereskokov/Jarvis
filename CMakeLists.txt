@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 2.6)
+project(JarvisHome)
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(WALL -Wall)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${WALL}")
+set(JARVIS_DIR "../Jarvis")
+set(SMARTHOME_DIR "../SmartHome")
+set(JARVISHOME_DIR JarvisHome)
+
+set(RUN_SOURCE ${JARVISHOME_DIR}/src/Run.cpp)
+set(MAIN ${JARVISHOME_DIR}/main/main.cpp)
+
+set(BOOST_ROOT /opt/boost/)
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_MULTITHREADED ON)
+set(BOOST_COMPONENTS system)
+find_package(Boost COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
+
+if (Boost_FOUND)
+	add_subdirectory(Jarvis)
+	add_subdirectory(SmartHome)
+	include_directories(${Boost_INCLUDE_DIRS})
+	add_library(${PROJECT_NAME}_Lib STATIC ${RUN_SOURCE})
+	add_executable(${PROJECT_NAME} ${TESTS_SOURCE} ${MAIN})
+	target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${${PROJECT_NAME}_Lib} Jarvis SmartHome)
+endif()
