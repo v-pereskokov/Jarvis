@@ -166,7 +166,9 @@ void MainWindow::on_addButton_clicked()
 {
   // Список доступных устройств (имя)
   Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.usbmodem14331"); // Порт потом укажу нужный
+  BTModule.connect();
   auto list = BTModule.getListOfDevicePortName();
+  BTModule.disconnect();
   // list[i]: first - name device, second - name port device
   std::vector<QString> avaliableDevices;
   for (auto i = 0; i < list.size(); ++i) {
