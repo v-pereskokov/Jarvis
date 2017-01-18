@@ -24,6 +24,7 @@ ui{new Ui::MainWindow}, _factory(new Jarvis::Devices::DeviceFactory)
   ui->groupNameEdit->hide();
   ui->addGroup->hide();
   ui->deleteGroup->hide();
+
   
   microphoneMovie = new QMovie(":/images/microphone.gif"); // Утечка?
   connect(microphoneMovie ,SIGNAL(frameChanged(int)),this,SLOT(setButtonIcon(int)));

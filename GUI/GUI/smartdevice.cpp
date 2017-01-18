@@ -7,7 +7,7 @@ SmartDevice::SmartDevice(QWidget *parent, const QString deviceBluetooth) : QPush
     deviceName = "defaultName";
     deviceID = 0;
     deviceStatus = false;
-
+    factory = new Jarvis::Devices::DeviceFactory;
 }
 
 SmartDevice::SmartDevice(QWidget *parent, const QString& deviceBluetooth,
@@ -33,13 +33,13 @@ SmartDevice::SmartDevice(QWidget *parent, const QString& deviceBluetooth,
 
 SmartDevice::~SmartDevice()
 {
-
+    delete factory;
 }
 
 
 void SmartDevice::startFabric(std::string devicePort)
 {
-
+    device = (*factory)(deviceBluetoothName.toUtf8().constData(), deviceName.toUtf8().constData(), devicePort);
 }
 
 bool SmartDevice::setGroupName(const QString& name)
@@ -125,10 +125,7 @@ bool SmartDevice::turnOnDevice()
     bool temp =  deviceStatus;
     deviceStatus = true;
 
-    // TODO:
-    //
-    // вызвать функцию включения лампочки
-    // связать через deviceBluetoothName
+    device->on();
 
     if(uploadDeviceConfig())
         return true;
@@ -145,10 +142,7 @@ bool SmartDevice::turnOffDevice()
     bool temp =  deviceStatus;
     deviceStatus = false;
 
-    // TODO:
-    //
-    // вызвать функцию выключения лампочки
-    // связать через deviceBluetoothName
+    device->off();
 
     if(uploadDeviceConfig())
         return true;

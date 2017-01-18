@@ -10,9 +10,7 @@
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"
 #include "grouptab.h"
-#include "../../SmartHome/include/Devices/Devices.hpp"
-#include "../../SmartHome/include/SerialPort.hpp"
-#include "../../SmartHome/include/BluetoothHC05.hpp"
+
 
 
 

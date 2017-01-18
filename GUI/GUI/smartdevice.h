@@ -4,6 +4,9 @@
 #include <QPushButton>
 #include <QString>
 #include <QMessageBox>
+#include "../../SmartHome/include/Devices/Devices.hpp"
+#include "../../SmartHome/include/SerialPort.hpp"
+#include "../../SmartHome/include/BluetoothHC05.hpp"
 
 class SmartDevice : public QPushButton
 {
@@ -28,12 +31,13 @@ public:
 
 
 protected:
-    QString                  groupName;
-    QString                  deviceName;
-    QString                  deviceBluetoothName; // уникальное Bluetooth имя устройства
-    int                      deviceID;
-    bool                     deviceStatus;  //вкл/выкл
-
+    QString                                   groupName;
+    QString                                   deviceName;
+    QString                                   deviceBluetoothName; // уникальное Bluetooth имя устройства
+    int                                       deviceID;
+    bool                                      deviceStatus;  //вкл/выкл
+    Jarvis::Devices::DeviceFactory           *factory;
+    std::unique_ptr<Jarvis::Devices::Device>  device;
 
     virtual bool        updateDeviceConfig();  //написать (нужен сервер)
     virtual bool        uploadDeviceConfig();  //написать (нужен сервер)
