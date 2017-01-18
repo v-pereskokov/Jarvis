@@ -87,3 +87,33 @@ void SmartBulbConfig::on_bulbImage_clicked()
     ui->statusButton->setChecked(!ui->statusButton->isChecked());
     emit(on_statusButton_clicked());
 }
+
+void SmartBulbConfig::on_deleteDeviceButton_clicked()
+{
+
+    QMessageBox msgBox;
+    //заголовок
+    msgBox.setWindowTitle(QString{"Delete Device"});
+    msgBox.setText(QString{"Warning"});
+    msgBox.setIcon(QMessageBox::Information);
+    // Основное сообщение Message Box
+    msgBox.setInformativeText(QString{"Smart Device "}
+                              + deviceButton->text()
+                              + QString{" will be REMOVED!!! \n\n Do you want to continue?"} );
+    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Cancel);
+
+    int ret = msgBox.exec();
+
+    switch (ret)
+    {
+    case QMessageBox::Cancel:
+        return;
+    case QMessageBox::Ok:
+        break;
+    default:
+        return;
+    }
+    emit(deleteDevice(deviceButton->text()));
+    this->close();
+}

@@ -1,14 +1,15 @@
 #include "smartbulb.h"
 
-SmartBulb::SmartBulb(QWidget *parent)  : SmartDevice{parent}
+SmartBulb::SmartBulb(QWidget *parent, const QString &deviceBlutooth)  : SmartDevice{parent, deviceBlutooth}
 {
     brightness = 100;
     color = bulbColor::white;
 
 }
 
-SmartBulb::SmartBulb(QWidget *parent, const QString &groupName, const QString &deviceName, int id, int brightness, bulbColor color) :
-    SmartDevice{parent, groupName, deviceName, id}
+SmartBulb::SmartBulb(QWidget *parent, const QString &deviceBlutooth, const QString &groupName,
+                     const QString &deviceName, int id, int brightness, bulbColor color) :
+    SmartDevice{parent, deviceBlutooth, groupName, deviceName, id}
 {
 
     this->brightness = brightness;
@@ -72,6 +73,11 @@ bulbColor SmartBulb::getBulbColor() const
 QString SmartBulb::getDeviceType() const
 {
     return deviceType;
+}
+
+bool   SmartBulb::updateDeviceConfig()
+{
+
 }
 
 const QString SmartBulb::deviceType = QString{"Smart Bulb"};

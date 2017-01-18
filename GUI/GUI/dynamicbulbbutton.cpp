@@ -1,6 +1,7 @@
 #include "dynamicbulbbutton.h"
 
-DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(QWidget *parent, const QString &deviceBluetooth,
+                                     QString &deviceType) :  SmartBulb{parent, deviceBluetooth}
 {
 
     buttonID = findNewID();   /* Присвоение кнопке номера, по которому булет производиться
@@ -10,21 +11,23 @@ DynamicBulbButton::DynamicBulbButton(QWidget *parent) :  SmartBulb{parent}
     this->setDeviceID(buttonID);
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     this->setFlat(true);
-    //this->setMaximumWidth(200);
+    this->deviceType = deviceType;
+
 }
 
-DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent) :  SmartBulb{parent}
+DynamicBulbButton::DynamicBulbButton(DynamicBulbButton *btn, QWidget *parent)
+    :  SmartBulb{parent, btn->getDeviceBluetoothName()}
 {
     buttonID = findNewID();
     resBusyID[buttonID] = true;
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    this->setFlat(true);
-    //this->setMaximumWidth(200);
+    this->setFlat(true);    
     this->setText(btn->text());
     this->setDeviceName(btn->text());
     this->setBrightness(btn->getBrightness());
     this->setBulbColor(btn->getBulbColor());
     this->setDeviceID(buttonID);
+    deviceType = btn->deviceType;
     if(btn->getDeviceStatus())
         this->turnOnDevice();
     else

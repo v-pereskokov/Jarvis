@@ -21,7 +21,7 @@ SettingsDialogWindow::SettingsDialogWindow(QWidget *parent, SettingsButtonBox *b
     groupList = grpList;
 
     ui->idLabel->setText(QString::number(deviceButton->getID()));
-    ui->deviceTypelabel->setText(deviceButton->getDeviceType());
+    ui->deviceTypelabel->setText(deviceButton->deviceType);
     ui->nameEdit->setText(deviceButton->getDeviceName());
     ui->GroupNameEdit->setText(deviceButton->getGroupName());
 

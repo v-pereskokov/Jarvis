@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classJarvis_1_1Jarvis">
+<title>Jarvis::Jarvis class Reference</title>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef connection::Map  <link linkend="classJarvis_1_1Jarvis_1ad16761e755a938403eb4e86779e7ab67">map</link><para><emphasis>Определяет тип для отображения std::string -&gt; std::string.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort">Arduino::Connection::SerialPort</link>  <link linkend="classJarvis_1_1Jarvis_1abff0bec5ca8ed7c53d2c626e22ac88f2">SerialPort</link><para><emphasis>Определяет тип для порта I/O.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1Jarvis_1a2666143f97052c530e5156aaa89cf4ff">stringVoice</link><para><emphasis>Определяет тип для строки, преобразованной из голоса</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1Jarvis_1a68de761561e9cb27640312e5972c6eaf">pathToConfigs</link><para><emphasis>Определяет тип для пути к конфигурациям</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="classJarvis_1_1Jarvis_1af0c57b2c51130d62873bdd5feed81c62">sayPhrase</link><para><emphasis>Определяет тип для фразы, которую система должна произнести</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Открытые атрибуты</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>private structs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>private params</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Voice _voice</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static JarvisDestroyer _destroyer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp; <link linkend="classJarvis_1_1Jarvis_1a6f50fbb249174da350352dc3429459b7">instance</link> (
+)<para><emphasis>Инициализация системы</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="classJarvis_1_1Jarvis_1a80c00115e07bf149673b3cf652751386">say</link> (
+<link linkend="classJarvis_1_1Voice">Voice</link> &amp; voice, const sayPhrase &amp; phrase)<para><emphasis>Воспроизведение фразы</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static stringVoice <link linkend="classJarvis_1_1Jarvis_1a2a9f9ca691361b0ef640ac5a150acb39">toArduino</link> (
+)<para><emphasis>Статический метод для запуска скрипта</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static stringVoice <link linkend="classJarvis_1_1Jarvis_1a4b45c41bc3fb910b2cf2f032b5fa0c08">sendToYandexSpeechKit</link> (
+)<para><emphasis>Статический метод для &quot;общения&quot; с сервером Яндекса</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="classJarvis_1_1Jarvis_1a211625e415e0aeb22eba6fab2deaa5e1">sendToSerialPort</link> (
+<link linkend="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort">SerialPort</link> &amp; serial, const std::string &amp; command)<para><emphasis>Статический метод для &quot;общения&quot; с портом Arduino.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static map <link linkend="classJarvis_1_1Jarvis_1a5e7d9053e69eee8154c68e2bc86e7362">getMapFromYandexSpeechKit</link> (
+const pathToConfigs &amp; path)<para><emphasis>Статический метод для &quot;общения&quot; получения данных с сервера Yandex.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1a34fb8baa346b1019769ea8b00c638dc4">Jarvis</link> (
+)<para><emphasis>Конструктор по-умолчанию</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1ae6a7cc649ef8aabd836c8b549ab39507">Jarvis</link> (
+<link linkend="classJarvis_1_1Voice">Voice</link> &amp; voice)<para><emphasis>Конструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1aa8670e3e8dfdd5e76cab8f57ccee5461">~Jarvis</link> (
+)<para><emphasis>Деструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1ac455d2a57de556bc9a8aa1b80fe99c99">Jarvis</link> (
+const <link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1abf77be09a8b7b116c31f26d17bd0851f">Jarvis</link> (
+<link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp;&amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp; <link linkend="classJarvis_1_1Jarvis_1a3488a3cc7ce01355c4537ba6dc517b65">operator=</link> (
+const <link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp; <link linkend="classJarvis_1_1Jarvis_1aa6a5817a0c85b1a92e61aa5395f96d11">operator=</link> (
+<link linkend="classJarvis_1_1Jarvis">Jarvis</link> &amp;&amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1af74ffc81a286c827aed0ffc7efea1973">~JarvisDestroyer</link> (
+)<para><emphasis>Деструктор</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classJarvis_1_1Jarvis_1a1453f3e7f2587b7b884525c75d8b8cf5">initialize</link> (
+<link linkend="classJarvis_1_1Jarvis">Jarvis</link> * jarvis)<para><emphasis>Инициализация системы</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1a22a6798b7868c1f17ecf5023edbd252b">JarvisDestroyer</link> (
+const JarvisDestroyer &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classJarvis_1_1Jarvis_1a382b3b739ed3881ae2d5a93b0743e72c">JarvisDestroyer</link> (
+JarvisDestroyer &amp;&amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>JarvisDestroyer &amp; <link linkend="classJarvis_1_1Jarvis_1a449b426d29488b2004e8431dfeeb204b">operator=</link> (
+const JarvisDestroyer &amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>JarvisDestroyer &amp; <link linkend="classJarvis_1_1Jarvis_1ace5b58fadb50698bbf9db3e0d7af3a2f">operator=</link> (
+JarvisDestroyer &amp;&amp; copy)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="classJarvis_1_1Jarvis_1ad16761e755a938403eb4e86779e7ab67">
+                <title>using Jarvis::Jarvis::map =  connection::Map</title> <emphasis>Определяет тип для отображения std::string -&gt; std::string.</emphasis>
+                
+<para>connection::Map map </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1abff0bec5ca8ed7c53d2c626e22ac88f2">
+                <title>using Jarvis::Jarvis::SerialPort =  Arduino::Connection::SerialPort</title> <emphasis>Определяет тип для порта I/O.</emphasis>
+                
+<para><link linkend="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort">Arduino::Connection::SerialPort</link> SerialPort </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a2666143f97052c530e5156aaa89cf4ff">
+                <title>using Jarvis::Jarvis::stringVoice =  std::string</title> <emphasis>Определяет тип для строки, преобразованной из голоса</emphasis>
+                
+<para>std::string stringVoice </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a68de761561e9cb27640312e5972c6eaf">
+                <title>using Jarvis::Jarvis::pathToConfigs =  std::string</title> <emphasis>Определяет тип для пути к конфигурациям</emphasis>
+                
+<para>std::string pathToConfigs </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1af0c57b2c51130d62873bdd5feed81c62">
+                <title>using Jarvis::Jarvis::sayPhrase =  std::string</title> <emphasis>Определяет тип для фразы, которую система должна произнести</emphasis>
+                
+<para>std::string sayPhrase </para>
+
+            </section>
+        <section>
+            <title>Данные класса</title>
+            <simplesect>
+                <title>private Jarvis::Jarvis::params</title>                
+<para>Объект <link linkend="classJarvis_1_1Jarvis">Jarvis</link></para>
+
+<para>Статический объект <link linkend="classJarvis_1_1Jarvis">Jarvis</link> </para>
+
+                <para>Definition at line 140 of file Jarvis.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Jarvis.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <simplesect>
+                <title>Voice Jarvis::Jarvis::_voice</title>                
+<para>Голос <link linkend="classJarvis_1_1Jarvis">Jarvis</link> </para>
+
+                <para>Definition at line 147 of file Jarvis.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Jarvis.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+        </section>
+            <simplesect>
+                <title>JarvisDestroyer Jarvis::Jarvis::_destroyer</title>                
+<para>Статический объект, отвечающий за разрушение <link linkend="classJarvis_1_1Jarvis">Jarvis</link>&apos;a </para>
+
+                <para>Definition at line 146 of file Jarvis.hpp</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Jarvis.hpp</para></listitem></itemizedlist></para>
+            </simplesect>
+            <section xml:id="classJarvis_1_1Jarvis_1a6f50fbb249174da350352dc3429459b7">
+                <title>static Jarvis&amp; Jarvis::Jarvis::instance ()</title> <emphasis>Инициализация системы</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para><link linkend="classJarvis_1_1Jarvis">Jarvis</link> возвращает тип едиснтвенного объека <link linkend="classJarvis_1_1Jarvis">Jarvis</link> Метод для инициализации системы </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a80c00115e07bf149673b3cf652751386">
+                <title>static void Jarvis::Jarvis::say (Voice &amp;voice, const sayPhrase &amp;phrase)</title> <emphasis>Воспроизведение фразы</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>voice</entry>
+                                <entry>
+<para>Голос <link linkend="classJarvis_1_1Jarvis">Jarvis</link> </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>phrase</entry>
+                                <entry>
+<para>Фраза, которую <link linkend="classJarvis_1_1Jarvis">Jarvis</link> должен вопроизвести голосом Метод для воспроизведения фразы, которую должен сказать <link linkend="classJarvis_1_1Jarvis">Jarvis</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a2a9f9ca691361b0ef640ac5a150acb39">
+                <title>static stringVoice Jarvis::Jarvis::toArduino ()</title> <emphasis>Статический метод для запуска скрипта</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>stringVoice Строка, преобразованная из голоса </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a4b45c41bc3fb910b2cf2f032b5fa0c08">
+                <title>static stringVoice Jarvis::Jarvis::sendToYandexSpeechKit ()</title> <emphasis>Статический метод для &quot;общения&quot; с сервером Яндекса</emphasis>
+                
+<para><formalpara><title>Возвращает: </title>
+
+<para>stringVoice Строка, преобразованная из голоса </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a211625e415e0aeb22eba6fab2deaa5e1">
+                <title>static void Jarvis::Jarvis::sendToSerialPort (SerialPort &amp;serial, const std::string &amp;command)</title> <emphasis>Статический метод для &quot;общения&quot; с портом Arduino.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>serial</entry>
+                                <entry>
+<para>Порт, по которому будет отправлен сигнал </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>command</entry>
+                                <entry>
+<para>Команда, которая будет отправлена </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a5e7d9053e69eee8154c68e2bc86e7362">
+                <title>static map Jarvis::Jarvis::getMapFromYandexSpeechKit (const pathToConfigs &amp;path)</title> <emphasis>Статический метод для &quot;общения&quot; получения данных с сервера Yandex.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>path</entry>
+                                <entry>
+<para>Путь до конфигурационного файла </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Возвращает: </title>
+
+<para>map Отображение вида std::string -&gt; std::string </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a34fb8baa346b1019769ea8b00c638dc4">
+                <title>Jarvis::Jarvis::Jarvis ()=default</title> <emphasis>Конструктор по-умолчанию</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1ae6a7cc649ef8aabd836c8b549ab39507">
+                <title>Jarvis::Jarvis::Jarvis (Voice &amp;voice)</title> <emphasis>Конструктор</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>voice</entry>
+                                <entry>
+<para>Голос <link linkend="classJarvis_1_1Jarvis">Jarvis</link>&apos;a </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1aa8670e3e8dfdd5e76cab8f57ccee5461">
+                <title>Jarvis::Jarvis::~Jarvis ()=default</title> <emphasis>Деструктор</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1ac455d2a57de556bc9a8aa1b80fe99c99">
+                <title>Jarvis::Jarvis::Jarvis (const Jarvis &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1abf77be09a8b7b116c31f26d17bd0851f">
+                <title>Jarvis::Jarvis::Jarvis (Jarvis &amp;&amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a3488a3cc7ce01355c4537ba6dc517b65">
+                <title>Jarvis&amp; Jarvis::Jarvis::operator= (const Jarvis &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1aa6a5817a0c85b1a92e61aa5395f96d11">
+                <title>Jarvis&amp; Jarvis::Jarvis::operator= (Jarvis &amp;&amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1af74ffc81a286c827aed0ffc7efea1973">
+                <title>Jarvis::Jarvis::~JarvisDestroyer ()</title> <emphasis>Деструктор</emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a1453f3e7f2587b7b884525c75d8b8cf5">
+                <title>void Jarvis::Jarvis::initialize (Jarvis *jarvis)</title> <emphasis>Инициализация системы</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Аргументы                        </title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>jarvis</entry>
+                                <entry>
+<para>Объект <link linkend="classJarvis_1_1Jarvis">Jarvis</link> Метод для инициализации системы </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a22a6798b7868c1f17ecf5023edbd252b">
+                <title>Jarvis::Jarvis::JarvisDestroyer (const JarvisDestroyer &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a382b3b739ed3881ae2d5a93b0743e72c">
+                <title>Jarvis::Jarvis::JarvisDestroyer (JarvisDestroyer &amp;&amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1a449b426d29488b2004e8431dfeeb204b">
+                <title>JarvisDestroyer&amp; Jarvis::Jarvis::operator= (const JarvisDestroyer &amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classJarvis_1_1Jarvis_1ace5b58fadb50698bbf9db3e0d7af3a2f">
+                <title>JarvisDestroyer&amp; Jarvis::Jarvis::operator= (JarvisDestroyer &amp;&amp;copy)=delete</title> <emphasis></emphasis>
+                
+            </section>
+</section>

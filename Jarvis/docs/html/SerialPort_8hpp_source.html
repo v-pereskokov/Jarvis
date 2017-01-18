@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jarvis: Исходный файл /Users/vladislavpereskokov/Desktop/Jarvis/Voice/include/SerialPort.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jarvis
+   &#160;<span id="projectnumber">v.0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SerialPort.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SERIALPORT_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SERIALPORT_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;boost/asio/serial_port.hpp&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceJarvis.html">Jarvis</a> {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">namespace </span><a class="code" href="namespaceArduino.html">Arduino</a> {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespaceConnection.html">Connection</a> {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define methods</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define params</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">using namespace </span><a class="code" href="namespaceboost_1_1asio.html">boost::asio</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">   34</a></span>&#160;      <span class="keyword">class </span><a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a> final {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">using</span> serviceIO = io_service;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">using</span> port = serial_port;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">using</span> portName = std::string;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">using</span> portRate = size_t;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">using</span> byte = char;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">using</span> message = std::string;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        </div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="keyword">public</span> methods:</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a>(<span class="keyword">const</span> portName &amp;name, <span class="keyword">const</span> portRate rate);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ~<a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> write(<span class="keyword">const</span> message &amp;message);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        message read();</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keyword">private</span> methods:</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a>(<span class="keyword">const</span> <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a> &amp;copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a>(<span class="keyword">const</span> <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a> &amp;&amp;copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">SerialPort</a> &amp;copy) = <span class="keyword">delete</span>;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> setRate(port &amp;port, <span class="keyword">const</span> portRate rate);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keyword">private</span> params:</div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html#ae94ab8cb0505cd48431c8a013eeb9c26">  100</a></span>&#160;        serviceIO _service; </div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html#a5149372d91ed61041ad34219e1d6a49a">  101</a></span>&#160;        port <a class="code" href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html#a5149372d91ed61041ad34219e1d6a49a">_port</a>; </div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      };</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif // SERIALPORT_H</span></div><div class="ttc" id="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_html"><div class="ttname"><a href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html">Jarvis::Arduino::Connection::SerialPort</a></div><div class="ttdoc">Класс для подключения по порту </div><div class="ttdef"><b>Definition:</b> SerialPort.hpp:34</div></div>
+<div class="ttc" id="namespaceJarvis_html"><div class="ttname"><a href="namespaceJarvis.html">Jarvis</a></div><div class="ttdoc">Основной namespace для всего проекта </div></div>
+<div class="ttc" id="namespaceboost_1_1asio_html"><div class="ttname"><a href="namespaceboost_1_1asio.html">asio</a></div></div>
+<div class="ttc" id="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_html_a5149372d91ed61041ad34219e1d6a49a"><div class="ttname"><a href="classJarvis_1_1Arduino_1_1Connection_1_1SerialPort.html#a5149372d91ed61041ad34219e1d6a49a">Jarvis::Arduino::Connection::SerialPort::_port</a></div><div class="ttdeci">port _port</div><div class="ttdef"><b>Definition:</b> SerialPort.hpp:101</div></div>
+<div class="ttc" id="namespaceConnection_html"><div class="ttname"><a href="namespaceConnection.html">Connection</a></div><div class="ttdoc">Для подключения к Arduino. </div></div>
+<div class="ttc" id="namespaceArduino_html"><div class="ttname"><a href="namespaceArduino.html">Arduino</a></div><div class="ttdoc">Для работы с Arduino. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

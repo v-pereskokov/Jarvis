@@ -21,11 +21,12 @@ public:
 
 private slots:
     void on_brightnessSlider_valueChanged(int value);
-
     void on_statusButton_clicked();
-
-
     void on_bulbImage_clicked();
+    void on_deleteDeviceButton_clicked();
+
+signals:
+    void deleteDevice(QString deviceName);
 
 private:
     Ui::SmartBulbConfig *ui;

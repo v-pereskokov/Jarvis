@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classJarvis">
+<title>Jarvis class Reference</title>
+<para>
+    <programlisting>#include <link linkend="Jarvis_8hpp">&lt;Jarvis.hpp&gt;</link></programlisting>
+</para>
+    <simplesect>
+
+<para>Класс, описывающий аналог ИИ </para>
+    </simplesect>
+</section>

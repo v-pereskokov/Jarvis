@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespaceJarvis_1_1Commands_1_1CommandType">
+<title>Jarvis::Commands::CommandType</title>
+        <section>
+            <title>Определения типов</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::string  <link linkend="Command_8hpp_1a876190d63cd840db586c4788a116f338">commandType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Переменные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const commandType <link linkend="Command_8hpp_1aa386fced21b570733e0d13f6c2dd14b4">python</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const commandType <link linkend="Command_8hpp_1a14154c5f082f07f92714fe89d56a9439">shell</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const commandType <link linkend="Command_8hpp_1a1187530f1e70cd81375f36b63e793c2e">music</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

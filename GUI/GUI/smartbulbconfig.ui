@@ -275,6 +275,43 @@ border:none;
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="deleteDeviceButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>225</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+                      background-color: #009E9B;
+                      border : none;
+                       font:  14px; 
+                       color: #fff;
+                       min-width: 80px;
+                       min-height: 20px;
+                       padding: 5px;
+                    }
+                    QPushButton:disabled {
+                      background-color: #989898;
+                       color: #fff;
+                     }
+                    QPushButton:hover {
+                       background-color: #61b7ff;
+                    }
+                    QPushButton:focus { 
+                       background-color: #61b7ff;
+                    }
+                    QPushButton:pressed {
+                       background-color: #54dff0;
+                     }</string>
+   </property>
+   <property name="text">
+    <string>Delete device</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="res.qrc"/>

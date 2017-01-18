@@ -11,5 +11,6 @@
         <file>bulbOffIcon.png</file>
         <file>bulbOnIcon.png</file>
         <file>toolIcon.png</file>
+        <file>microphone.gif</file>
     </qresource>
 </RCC>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespaceJarvis">
+<title>Jarvis</title>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classJarvis_1_1Jarvis">Jarvis::Jarvis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classJarvis_1_1Parser">Jarvis::Parser</link></para>
+<para><emphasis>Класс для парсинга файлов различных типов</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classJarvis_1_1Sentence">Jarvis::Sentence</link></para>
+<para><emphasis>Класс для работы с предложениями к Jarvis.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classJarvis_1_1Voice">Jarvis::Voice</link></para>
+<para><emphasis>Описывает объект голос</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Пространства имен </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceJarvis_1_1Arduino">Jarvis::Arduino</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceJarvis_1_1Commands">Jarvis::Commands</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceJarvis_1_1connection">Jarvis::connection</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Parser::Tree <link linkend="namespaceJarvis_1a317317aef901d7a097472293993d35d0">jsonParse</link> (
+Parser::stringTarget &amp; stream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Parser::Tree <link linkend="namespaceJarvis_1aee6fb2e55e20f8df7e199e5adbe43fa1">xmlParse</link> (
+Parser::stringTarget &amp; stream)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1a333da3058dd9eba2fb455fce8edd2557">operator==</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1a30effa4f0618d13d82a08b61222841c3">operator!=</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1ae92529451bff5ef1a8e6117041b0d4eb">operator&gt;</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1a150bb3f2da01868ba25056a7b602420a">operator&lt;</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1a4f81241fea0f46c08819fbbce5b115ed">operator&gt;=</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="namespaceJarvis_1a0df10f752b2586fd4069ef999f744c04">operator&lt;=</link> (
+const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; lhs, const <link linkend="classJarvis_1_1Sentence">Sentence</link> &amp; rhs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Основной namespace для всего проекта </para>
+    </simplesect>
+</section>
