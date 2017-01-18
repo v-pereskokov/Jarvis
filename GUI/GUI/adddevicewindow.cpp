@@ -11,18 +11,19 @@ AddDeviceWindow::AddDeviceWindow(QWidget *parent) :
 
 AddDeviceWindow::AddDeviceWindow(QWidget *parent,
                                       std::vector<SettingsButtonBox *> &btnList,
-                                      std::vector<QString> avaliableDevices)  : AddDeviceWindow{parent}
+                                      std::vector<std::pair<std::__cxx11::string, std::__cxx11::string> > avaliableDevices)
+    : AddDeviceWindow{parent}
 {
     QPushButton *tempBtn;
     QString stylesList[stylesAmount];
     setStyles(stylesList);
-
+    this->avaliableDevices = avaliableDevices;
     buttonList = btnList;
 
     for(size_t i = 0; i < avaliableDevices.size(); ++i)
     {
-
-        tempBtn = new QPushButton(avaliableDevices[i], ui->scrollAreaWidgetContents);
+        std::string deviceBTName =  avaliableDevices[i].first;
+        tempBtn = new QPushButton(QString::fromUtf8(deviceBTName.c_str()), ui->scrollAreaWidgetContents);
         tempBtn->setStyleSheet(stylesList[4]);
         ui->avaliableDevicesLayout->addWidget(tempBtn);
         connect(tempBtn, SIGNAL(clicked()), this, SLOT(getButtonName()));
@@ -91,7 +92,16 @@ void AddDeviceWindow::on_buttonBox_clicked(QAbstractButton *button)
             QMessageBox::information(this, QString{"warning"}, QString{"Enter device name."});
             return;
         }
-        emit(newDevice(ui->deviceEdit->text(), ui->deviceNameEdit->text(), ui->deviceGroupEdit->text()));
+        for (int i = 0; i < avaliableDevices.size(); ++i)
+        {
+            QString temp = QString::fromUtf8(avaliableDevices[i].first.c_str());
+            if(temp == ui->deviceEdit->text())
+            {
+                emit(newDevice(ui->deviceEdit->text(), avaliableDevices[i].second,
+                               ui->deviceNameEdit->text(), ui->deviceGroupEdit->text()));
+                break;
+            }
+        }
         this->close();
     }
 }

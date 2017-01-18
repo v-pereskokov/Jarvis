@@ -10,7 +10,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GUI
 TEMPLATE = app
-
+macx {
+QMAKE_CXXFLAGS += -std=c++14
+INCLUDEPATH += "/opt/boost/include"
+LIBS += -L/opt/boost/lib
+LIBS += -lboost_system
+}
 LIBS += -L/usr/lib/x86_64-linux-gnu -lboost_system
 SOURCES += main.cpp\
         mainwindow.cpp \

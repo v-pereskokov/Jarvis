@@ -38,7 +38,7 @@ public:
   void     changeDeviceGroupTab(QString newGroupTabName, SettingsButtonBox *btn); //Слот изменения группы устройства
   void     on_addGroup_clicked();   // Слот добавления группы устройств
   void     on_deleteGroup_clicked(); // Слот удаления группы устройств вместе с устройствами
-  void     addDevice(QString deviceBluetooth, QString deviceName, QString groupName); // Слот создания устройства
+  void     addDevice(QString deviceBluetooth, std::string devicePort, QString deviceName, QString groupName); // Слот создания устройства
   void     on_toolPushButton_clicked();  // Слот сворачивания/разворачивания панели управления
   void     setButtonIcon(int frame);
   void     on_microphoneButton_clicked();

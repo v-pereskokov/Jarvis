@@ -167,30 +167,24 @@ void MainWindow::on_addButton_clicked()
   // Список доступных устройств (имя)
   Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.usbmodem14331"); // Порт потом укажу нужный
   BTModule.connect();
-  auto list = BTModule.getListOfDevicePortName();
+  auto avaliableDevices = BTModule.getListOfDevicePortName();
   BTModule.disconnect();
-  // list[i]: first - name device, second - name port device
-  std::vector<QString> avaliableDevices;
-  for (auto i = 0; i < list.size(); ++i) {
-    std::string temp = list[i].first;
-    avaliableDevices.push_back(QString::fromUtf8(temp.c_str()));
-  }
   
   
   AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
-  connect(addDeviceWindow, SIGNAL(newDevice(QString, QString , QString)),
-          this, SLOT(addDevice(QString, QString , QString)));
+  connect(addDeviceWindow, SIGNAL(newDevice(QString, std::__cxx11::string, QString , QString)),
+          this, SLOT(addDevice(QString, std::__cxx11::string, QString , QString)));
   addDeviceWindow->show(); //вызов диалогового окна добавления устройства
   
 }
 
-void MainWindow::addDevice(QString deviceBluetooth, QString deviceName, QString groupName)
+void MainWindow::addDevice(QString deviceBluetooth, std::__cxx11::string devicePort, QString deviceName, QString groupName)
 {
   GroupTab *tab = getGroupTab(groupName, true, ui->scrollAreaWidgetContents);
   
   // Создаем объект динамической кнопки
   SettingsButtonBox *settings = createDynamicButton(deviceBluetooth, deviceName, tab->tab->text(), tab->layout);
-  
+  settings->deviceButton->startFabric(devicePort);
   //Добавляем кнопку в слой
   tab->layout->addSettingsButtonBox(settings);
   if(tab->tab->isChecked())

@@ -36,6 +36,12 @@ SmartDevice::~SmartDevice()
 
 }
 
+
+void SmartDevice::startFabric(std::string devicePort)
+{
+
+}
+
 bool SmartDevice::setGroupName(const QString& name)
 {
     QString temp = groupName;

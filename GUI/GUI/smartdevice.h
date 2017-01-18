@@ -24,6 +24,7 @@ public:
     QString         getGroupName() const;
     QString         getDeviceName() const;
     int             getDeviceID() const;
+    void            startFabric(std::string devicePort);
 
 
 protected:
