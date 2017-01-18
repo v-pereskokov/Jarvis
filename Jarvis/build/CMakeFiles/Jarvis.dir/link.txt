@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libJarvis.a  CMakeFiles/Jarvis.dir/src/Command.cpp.o CMakeFiles/Jarvis.dir/src/Jarvis.cpp.o CMakeFiles/Jarvis.dir/src/Parser.cpp.o CMakeFiles/Jarvis.dir/src/SpeechKit.cpp.o CMakeFiles/Jarvis.dir/src/Transport.cpp.o CMakeFiles/Jarvis.dir/src/Voice.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libJarvis.a

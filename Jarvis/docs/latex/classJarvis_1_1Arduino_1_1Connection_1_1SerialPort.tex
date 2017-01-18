@@ -1,0 +1,132 @@
+\hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}{}\section{Класс Jarvis\+:\+:Arduino\+:\+:Connection\+:\+:Serial\+Port}
+\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+
+
+Класс для подключения по порту  
+
+
+
+
+{\ttfamily \#include $<$Serial\+Port.\+hpp$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a9f327eb95493fa85c7db715b21ede8d0}{Serial\+Port} (const port\+Name \&name, const port\+Rate rate)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ab79a8590e02e3de7e469d5b6e915f84c}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ab79a8590e02e3de7e469d5b6e915f84c}} 
+\hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ab79a8590e02e3de7e469d5b6e915f84c}{$\sim$\+Serial\+Port} ()=default
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\item 
+void \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_aa83e438051a5b6b77e99a656633bd61c}{write} (const message \&message)
+\begin{DoxyCompactList}\small\item\em Метод для отправки сообщения \end{DoxyCompactList}\item 
+message \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a484856dc39e0244a37bcd0f236595f5b}{read} ()
+\begin{DoxyCompactList}\small\item\em Метод для получения сообщения \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a0485ff2bb3a26a941c0ba6aedefa4864}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a0485ff2bb3a26a941c0ba6aedefa4864}} 
+{\bfseries Serial\+Port} (const \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}{Serial\+Port} \&copy)=delete
+\item 
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_af485ac5e3d1e0e1146851961a30413ea}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_af485ac5e3d1e0e1146851961a30413ea}} 
+{\bfseries Serial\+Port} (const \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}{Serial\+Port} \&\&copy)=delete
+\item 
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_af3004d08c4ae6617468835b22f4f7f14}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_af3004d08c4ae6617468835b22f4f7f14}} 
+\hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}{Serial\+Port} \& {\bfseries operator=} (const \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort}{Serial\+Port} \&copy)=delete
+\item 
+void \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a312c671ec469d889c07a283ef27568d9}{set\+Rate} (port \&port, const port\+Rate rate)
+\begin{DoxyCompactList}\small\item\em Заполнение информацией \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+private \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ae94ab8cb0505cd48431c8a013eeb9c26}{params}\+: service\+IO \+\_\+service
+\item 
+port \hyperlink{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a5149372d91ed61041ad34219e1d6a49a}{\+\_\+port}
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс для подключения по порту 
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a9f327eb95493fa85c7db715b21ede8d0}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a9f327eb95493fa85c7db715b21ede8d0}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!Serial\+Port@{Serial\+Port}}
+\index{Serial\+Port@{Serial\+Port}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{Serial\+Port()}{SerialPort()}}
+{\footnotesize\ttfamily Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::\+Serial\+Port (\begin{DoxyParamCaption}\item[{const port\+Name \&}]{name,  }\item[{const port\+Rate}]{rate }\end{DoxyParamCaption})}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em name} & Имя порта для подключения \\
+\hline
+{\em rate} & Сокрость передачи данных \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a484856dc39e0244a37bcd0f236595f5b}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a484856dc39e0244a37bcd0f236595f5b}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!read@{read}}
+\index{read@{read}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily message Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Метод для получения сообщения 
+
+\begin{DoxyReturn}{Возвращает}
+message Сообщение 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a312c671ec469d889c07a283ef27568d9}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a312c671ec469d889c07a283ef27568d9}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!set\+Rate@{set\+Rate}}
+\index{set\+Rate@{set\+Rate}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{set\+Rate()}{setRate()}}
+{\footnotesize\ttfamily void Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::set\+Rate (\begin{DoxyParamCaption}\item[{port \&}]{port,  }\item[{const port\+Rate}]{rate }\end{DoxyParamCaption})}
+
+
+
+Заполнение информацией 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em port} & Порт для \char`\"{}общения\char`\"{} \\
+\hline
+{\em rate} & Скорость для передачи данных \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_aa83e438051a5b6b77e99a656633bd61c}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_aa83e438051a5b6b77e99a656633bd61c}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!write@{write}}
+\index{write@{write}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::write (\begin{DoxyParamCaption}\item[{const message \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Метод для отправки сообщения 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em message} & Сообщение \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a5149372d91ed61041ad34219e1d6a49a}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_a5149372d91ed61041ad34219e1d6a49a}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!\+\_\+port@{\+\_\+port}}
+\index{\+\_\+port@{\+\_\+port}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{\+\_\+port}{\_port}}
+{\footnotesize\ttfamily port Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::\+\_\+port}
+
+порт \mbox{\Hypertarget{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ae94ab8cb0505cd48431c8a013eeb9c26}\label{classJarvis_1_1Arduino_1_1Connection_1_1SerialPort_ae94ab8cb0505cd48431c8a013eeb9c26}} 
+\index{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}!params@{params}}
+\index{params@{params}!Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port@{Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily private Jarvis\+::\+Arduino\+::\+Connection\+::\+Serial\+Port\+::params}
+
+I/O cервис 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vladislavpereskokov/\+Desktop/\+Jarvis/\+Voice/include/Serial\+Port.\+hpp\end{DoxyCompactItemize}

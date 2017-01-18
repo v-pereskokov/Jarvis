@@ -135,12 +135,14 @@ void test5() {
 
 void test6() {
   Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.usbmodem14331");
-  std::cout << BTModule.getNameDevice("2016,6,227738") << std::endl;
-  BTModule.getListDevicesName();
+  BTModule.connect();
+//  std::cout << BTModule.getNameDevice("2016,6,227738") << std::endl;
+//  BTModule.getListDevicesName();
   auto list = BTModule.getListOfDevicePortName();
   for (auto &i : list) {
     std::cout << "name: " << i.first << " port: " << i.second << std::endl;
   }
+  BTModule.disconnect();
 }
 
 int main() {

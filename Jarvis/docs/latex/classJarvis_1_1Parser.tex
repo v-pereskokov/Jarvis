@@ -1,0 +1,162 @@
+\hypertarget{classJarvis_1_1Parser}{}\section{Класс Jarvis\+:\+:Parser}
+\label{classJarvis_1_1Parser}\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+
+
+Класс для парсинга файлов различных типов  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+hpp$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJarvis_1_1Parser_a60c7c20f5314859c9f204dd5142fcf90}\label{classJarvis_1_1Parser_a60c7c20f5314859c9f204dd5142fcf90}} 
+\hyperlink{classJarvis_1_1Parser_a60c7c20f5314859c9f204dd5142fcf90}{Parser} ()=default
+\begin{DoxyCompactList}\small\item\em Конструктор по-\/умолчанию \end{DoxyCompactList}\item 
+\hyperlink{classJarvis_1_1Parser_ac4987517b9f2618f1c8a7ff8a91f6b77}{Parser} (const Path \&path)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJarvis_1_1Parser_a42970c65127a01194e31175af54cd292}\label{classJarvis_1_1Parser_a42970c65127a01194e31175af54cd292}} 
+\hyperlink{classJarvis_1_1Parser_a42970c65127a01194e31175af54cd292}{Parser} (const \hyperlink{classJarvis_1_1Parser}{Parser} \&copy)=default
+\begin{DoxyCompactList}\small\item\em Конструктор копирования \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJarvis_1_1Parser_a4cc69248743fb4bcaa27ebe8ca60d4bf}\label{classJarvis_1_1Parser_a4cc69248743fb4bcaa27ebe8ca60d4bf}} 
+\hyperlink{classJarvis_1_1Parser}{Parser} \& \hyperlink{classJarvis_1_1Parser_a4cc69248743fb4bcaa27ebe8ca60d4bf}{operator=} (const \hyperlink{classJarvis_1_1Parser}{Parser} \&copy)=default
+\begin{DoxyCompactList}\small\item\em Оператор копирования \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJarvis_1_1Parser_a7ff8a13f47d05e0fe46ce9b90cf596fd}\label{classJarvis_1_1Parser_a7ff8a13f47d05e0fe46ce9b90cf596fd}} 
+\hyperlink{classJarvis_1_1Parser_a7ff8a13f47d05e0fe46ce9b90cf596fd}{$\sim$\+Parser} ()=default
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\item 
+void \hyperlink{classJarvis_1_1Parser_ae2e8ce2a61c865342619fffe478dcda3}{load\+Target} (const Path \&path)
+\begin{DoxyCompactList}\small\item\em Метод для подгрузки файла \end{DoxyCompactList}\item 
+Tree \hyperlink{classJarvis_1_1Parser_a6d9a642092d5b7806b19ea6ccd98a515}{json\+Parse} ()
+\begin{DoxyCompactList}\small\item\em Парсер json фалйа \end{DoxyCompactList}\item 
+Tree \hyperlink{classJarvis_1_1Parser_ae970d807833a09eb01ac2bb3367560b7}{xml\+Parse} ()
+\begin{DoxyCompactList}\small\item\em Парсер xml фалйа \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+private \hyperlink{classJarvis_1_1Parser_a60503f54d37de6bc5eac1e6cb0c79c88}{params}\+: Path \+\_\+target
+\item 
+Tree \hyperlink{classJarvis_1_1Parser_aaa45f2682e516630116ab3a80028d0d4}{\+\_\+tree}
+\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+Tree \hyperlink{classJarvis_1_1Parser_ac52ba088bbd034ec108efce6c8f48e17}{json\+Parse} (string\+Target \&stream)
+\begin{DoxyCompactList}\small\item\em Парсер json фалйа \end{DoxyCompactList}\item 
+Tree \hyperlink{classJarvis_1_1Parser_a6f226036ccce1dd03cab22a3214374f4}{xml\+Parse} (string\+Target \&stream)
+\begin{DoxyCompactList}\small\item\em Парсер xml фалйа \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс для парсинга файлов различных типов 
+
+\subsection{Конструктор(ы)}
+\mbox{\Hypertarget{classJarvis_1_1Parser_ac4987517b9f2618f1c8a7ff8a91f6b77}\label{classJarvis_1_1Parser_ac4987517b9f2618f1c8a7ff8a91f6b77}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily Jarvis\+::\+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const Path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь до файла \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\mbox{\Hypertarget{classJarvis_1_1Parser_a6d9a642092d5b7806b19ea6ccd98a515}\label{classJarvis_1_1Parser_a6d9a642092d5b7806b19ea6ccd98a515}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!json\+Parse@{json\+Parse}}
+\index{json\+Parse@{json\+Parse}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{json\+Parse()}{jsonParse()}}
+{\footnotesize\ttfamily Tree Jarvis\+::\+Parser\+::json\+Parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Парсер json фалйа 
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJarvis_1_1Parser_ae2e8ce2a61c865342619fffe478dcda3}\label{classJarvis_1_1Parser_ae2e8ce2a61c865342619fffe478dcda3}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!load\+Target@{load\+Target}}
+\index{load\+Target@{load\+Target}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{load\+Target()}{loadTarget()}}
+{\footnotesize\ttfamily void Jarvis\+::\+Parser\+::load\+Target (\begin{DoxyParamCaption}\item[{const Path \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Метод для подгрузки файла 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em path} & Путь до файла \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJarvis_1_1Parser_ae970d807833a09eb01ac2bb3367560b7}\label{classJarvis_1_1Parser_ae970d807833a09eb01ac2bb3367560b7}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!xml\+Parse@{xml\+Parse}}
+\index{xml\+Parse@{xml\+Parse}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{xml\+Parse()}{xmlParse()}}
+{\footnotesize\ttfamily Tree Jarvis\+::\+Parser\+::xml\+Parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Парсер xml фалйа 
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}
+
+
+\subsection{Документация по друзьям класса и функциям, относящимся к классу}
+\mbox{\Hypertarget{classJarvis_1_1Parser_ac52ba088bbd034ec108efce6c8f48e17}\label{classJarvis_1_1Parser_ac52ba088bbd034ec108efce6c8f48e17}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!json\+Parse@{json\+Parse}}
+\index{json\+Parse@{json\+Parse}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{json\+Parse}{jsonParse}}
+{\footnotesize\ttfamily Tree json\+Parse (\begin{DoxyParamCaption}\item[{Parser\+::string\+Target \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Парсер json фалйа 
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJarvis_1_1Parser_a6f226036ccce1dd03cab22a3214374f4}\label{classJarvis_1_1Parser_a6f226036ccce1dd03cab22a3214374f4}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!xml\+Parse@{xml\+Parse}}
+\index{xml\+Parse@{xml\+Parse}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{xml\+Parse}{xmlParse}}
+{\footnotesize\ttfamily Tree xml\+Parse (\begin{DoxyParamCaption}\item[{Parser\+::string\+Target \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Парсер xml фалйа 
+
+\begin{DoxyReturn}{Возвращает}
+Дерево, распарсенного файла 
+\end{DoxyReturn}
+
+
+\subsection{Данные класса}
+\mbox{\Hypertarget{classJarvis_1_1Parser_aaa45f2682e516630116ab3a80028d0d4}\label{classJarvis_1_1Parser_aaa45f2682e516630116ab3a80028d0d4}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!\+\_\+tree@{\+\_\+tree}}
+\index{\+\_\+tree@{\+\_\+tree}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{\+\_\+tree}{\_tree}}
+{\footnotesize\ttfamily Tree Jarvis\+::\+Parser\+::\+\_\+tree}
+
+Дерево \mbox{\Hypertarget{classJarvis_1_1Parser_a60503f54d37de6bc5eac1e6cb0c79c88}\label{classJarvis_1_1Parser_a60503f54d37de6bc5eac1e6cb0c79c88}} 
+\index{Jarvis\+::\+Parser@{Jarvis\+::\+Parser}!params@{params}}
+\index{params@{params}!Jarvis\+::\+Parser@{Jarvis\+::\+Parser}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily private Jarvis\+::\+Parser\+::params}
+
+путь до файла 
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vladislavpereskokov/\+Desktop/\+Jarvis/\+Voice/include/Parser.\+hpp\end{DoxyCompactItemize}

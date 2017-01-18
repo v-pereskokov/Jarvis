@@ -1,0 +1,4 @@
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/Jarvis/build/CMakeFiles/rebuild_cache.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/Jarvis/build/CMakeFiles/edit_cache.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/Jarvis/build/CMakeFiles/test.dir
+/Users/vladislavpereskokov/Desktop/Projects/Jarvis/Jarvis/build/CMakeFiles/Jarvis.dir
