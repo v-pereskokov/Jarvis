@@ -33,7 +33,7 @@ signals:
 private:
     Ui::AddDeviceWindow *ui;
     std::vector<SettingsButtonBox*>    buttonList;
-    std::vector<std::pair<std::__cxx11::string, std::__cxx11::string> > avaliableDevices;
+    std::vector<std::pair<std::string, std::__cxx11::string> > avaliableDevices;
 };
 
 #endif // ADDDEVICEWINDOW_H

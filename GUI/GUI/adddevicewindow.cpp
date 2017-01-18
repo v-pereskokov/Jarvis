@@ -11,7 +11,7 @@ ui(new Ui::AddDeviceWindow)
 
 AddDeviceWindow::AddDeviceWindow(QWidget *parent,
                                  std::vector<SettingsButtonBox *> &btnList,
-                                 std::vector<std::pair<std::__cxx11::string, std::__cxx11::string> > avaliableDevices)
+                                 std::vector<std::pair<std::string, std::string> > avaliableDevices)
 : AddDeviceWindow{parent}
 {
   QPushButton *tempBtn;

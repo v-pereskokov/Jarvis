@@ -170,16 +170,15 @@ void MainWindow::on_addButton_clicked()
   BTModule.connect();
   auto avaliableDevices = BTModule.getListOfDevicePortName();
   BTModule.disconnect();
-  
-  
+
   AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
-  connect(addDeviceWindow, SIGNAL(newDevice(QString, std::__cxx11::string, QString , QString)),
-          this, SLOT(addDevice(QString, std::__cxx11::string, QString , QString)));
+  connect(addDeviceWindow, SIGNAL(newDevice(QString, std::string, QString , QString)),
+          this, SLOT(addDevice(QString, std::string, QString , QString)));
   addDeviceWindow->show(); //вызов диалогового окна добавления устройства
   
 }
 
-void MainWindow::addDevice(QString deviceBluetooth, std::__cxx11::string devicePort, QString deviceName, QString groupName)
+void MainWindow::addDevice(QString deviceBluetooth, std::string devicePort, QString deviceName, QString groupName)
 {
   GroupTab *tab = getGroupTab(groupName, true, ui->scrollAreaWidgetContents);
   

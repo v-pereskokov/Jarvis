@@ -36,6 +36,7 @@ SOURCES += main.cpp\
     ../../SmartHome/src/Device.cpp \
     ../../SmartHome/src/DevicesController.cpp \
     ../../SmartHome/src/Teapot.cpp \
+    ../../SmartHome/src/Fan.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -56,7 +57,8 @@ HEADERS  += mainwindow.h \
     ../../SmartHome/include/DevicesController.hpp \
     ../../SmartHome/include/Devices/Teapot.hpp \
     ../../SmartHome/include/Commands.hpp \
-    ../../SmartHome/include/Mediator.hpp
+    ../../SmartHome/include/Mediator.hpp \
+    ../../SmartHome/include/Devices/Fan.hpp
 
 
 FORMS    += mainwindow.ui \
