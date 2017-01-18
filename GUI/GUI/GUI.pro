@@ -23,7 +23,14 @@ SOURCES += main.cpp\
     settingsbuttonbox.cpp \
     widgetgridlayout.cpp \
     dynamicbulbbutton.cpp \
-    adddevicewindow.cpp
+    adddevicewindow.cpp \
+    ../../SmartHome/src/Devices.cpp \
+    ../../SmartHome/src/SerialPort.cpp \
+    ../../SmartHome/src/BluetoothHC05.cpp \
+    ../../SmartHome/src/Bulb.cpp \
+    ../../SmartHome/src/Device.cpp \
+    ../../SmartHome/src/DevicesController.cpp \
+    ../../SmartHome/src/Teapot.cpp \
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -35,7 +42,17 @@ HEADERS  += mainwindow.h \
     settingsbuttonbox.h \
     widgetgridlayout.h \
     dynamicbulbbutton.h \
-    adddevicewindow.h
+    adddevicewindow.h \
+    ../../SmartHome/include/Devices/Devices.hpp \
+    ../../SmartHome/include/SerialPort.hpp \
+    ../../SmartHome/include/BluetoothHC05.hpp \
+    ../../SmartHome/include/Devices/Bulb.hpp \
+    ../../SmartHome/include/Devices/Device.hpp \
+    ../../SmartHome/include/DevicesController.hpp \
+    ../../SmartHome/include/Devices/Teapot.hpp \
+    ../../SmartHome/include/Commands.hpp \
+    ../../SmartHome/include/Mediator.hpp
+
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \
