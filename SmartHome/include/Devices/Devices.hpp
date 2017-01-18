@@ -9,6 +9,7 @@
 #include <exception>
 #include "Bulb.hpp"
 #include "Teapot.hpp"
+#include "Fan.hpp"
 //#include "TemperatureModule.hpp"
 
 namespace Jarvis {
