@@ -11,8 +11,6 @@
 #include <utility>
 #include <boost/utility.hpp>
 #include "Command.hpp"
-#include "SerialPort.hpp"
-//#include "Mediator.hpp"
 #include "Voice.hpp"
 
 /*!
