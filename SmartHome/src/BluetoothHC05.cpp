@@ -11,21 +11,17 @@ namespace Jarvis {
       }
       
       BluetoothHC05::answers BluetoothHC05::getNameDevice(const address &address) {
-        connect();
         command(ATCommands::RNAME + address);
         deviceName name = getNameFromAnswerRname(getAnswer());
-        disconnect();
         return name;
       }
       
       BluetoothHC05::listDevices BluetoothHC05::getListDevicesAddress() {
-        connect();
         command(ATCommands::INIT);
         getAnswer();
         command(ATCommands::INQUIRE);
         listDevices list;
         findListDevicesAddress(&list, getAnswer());
-        disconnect();
         return list;
       }
       
@@ -91,7 +87,7 @@ namespace Jarvis {
           address = findValue(target, ",");
           std::replace(address.begin(), address.end(), ':', ',');
           list->push_back(address);
-          target.erase(0, ((i != count - 1) ? (target.find_first_of("+")) : target.find_first_of("OK")));
+          target.erase(0, ((i != count - 1) ? (target.find_first_of("+") + 1) : target.find_first_of("OK")));
         }
       }
       
