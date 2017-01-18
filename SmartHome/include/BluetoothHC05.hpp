@@ -57,6 +57,8 @@ namespace Jarvis {
         BluetoothHC05(const Connection::SerialPort::portName &portName, const Connection::SerialPort::portRate portRate = 9600);
         ~BluetoothHC05();
         
+        void connect();
+        void disconnect();
         answers getNameDevice(const address &address);
         listDevices getListDevicesAddress();
         listDevices getListDevicesName();
@@ -70,8 +72,6 @@ namespace Jarvis {
         BluetoothHC05& operator=(const BluetoothHC05 &copy) = delete;
         BluetoothHC05& operator=(BluetoothHC05 &&copy) = delete;
         
-        void connect();
-        void disconnect();
         deviceName getNameFromAnswerRname(const answers &answer);
         void command(const query &query);
         void clear(answers *answer);

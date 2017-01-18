@@ -1,18 +1,15 @@
 cmake_minimum_required(VERSION 2.6)
 project(SmartHome)
 
-set(GPP14 -std=c++14)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(WALL -Wall)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GPP14} ${WALL}")
+set(TEST_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp)
 
-set(SERIALPORT_SOURCE src/SerialPort.cpp)
-set(DEVICE_SOURCE src/Device.cpp)
-set(BULB_SOURCE src/Bulb.cpp)
-set(MODULE_SOURCE src/Module.cpp)
-set(DEVICES_SOURCE src/Devices.cpp)
-set(BULB_SOURCE src/Bulb.cpp)
-set(TEAPOT_SOURCE src/Teapot.cpp)
-set(BLUETOOTH_SOURCE src/BluetoothHC05.cpp)
+set(${PROJECT_NAME}_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/include/)
+include_directories(${${PROJECT_NAME}_INCLUDE_DIRS})
+file(GLOB ${PROJECT_NAME}_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 set(BOOST_ROOT /opt/boost/)
 set(Boost_USE_STATIC_LIBS ON)
@@ -23,10 +20,7 @@ find_package(Boost COMPONENTS ${BOOST_COMPONENTS} REQUIRED)
 
 if (Boost_FOUND)
   include_directories(${Boost_INCLUDE_DIRS})
-
-  add_library(SmartHomeLib STATIC ${SERIALPORT_SOURCE} ${DEVICE_SOURCE} ${BULB_SOURCE} ${MODULE_SOURCE} ${DEVICES_SOURCE} ${BULB_SOURCE} ${TEAPOT_SOURCE} ${BLUETOOTH_SOURCE})
-
-  add_executable(tests ${TESTS_SOURCE} tests/test.cpp)
-
-  target_link_libraries(tests ${Boost_LIBRARIES} SmartHomeLib)
+  add_library(${PROJECT_NAME} STATIC ${${PROJECT_NAME}_SOURCES})
+  add_executable(test ${TESTS_SOURCE} ${TEST_SOURCE})
+  target_link_libraries(test ${Boost_LIBRARIES} ${PROJECT_NAME})
 endif()
