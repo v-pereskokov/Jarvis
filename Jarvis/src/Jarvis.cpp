@@ -7,7 +7,7 @@ namespace Jarvis {
   Jarvis::JarvisDestroyer Jarvis::_destroyer;
   
   Jarvis::stringVoice Jarvis::getStringVoice() {
-    return _voice.voiceRecognition();
+    return _voice.recordAndGet();
   }
   
   Jarvis::JarvisDestroyer::~JarvisDestroyer() {

@@ -1,0 +1,12 @@
+{
+	"VoiceFiles" : { 
+		"приветствие" : "Samples/Welcome.wav",
+		"включи свет" : "Samples/LedOff.wav",
+		"выключи свет" : "Samples/LedOn.wav",
+		"заморгай" : "Samples/Blink.wav",
+		"зажигай" : "Samples/VoiceHighwayToHell.wav",
+		"ошибка" : "Samples/Error.wav",
+		"прощание" : "Samples/Goodbye.wav",
+		"еще" : "Samples/SomethingElse.wav"
+	}
+}
