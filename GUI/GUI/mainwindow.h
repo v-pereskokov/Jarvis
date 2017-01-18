@@ -11,6 +11,9 @@
 #include "smartbulbconfig.h"
 #include "grouptab.h"
 #include "../../SmartHome/include/Devices/Devices.hpp"
+#include "../../SmartHome/include/SerialPort.hpp"
+#include "../../SmartHome/include/BluetoothHC05.hpp"
+
 
 
 namespace Ui {
@@ -53,7 +56,7 @@ private:
   std::vector<SettingsButtonBox*> buttonList;
   std::vector<GroupTab*>       groupList;
   QString stylesList[stylesAmount];
-  Jarvis::Devices::DeviceFactory *_factory
+  Jarvis::Devices::DeviceFactory *_factory;
   
 };
 

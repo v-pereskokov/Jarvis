@@ -172,7 +172,8 @@ void MainWindow::on_addButton_clicked()
   // list[i]: first - name device, second - name port device
   std::vector<QString> avaliableDevices;
   for (auto i = 0; i < list.size(); ++i) {
-    avaliableDevices.push_back(list[i].first);
+    std::string temp = list[i].first;
+    avaliableDevices.push_back(QString::fromUtf8(temp.c_str()));
   }
   
   
