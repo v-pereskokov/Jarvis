@@ -15,8 +15,12 @@ QMAKE_CXXFLAGS += -std=c++14
 INCLUDEPATH += "/opt/boost/include"
 LIBS += -L/opt/boost/lib
 LIBS += -lboost_system
+
 }
 LIBS += -L/usr/lib/x86_64-linux-gnu -lboost_system
+LIBS += -lcurl
+CONFIG += c++14
+QMAKE_CXXFLAGS += -std=c++14
 SOURCES += main.cpp\
         mainwindow.cpp \
     smartdevice.cpp \
@@ -36,7 +40,13 @@ SOURCES += main.cpp\
     ../../SmartHome/src/Device.cpp \
     ../../SmartHome/src/DevicesController.cpp \
     ../../SmartHome/src/Teapot.cpp \
-    ../../SmartHome/src/Fan.cpp
+    ../../SmartHome/src/Fan.cpp \
+    ../../Jarvis/src/Command.cpp \
+    ../../Jarvis/src/Jarvis.cpp \
+    ../../Jarvis/src/Parser.cpp \
+    ../../Jarvis/src/SpeechKit.cpp \
+    ../../Jarvis/src/Transport.cpp \
+    ../../Jarvis/src/Voice.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -58,7 +68,13 @@ HEADERS  += mainwindow.h \
     ../../SmartHome/include/Devices/Teapot.hpp \
     ../../SmartHome/include/Commands.hpp \
     ../../SmartHome/include/Mediator.hpp \
-    ../../SmartHome/include/Devices/Fan.hpp
+    ../../SmartHome/include/Devices/Fan.hpp \
+    ../../Jarvis/include/Command.hpp \
+    ../../Jarvis/include/Jarvis.hpp \
+    ../../Jarvis/include/Parser.hpp \
+    ../../Jarvis/include/SpeechKit.hpp \
+    ../../Jarvis/include/Transport.hpp \
+    ../../Jarvis/include/Voice.hpp
 
 
 FORMS    += mainwindow.ui \

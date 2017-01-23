@@ -6,10 +6,13 @@
 #include <QMessageBox>
 #include <QMovie>
 #include <vector>
+#include <thread>
 #include "settingsbuttonbox.h"
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"
 #include "grouptab.h"
+#include "../../Jarvis/include/Command.hpp"
+#include "../../Jarvis/include/Jarvis.hpp"
 
 
 
@@ -25,6 +28,7 @@ class MainWindow : public QMainWindow
 public:
   explicit MainWindow(QWidget *parent = 0);
   QString getDeviceTypeFromBluetoothName(QString deviceBluetooth);
+
   ~MainWindow();
   
   private slots:
@@ -47,6 +51,7 @@ private:
   void             deleteDynamicButton(const QString &buttonName);
   GroupTab*        getGroupTab(QString tabName, bool createIfNotExist, QWidget *parent = 0);
   GroupTab*        createGroupTab(QString tabName, QWidget *parent = 0);
+  DynamicBulbButton* findDevice(QString deviceName);
   
   
   QMovie         *microphoneMovie;
@@ -57,5 +62,6 @@ private:
   Jarvis::Devices::DeviceFactory *_factory;
   
 };
-
+void    voiceProcessing(std::string &deviceName, std::string &command);
+std::string   parseCommand(std::string &command);
 #endif // MAINWINDOW_H
