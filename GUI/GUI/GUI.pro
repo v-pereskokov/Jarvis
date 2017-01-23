@@ -80,7 +80,11 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \
     smartbulbconfig.ui \
-    adddevicewindow.ui
+    adddevicewindow.ui \
+    init.ui
 
 RESOURCES += \
     res.qrc
+
+DISTFILES += \
+    ../../Jarvis/conf/speechkit.json
