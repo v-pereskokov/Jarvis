@@ -8,7 +8,6 @@
 #include <vector>
 #include <thread>
 #include "settingsbuttonbox.h"
-#include "ui_init.h"
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"
 #include "grouptab.h"
@@ -45,7 +44,7 @@ public:
   void     on_toolPushButton_clicked();  // Слот сворачивания/разворачивания панели управления
   void     setButtonIcon(int frame);
   void     on_microphoneButton_clicked();
-  void     changeUI();
+
 private:
   SettingsButtonBox*  createDynamicButton(const QString deviceBluetooth, const QString &buttonName,
                                           const QString groupName, QWidget *parent = 0);
@@ -56,9 +55,7 @@ private:
   
   
   QMovie         *microphoneMovie;
-  QMovie         *initMovie;
   Ui::MainWindow *ui;
-  Ui::Form       *ui2;
   std::vector<SettingsButtonBox*> buttonList;
   std::vector<GroupTab*>       groupList;
   QString stylesList[stylesAmount];

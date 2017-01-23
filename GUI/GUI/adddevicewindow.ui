@@ -16,6 +16,9 @@
   <property name="windowTitle">
    <string>Add New Device</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #222;</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="2">
     <layout class="QVBoxLayout" name="deviceLayout">

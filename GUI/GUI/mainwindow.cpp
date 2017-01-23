@@ -4,18 +4,7 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow{parent},
-    ui{new Ui::MainWindow}, ui2{new Ui::Form}, _factory(new Jarvis::Devices::DeviceFactory)
-{
-    initMovie = new QMovie(":/images/init.gif");
-
-
-    ui2->setupUi(this);
-    ui2->initLabel->setMovie( initMovie);
-    connect(initMovie, SIGNAL(finished()), this, SLOT(changeUI()));
-    initMovie->start();
-}
-
-void MainWindow::changeUI()
+    ui{new Ui::MainWindow}, _factory(new Jarvis::Devices::DeviceFactory)
 {
     ui->setupUi(this);
     ui->verticalLayoutLeft->setSpacing(10);
@@ -44,10 +33,11 @@ void MainWindow::changeUI()
         connect(microphoneMovie, SIGNAL(finished()), microphoneMovie, SLOT(stop()));
 }
 
+
+
 MainWindow::~MainWindow()
 {
     delete ui;    
-    delete ui2;
     delete _factory;
 }
 

@@ -3,23 +3,21 @@
 
 AddDeviceWindow::AddDeviceWindow(QWidget *parent) :
 QDialog(parent),
-ui(new Ui::AddDeviceWindow)
+ui(new Ui::AddDeviceWindow), ui2{new Ui::Loading}
 {
-  ui->setupUi(this);
+  ui2->setupUi(this);
+  initMovie = new QMovie(":/images/init.gif");
+
 }
 
-
-AddDeviceWindow::AddDeviceWindow(QWidget *parent,
-                                 std::vector<SettingsButtonBox *> &btnList,
-                                 std::vector<std::pair<std::string, std::string> > avaliableDevices)
-: AddDeviceWindow{parent}
+void AddDeviceWindow::changeUI()
 {
+  ui2->initLabel->hide();
+  ui->setupUi(this);
+
   QPushButton *tempBtn;
   QString stylesList[stylesAmount];
   setStyles(stylesList);
-  this->avaliableDevices = avaliableDevices;
-  buttonList = btnList;
-  
   for(size_t i = 0; i < avaliableDevices.size(); ++i)
     {
     std::string deviceBTName =  avaliableDevices[i].first;
@@ -28,6 +26,23 @@ AddDeviceWindow::AddDeviceWindow(QWidget *parent,
     ui->avaliableDevicesLayout->addWidget(tempBtn);
     connect(tempBtn, SIGNAL(clicked()), this, SLOT(getButtonName()));
     }
+
+}
+
+AddDeviceWindow::AddDeviceWindow(QWidget *parent,
+                                 std::vector<SettingsButtonBox *> &btnList,
+                                 std::vector<std::pair<std::string, std::string>> avaliableDevices)
+: AddDeviceWindow{parent}
+{
+
+
+  this->avaliableDevices = avaliableDevices;
+  buttonList = btnList;  
+
+  //ui2->setupUi(this);
+  ui2->initLabel->setMovie( initMovie);
+  connect(initMovie, SIGNAL(finished()), this, SLOT(changeUI()));
+  initMovie->start();
 }
 
 
@@ -40,6 +55,7 @@ void AddDeviceWindow::getButtonName()
 AddDeviceWindow::~AddDeviceWindow()
 {
   delete ui;
+  delete ui2;
 }
 
 bool AddDeviceWindow::checkName(const QString& name) const

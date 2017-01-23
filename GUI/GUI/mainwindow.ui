@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>655</width>
+    <width>672</width>
     <height>422</height>
    </rect>
   </property>
@@ -17,21 +17,8 @@
    <string notr="true">background-color: #222;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="5" rowspan="2">
-     <spacer name="verticalSpacer">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="0" column="0" rowspan="4">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" rowspan="3">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -124,10 +111,82 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="8">
+    <item row="0" column="3">
+     <widget class="QPushButton" name="microphoneButton">
+      <property name="maximumSize">
+       <size>
+        <width>70</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {  						
+						border-radius: 50px;						
+                        }</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/images/microphone.gif</normaloff>:/images/microphone.gif</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>70</width>
+        <height>70</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="toolPushButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {                         
+                          text-align: left;
+						background-color: #004A49;
+                          background-repeat: none; 
+						 min-width: 70px; 
+                          min-height: 70px;
+                          max-width: 70px; 
+                          max-height: 70px;
+						border: #535353 1px solid;
+						border-radius: 35px;
+						align: rigth;
+                        }
+                        QPushButton:hover {
+                           background-color: #2897ff;
+                        }
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5" rowspan="3">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout"/>
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -174,6 +233,19 @@
          </spacer>
         </item>
        </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -254,52 +326,8 @@ color: #00FBF6;</string>
       </item>
      </layout>
     </item>
-    <item row="0" column="5">
-     <widget class="QPushButton" name="microphoneButton">
-      <property name="maximumSize">
-       <size>
-        <width>70</width>
-        <height>70</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {  						
-						border-radius: 50px;						
-                        }</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="res.qrc">
-        <normaloff>:/images/microphone.gif</normaloff>:/images/microphone.gif</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>70</width>
-        <height>70</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="4">
-     <spacer name="horizontalSpacer_4">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Expanding</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="8" rowspan="2">
-     <spacer name="verticalSpacer_3">
+    <item row="1" column="3">
+     <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -311,38 +339,7 @@ color: #00FBF6;</string>
       </property>
      </spacer>
     </item>
-    <item row="3" column="5">
-     <widget class="QPushButton" name="toolPushButton">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {                         
-                          text-align: left;
-						background-color: #004A49;
-                          background-repeat: none; 
-						 min-width: 70px; 
-                          min-height: 70px;
-                          max-width: 70px; 
-                          max-height: 70px;
-						border: #535353 1px solid;
-						border-radius: 35px;
-						align: rigth;
-                        }
-                        QPushButton:hover {
-                           background-color: #2897ff;
-                        }
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-      <property name="flat">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
+    <item row="0" column="4">
      <spacer name="horizontalSpacer_3">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -358,6 +355,22 @@ color: #00FBF6;</string>
       </property>
      </spacer>
     </item>
+    <item row="0" column="2">
+     <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Expanding</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -365,7 +378,7 @@ color: #00FBF6;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>655</width>
+     <width>672</width>
      <height>19</height>
     </rect>
    </property>
