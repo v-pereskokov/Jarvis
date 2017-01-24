@@ -179,15 +179,15 @@ void MainWindow::on_addButton_clicked()
 
 
     // Список доступных устройств (имя)
-    //Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
-    //BTModule.connect();
-    //auto avaliableDevices = BTModule.getListOfDevicePortName();
-    //BTModule.disconnect();
-    std::this_thread::sleep_for(std::chrono::milliseconds(600));
-    std::vector<std::pair<std::string, std::string>> avaliableDevices;
-    std::string str1= "Bulb", str2 = "fugvenv";
-    avaliableDevices.push_back({str1, str2});
-    avaliableDevices.push_back({str2, str1});
+    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
+    BTModule.connect();
+    auto avaliableDevices = BTModule.getListOfDevicePortName();
+    BTModule.disconnect();
+//    std::this_thread::sleep_for(std::chrono::milliseconds(600));
+//    std::vector<std::pair<std::string, std::string>> avaliableDevices;
+//    std::string str1= "Bulb", str2 = "fugvenv";
+//    avaliableDevices.push_back({str1, str2});
+//    avaliableDevices.push_back({str2, str1});
 
     addDeviceWindow->setDevices(avaliableDevices);
 }
@@ -198,7 +198,7 @@ void MainWindow::addDevice(QString deviceBluetooth, std::string devicePort, QStr
 
     // Создаем объект динамической кнопки
     SettingsButtonBox *settings = createDynamicButton(deviceBluetooth, deviceName, tab->tab->text(), tab->layout);
-    //settings->deviceButton->startFabric(devicePort);
+    settings->deviceButton->startFabric(devicePort);
     //Добавляем кнопку в слой
     tab->layout->addSettingsButtonBox(settings);
     if(tab->tab->isChecked())
