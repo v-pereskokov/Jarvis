@@ -12,5 +12,6 @@
         <file>toolIcon.png</file>
         <file>microphone.gif</file>
         <file>init.gif</file>
+        <file>addIcon.png</file>
     </qresource>
 </RCC>

@@ -125,9 +125,9 @@ bool SmartDevice::turnOnDevice()
   bool temp =  deviceStatus;
   deviceStatus = true;
   
-  device->connect();
-  device->on();
-  device->disconnect();
+  //device->connect();
+  //device->on();
+  //device->disconnect();
   
   if(uploadDeviceConfig())
     return true;
