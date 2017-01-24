@@ -161,7 +161,10 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
     return tab;
 }
 
-
+void MainWindow::emitAddBtn()
+{
+    emit(on_addButton_clicked());
+}
 
 void MainWindow::on_addButton_clicked()
 {
@@ -343,22 +346,22 @@ void MainWindow::on_toolPushButton_clicked()
 void MainWindow::on_microphoneButton_clicked()
 {
     std::string deviceName, command;
-    std::thread thr(voiceProcessing, std::ref(deviceName), std::ref(command));
+    std::thread thr(voiceProcessing, std::ref(deviceName), std::ref(command), this);
     thr.detach();
     microphoneMovie->start();
+    //voiceProcessing(deviceName, command);
+    //DynamicBulbButton *device = findDevice(QString::fromUtf8(deviceName.c_str()));
 
-    DynamicBulbButton *device = findDevice(QString::fromUtf8(deviceName.c_str()));
-
-    if(command.compare(0,2,"on") == 0 && device)
-        device->turnOnDevice();
-    if (command.compare(0,3,"off")== 0 && device)
-        device->turnOffDevice();
-    if (command.compare(0,3,"add") == 0)
-        emit(on_addButton_clicked());
+    //if(command.compare(0,2,"on") == 0 && device)
+       // device->turnOnDevice();
+    //if (command.compare(0,3,"off")== 0 && device)
+      //  device->turnOffDevice();
+   // if (command.compare(0,3,"add") == 0)
+      //  emit(on_addButton_clicked());
 
 }
 
-void voiceProcessing(std::string &deviceName, std::string &command)
+void voiceProcessing(std::string &deviceName, std::string &command, MainWindow* wnd)
 {
     std::string cmd = Jarvis::Jarvis::getStringVoice();
     command = parseCommand(cmd);
@@ -366,8 +369,14 @@ void voiceProcessing(std::string &deviceName, std::string &command)
         deviceName = "Bulb";
     else if (cmd.find("чайник") != std::string::npos)
         deviceName = "Kettle";
-    return;
+    DynamicBulbButton *device = wnd->findDevice(QString::fromUtf8(deviceName.c_str()));
 
+    if(command.compare(0,2,"on") == 0 && device)
+        device->turnOnDevice();
+    if (command.compare(0,3,"off")== 0 && device)
+        device->turnOffDevice();
+    if (command.compare(0,3,"add") == 0)
+        wnd->emitAddBtn();
 }
 
 DynamicBulbButton* MainWindow::findDevice(QString deviceName)

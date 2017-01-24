@@ -15,6 +15,6 @@
 		"lang" : "ru-RU"
 	},
 	"record" : {
-        "name" : "/Users/vladislavpereskokov/Desktop/Tests/Jarvis/Jarvis/samples/output.wav"
+        "name" : "../../Jarvis/samples/output.wav"
 	}
 }

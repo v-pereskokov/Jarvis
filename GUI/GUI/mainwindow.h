@@ -30,7 +30,8 @@ class MainWindow : public QMainWindow
 public:
   explicit MainWindow(QWidget *parent = 0);
   QString getDeviceTypeFromBluetoothName(QString deviceBluetooth);
-
+  DynamicBulbButton* findDevice(QString deviceName);
+  void  emitAddBtn();
   ~MainWindow();
   
   private slots:
@@ -53,7 +54,7 @@ private:
   void             deleteDynamicButton(const QString &buttonName);
   GroupTab*        getGroupTab(QString tabName, bool createIfNotExist, QWidget *parent = 0);
   GroupTab*        createGroupTab(QString tabName, QWidget *parent = 0);
-  DynamicBulbButton* findDevice(QString deviceName);
+
   
   
   QMovie         *microphoneMovie;
@@ -64,6 +65,6 @@ private:
   Jarvis::Devices::DeviceFactory *_factory;
   
 };
-void    voiceProcessing(std::string &deviceName, std::string &command);
+void    voiceProcessing(std::string &deviceName, std::string &command, MainWindow *wnd);
 std::string   parseCommand(std::string &command);
 #endif // MAINWINDOW_H

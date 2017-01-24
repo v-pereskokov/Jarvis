@@ -23,8 +23,8 @@ namespace Jarvis {
     using settingsKeySpeechKit = std::string;
     using settingsKeysSpeechKitYandex = std::vector<settingsKeySpeechKit>;
     
-    const scriptName scriptRecord = "/Users/vladislavpereskokov/Desktop/Tests/Jarvis/Jarvis/scripts/record.py";
-    const configurationFile speechKitJson = "/Users/vladislavpereskokov/Desktop/Tests/Jarvis/Jarvis/conf/speechkit.json";
+    const scriptName scriptRecord = "../../Jarvis/scripts/record.py";
+    const configurationFile speechKitJson = "../../Jarvis/conf/speechkit.json";
     const resultSentenceKeySpeechKit resultSentenceKey = "variant";
     const settingsKeysSpeechKitYandex keys = {"key", "uuid", "topic", "lang"};
   }
