@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QScrollBar>
 #include <QMessageBox>
+#include <QThread>
 #include <vector>
 #include <thread>
+#include <chrono>
 #include "settingsbuttonbox.h"
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"

@@ -165,23 +165,30 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
 
 void MainWindow::on_addButton_clicked()
 {
+    AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList};
     LoadingWindow *load = new LoadingWindow(this);
-    load->show();
-    // Список доступных устройств (имя)
-    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
-    BTModule.connect();
-    auto avaliableDevices = BTModule.getListOfDevicePortName();
-    BTModule.disconnect();
-    //std::vector<std::pair<std::string, std::string>> avaliableDevices;
-    //std::string str1= "vdfvdfv", str2 = "fugvenv";
-    //avaliableDevices.push_back({str1, str2});
-    //avaliableDevices.push_back({str2, str1});
+    QThread* thread = new QThread;
+    load->moveToThread(thread);
 
-    AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
+    connect(thread, SIGNAL(started()), load, SLOT(show()));
+    connect(load, SIGNAL(animationEnd()), addDeviceWindow, SLOT(show()));
     connect(addDeviceWindow, SIGNAL(newDevice(QString, std::string, QString , QString)),
             this, SLOT(addDevice(QString, std::string, QString , QString)));
-    addDeviceWindow->show(); //вызов диалогового окна добавления устройства
+    thread->start();
 
+
+    // Список доступных устройств (имя)
+    //Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
+    //BTModule.connect();
+    //auto avaliableDevices = BTModule.getListOfDevicePortName();
+    //BTModule.disconnect();
+    std::this_thread::sleep_for(std::chrono::milliseconds(3600));
+    std::vector<std::pair<std::string, std::string>> avaliableDevices;
+    std::string str1= "vdfvdfv", str2 = "fugvenv";
+    avaliableDevices.push_back({str1, str2});
+    avaliableDevices.push_back({str2, str1});
+
+    addDeviceWindow->setDevices(avaliableDevices);
 }
 
 void MainWindow::addDevice(QString deviceBluetooth, std::string devicePort, QString deviceName, QString groupName)
@@ -360,20 +367,9 @@ void voiceProcessing(std::string &deviceName, std::string &command)
     else if (cmd.find("чайник") != std::string::npos)
         deviceName = "Kettle";
     return;
-    // TODO:
-    //
-    // включить микрофон
-    // получить команду
-    // 1) для выключения вызвать функцию
-    //    device = buttonList[n]; // n найти перебором спика по имени лампочки которое ввел пользователь (deviceName)
-    //    device->deviceButton->turnOffDevice;
-    // 2) для включения вызвать функцию
-    //    device = buttonList[n]; // n найти перебором спика по имени лампочки которое ввел пользователь (deviceName)
-    //    device->deviceButton->turnOnDevice;
-    // 3) для добавления устройства вызвать
-    //    emit(on_addButton_clicked());
 
 }
+
 DynamicBulbButton* MainWindow::findDevice(QString deviceName)
 {
     for(size_t i = 0; i < buttonList.size(); ++i)

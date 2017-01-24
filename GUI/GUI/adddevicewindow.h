@@ -18,12 +18,11 @@ class AddDeviceWindow : public QDialog
 
 public:
     explicit AddDeviceWindow(QWidget *parent = 0);
-    AddDeviceWindow(QWidget *parent, std::vector<SettingsButtonBox *> &btnList,
-                    std::vector<std::pair<std::string, std::string>> avaliableDevices);
+    AddDeviceWindow(QWidget *parent, std::vector<SettingsButtonBox *> &btnList);
     ~AddDeviceWindow();
     bool checkName(const QString& name) const;
     bool checkBluetoothName(const QString& name) const;
-
+    void  setDevices(std::vector<std::pair<std::string, std::string>> avaliableDevices);
 private slots:
     void  getButtonName();
     void  on_buttonBox_clicked(QAbstractButton *button);

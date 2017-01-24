@@ -10,29 +10,29 @@ QDialog(parent), ui(new Ui::AddDeviceWindow)
 
 
 AddDeviceWindow::AddDeviceWindow(QWidget *parent,
-                                 std::vector<SettingsButtonBox *> &btnList,
-                                 std::vector<std::pair<std::string, std::string>> avaliableDevices)
+                                 std::vector<SettingsButtonBox *> &btnList)
 : AddDeviceWindow{parent}
 {
 
-
-  this->avaliableDevices = avaliableDevices;
   buttonList = btnList;
-
-  QPushButton *tempBtn;
-  QString stylesList[stylesAmount];
-  setStyles(stylesList);
-  for(size_t i = 0; i < avaliableDevices.size(); ++i)
-    {
-    std::string deviceBTName =  avaliableDevices[i].first;
-    tempBtn = new QPushButton(QString::fromUtf8(deviceBTName.c_str()), ui->scrollAreaWidgetContents);
-    tempBtn->setStyleSheet(stylesList[4]);
-    ui->avaliableDevicesLayout->addWidget(tempBtn);
-    connect(tempBtn, SIGNAL(clicked()), this, SLOT(getButtonName()));
-    }
-
 }
 
+void AddDeviceWindow::setDevices(std::vector<std::pair<std::string, std::string>> avaliableDevices)
+{
+    this->avaliableDevices = avaliableDevices;
+
+    QPushButton *tempBtn;
+    QString stylesList[stylesAmount];
+    setStyles(stylesList);
+    for(size_t i = 0; i < avaliableDevices.size(); ++i)
+      {
+      std::string deviceBTName =  avaliableDevices[i].first;
+      tempBtn = new QPushButton(QString::fromUtf8(deviceBTName.c_str()), ui->scrollAreaWidgetContents);
+      tempBtn->setStyleSheet(stylesList[4]);
+      ui->avaliableDevicesLayout->addWidget(tempBtn);
+      connect(tempBtn, SIGNAL(clicked()), this, SLOT(getButtonName()));
+      }
+}
 
 void AddDeviceWindow::getButtonName()
 {

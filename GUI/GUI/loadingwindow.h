@@ -16,6 +16,11 @@ public:
     explicit LoadingWindow(QWidget *parent = 0);
     ~LoadingWindow();
 
+private slots:
+    void sendSignalExit();
+signals:
+    void animationEnd();
+
 private:
     Ui::LoadingWindow *ui;
     QMovie            *initMovie;
