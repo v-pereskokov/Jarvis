@@ -166,7 +166,7 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
 void MainWindow::on_addButton_clicked()
 {
     // Список доступных устройств (имя)
-    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.usbmodem14331"); // Порт потом укажу нужный
+    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
     BTModule.connect();
     auto avaliableDevices = BTModule.getListOfDevicePortName();
     BTModule.disconnect();

@@ -17,8 +17,8 @@ namespace Jarvis {
       }
       
       BluetoothHC05::listDevices BluetoothHC05::getListDevicesAddress() {
-        command(ATCommands::INIT);
-        getAnswer();
+//        command(ATCommands::INIT);
+//        getAnswer();
         command(ATCommands::INQUIRE);
         listDevices list;
         findListDevicesAddress(&list, getAnswer());

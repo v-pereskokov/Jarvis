@@ -14,7 +14,7 @@ namespace Jarvis {
   }
   
   void Voice::record() {
-    Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::python, VoiceConfigurations::scriptRecord, {"../samples/output.wav"});
+    Jarvis::Commands::Command::execute(Jarvis::Commands::CommandType::python, VoiceConfigurations::scriptRecord, {"/Users/vladislavpereskokov/Desktop/Tests/Jarvis/Jarvis/samples/output.wav"});
   }
   
   Voice::sentence Voice::voiceRecognition() {

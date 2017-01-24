@@ -5,7 +5,7 @@ import sys
 def Record(PATH):
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
-    CHANNELS = 2
+    CHANNELS = 1
     RATE = 16000
     RECORD_SECONDS = 3
     WAVE_OUTPUT_FILENAME = PATH
