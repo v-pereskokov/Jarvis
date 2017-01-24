@@ -46,7 +46,8 @@ SOURCES += main.cpp\
     ../../Jarvis/src/Parser.cpp \
     ../../Jarvis/src/SpeechKit.cpp \
     ../../Jarvis/src/Transport.cpp \
-    ../../Jarvis/src/Voice.cpp
+    ../../Jarvis/src/Voice.cpp \
+    loadingwindow.cpp
 
 HEADERS  += mainwindow.h \
     smartdevice.h \
@@ -74,14 +75,15 @@ HEADERS  += mainwindow.h \
     ../../Jarvis/include/Parser.hpp \
     ../../Jarvis/include/SpeechKit.hpp \
     ../../Jarvis/include/Transport.hpp \
-    ../../Jarvis/include/Voice.hpp
+    ../../Jarvis/include/Voice.hpp \
+    loadingwindow.h
 
 
 FORMS    += mainwindow.ui \
     settingsdialogwindow.ui \
     smartbulbconfig.ui \
     adddevicewindow.ui \
-    init.ui
+    loadingwindow.ui
 
 RESOURCES += \
     res.qrc

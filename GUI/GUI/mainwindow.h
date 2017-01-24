@@ -4,13 +4,13 @@
 #include <QMainWindow>
 #include <QScrollBar>
 #include <QMessageBox>
-#include <QMovie>
 #include <vector>
 #include <thread>
 #include "settingsbuttonbox.h"
 #include "settingsdialogwindow.h"
 #include "smartbulbconfig.h"
 #include "grouptab.h"
+#include "loadingwindow.h"
 #include "../../Jarvis/include/Command.hpp"
 #include "../../Jarvis/include/Jarvis.hpp"
 

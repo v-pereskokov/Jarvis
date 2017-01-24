@@ -165,11 +165,17 @@ GroupTab* MainWindow::createGroupTab(QString tabName, QWidget *parent)
 
 void MainWindow::on_addButton_clicked()
 {
+    LoadingWindow *load = new LoadingWindow(this);
+    load->show();
     // Список доступных устройств (имя)
     Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
     BTModule.connect();
     auto avaliableDevices = BTModule.getListOfDevicePortName();
     BTModule.disconnect();
+    //std::vector<std::pair<std::string, std::string>> avaliableDevices;
+    //std::string str1= "vdfvdfv", str2 = "fugvenv";
+    //avaliableDevices.push_back({str1, str2});
+    //avaliableDevices.push_back({str2, str1});
 
     AddDeviceWindow *addDeviceWindow = new AddDeviceWindow{this, buttonList, avaliableDevices};
     connect(addDeviceWindow, SIGNAL(newDevice(QString, std::string, QString , QString)),
