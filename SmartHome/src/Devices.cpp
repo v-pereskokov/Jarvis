@@ -18,7 +18,7 @@ namespace Jarvis {
     void DeviceFactory::initialize() {
       _traits["Bulb"] = std::make_shared<Creator<Bulb, Device, Device::name, Connection::SerialPort::portName, Connection::SerialPort::portRate>>();
       _traits["Kettle"] = std::make_shared<Creator<Teapot, Device, Device::name, Connection::SerialPort::portName, Connection::SerialPort::portRate>>();
-      _traits["Fan"] = std::make_shared<Creator<Fan, Device, Device::name, Connection::SerialPort::portName, Connection::SerialPort::portRate>>();
+      _traits["Radio"] = std::make_shared<Creator<Fan, Device, Device::name, Connection::SerialPort::portName, Connection::SerialPort::portRate>>();
     }
   }
 }

@@ -41,6 +41,7 @@ SOURCES += main.cpp\
     ../../SmartHome/src/DevicesController.cpp \
     ../../SmartHome/src/Teapot.cpp \
     ../../SmartHome/src/Fan.cpp \
+    ../../SmartHome/src/Radio.cpp \
     ../../Jarvis/src/Command.cpp \
     ../../Jarvis/src/Jarvis.cpp \
     ../../Jarvis/src/Parser.cpp \
@@ -70,6 +71,7 @@ HEADERS  += mainwindow.h \
     ../../SmartHome/include/Commands.hpp \
     ../../SmartHome/include/Mediator.hpp \
     ../../SmartHome/include/Devices/Fan.hpp \
+    ../../SmartHome/include/Devices/Radio.hpp \
     ../../Jarvis/include/Command.hpp \
     ../../Jarvis/include/Jarvis.hpp \
     ../../Jarvis/include/Parser.hpp \

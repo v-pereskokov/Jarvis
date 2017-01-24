@@ -179,16 +179,25 @@ void MainWindow::on_addButton_clicked()
 
 
     // Список доступных устройств (имя)
-    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
-    BTModule.connect();
-    auto avaliableDevices = BTModule.getListOfDevicePortName();
-    BTModule.disconnect();
+//    Jarvis::Connection::Bluetooth::BluetoothHC05 BTModule("/dev/cu.Brain-DevB"); // Порт потом укажу нужный
+//    BTModule.connect();
+//    auto avaliableBT = BTModule.getListOfDevicePortName();
+//    BTModule.disconnect();
 //    std::this_thread::sleep_for(std::chrono::milliseconds(600));
-//    std::vector<std::pair<std::string, std::string>> avaliableDevices;
-//    std::string str1= "Bulb", str2 = "fugvenv";
-//    avaliableDevices.push_back({str1, str2});
-//    avaliableDevices.push_back({str2, str1});
-
+    std::vector<std::pair<std::string, std::string>> avaliableDevices;
+    std::string str1= "Bulb", str2 = "fugvenv";
+    avaliableDevices.push_back({"Bulb", "/dev/cu.Bulb-DevB"});
+    avaliableDevices.push_back({"Kettle", "/dev/cu.Kettle-DevB"});
+    avaliableDevices.push_back({"Radio", "/dev/cu.Radio-DevB"});
+//    auto it = avaliableDevices.begin();
+//    for (; it != avaliableDevices.end(); ++it) {
+//        if (it->first == avaliableBT[0].first) {
+//            break;
+//        }
+//    }
+//    if (it != avaliableDevices.end()) {
+//        avaliableDevices.push_back(avaliableBT[0]);
+//    }
     addDeviceWindow->setDevices(avaliableDevices);
 }
 
