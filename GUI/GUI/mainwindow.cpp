@@ -345,15 +345,22 @@ void MainWindow::on_microphoneButton_clicked()
     std::thread thr(voiceProcessing, std::ref(deviceName), std::ref(command), this);
     thr.detach();
     microphoneMovie->start();
-    //voiceProcessing(deviceName, command);
-    //DynamicBulbButton *device = findDevice(QString::fromUtf8(deviceName.c_str()));
+//    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+//    //voiceProcessing(deviceName, command);
+//    DynamicBulbButton *device = findDevice(QString::fromUtf8(deviceName.c_str()));
 
-    //if(command.compare(0,2,"on") == 0 && device)
-       // device->turnOnDevice();
-    //if (command.compare(0,3,"off")== 0 && device)
-      //  device->turnOffDevice();
-   // if (command.compare(0,3,"add") == 0)
-      //  emit(on_addButton_clicked());
+//    if(command.compare(0,2,"on") == 0 && device)
+//    {
+//        device->turnOnDevice();
+//        device->setIcon(QIcon{QPixmap{":/images/bulbOnIcon.png"}});
+//    }
+//    if (command.compare(0,3,"off")== 0 && device)
+//    {
+//        device->turnOffDevice();
+//        device->setIcon(QIcon{QPixmap{":/images/bulbOffIcon.png"}});
+//    }
+//    if (command.compare(0,3,"add") == 0)
+//        emit(on_addButton_clicked());
 
 }
 
@@ -368,9 +375,16 @@ void voiceProcessing(std::string &deviceName, std::string &command, MainWindow* 
     DynamicBulbButton *device = wnd->findDevice(QString::fromUtf8(deviceName.c_str()));
 
     if(command.compare(0,2,"on") == 0 && device)
+    {
         device->turnOnDevice();
+        device->setIcon(QIcon{QPixmap{":/images/bulbOnIcon.png"}});
+    }
+
     if (command.compare(0,3,"off")== 0 && device)
-        device->turnOffDevice();
+    {
+       device->turnOffDevice();
+       device->setIcon(QIcon{QPixmap{":/images/bulbOffIcon.png"}});
+    }
     if (command.compare(0,3,"add") == 0)
         wnd->emitAddBtn();
 }
