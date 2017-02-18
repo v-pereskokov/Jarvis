@@ -1,4 +1,0 @@
-EasyA						 KEYWORD1
-readStream   		         KEYWORD2
-ATCommands   		         KEYWORD1
-getCommand					 KEYWORD2

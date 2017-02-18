@@ -1,0 +1,75 @@
+// ------------------------------------------------------------------
+// Slide
+// ------------------------------------------------------------------
+// 1. Number ........... Page number
+// 2. Content .......... Various content types
+// 3. Modifiers......... Slide modifiers
+// 4. Elements ......... Content elements
+// ------------------------------------------------------------------
+
+.slide {
+
+	position:relative;
+	z-index:1;
+	overflow:hidden;
+	padding-top: 36px;
+	padding-right: 56px;
+	padding-left: 64px;
+	padding-bottom: 0;
+	width:$width;
+	height:$height;
+	background:white;
+	line-height:2;
+	font-size:24px;
+
+	// Logo
+
+	&::before {
+		position:absolute;
+		transform: scale(.7);
+		height: 200px;
+		width: 260px;
+		right: 16px;
+		top: -38px;
+		background-image: url("../images/logo_noback.png");
+		content:'';
+		}
+
+	// Number
+
+	&::after {
+		position:absolute;
+		left:64px;
+		bottom:20px;
+		color:$light;
+		counter-increment:slide;
+		content:counter(slide);
+		}
+
+	// Content
+
+	@import
+		'content/basic',
+		'content/inline',
+		'content/quote',
+		'content/lists',
+		'content/table',
+		'content/code',
+		'content/footer';
+
+	// Modifiers
+
+	@import
+		'modifiers/grid',
+		'modifiers/black',
+		'modifiers/white';
+
+	// Elements
+
+	@import
+		'elements/columns',
+		'elements/shout',
+		'elements/cover',
+		'elements/place';
+
+	}

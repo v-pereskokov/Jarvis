@@ -1,0 +1,211 @@
+.smarthome-start {
+	margin-top: -9%;
+	margin-left: 7%;
+	font-size: 48pt;
+}
+
+.smarthome-qr {
+	margin-left: 30%;
+}
+
+.smarthome-qr-img {
+	width: 60%;
+	height: 60%;
+}
+
+.who_is_who {
+	margin: 5%;
+}
+
+.who_is_who-images-developer {
+	height: 28%;
+	width: 28%;
+	margin-right: 4%;
+}
+
+.who_is_who-names {
+	font-size: 16pt;
+	margin-left: -9%;
+}
+
+.who_is_who-names-property {
+	font-size: 14pt;
+	margin-top: -3%;
+}
+
+.who_is_who-names-property-den {
+	font-size: 14pt;
+	margin-top: -4.3%;
+	margin-left: 8%;
+}
+
+.who_is_who-names-denis {
+	margin-left: 35%;
+	margin-top: -10.7%;
+}
+
+.who_is_who-names-vlados {
+	margin-left: 64%;
+	margin-top: -10.7%;
+}
+
+.who_is_who-names-property-vlados {
+	font-size: 14pt;
+	margin-top: -8%;
+	margin-left: 20%;
+}
+
+.all {
+	font-size: 36pt;
+	margin: 20%;
+}
+
+.speechkit {
+	height: 30%;
+	width: 23%;
+	margin-top: 15%;
+}
+
+.arduino {
+	height: 30%;
+	width: 25%;
+	margin-top: 15%;
+	margin-left: 10%;
+}
+
+.c {
+	height: 35%;
+	width: 23%;
+	margin-top: 16%;
+}
+
+.cpp {
+	height: 30%;
+	width: 25%;
+	margin-top: -10%;
+	margin-left: 10%;
+}
+
+.python {
+	height: 35%;
+	width: 30%;
+	margin-top: -2%;
+	margin-left: 10%;
+}
+
+.ghome {
+	height: 25%;
+	width: 50%;
+}
+
+.applekit {
+	height: 40%;
+	width: 40%;
+	margin-top: 15%;
+	margin-left: 60%;
+}
+
+.home {
+	height: 38%;
+	width: 25%;
+	margin-top: 15%;
+	margin-left: 33%;
+}
+
+.bulb {
+	height: 25%;
+	width: 15%;
+	margin-top: -40%;
+	margin-left: 15%;
+}
+
+.electr {
+	height: 25%;
+	width: 15%;
+	margin-left: 5%;
+	margin-top: -40%;
+}
+
+.tea {
+	height: 28%;
+	width: 18%;
+}
+
+.back {
+	height: 90%;
+	width: 35%;
+	margin-top: -2%;
+}
+
+.back-first {
+	margin-left: -5.5%;
+}
+
+.back-second {
+	margin-left: -0.5%;
+}
+
+.back-third {
+	margin-left: -0.5%;
+}
+
+.jarvis {
+	height: 35%;
+	width: 20%;
+	margin-top: 10%;
+}
+
+.jarvis1 {
+	height: 45%;
+	width: 25%;
+	margin-left: -22%;
+	padding-top: 10px;
+}
+
+.gui {
+	margin-left: 4%;
+}
+
+.voice {
+	margin-left: 38%;
+	margin-top: -60%;
+}
+
+.top {
+	margin-left: 65%;
+	margin-top: -22%;
+}
+
+.list {
+	margin-top: 15%;
+}
+
+.oop {
+	margin-top: 5%;
+	margin-left: 13%;
+}
+
+.code-font {
+	font-size: 12pt;
+	margin-top: -2%;
+	margin-left: 2%;
+	width: 250px;
+}
+
+.human-code {
+	margin-left: 55%;
+	margin-top: -50%;
+}
+
+.orc-code {
+	margin-left: 55%;
+	margin-top: 1%;
+}
+
+.up {
+	margin-top: -3%;
+}
+
+.example {
+	margin: 17%;
+}
