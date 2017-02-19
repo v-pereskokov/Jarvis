@@ -14,6 +14,7 @@ gulp.task('default', ['styles'], () => {
 	sync.init({
 		ui: false,
 		notify: false,
+		port: process.env.PORT || 3000,
 		server: {
 			baseDir: '.'
 		}
