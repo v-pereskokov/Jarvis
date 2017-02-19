@@ -29,6 +29,7 @@
   "scripts": {
     "dev": "gulp",
     "styles": "gulp styles",
-    "prepublish": "npm run styles"
+    "prepublish": "npm run styles",
+    "start": "npm run dev"
   }
 }
