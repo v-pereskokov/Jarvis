@@ -1,0 +1,18 @@
+language: node_js
+sudo: required
+node_js:
+- '7'
+branches:
+  only:
+  - presentation
+deploy:
+  provider: heroku
+  api_key:
+    secure: b9ec777b-f764-4ff1-abc5-55ef220ecdef
+  app: jarvispresent
+  on:
+    repo: vladpereskokov/Jarvis
+  skip_cleanup: true
+install:
+  - npm install
+  - npm run dev
