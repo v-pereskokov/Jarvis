@@ -1,17 +1,13 @@
 {
-  "name": "shower-technopark-theme",
-  "description": "\"Technopark\" theme for Shower HTML presentation engine",
+  "name": "Shower Jarvis",
+  "description": "",
   "version": "0.0.1",
-  "homepage": "https://github.com/frontend-park-mail-ru/shower-technopark-theme",
+  "homepage": "https://github.com/Jarvis",
   "repository": {
     "type": "git",
-    "url": "git://github.com/frontend-park-mail-ru/shower-technopark-theme.git"
+    "url": "git://github.com/Jarvis"
   },
   "keywords": [
-    "shower",
-    "frontend",
-    "technopark",
-    "theme"
   ],
   "dependencies": {
     "autoprefixer": "^6.4.0",
