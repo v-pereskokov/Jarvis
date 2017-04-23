@@ -176,10 +176,6 @@
 	margin-top: -22%;
 }
 
-.list {
-	margin-top: 15%;
-}
-
 .oop {
 	margin-top: 5%;
 	margin-left: 13%;
@@ -231,4 +227,23 @@
 	font-size: 24pt;
 	margin-top: 13%;
 	margin-left: 20%;
+}
+
+.slide p {
+	text-indent: 0em;
+}
+
+.putin {
+	width: 600px;
+	height: 300px;
+	position: absolute;
+	left: 200px;
+}
+
+.putin1 {
+	width: 450px;
+	height: 300px;
+	position: absolute;
+	top: 150px;
+	left: 270px;
 }
